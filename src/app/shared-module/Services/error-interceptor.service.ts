@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ErrorInterceptorService {
+
+  constructor() { }
+
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    return next.handle(request).pipe(
+      catchError((error: HttpErrorResponse) => {
+        // Handle the error response
+        // ...
+        return throwError(error);
+      })
+    );
+  }
+}

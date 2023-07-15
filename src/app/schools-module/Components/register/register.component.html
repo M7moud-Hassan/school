@@ -15,21 +15,26 @@
         <br />
         <img src="assets/images/logo_txt.svg" alt="logo_txt" class="logo_txt">
         <div >
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="registerForm" (ngSubmit)="submit()">
                 <h5>تسجيل جديد <span>للمدارس فقط</span></h5>
                 <div class="input-box">
-                    <label for="name">الاسم بالعربية</label>
-                    <input type="text" spellcheck="false" placeholder="ادخل اسم المدرسة باللغة العربية" required>
+                    <label for="nameInArabic">الاسم بالعربية</label>
+                    <input type="text" spellcheck="false" formControlName="nameInArabic" name="nameInArabic" id="nameInArabic" placeholder="ادخل اسم المدرسة باللغة العربية" >
                 </div>
 
                 <div class="input-box">
-                    <label for="name">الاسم بالانجليزية</label>
-                    <input type="text" spellcheck="false" placeholder="ادخل اسم المدرسة باللغة الانجليزية" required>
+                    <label for="nameInEnglish">الاسم بالانجليزية</label>
+                    <input type="text" spellcheck="false" formControlName="nameInEnglish" name="nameInEnglish" id="nameInEnglish" placeholder="ادخل اسم المدرسة باللغة الانجليزية" >
                 </div>
                
-              
+                <!-- <div class="input-box">
+                    <label for="">رقم الهاتف</label>
+                    <input type="text" formControlName="phone" name="phone" id="phone" />
+                     <i class="uil uil-eye-slash"> <span class="fst-normal px-4 pe-0 fs-3">|</span> </i>
+                </div> -->
+
                 <div class="input-box">
-                    <label for="name">رقم الهاتف</label>
+                    <label for="phone">رقم الهاتف</label>
                    
                 <ngx-intl-tel-input
                 [cssClass]="'custom'"
@@ -49,8 +54,8 @@
                 [separateDialCode]="separateDialCode"
                 [numberFormat]="PhoneNumberFormat.National"
                 name="phone"
-                    formControlName="phone"
-                    
+                formControlName="phone"
+                id="phone"
               >
               </ngx-intl-tel-input>
               <div class="code-phone">
@@ -59,16 +64,16 @@
             
         </div>
         <div class="input-box">
-            <label for="name">البريد الالكتروني</label>
-            <input class="emial-input" type="text" spellcheck="false" placeholder="name@gmail.com" required>
+            <label for="email">البريد الالكتروني</label>
+            <input class="email-input" type="text" formControlName="email" name="email" id="email" spellcheck="false" placeholder="name@gmail.com" >
             <div class="icon-email">
                 <img src="assets/images/email.svg" alt="email">
             </div>
         </div>
 
         <div class="input-box">
-            <label for="name">العنوان كاملا</label>
-            <input type="text" spellcheck="false" placeholder="ادخل اسم المدرسة باللغة الانجليزية" required>
+            <label for="address">العنوان كاملا</label>
+            <input type="text" spellcheck="false" formControlName="address" name="address" id="address" placeholder="ادخل اسم المدرسة باللغة الانجليزية">
             <div class="location">
                 <img src="assets/images/Location.svg" alt="locations"> 
             </div>
@@ -87,7 +92,7 @@
                 </div>
                 <p class="hint" *ngIf="!showContainer" >سوف تصلك رسالة عل البريد الالكتروني / رقم الهاتف بكلمة المرور الجديدة</p> -->
                 <br/>
-                <button class="rounded-button">{{labelSubmit}}</button>
+                <button class="rounded-button" [value]="labelSubmit">{{labelSubmit}}</button>
                 <p class="register-link">لدي حساب ؟ <a>تسجيل دخول</a></p>
             </form>
 

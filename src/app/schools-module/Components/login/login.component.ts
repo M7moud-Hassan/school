@@ -1,8 +1,10 @@
 import { Component,AfterViewInit,OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { DilaogContactComponent } from '../dilaog-contact/dilaog-contact.component';
+import { AuthService } from '../../Services/auth.service';
+import { LoginModel } from '../../Core/Models/login-model';
 
 @Component({
   selector: 'app-login',
@@ -12,21 +14,22 @@ import { DilaogContactComponent } from '../dilaog-contact/dilaog-contact.compone
 export class LoginComponent implements OnInit, AfterViewInit {
   inputValue: string = "";
   showInput: boolean = false;
-  imageSource:string =
-     "assets/images/message.svg";
+  imageSource:string = "assets/images/message.svg";
+  labelSubmit:string='دخول' ;
   titleForm:string='تسجيل الدخول';
-  label2:string='كلمة المرور'
-  labelSubmit:string='دخول'
+  label2:string='كلمة المرور' ;
   showContainer:boolean=true;
-  loginForm = new FormGroup(
-    {
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)])
-    }
-  )
+  loginModel:LoginModel = {} as LoginModel;
 
-  constructor(private dialog: MatDialog, private elementRef: ElementRef) {
+  constructor(private fb:FormBuilder,private dialog: MatDialog, private elementRef: ElementRef,private authService:AuthService) {
   }
+  loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      rememberMe: [false]
+    });
+
+  
 
 
   ngAfterViewInit(): void {
@@ -46,7 +49,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   openDialog() {
-    
+
     const dialogConfig = new MatDialogConfig();
   
     dialogConfig.position = {
@@ -67,15 +70,41 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit() {
+    //TODO: remove
+    this.mapValues();
+    //TODO: remove
+    alert(`
+    ${this.loginModel.userNumber},
+    ${this.loginModel.password},
+    ${this.loginModel.rememberMe},
+    `)
 
+    if(this.loginForm.valid){
+      this.mapValues();
+      this.authService.login(this.loginModel).subscribe({
+        next:(response)=>{
+
+        },
+        error:(error)=>{
+
+        }
+      })
+    }
   }
 
   @ViewChild('dialog', { static: true }) set content(content: ElementRef) {
     this.elementRef = content;
   }
-
   toggleInputVisibility() {
     this.showInput = !this.showInput;
+  }
+  
+  mapValues(){
+    this.loginModel = {
+      userNumber : this.loginForm.controls['email'].value,
+      password : this.loginForm.get('password')?.value,
+      rememberMe : this.loginForm.get('rememberMe')?.value,
+    }
   }
 
   ngOnInit() {
