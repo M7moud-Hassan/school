@@ -1,0 +1,203 @@
+@import url('https://unicons.iconscout.com/release/v4.0.0/css/line.css');
+.main-index {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.main-index .left-div {
+    position: relative;
+    float: left;
+    width: 60%;
+    height: 100%;
+    background-color: #E6E6E6;
+}
+
+
+.main-index .right-div {
+    float: right;
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    padding: 5%;
+}
+.main-index .right-div  h5{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-index .right-div .logo {
+    display: inline-block;
+    width: 18%;
+    height: 18%;
+}
+.main-index .right-div .logo_txt{
+    width: 30%;
+}
+
+.main-index .right-div .input-field {
+    position: relative;
+}
+
+.main-index .right-div label {
+    display: block;
+}
+
+.main-index .left-div .image {
+    margin-top: 5%;
+    float: right;
+    width: 95%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80%;
+  }
+  .main-index .left-div .image img{
+    width: 100%;
+    height: 100%;
+
+  }
+
+.main-index .left-div .under-image {
+    margin-left: 5%;
+    top: 85%;
+    position: absolute;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: auto !important;
+    height: 15%;
+}
+.main-index .left-div .under-image .logo{
+    width: 50px;
+    height: 50px;
+}
+.main-index .left-div .under-image span{
+  cursor: pointer;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.main-index .right-div .input-box {
+    margin-top: 25px;
+    height: 40px;
+  }
+
+  .main-index .right-div .input-box input {
+    text-align: right;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 0 18px 0 35px;
+    box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+    transition: all 0.2s linear;
+  }
+  .main-index .right-div a {
+    color: #575757;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .main-index .right-div .example-margin {
+    color: #575757;
+  }
+
+.main-index .right-div .input-box input:is(:focus, :valid) {
+    border-color: #4070f4;
+  }
+  
+.main-index .right-div .input-box :is(i) {
+    position: relative;
+    top: -70%;
+   
+    transform: translateY(-50%);
+    color: #999;
+    transition: all 0.2s linear;
+  }
+  .main-index .right-div .input-box i {
+    left: -43%;
+    cursor: pointer;
+    font-size: 20px;
+}
+  
+.main-index .right-div  input:is(:focus, :valid) ~ i {
+    color: #4070f4;
+  }
+ 
+  .main-index .right-div .input-box label{
+    text-align: right;
+    padding-bottom: 5px;
+  }
+
+ 
+  .main-index .right-div .rounded-button {
+    border-radius: 20px; 
+    margin-top: 20px;
+    padding: 10px 10px; 
+    width: 50%;
+    background-color: #3AA7CE; 
+    color: #ffffff;
+    border: none; 
+    cursor: pointer;
+  }
+  .main-index .right-div  .d-flex {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: auto !important;
+  }
+  
+  .main-index .right-div .d-flex p {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .main-index .hint{
+    padding-top: 10px;
+    color: #575757;
+    font-size: 10px;
+  }
+  
+
+
+@media screen and (max-width: 1000px) {
+    .main-index .left-div {
+        width: 50%;
+    }
+
+    .main-index .right-div {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .main-index .left-div {
+        width: 100%;
+        height: 50%;
+    }
+
+    .main-index .right-div {
+        width: 100%;
+        height: 50%;
+    }
+    .main-index .left-div .under-image {
+      padding-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .main-index .left-div .under-image {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .main-index {
+        position: absolute;
+    }
+
+    .main-index .left-div .image {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+}

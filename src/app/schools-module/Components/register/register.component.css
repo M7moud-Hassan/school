@@ -1,0 +1,71 @@
+.main-index .left-div .image img {
+    width: auto !important;
+}
+
+.main-index .right-div {
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.main-index .right-div .logo {
+    width: 10%;
+    height: 10%;
+}
+
+.main-index .right-div .logo_txt {
+    width: 20%;
+}
+
+.main-index .right-div h5>span {
+    font-weight: normal;
+    font-size: 14px;
+    padding-right: 10px;
+}
+
+.main-index .right-div input::placeholder {
+    font-size: 12px;
+}
+.code-phone {
+    display: inline;
+    position: relative;
+    left: -33%;
+    z-index: 10;
+    bottom: 75%;
+    border-right: 2px solid gray;
+    padding-right: 5px;
+}
+
+.emial-input{
+    padding-right: 50px !important;
+}
+.location{
+    display: inline;
+    position: relative;
+    left: -45%;
+    z-index: 10;
+    bottom: 75%;
+   
+}
+.input-box{
+    margin-top: 30px !important;
+}
+.rounded-button{
+    width: 100% !important;
+}
+.register-link{
+    padding-top: 3px;
+}
+.register-link a{
+    color: blue !important;
+}
+.icon-email{
+    display: inline;
+    position: relative;
+    right: -45%;
+    z-index: 10;
+    bottom: 75%;
+    border-left: 2px solid gray;
+    padding-left: 10px;
+    padding-right: 5px;
+}

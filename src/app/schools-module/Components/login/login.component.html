@@ -1,0 +1,42 @@
+<div class="main-index">
+    <div class="left-div">
+        <div class="image">
+            <img src="assets/images/bg_index.png" alt="">
+        </div>
+        <div #dialog class="under-image">
+            <!-- src="assets/images/message.svg" -->
+            <img [src]="imageSource" alt="logo" class="logo">
+            <span (click)="openDialog()">Busway مرحباً بك في باص واي </span>
+        </div>
+    </div>
+    <div class="right-div text-center">
+        <img class="logo" src="assets/images/logo.svg" alt="logo">
+        <br />
+        <img src="assets/images/logo_txt.svg" alt="logo_txt" class="logo_txt">
+        <div class="mt-4">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <h5>{{titleForm}}</h5>
+                <div class="input-box">
+                    <label for="name">رقم المستخدم</label>
+                    <input type="text" spellcheck="false" required>
+                </div>
+                <br />
+                <div class="input-box">
+                    <label for="">{{label2}}</label>
+                    <input *ngIf="showContainer==true" type="password" spellcheck="false" required />
+                    <input *ngIf="showContainer==false" type="text" spellcheck="false" required>
+                    <i *ngIf="showContainer==true" class="uil uil-eye-slash toggle"></i>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-4" >
+                    <p *ngIf="showContainer">
+                        <a routerLink="/forgot-password">نسيت كلمة المرور ؟</a>
+                    </p>
+                    <mat-checkbox *ngIf="showContainer" class="example-margin" dir="rtl">تذكرني</mat-checkbox>
+                </div>
+                <p class="hint" *ngIf="!showContainer" >سوف تصلك رسالة عل البريد الالكتروني / رقم الهاتف بكلمة المرور الجديدة</p>
+                <button class="rounded-button">{{labelSubmit}}</button>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -15,7 +15,7 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
   imports: [
     CommonModule,
     AgentModuleRoutingModule,
-    SharedModuleModule
+    // SharedModuleModule
   ]
 })
 export class AgentModuleModule { }

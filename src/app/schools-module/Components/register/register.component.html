@@ -1,0 +1,96 @@
+
+<div class="main-index">
+    <div class="left-div">
+        <div class="image">
+            <img src="assets/images/register.png" alt="">
+        </div>
+        <div #dialog class="under-image">
+            <!-- src="assets/images/message.svg" -->
+            <img [src]="imageSource" alt="logo" class="logo">
+            <span (click)="openDialog()">Busway مرحباً بك في باص واي </span>
+        </div>
+    </div>
+    <div class="right-div text-center">
+        <img class="logo" src="assets/images/logo.svg" alt="logo">
+        <br />
+        <img src="assets/images/logo_txt.svg" alt="logo_txt" class="logo_txt">
+        <div >
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <h5>تسجيل جديد <span>للمدارس فقط</span></h5>
+                <div class="input-box">
+                    <label for="name">الاسم بالعربية</label>
+                    <input type="text" spellcheck="false" placeholder="ادخل اسم المدرسة باللغة العربية" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="name">الاسم بالانجليزية</label>
+                    <input type="text" spellcheck="false" placeholder="ادخل اسم المدرسة باللغة الانجليزية" required>
+                </div>
+               
+              
+                <div class="input-box">
+                    <label for="name">رقم الهاتف</label>
+                   
+                <ngx-intl-tel-input
+                [cssClass]="'custom'"
+                [preferredCountries]="preferredCountries"
+                [enableAutoCountrySelect]="true"
+                [enablePlaceholder]="true"
+                [searchCountryFlag]="true"
+                [searchCountryField]="[
+                  SearchCountryField.Iso2,
+                  SearchCountryField.Name
+                ]"
+                [selectFirstCountry]="false"
+                [selectedCountryISO]="CountryISO.SaudiArabia"
+                [maxLength]="15"
+                (countryChange)="onCountrySelected($event)"
+                [phoneValidation]="true"
+                [separateDialCode]="separateDialCode"
+                [numberFormat]="PhoneNumberFormat.National"
+                name="phone"
+                    formControlName="phone"
+                    
+              >
+              </ngx-intl-tel-input>
+              <div class="code-phone">
+                +{{countryCode}}  
+            </div>
+            
+        </div>
+        <div class="input-box">
+            <label for="name">البريد الالكتروني</label>
+            <input class="emial-input" type="text" spellcheck="false" placeholder="name@gmail.com" required>
+            <div class="icon-email">
+                <img src="assets/images/email.svg" alt="email">
+            </div>
+        </div>
+
+        <div class="input-box">
+            <label for="name">العنوان كاملا</label>
+            <input type="text" spellcheck="false" placeholder="ادخل اسم المدرسة باللغة الانجليزية" required>
+            <div class="location">
+                <img src="assets/images/Location.svg" alt="locations"> 
+            </div>
+        </div>
+                <!-- <div class="input-box">
+                    <label for="">{{label2}}</label>
+                    <input *ngIf="showContainer==true" type="password" spellcheck="false" required />
+                    <input *ngIf="showContainer==false" type="text" spellcheck="false" required>
+                    <i *ngIf="showContainer==true" class="uil uil-eye-slash toggle"></i>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-4" >
+                    <p *ngIf="showContainer">
+                        <a routerLink="/forgot-password">نسيت كلمة المرور ؟</a>
+                    </p>
+                    <mat-checkbox *ngIf="showContainer" class="example-margin" dir="rtl">تذكرني</mat-checkbox>
+                </div>
+                <p class="hint" *ngIf="!showContainer" >سوف تصلك رسالة عل البريد الالكتروني / رقم الهاتف بكلمة المرور الجديدة</p> -->
+                <br/>
+                <button class="rounded-button">{{labelSubmit}}</button>
+                <p class="register-link">لدي حساب ؟ <a>تسجيل دخول</a></p>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.nav-bar{
+    min-height: 120px;
+    /* align-items: stretch;
+    display: flex */
+}
+.main-layout{
+  min-height: calc(100vh - 120px);
+  /* align-items: stretch;
+  display: flex */
+}
+.side-menu{
+    min-height: calc(100vh);
+}

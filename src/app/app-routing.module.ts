@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainLayoutComponent } from './shared-module/Components/main-layout/main-layout.component';
-import { WelcomePageComponent } from './shared-module/Components/welcome-page/welcome-page.component';
+import { MainLayoutComponent } from './Layout/main-layout/main-layout.component';
+import { WelcomePageComponent } from './Layout/welcome-page/welcome-page.component';
+import { LoginComponent } from './schools-module/Components/login/login.component';
+import { RegisterComponent } from './schools-module/Components/register/register.component';
 
 const routes: Routes = [
+  {path:'login',component:LoginComponent},
+  {path:'register',component:RegisterComponent},
   {path:'',component:MainLayoutComponent,children:[
-    {path:'',redirectTo:'/welcome',pathMatch:'full'},
+    {path:'',redirectTo:'welcome',pathMatch:'full'},
     {path:'welcome',component:WelcomePageComponent},
     {path:'school',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},
     {path:'agent',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},
