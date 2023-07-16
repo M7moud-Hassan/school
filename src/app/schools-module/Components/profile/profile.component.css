@@ -1,0 +1,133 @@
+@import url('https://unicons.iconscout.com/release/v4.0.0/css/line.css');
+.main-profile {
+    text-align: center !important;
+}
+
+.main-profile .title {
+    float: right;
+    border-bottom: 5px solid transparent;
+    background-image: url('../../../../assets/images/divider.svg');
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.main-profile .container-image {
+    width: 6%;
+    margin: auto;
+    height: 6%;
+}
+
+.main-profile .container-image img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-profile .container-image .edit-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.main-index .right-div {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.main-index .right-div {
+    float: none;
+    position: relative;
+    width: 25%;
+    height: auto;
+    background-color: white;
+    padding: 0;
+}
+.edit-icon{
+    right: 35% !important;
+    border: none !important;
+    cursor: pointer;
+}
+.icon-email{
+    right: -37%;
+}
+.location-school{
+    margin-top: 20px;
+    width: 100%;
+}
+.location-school .left{
+    width: 50%;
+    float: left;
+    padding-right: 10px;
+}
+.location-school .right{
+    width: 50%;
+    float: right;
+}
+
+.location-school .main-index .right-div {
+    width: 30%;
+    margin-right: 5%;
+    
+}
+
+.search-icon{
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    background-color: #3AA7CE;
+    right: 40% !important;
+    top: -100%;
+    border: none !important;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    color: white;
+}
+.search-icon span{
+    margin-left: 5%;
+    font-weight: bold;
+}
+.main-profile .rounded-button {
+    border-radius: 20px; 
+    margin-top: 20px;
+    padding: 10px 10px; 
+    width: 20% !important;
+    background-color: #3AA7CE; 
+    color: #ffffff;
+    border: none; 
+    cursor: pointer;
+  }
+
+  .main-profile .outline-button {
+    border-radius: 20px; 
+    margin-top: 20px;
+    padding: 10px 10px; 
+    width: 20%;
+    background-color: #fff; 
+    color: black;
+    outline: auto black;
+    border: none; 
+    cursor: pointer;
+  }
+
+  .input-box input{
+    padding: 0 50px 0 100px !important;
+    background-color: white;
+  }
+  .main-index{
+    position: absolute !important;
+  }
+  .input-box label{
+    background-color: transparent;
+  }
+  .input-box{
+    background-color: transparent;
+  }
