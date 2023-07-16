@@ -1,1 +1,23 @@
-<p>groups works!</p>
+<h3  class="fw-bolder" style="font-size: 18px;">المجموعات :</h3>
+<div class="groups"  >
+    <div *ngFor="let item of groups" class="group" dir="ltr">
+            <div class="heading mb-3 text-end">
+                <img src="assets/images/group.png" alt="group">
+                <span>{{item.groupName}}</span>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <p>{{item.supervisor}}</p>
+                    <p>{{item.busNumber}}</p>
+                    <p>{{item.plateNumber}}</p>
+                    <img src="assets/images/bus-{{item.busColor}}.svg" alt="">
+                </div>
+                <div class="right">
+                    <p>: المشــــرف</p>
+                    <p>: رقم البـاص</p>
+                    <p>: رقم اللوحة</p>
+                    <p>: لون الباص</p>
+                </div>
+            </div>
+        </div>
+</div>

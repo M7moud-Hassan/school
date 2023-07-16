@@ -12,8 +12,9 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'reset-password',component:ResetPasswordComponent},
   {path:'',component:MainLayoutComponent,children:[
-    {path:'',redirectTo:'home',pathMatch:'full'},
+    {path:'',redirectTo:'/home',pathMatch:'full'},
     {path:'home',component:HomePageComponent},
+    {path:'welcome',component:WelcomePageComponent},
     {path:'school',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},
     {path:'agent',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},
     {path:'admin',loadChildren:()=>import('./admin-module/admin-module.module').then(m=>m.AdminModuleModule)},
