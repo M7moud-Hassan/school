@@ -15,7 +15,10 @@ body{
     width: 100%;
     height: 100%;
     background-color: #fff;
-    /* float: right; */
+}
+.aside-menu  .items{
+    padding-right: 10%;
+    padding-top: 8%;
 }
 .main-home .bg-menu {
     margin-top: 15%;
@@ -30,7 +33,7 @@ body{
 }
 
 .main-home .bg-menu .right {
-    /* float: right; */
+    float: right;
     width: 73%;
     height: 100%;
     background-image: url('/assets/images/bg_menu.png');
@@ -42,6 +45,9 @@ body{
     justify-content: center;
     align-items: center;
 
+}
+.main-home .bg-menu .right p{
+    margin-top: 5%;
 }
 
 .row-item {
@@ -80,7 +86,7 @@ body{
 .main-home .bg-menu .left {
     float: left;
     width: 25%;
-    height: 100%;
+    height: 40px;
     background-image: url('/assets/images/bg_menu.png');
     background-size: cover;
     background-repeat: repeat;
