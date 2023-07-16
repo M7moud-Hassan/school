@@ -12,6 +12,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+import { NewPasswordComponent } from './Components/new-password/new-password.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     LoginComponent,
     RegisterComponent,
     DilaogContactComponent,
+    ResetPasswordComponent,
+    NewPasswordComponent,
   ],
   imports: [
     CommonModule,
