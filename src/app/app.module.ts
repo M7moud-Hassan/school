@@ -10,6 +10,7 @@ import { SideMenuComponent } from './Layout/side-menu/side-menu.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { NavbarComponent } from './Layout/navbar/navbar.component';
 import { WelcomePageComponent } from './Layout/welcome-page/welcome-page.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WelcomePageComponent } from './Layout/welcome-page/welcome-page.compone
     BrowserModule,
     AppRoutingModule,
     SharedModuleModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [
     AppComponent

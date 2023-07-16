@@ -1,11 +1,26 @@
-<div class="">
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
-    <p style="height: 200px; border: 2px solid blue; margin: 10px;">welcome-page works!</p>
+<div class="container p-4">
+    <div class="row mb-3" *ngFor="let item of collection | paginate: 
+    { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
+        <div class="card">
+            <div class="card-header">
+              {{i+1}} User Information
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Name : {{item.name}}</h5>
+              <p class="card-text">Email : {{item.email}}</p>
+              <hr>
+              <p class="card-text text-muted">Tel : {{item.phone}}</p>
+              <a href="#" class="btn btn-primary">OK</a>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <pagination-controls
+        (pageChange)="pageNo = $event"
+         id="foo" 
+         nextLabel=""
+         previousLabel=""
+        ></pagination-controls>
+    </div>
 </div>
+

@@ -12,6 +12,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxIntlTelInputModule
+    NgxIntlTelInputModule,
+    NgxPaginationModule
   ]
 })
 export class SchoolsModuleModule { }
