@@ -1,0 +1,9 @@
+.dialog-div{
+    width: 270px;
+}
+.dialog-div>p{
+    text-align: right;
+    font-size: 11px;
+    padding-top: 10px;
+    padding-right: 5px;
+}
