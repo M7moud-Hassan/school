@@ -12,6 +12,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { NewPasswordComponent } from './Components/new-password/new-password.component';
 
@@ -32,7 +33,8 @@ import { NewPasswordComponent } from './Components/new-password/new-password.com
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxIntlTelInputModule
+    NgxIntlTelInputModule,
+    NgxPaginationModule
   ]
 })
 export class SchoolsModuleModule { }
