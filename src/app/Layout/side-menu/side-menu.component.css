@@ -1,0 +1,91 @@
+@import url('https://unicons.iconscout.com/release/v4.0.0/css/line.css');
+body{
+    margin: 0;
+    padding: 0;
+}
+/* .main-home {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: aqua;
+} */
+
+.aside-menu {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /* float: right; */
+}
+.main-home .bg-menu {
+    margin-top: 15%;
+    height: 8%;
+    background-color: azure;
+}
+
+.main-home .bg-menu .right p {
+    color: white;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.main-home .bg-menu .right {
+    /* float: right; */
+    width: 73%;
+    height: 100%;
+    background-image: url('/assets/images/bg_menu.png');
+    background-size: cover;
+    background-repeat: repeat;
+    border-radius: 15px;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.row-item {
+    text-align: right !important;
+    padding-right: 20%;
+    /* padding-top: 7%; */
+    margin: 10px 0px;
+    padding: 8px 5px 8px 2px;
+    border: 2px solid transparent ;
+    border-radius: 7px;
+    transition: all .5s ease-in-out ;
+}
+/* .row-item:hover{
+    border: 2px solid blue;
+} */
+
+.row-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.row-item span {
+    padding-right: 5%;
+    font-size: 14px;
+}
+.help .noti {
+    margin-left: 20px;
+    float: left;
+    background-color: #FFE2E2;
+    color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50%;
+}
+
+.main-home .bg-menu .left {
+    float: left;
+    width: 25%;
+    height: 100%;
+    background-image: url('/assets/images/bg_menu.png');
+    background-size: cover;
+    background-repeat: repeat;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
