@@ -15,6 +15,9 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { NewPasswordComponent } from './Components/new-password/new-password.component';
+import { HomePageComponent } from './Components/home-page/home-page.component';
+import { ActivitiesComponent } from './Components/activities/activities.component';
+import { GroupsComponent } from './Components/groups/groups.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { NewPasswordComponent } from './Components/new-password/new-password.com
     DilaogContactComponent,
     ResetPasswordComponent,
     NewPasswordComponent,
+    HomePageComponent,
+    ActivitiesComponent,
+    GroupsComponent,
   ],
   imports: [
     CommonModule,

@@ -5,14 +5,15 @@ import { WelcomePageComponent } from './Layout/welcome-page/welcome-page.compone
 import { LoginComponent } from './schools-module/Components/login/login.component';
 import { RegisterComponent } from './schools-module/Components/register/register.component';
 import { ResetPasswordComponent } from './schools-module/Components/reset-password/reset-password.component';
+import { HomePageComponent } from './schools-module/Components/home-page/home-page.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'reset-password',component:ResetPasswordComponent},
   {path:'',component:MainLayoutComponent,children:[
-    {path:'',redirectTo:'welcome',pathMatch:'full'},
-    {path:'welcome',component:WelcomePageComponent},
+    {path:'',redirectTo:'home',pathMatch:'full'},
+    {path:'home',component:HomePageComponent},
     {path:'school',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},
     {path:'agent',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},
     {path:'admin',loadChildren:()=>import('./admin-module/admin-module.module').then(m=>m.AdminModuleModule)},

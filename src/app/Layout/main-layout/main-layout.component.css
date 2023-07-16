@@ -4,9 +4,11 @@
     display: flex */
 }
 .main-layout{
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh);
   /* align-items: stretch;
   display: flex */
+  background-color: #F5F5F5;
+  padding: 25px;
 }
 .side-menu{
     min-height: calc(100vh);
