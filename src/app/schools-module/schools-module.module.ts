@@ -18,6 +18,7 @@ import { NewPasswordComponent } from './Components/new-password/new-password.com
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { ActivitiesComponent } from './Components/activities/activities.component';
 import { GroupsComponent } from './Components/groups/groups.component';
+import { ParentsListComponent } from './Components/parents-list/parents-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { GroupsComponent } from './Components/groups/groups.component';
     HomePageComponent,
     ActivitiesComponent,
     GroupsComponent,
+    ParentsListComponent,
   ],
   imports: [
     CommonModule,

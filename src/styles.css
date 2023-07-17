@@ -1,49 +1,136 @@
 .mdc-form-field{
-    vertical-align:baseline !important;
+  vertical-align:baseline !important;
 }
 @font-face {
-    font-family: 'Cairo';
-    src: url('../src/assets/libs/fonts/Cairo.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  body,h1,h2,h3,h4,h5,h6,p,label,span,div {
-    font-family: 'Cairo' !important;
-  }
-  .main-index .right-div .mdc-form-field label {
-    color: #575757;
-  }
-  .iti {
-    width: 100% !important;
-    text-align: right;
-    height: 100%;
-    width: 100%;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    font-size: 22px;
-    padding: 0 18px 0 35px;
-    box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
-    transition: all 0.2s linear;
-  }
-  .iti #phone{
-    width: 100%;
-    height: 100%;
-    outline: none;
-    border:none;
-  }
-  .iti #phone ::placeholder{
-    font-size: 5px !important;
-  }
-
- .mat-mdc-text-field-wrapper{
-  height: 55px !important;
-  width: 100%;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    font-size: 22px;
-    box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
-    transition: all 0.2s linear;
+  font-family: 'Cairo';
+  src: url('../src/assets/libs/fonts/Cairo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
- 
+body,h1,h2,h3,h4,h5,h6,p,label,span,div {
+  font-family: 'Cairo' !important;
+}
+.main-index .right-div .mdc-form-field label {
+  color: #575757;
+}
+.iti {
+  width: 100% !important;
+  text-align: right;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 22px;
+  padding: 0 18px 0 35px;
+  box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+  transition: all 0.2s linear;
+}
+.iti #phone{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border:none;
+}
+.iti #phone ::placeholder{
+  font-size: 5px !important;
+}
+
+.mat-mdc-text-field-wrapper{
+height: 55px !important;
+width: 100%;
+  outline: none;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 22px;
+  box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+  transition: all 0.2s linear;
+}
+
+/* start parents *****************************************************************/
+.users-count{
+display: inline-block;
+background-color: #F8E9FF;
+color: #785B9D;
+font-size: 13px;
+padding: 3px 8px;
+min-width: 100px;
+text-align: center;
+border-radius: 10px;
+margin-right: 20px;
+}
+.table {
+border: none;
+}
+thead{
+font-weight: 900;
+}
+.table td,
+.table th {
+border: none;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+
+/* --------------------------start search------------------------------------------ */
+
+.search-box {
+width: 90%;
+/* height: 70%; */
+background-color: #fff;
+}
+.search-box .has-search-box {
+margin-right: 5%;
+width: 80%;
+float: right;
+}
+.search-box .has-search-box .form-control {
+padding-right: 2.375rem;
+background-color: #F5F5F5;
+}
+
+.search-box .btns {
+margin:0 1%;
+width: 12%;
+cursor: pointer;
+border-radius: 10px;
+height: 40px;
+background-color: #3AA7CE;
+display: inline;
+float: left;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.search-box .has-search-box .form-control-feedback {
+position: absolute;
+z-index: 2;
+display: block;
+width: 2.375rem;
+height: 2.375rem;
+line-height: 2.375rem;
+text-align: center;
+pointer-events: none;
+color: #aaa;
+}
+/* --------------------------end search------------------------------------------ */
+/* ----------------------------start action buttons [delete-update-edit-add-....]----------------- */
+.action-button{
+background-color: transparent;
+border: 1px solid silver;
+border-radius: 7px;
+display: inline-block;
+padding: 4px 10px;
+margin-left: 7px;
+margin-bottom: 7px;
+}
+.action-button>img{
+width: 20px;
+height: 20px;
+display: inline-block;
+margin-left: 10px;
+}
+/* ----------------------------end action buttons [delete-update-edit-add-....]----------------- */
+
+/* end parents *****************************************************************/
