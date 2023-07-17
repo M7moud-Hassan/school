@@ -12,6 +12,7 @@ import { NavbarComponent } from './Layout/navbar/navbar.component';
 import { WelcomePageComponent } from './Layout/welcome-page/welcome-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     SharedModuleModule,
     BrowserAnimationsModule,
     NgxPaginationModule
+    
   ],
   providers: [
     AppComponent

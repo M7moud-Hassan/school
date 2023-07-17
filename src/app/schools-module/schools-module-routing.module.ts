@@ -9,6 +9,8 @@ import { NewStudentComponent } from './Components/new-student/new-student.compon
 import { ParentsComponent } from './Components/parents/parents.component';
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { ParentsListComponent } from './Components/parents-list/parents-list.component';
+import { TrackingTripComponent } from './Components/tracking-trip/tracking-trip.component';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -17,6 +19,7 @@ const routes: Routes = [
   {path:'parents',component:ParentsComponent},
   {path:'home',component:HomePageComponent},
   {path:'parents-list',component:ParentsListComponent},
+  {path:'tracking',component:TrackingTripComponent}
 ];
 
 @NgModule({

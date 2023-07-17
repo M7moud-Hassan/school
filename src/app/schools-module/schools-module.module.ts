@@ -24,6 +24,9 @@ import { ReportTripsComponent } from './Components/report-trips/report-trips.com
 import { NewStudentComponent } from './Components/new-student/new-student.component';
 import { ParentsComponent } from './Components/parents/parents.component';
 import { StatisticsComponent } from './Components/statistics/statistics.component';
+import { TrackingTripComponent } from './Components/tracking-trip/tracking-trip.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { InfoWindowComponent } from './Components/info-window/info-window.component'
 
 @NgModule({
   declarations: [
@@ -43,6 +46,8 @@ import { StatisticsComponent } from './Components/statistics/statistics.componen
     NewStudentComponent,
     ParentsComponent,
     StatisticsComponent,
+    TrackingTripComponent,
+    InfoWindowComponent,
   ],
   imports: [
     CommonModule,
@@ -52,7 +57,8 @@ import { StatisticsComponent } from './Components/statistics/statistics.componen
     FormsModule,
     ReactiveFormsModule,
     NgxIntlTelInputModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    GoogleMapsModule    
   ]
 })
 export class SchoolsModuleModule { }
