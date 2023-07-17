@@ -23,6 +23,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
 import { ReportTripsComponent } from './Components/report-trips/report-trips.component';
 import { NewStudentComponent } from './Components/new-student/new-student.component';
 import { ParentsComponent } from './Components/parents/parents.component';
+import { StatisticsComponent } from './Components/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ParentsComponent } from './Components/parents/parents.component';
     ReportTripsComponent,
     NewStudentComponent,
     ParentsComponent,
+    StatisticsComponent,
   ],
   imports: [
     CommonModule,

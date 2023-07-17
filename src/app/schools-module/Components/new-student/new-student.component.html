@@ -1,3 +1,4 @@
+<form [formGroup]="newStudentModelForm" (ngSubmit)="onSubmit()">
 <div class="container">
 <div class="row">
     <div class="col-7 con-div ">
@@ -11,49 +12,57 @@
              </div>
              
              <div class="input-box">
-                <label for="nameInEnglish">الاسم بالانجليزية</label>
-                <input type="text" spellcheck="false" formControlName="nameInEnglish" name="nameInEnglish" id="nameInEnglish" placeholder="ادخل اسم المدرسة باللغة الانجليزية" >
+                <label for="userNumber">رقم المستخدم</label>
+                <input type="text" spellcheck="false" formControlName="userNumber" name="userNumber" id="userNumber" placeholder="" >
             </div>
 
             <div class="input-box">
-                <label for="nameInEnglish">الاسم بالانجليزية</label>
-                <input type="text" spellcheck="false" formControlName="nameInEnglish" name="nameInEnglish" id="nameInEnglish" placeholder="ادخل اسم المدرسة باللغة الانجليزية" >
+                <label for="name">اسم المستخدم بالعربى</label>
+                <input type="text" spellcheck="false" formControlName="name" name="name" id="name" placeholder="" >
             </div>
             <div class="input-box">
-                <label for="nameInEnglish">الاسم بالانجليزية</label>
-                <input type="text" spellcheck="false" formControlName="nameInEnglish" name="nameInEnglish" id="nameInEnglish" placeholder="ادخل اسم المدرسة باللغة الانجليزية" >
+                <label for="nameEn">اسم المستخدم بالانجليزية</label>
+                <input type="text" spellcheck="false" formControlName="nameEn" name="nameEn" id="nameEn" placeholder="" >
             </div>
             <div class="input-box">
-                <label for="nameInEnglish">الاسم بالانجليزية</label>
-                <input type="text" spellcheck="false" formControlName="nameInEnglish" name="nameInEnglish" id="nameInEnglish" placeholder="ادخل اسم المدرسة باللغة الانجليزية" >
+                <label for="email">البريد الالكترونى</label>
+                <input type="text" spellcheck="false" formControlName="email" name="email" id="email" placeholder="" >
+            </div>
+            <div class="input-box">
+                <label for="address">العنوان</label>
+                <input type="text" spellcheck="false" formControlName="address" name="address" id="address" placeholder="" >
+            </div>
+            <div class="input-box">
+                <label for="password">كلمة المرور</label>
+                <input type="password" spellcheck="false" formControlName="password" name="password" id="password" placeholder="" >
             </div>
             
 
          </div>
          <div class="col-1"></div>
-    <div class="col-4 con-div">
+    <div class="col-4 groupsTypes">
         <h2>المجموعات</h2>
         <div class="card border-0  shadow">
             <div class="card-body">
                 <label class="checkbox-customize">
-                    <input type="checkbox" checked="checked">
+                    <input type="checkbox" formControlName="outboundJourney" name="outboundJourney" id="outboundJourney" [checked]="outboundJourney">
                     <span class="checkmark"></span>
                     
                   </label>
                   <span>
-                    One
+                    رحلة ذهاب
                   </span>
             </div>
           </div>
           <div class="card border-0  shadow mt-4">
             <div class="card-body">
                 <label class="checkbox-customize">
-                    <input type="checkbox" checked="checked">
+                    <input type="checkbox" formControlName="returnJourney" name="returnJourney" id="returnJourney" [checked]="returnJourney" >
                     <span class="checkmark"></span>
                     
                   </label>
                   <span>
-                    One
+                    رحلة عودة
                   </span>
             </div>
           </div>
@@ -71,9 +80,8 @@
         </div>
         <div class="col-6">
             <div class="input-box">
-                <label for="name">موقع المنزل</label>
-                <input class="emial-input" type="text" spellcheck="false" placeholder="name@gmail.com"
-                    required>
+                <label for="homeLocation">موقع المنزل</label>
+                <input class="emial-input" type="text" spellcheck="false" formControlName="homeLocation" name="homeLocation" id="homeLocation" placeholder="ادخل اسم الموقع للوصول اليه على الخريطة" >
                 
                 <div class="icon-email search-icon" dir="ltr">
                     <img src="assets/images/Search_light.svg" alt="edit">
@@ -83,9 +91,10 @@
         </div>
     </div>
     <div class="row text-center  d-flex justify-content-center align-items-cente">
-        <div class="col-2">  <button class="rounded-button">حفظ التعديلات</button></div>
-        <div class="col-2"> <button class="outline-button">حفظ التعديلات</button></div>
+        <div class="col-2">  <button class="rounded-button">حفظ البيانات</button></div>
+        <div class="col-2"> <button class="outline-button">إلغاء</button></div>
     </div>
     </div>
    
 </div>
+</form>

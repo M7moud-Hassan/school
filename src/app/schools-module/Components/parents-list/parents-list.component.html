@@ -37,7 +37,7 @@
     <div>
         <table class="table table">
             <tr class="tableHeader">
-                <td><input class="form-check-input fs-5" type="checkbox" value="" id="checkbox-all" /></td>
+                <td class="d-inline-block me-2"><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()" id="checkbox-all" /></td>
                 <td>الاســـم</td>
                 <td>رقم الجوال</td>
                 <td>عدد الأبناء</td>
@@ -51,7 +51,7 @@
             <tbody *ngFor="let item of parents_data | paginate: 
                 { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
                 <tr id="first_{{i}}">
-                    <td><input class="form-check-input fs-5" type="checkbox" value="" id="checkbox-{{i}}" /></td>
+                    <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="item.isSelected" (change)="checkBoxChange()" id="checkbox-{{i}}" /></td>
                     <td>{{item.name}}</td>
                     <td>{{item.phone}}</td>
                     <td>{{item.childrenInfo.length}} <a data-bs-toggle="collapse" href="#parent-info-{{item.id}}" ><img src="assets/images/Search.svg" class="mx-3" alt=""></a></td>
