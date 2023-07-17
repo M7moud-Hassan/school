@@ -6,6 +6,7 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ReportTripsComponent } from './Components/report-trips/report-trips.component';
 import { NewStudentComponent } from './Components/new-student/new-student.component';
+import { ParentsComponent } from './Components/parents/parents.component';
 
 const routes: Routes = [
   {path:'',component:SchoolsLayoutComponent,children:[
@@ -13,7 +14,8 @@ const routes: Routes = [
   ]},
   {path:'profile',component:ProfileComponent},
   {path:'trip-reports',component:ReportTripsComponent},
-  {path:'new-student',component:NewStudentComponent}
+  {path:'new-student',component:NewStudentComponent},
+  {path:'parents',component:ParentsComponent}
 ];
 
 @NgModule({

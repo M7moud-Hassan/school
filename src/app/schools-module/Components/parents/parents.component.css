@@ -1,0 +1,115 @@
+.con-div{
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+.load-image{
+    background-color: #E2F7FF;
+    border-radius: 20px;
+    
+}
+.input-box {
+    margin-top: 25px;
+    height: 40px;
+  }
+  .input-box input {
+    text-align: right;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 0 18px 0 35px;
+    box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+    transition: all 0.2s linear;
+  }
+  .input-box input:is(:focus) {
+    border-color: #4070f4;
+  }
+  .input-box :is(i) {
+    position: relative;
+    top: -70%;
+   
+    transform: translateY(-50%);
+    color: #999;
+    transition: all 0.2s linear;
+  }
+  .input-box label{
+    text-align: right;
+    padding-bottom: 5px;
+  }
+
+  .checkbox-customize {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 17px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .checkbox-customize input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 7px;
+    background-color: #eee;
+  }
+  
+  .checkbox-customize:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .checkbox-customize input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+
+  .card-body span{
+    margin-right: 10%;
+    font-size: 20px;
+  }
+.search-icon{
+    right: 80% !important;
+}
+  
+
+.rounded-button {
+    border-radius: 20px; 
+    margin-top: 20px;
+    padding: 10px 10px; 
+    background-color: #3AA7CE; 
+    color: #ffffff;
+    border: none; 
+    cursor: pointer;
+  }
+.outline-button {
+    border-radius: 20px; 
+    margin-top: 20px;
+    padding: 10px 10px; 
+    background-color: #fff; 
+    color: black;
+    outline: auto black;
+    border: none; 
+    cursor: pointer;
+  }
+  .btn-plus{
+    background-color: aqua;
+     margin-top: 50px; 
+     width: 45px;
+      height: 45px;
+      border-radius: 15px;
+  }
