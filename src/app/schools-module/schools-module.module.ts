@@ -18,9 +18,6 @@ import { NewPasswordComponent } from './Components/new-password/new-password.com
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { ActivitiesComponent } from './Components/activities/activities.component';
 import { GroupsComponent } from './Components/groups/groups.component';
-import { ParentsComponent } from './Components/parents/parents.component';
-import {MatTableModule} from '@angular/material/table';
-import { TestTableComponent } from './Components/test-table/test-table.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +31,6 @@ import { TestTableComponent } from './Components/test-table/test-table.component
     HomePageComponent,
     ActivitiesComponent,
     GroupsComponent,
-    ParentsComponent,
-    TestTableComponent,
   ],
   imports: [
     CommonModule,
@@ -45,8 +40,7 @@ import { TestTableComponent } from './Components/test-table/test-table.component
     FormsModule,
     ReactiveFormsModule,
     NgxIntlTelInputModule,
-    NgxPaginationModule,
-    MatTableModule
+    NgxPaginationModule
   ]
 })
 export class SchoolsModuleModule { }

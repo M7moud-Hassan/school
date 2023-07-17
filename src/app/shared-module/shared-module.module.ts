@@ -16,7 +16,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     MatDialogModule,
     MatCheckboxModule,
     HttpClientModule,
-    NgxPaginationModule,
+    NgxPaginationModule
   ],
   exports:[
   ],
