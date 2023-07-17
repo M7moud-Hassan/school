@@ -19,6 +19,10 @@ import { HomePageComponent } from './Components/home-page/home-page.component';
 import { ActivitiesComponent } from './Components/activities/activities.component';
 import { GroupsComponent } from './Components/groups/groups.component';
 import { ParentsListComponent } from './Components/parents-list/parents-list.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { ReportTripsComponent } from './Components/report-trips/report-trips.component';
+import { NewStudentComponent } from './Components/new-student/new-student.component';
+import { ParentsComponent } from './Components/parents/parents.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import { ParentsListComponent } from './Components/parents-list/parents-list.com
     ActivitiesComponent,
     GroupsComponent,
     ParentsListComponent,
+    ProfileComponent,
+    ReportTripsComponent,
+    NewStudentComponent,
+    ParentsComponent,
   ],
   imports: [
     CommonModule,

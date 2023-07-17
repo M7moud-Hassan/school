@@ -51,16 +51,16 @@ body{
 }
 
 .row-item img {
-    width: 20px;
-    height: 20px;
+    width: 2vw;
+    height: 2vw;
 }
 
 .row-item span {
     padding-right: 5%;
-    font-size: 14px;
+    font-size: 1vw;
 }
 .help .noti {
-    margin-left: 20px;
+    margin-left: 2vw;
     float: left;
 }
 
@@ -79,7 +79,7 @@ body{
 
 .toolbar {
     height: 10%;
-    width: 230%;
+    width: 100%;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -88,7 +88,7 @@ body{
 
 .toolbar .search {
     width: 60%;
-    height: 70%;
+    height: 45px;
     background-color: #fff;
 }
 
@@ -97,6 +97,8 @@ body{
     width: 40%;
     height: 70%;
     background-color: #fff;
+    display:flex;
+    align-items: center;
 }
 
 .toolbar .search .has-search {
@@ -116,7 +118,7 @@ body{
     margin-right: 1%;
     width: 8%;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 1vw;
     height: 45px;
     background-color: #3AA7CE;
     display: inline;
@@ -140,12 +142,24 @@ body{
 }
 
 .toolbar .school img {
-    height: 100%;
+    height: 45px;
+    width: 45px;
 }
 
 .toolbar .school span {
-    margin-left: 10px;
-    font-size: 18px;
+    margin-left: 1vw;
+    font-size: 1.5vw;
     font-weight: bold;
 }
+
+@media screen and (max-width: 750px) {
+ 
+   
+    .toolbar .search .btns {
+    width: 20%;
+} 
+.toolbar .search .has-search {
+    width: 73%;
+}
+  }
 

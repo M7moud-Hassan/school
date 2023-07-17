@@ -1,7 +1,7 @@
 .activies .active {
     display: inline-block;
     width: 20%;
-    height: 150px;
+    height: 15vw;
     background-color: aqua;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -30,11 +30,16 @@
 
 .activies .active .body .left .number {
     /* background-color: rgba(58, 167, 206, 0.5); */
-    padding:10px 15px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 10px;
+    padding:1vw 1.5vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 1vw;
     font-weight: bold;
+    font-size: 1.5vw;
+    color: white;
+}
+.activies .active  .title{
+    font-size: 1vw;
 }
 .number-orange{
     background-color: #EA987D;
@@ -65,6 +70,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.activies .active .footer p {
+    font-size: 1vw;
 }
 
 .flex-wrapper {
