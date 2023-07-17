@@ -12,7 +12,18 @@
     color: white;
     font-weight: 900;
   }
-
+.select-size{
+  padding: 0;
+  display:table-row !important;    
+  padding-left: 5px;
+   padding-right: 5px;
+   background-color:#FFFFFF;
+   border: none;
+   border-radius: 5px;
+}
+option{
+  display:table-cell !important;
+}
   .parentInActive{
     display: inline-block;
     background-color: #FFF0EB;
