@@ -20,6 +20,7 @@ import { ActivitiesComponent } from './Components/activities/activities.componen
 import { GroupsComponent } from './Components/groups/groups.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ReportTripsComponent } from './Components/report-trips/report-trips.component';
+import { NewStudentComponent } from './Components/new-student/new-student.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ReportTripsComponent } from './Components/report-trips/report-trips.com
     GroupsComponent,
     ProfileComponent,
     ReportTripsComponent,
+    NewStudentComponent,
   ],
   imports: [
     CommonModule,

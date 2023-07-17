@@ -5,13 +5,15 @@ import { SchoolsHomePageComponent } from './Components/schools-home-page/schools
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ReportTripsComponent } from './Components/report-trips/report-trips.component';
+import { NewStudentComponent } from './Components/new-student/new-student.component';
 
 const routes: Routes = [
   {path:'',component:SchoolsLayoutComponent,children:[
     {path:'',component:SchoolsHomePageComponent}
   ]},
   {path:'profile',component:ProfileComponent},
-  {path:'trip-reports',component:ReportTripsComponent}
+  {path:'trip-reports',component:ReportTripsComponent},
+  {path:'new-student',component:NewStudentComponent}
 ];
 
 @NgModule({
