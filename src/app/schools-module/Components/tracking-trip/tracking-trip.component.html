@@ -1,0 +1,24 @@
+<google-map height="500px"
+            width="100%"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="moveMap($event)"
+            (mapMousemove)="move($event)">
+            <map-marker  #marker="mapMarker" *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              [icon]="markerIcon"
+              (mapClick)="openInfoWindow(marker)"
+             ></map-marker>
+             <map-info-window>Info Window content</map-info-window>
+</google-map>
+
+
+<div class="container row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="rounded-button text-center" >
+            إنهاء الرحلة
+            </div>
+    </div>
+    <div class="col-4"></div>
+    </div>
