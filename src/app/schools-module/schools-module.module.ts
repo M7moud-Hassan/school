@@ -23,9 +23,11 @@ import { ProfileComponent } from './Components/profile/profile.component';
 import { ReportTripsComponent } from './Components/report-trips/report-trips.component';
 import { NewStudentComponent } from './Components/new-student/new-student.component';
 import { ParentsComponent } from './Components/parents/parents.component';
+import { StatisticsComponent } from './Components/statistics/statistics.component';
 import { TrackingTripComponent } from './Components/tracking-trip/tracking-trip.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { InfoWindowComponent } from './Components/info-window/info-window.component'
+import { InfoWindowComponent } from './Components/info-window/info-window.component';
+import { TodayJourneyComponent } from './Components/today-journey/today-journey.component'
 
 @NgModule({
   declarations: [
@@ -44,8 +46,10 @@ import { InfoWindowComponent } from './Components/info-window/info-window.compon
     ReportTripsComponent,
     NewStudentComponent,
     ParentsComponent,
+    StatisticsComponent,
     TrackingTripComponent,
     InfoWindowComponent,
+    TodayJourneyComponent,
   ],
   imports: [
     CommonModule,

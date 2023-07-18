@@ -18,12 +18,12 @@
                 <h5>{{titleForm}}</h5>
                 <div class="input-box">
                     <label for="name">رقم المستخدم</label>
-                    <input type="text" spellcheck="false" name="email" formControlName="email" >
+                    <input type="text" spellcheck="false" name="email" id="email" formControlName="email" >
                 </div>
                 <br />
                 <div class="input-box">
-                    <label for="">{{label2}}</label>
-                    <input [type]="showInput?'text':'password'" formControlName="password" name="password" spellcheck="false"  />
+                    <label for="password">{{label2}}</label>
+                    <input [type]="showInput?'text':'password'" formControlName="password" id="password" name="password" spellcheck="false"  />
                     <i *ngIf="showContainer==true" class="uil uil-eye-slash toggle"></i>
                 </div>
                 <div class="d-flex justify-content-between align-items-center mt-4" >

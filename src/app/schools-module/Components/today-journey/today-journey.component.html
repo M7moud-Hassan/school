@@ -1,0 +1,97 @@
+<div class="container-fluid">
+    <div class="busBackground">
+    <div class="row mb-5" >
+        <p><span class="fw-bolder" style="font-size: 18px;"> رحلات اليوم : </span></p>
+        <div class="activies">
+            <div *ngFor="let activity of todayJournies;let i= index;let e = even" class="active activityItem">
+                <div class="body">
+                    <div class="left">
+                        <div>
+                            <div [className]="e?'number-blue number':'number-orange number'">
+                                {{activity.count}}
+                            </div>
+                            <div class="text-muted mt-2 title">
+                                {{activity.activityName}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="single-chart">
+                            <svg viewBox="0 0 36 36" class="circular-chart {{e? 'blue':'orange'}}">
+                                <path class="circle-bg" d="M18 2.0845
+                                  a 15.9155 15.9155 0 0 1 0 31.831
+                                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" [attr.stroke-dasharray]="strokArray[i]" d="M18 2.0845
+                                  a 15.9155 15.9155 0 0 1 0 31.831
+                                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage  fw-bolder">%{{activity.percent}}</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <p>{{activity.label}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12 col-md-3">
+            <button class="journeyTypeButton" [style]="allJournies?'font-weight:900':'font-weight:500'" (click)="getAllJourney()">الكل</button>
+        </div>
+        <div class="col-12 col-md-3">
+            <button class="journeyTypeButton" [style]="outboundJourney?'font-weight:900':'font-weight:500'" (click)="getOutboundJourney()">رحلات الذهاب</button>
+        </div>
+        <div class="col-12 col-md-3">
+            <button class="journeyTypeButton" [style]="returnJourney?'font-weight:900':'font-weight:500'" (click)="getReturnJourney()">رحلات العودة</button>
+        </div>
+        <div class="col-12 col-md-3"></div>
+    </div>
+    </div>
+    <div  class="row">
+        <div *ngFor="let item of journies" class="col-12 col-md-6">
+            <div class="tripItem">
+                <div class="row">
+                    <div class="col-10">
+                        <p class="title">مجموعة <span class="itemTitle">{{item.groupNameAr}}</span> <span> ( {{item.groupNameEn}} )</span></p>
+                        <div class="row mt-3">
+                            <div class="col-5 MiddleGroup">
+                                <span>{{item.supervisorName}}</span>
+                            <img src="assets/images/reload.svg" alt="">
+                            </div>
+                            <div class="col-4 MiddleGroup">
+                                <span>عدد الطلاب {{item.studentCount}}</span>
+                                <img src="assets/images/reload.svg"  alt="">
+                            </div>
+                            <div class="col-3 MiddleGroup">
+                                <span class="activeStateTransparent"> 
+                                    <span [style.backgroundColor]="item.active?'#3AA7CE':'#ff0000'" class="dotColor"></span>
+                                     <span [style.color]="item.active?'#3AA7CE':'#ff0000'" class=" pe-2">{{item.active?'فعال':'غير فعال'}}</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <img src="assets/images/group.png" class="cardImage" alt="">
+                    </div>
+                </div>
+                <hr class="px-5 mx-3">
+                <div class="row">
+                    <div class="col-12 mb-sm-2 mb-md-0 col-md-3">
+                        <img src="assets/images/Calendar.svg"  alt="">
+                         <span>{{item.date}}</span>
+                    </div>
+                    <div class="col-12 mb-sm-2 mb-md-0 col-md-6">
+                        <span>الإنهاء باستخدام الكود</span>
+                        <span class="activeState" [style.backgroundColor]="item.codeActive?'#E0FFD9':'#FFF0EB'" > <span [style.backgroundColor]="item.codeActive?'#3AA7CE':'#ff0000'" class="dotColor"></span> {{item.codeActive?'فعال':'غير فعال'}}</span>
+                    </div>
+                    <div class="col-12 mb-sm-2 mb-md-0 col-md-3 actionIcons">
+                        <a routerLink="#"><img src="assets/images/user.svg" alt=""></a>
+                        <a routerLink="#"><img src="assets/images/Edit.svg" alt="" ></a>
+                        <a routerLink="#"><img src="assets/images/Delete.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

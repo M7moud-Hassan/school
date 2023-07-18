@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="welcomeBack">
+                <h1 class="fs-4">مرحباً بعودتــــك</h1>
+                <h3 class="fs-3 fw-bolder">أ . نايف</h3>
+                <h4>انتقل للإطلاع على التقارير <i class="icon pi-arrow-right"></i></h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="wrapper">
+         <div *ngFor="let item of statisctics" class="item">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-5">
+                    <img src="{{item.image}}" width="60" height="60" class="mb-4">
+                </div>
+                <div class="col-7">
+                    <h3 class="m-0 p-0 text-muted">{{item.label}}</h3>
+                    <h2 class="fw-bolder">{{item.count}}</h2>
+                </div>
+            </div>
+         </div>    
+        </div>
+    </div>
+</div>
