@@ -74,3 +74,19 @@
         width: 45%;
     }
   }
+
+
+  /* ------------------------------------------------------------------- */
+
+  .cardGroupItem{
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.cardGroupItem img{
+    width: 100%;
+}

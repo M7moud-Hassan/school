@@ -1,22 +1,50 @@
 <h3  class="fw-bolder" style="font-size: 18px;">المجموعات :</h3>
 <div class="groups"  >
-    <div *ngFor="let item of groups" class="group" dir="ltr">
-            <div class="heading mb-3">
-                <img src="assets/images/group.png" alt="group">
-                <span>{{item.groupName}}</span>
-            </div>
-            <div class="items">
-                <div class="left">
-                    <p>{{item.supervisor}}</p>
-                    <p>{{item.busNumber}}</p>
-                    <p>{{item.plateNumber}}</p>
-                    <img src="assets/images/bus-{{item.busColor}}.svg" alt="">
-                </div>
-                <div class="right">
-                    <p>: المشــــرف</p>
-                    <p>: رقم البـاص</p>
-                    <p>: رقم اللوحة</p>
-                    <p>: لون الباص</p>
+        <div class="row">
+            <div *ngFor="let item of groups" class="group" class="col-12 col-md-3">
+                <div class="cardGroupItem">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="text-start pt-4 pb-3" style="color: #3AA7CE;font-size: 17px;">{{item.groupName}}</div>
+                        </div>
+                        <div class="col-4">
+                            <img src="assets/images/group.png" alt="group">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5 text-center">
+                            <div style="color: #575757;"> المشــــرف : </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="px-2" style="color: black;font-weight: 800;">{{item.supervisor}}</div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5 text-center">
+                            <div style="color: #575757;"> رقم البـاص : </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="px-2" style="color: black;font-weight: 800;">{{item.busNumber}}</div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5 text-center">
+                            <div style="color: #575757;"> رقم اللوحة : </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="px-2" style="color: black;font-weight: 800;">{{item.plateNumber}}</div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5 text-center">
+                            <div style="color: #575757;"> لون الباص : </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="px-2" style="color: black;font-weight: 800;">
+                                <img src="assets/images/bus-{{item.busColor}}.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
