@@ -45,7 +45,7 @@ export class ParentsListComponent {
       { id:124, name:'الابـــن 4', phone:'055251521252'},
       { id:125, name:'الابـــن 5', phone:'055251521252'},
     ]},
-    {id:6,name:'حساب ولى الأمر 6',phone:'047868736783',isSelected:false,lastActiveDate:'2023/07/03',isActive:false,childrenInfo:[{
+    {id:16,name:' 1حساب ولى الأمر 6',phone:'047868736783',isSelected:false,lastActiveDate:'2023/07/03',isActive:false,childrenInfo:[{
       id:113,
       name:'الابـــن 1',
       phone:'055251521252'

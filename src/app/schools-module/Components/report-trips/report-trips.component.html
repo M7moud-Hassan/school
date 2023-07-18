@@ -1,99 +1,219 @@
-<div class="reports" dir="ltr">
-    <div class="row m-0 p-0">
-        <div class="col-4">
-            <img src="assets/images/report.png" alt="">
-        </div>
-        <div class="col-8">
-            <h1 style="text-align: right;">التقارير الخاصة بالمدرسة :</h1>
-            <div class="row m-0 p-0">
-                <div class="col-3">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-9">
+            <h3  class="fw-bolder py-4" style="font-size: 18px;">التقارير الخاصة بالمدرسة :</h3>
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <button (click)="selectJourneyForm()" [ngClass]="isJourneyFormSelected?'blueButton':''" class="journeyTypeButton">رحــلات</button>
                 </div>
-                <div class="col-3">
-                    <button class="rounded-button">حفظ التعديلات</button>
+                <div class="col-12 col-md-3">
+                    <button (click)="selectAbsenceForm()" [ngClass]="isAbsenceFormSelected?'blueButton':''" class="journeyTypeButton">غيــاب</button>
                 </div>
-                <div class="col-3">
-                    <button class="rounded-button">حفظ التعديلات</button>
+                <div class="col-12 col-md-3">
+                    <button (click)="selectSupervisorForm()" [ngClass]="isSupervisorFormSelected?'blueButton':''" class="journeyTypeButton">مشرفــين</button>
                 </div>
-                <div class="col-3">
-                    <button class="rounded-button">حفظ التعديلات</button>
-                </div>
+                <div class="col-12 col-md-3"></div>
             </div>
+        </div>
+        <div class="col-12 col-md-3 imageLabel" >
+            <img src="assets/images/report.png">
         </div>
     </div>
-    <div class="row m-0 p-0" dir="rtl">
-      <div class="col-6">
-        <p><strong>Dropdown</strong></p>
-        <div class="formui-dropdown">
-            <select>
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-            </select>
+    <div class="row">
+        <div class="col-12 col-md-10">
+            <div *ngIf="isJourneyFormSelected" class="formContainer">
+                <form [formGroup]="journeyReportForm" (ngSubmit)="getJourneyReportSubmit()">
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="groupId" class="fw-bolder fs-5 pb-3">اختر المجموعة</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="groupId" name="groupId" id="groupId">
+                                    <option *ngFor="let item of groups" class="p-4 d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="supervisorId" class="fw-bolder fs-5 pb-3">اختر المشرف</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="supervisorId" name="supervisorId" id="supervisorId">
+                                    <option *ngFor="let item of supervisors" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="studentId" class="fw-bolder fs-6 pb-3">اختر الطالب</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="studentId" name="studentId" id="studentId">
+                                    <option *ngFor="let item of students" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6" dir="rtl">
+                            <div class="form-group" >
+                                <label for="journeyDate"  class="fw-bolder fs-6 pb-2 mb-2">تاريخ الرحلة</label>
+                                <input type="date" id="journeyDate"   name="journeyDate" formControlName="journeyDate" class="form-control datepicker dateInput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="card-body">
+                                        <label class="checkbox-customize">
+                                            <input type="checkbox" formControlName="outboundJourney" name="outboundJourney" id="outboundJourney">
+                                            <span class="checkmark"></span>
+                                            
+                                          </label>
+                                          <span>
+                                            رحلة ذهاب
+                                          </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="card-body">
+                                        <label class="checkbox-customize">
+                                            <input type="checkbox" formControlName="returnJourney" name="returnJourney" id="returnJourney">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <span>
+                                            رحلة عودة
+                                          </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6"></div>
+                    </div>
+                    <div style="margin-top:80px;"></div>
+                    <div class="row">
+                        <div class="col-12 col-md-2 mx-3">
+                            <button class="journeyTypeButton blueButton">طباعة</button>
+                        </div>
+                        <div class="col-12 col-md-2 mx-3">
+                            <button class="whiteButton">إلغــاء</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="isSupervisorFormSelected" class="formContainer">
+                <form [formGroup]="supervisorReportForm" (ngSubmit)="getSupervisorReportSubmit()">
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="supervisorId_SupervisorForm" class="fw-bolder fs-5 pb-3">اختر المشرف</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="supervisorId" name="supervisorId" id="supervisorId_SupervisorForm">
+                                    <option *ngFor="let item of supervisors" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="groupId" class="fw-bolder fs-5 pb-3">اختر المجموعة</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="groupId" name="groupId" id="groupId">
+                                    <option *ngFor="let item of groups" class="p-4 d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="from" class="fw-bolder fs-6 pb-3">بداية الرحلة</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="from" name="from" id="from">
+                                    <option *ngFor="let item of cities" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="to" class="fw-bolder fs-6 pb-3">نهاية الرحلة</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="to" name="to" id="to">
+                                    <option *ngFor="let item of cities" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group" >
+                                <label for="journeyDate"  class="fw-bolder fs-6 pb-2 mb-2">تاريخ الرحلة</label>
+                                <input type="date" id="journeyDate"   name="journeyDate" formControlName="journeyDate" class="form-control datepicker dateInput">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:80px;"></div>
+                    <div class="row">
+                        <div class="col-12 col-md-2 mx-3">
+                            <button class="journeyTypeButton blueButton">طباعة</button>
+                        </div>
+                        <div class="col-12 col-md-2 mx-3">
+                            <button class="whiteButton">إلغــاء</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="isAbsenceFormSelected" class="formContainer">
+                <form [formGroup]="absentReportForm" (ngSubmit)="getAbsentReportSubmit()">
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="studentId" class="fw-bolder fs-6 pb-3">اختر الطالب</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="studentId" name="studentId" id="studentId">
+                                    <option *ngFor="let item of students" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="dropdownMenu pb-3">
+                                <label for="supervisorId" class="fw-bolder fs-5 pb-3">تم تسجيل الغياب بواسطة</label>
+                                <select class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="supervisorId" name="supervisorId" id="supervisorId">
+                                    <option *ngFor="let item of supervisors" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6" dir="rtl">
+                            <div class="form-group" >
+                                <label for="from"  class="fw-bolder fs-6 pb-2 mb-2">من الرحلة</label>
+                                <input type="date" id="from"   name="from" formControlName="from" class="form-control datepicker dateInput">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6" dir="rtl">
+                            <div class="form-group" >
+                                <label for="to"  class="fw-bolder fs-6 pb-2 mb-2">حتى الرحلة</label>
+                                <input type="date" id="to"   name="to" formControlName="to" class="form-control datepicker dateInput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group" >
+                                <label for="reason"  class="fw-bolder fs-6 pb-2 mb-2">سبب الغياب 
+                                     <span style="background-color: #3AA7CE;" class="dotColor"></span> 
+                                     <span style="color: #3AA7CE;">اختيارى</span>
+                                </label>
+                                <input type="text" id="reason"   name="reason" formControlName="reason" class="d-inline-block px-3 py-1 w-100 fs-5" style="border-radius: 10px;border: .1px solid #3AA7CE;">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6"></div>
+                    </div>
+                    <div style="margin-top:80px;"></div>
+                    <div class="row">
+                        <div class="col-12 col-md-2 mx-3">
+                            <button class="journeyTypeButton blueButton">طباعة</button>
+                        </div>
+                        <div class="col-12 col-md-2 mx-3">
+                            <button class="whiteButton">إلغــاء</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      <div class="col-6">
-        <p><strong>Dropdown</strong></p>
-        <div class="formui-dropdown">
-            <select>
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-            </select>
-        </div>
-      </div>
+        <div class="col-12 col-md-2"></div>
     </div>
-    <div class="row m-0 p-0" dir="rtl">
-        <div class="col-6">
-          <p><strong>Dropdown</strong></p>
-          <div class="formui-dropdown">
-              <select>
-                  <option>Select</option>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
-                  <option>Option 4</option>
-              </select>
-          </div>
-        </div>
-        <div class="col-6">
-          <p><strong>Dropdown</strong></p>
-         
-        </div>
-      </div>
-      <div class="bootstrap-iso">
-        <div class="container-fluid">
-         <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-12">
-           <form action="https://formden.com/post/MlKtmY4x/" class="form-horizontal" method="post">
-            <div class="form-group ">
-             <div class="col-sm-10">
-              <div class="input-group">
-               <div class="input-group-addon" style="padding-top: 0;">
-                <img src="assets/images/Calendar.svg"  alt="Calendar">
-               </div>
-               <input class="form-control"  id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-              </div>
-             </div>
-            </div>
-            <div class="form-group">
-             <div class="col-sm-10 col-sm-offset-2">
-              <input name="_honey" style="display:none" type="text"/>
-             </div>
-            </div>
-           </form>
-          </div>
-         </div>
-        </div>
-       </div>
-       <label class="checkbox-customize">One
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-
-      
-
 </div>

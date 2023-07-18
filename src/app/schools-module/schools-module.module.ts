@@ -27,7 +27,8 @@ import { StatisticsComponent } from './Components/statistics/statistics.componen
 import { TrackingTripComponent } from './Components/tracking-trip/tracking-trip.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { InfoWindowComponent } from './Components/info-window/info-window.component';
-import { TodayJourneyComponent } from './Components/today-journey/today-journey.component'
+import { TodayJourneyComponent } from './Components/today-journey/today-journey.component';
+import {MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { TodayJourneyComponent } from './Components/today-journey/today-journey.
     ReactiveFormsModule,
     NgxIntlTelInputModule,
     NgxPaginationModule,
-    GoogleMapsModule    
+    GoogleMapsModule,
+    MatIconModule,    
   ]
 })
 export class SchoolsModuleModule { }

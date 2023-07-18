@@ -22,23 +22,23 @@
     </div>
     <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
         <div class="col-12 col-md-5">
-            <div class="action-button"><img src="assets/images/parents.svg" alt="">اضافة ولى الأمر </div>
-            <div class="action-button"><img src="assets/images/parents.svg" alt="">تعديل </div>
-            <div class="action-button"><img src="assets/images/parents.svg" alt="">حذف </div>
+            <a routerLink="#" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">اضافة ولى الأمر </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/Delete.svg" alt="">حذف </div></a>
         </div>
         <div class="col-12 col-md-7 float-end">
-            <div class="action-button"><img src="assets/images/parents.svg" alt="">تحميل نموذج </div>
-            <div class="action-button"><img src="assets/images/parents.svg" alt="">رفع بيانات </div>
-            <div class="action-button"><img src="assets/images/parents.svg" alt="">طباعة </div>
-            <div class="action-button"><img src="assets/images/parents.svg" alt="">إكسل </div>
-            <div class="action-button"><img src="assets/images/parents.svg" alt="">pdf </div>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/uploadModel.svg" alt="">تحميل نموذج </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/upload.svg" alt="">رفع بيانات </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/print.svg" alt="">طباعة </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
         </div>
     </div>
     <div>
         <table class="table table">
             <tr class="tableHeader">
                 <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()"  id="checkbox-all" /></td>
-                <td>الاســـم  <select name="" id="" class="select-size">
+                <td>الاســـم  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
@@ -57,14 +57,20 @@
                 { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
                 <tr id="first_{{i}}">
                     <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="item.isSelected" (change)="checkBoxChange()" id="checkbox-{{i}}" /></td>
-                    <td>{{item.name}}</td>
+                    <td><img src="assets/images/user.png" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
                     <td>{{item.phone}}</td>
-                    <td>{{item.childrenInfo.length}} <a data-bs-toggle="collapse" href="#parent-info-{{item.id}}" ><img src="assets/images/Search.svg" class="mx-3" alt=""></a></td>
+                    <td>{{item.childrenInfo.length}} <a data-bs-toggle="collapse" href="#parent-info-{{item.id}}" > 
+                         <img *ngIf="!item.isActive" src="assets/images/eye.svg" class="me-2" alt="">
+                         <img *ngIf="item.isActive"  src="assets/images/blueEye.svg" class="me-2" alt="">
+                    </a>
+                    </td>
                     <td>{{item.lastActiveDate}}</td>
                     <td [className]="item.isActive?'parentActive':'parentInActive'">
                         <span></span>{{item.isActive?'فعـــــال':'غير فعال'}}
                     </td>
-                    <td><a routerLink="#"><img src="assets/images/Search.svg" alt=""></a></td>
+                    <td><a routerLink="#">
+                        <img src="assets/images/lock.svg" alt="">
+                    </a></td>
                 <tr class="collapse" id="parent-info-{{item.id}}">
                     <td colspan="7" [className]="item.isActive?'blueBackground':'dangerBackground'">
                         <div class="row">
@@ -75,11 +81,19 @@
                             <div class="row">
                                 <div *ngFor="let child of item.childrenInfo" class="sonRecord">
                                         <div class="row">
-                                            <div class="col-3 col-md-1"><img src="assets/images/Search.svg" alt=""> </div>
+                                            <div class="col-3 col-md-1">
+                                                <img src="assets/images/user.png" width="25" height="25" alt=""> </div>
                                             <div class="col-3 col-md-4">{{child.name}}</div>
                                             <div class="col-3 col-md-1"></div>
-                                            <div class="col-3 col-md-2">{{child.phone}}</div>
-                                            <div class="col-3 col-md-4">edit | update | delete</div>
+                                            <div class="col-3 col-md-2">
+                                                <a routerLink="#"> <img src="assets/images/Call.svg" class="me-2" alt=""> </a>
+                                                {{child.phone}}</div>
+                                            <div class="col-3 col-md-4">
+                                                <a routerLink="#"> <img src="assets/images/person.svg" class="me-2" alt=""> </a>
+                                                <a routerLink="#"> <img src="assets/images/Edit.svg" class="me-2" alt=""> </a>
+                                                <a routerLink="#"> <img src="assets/images/Delete.svg" class="me-2" alt=""> </a>
+                                                <a routerLink="#"> <img src="assets/images/lock.svg" class="me-2" alt=""> </a>
+                                            </div>
                                         </div>
                                 </div>
                             </div>
@@ -91,8 +105,7 @@
     </div>
     <div class="row my-5 m-0">
         <div class="d-flex align-items-center justify-content-center">
-            <pagination-controls (pageChange)="pageNo = $event" id="foo" nextLabel=""
-                previousLabel=""></pagination-controls>
+            <pagination-controls (pageChange)="pageNo = $event" id="foo" nextLabel="" previousLabel=""></pagination-controls>
         </div>
     </div>
 </div>
