@@ -100,6 +100,34 @@ body{
     display:flex;
     align-items: center;
 }
+.dropdownlist2 .email{
+    color: #3AA7CE;
+}
+.dropdownlist2 .row-item{
+    display: block !important;
+    text-align: right !important;
+}
+.dropdownlist2 .row-item span{
+    font-size: 12px !important;
+    color: #575757 !important;
+}
+.dropdownlist2 .row-item  img{
+    width: 25px !important;
+    height: 25px !important;
+}
+.dropdownlist2 {
+    position: relative;
+    width: 100%;
+    top: 210%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: -46%;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: 20px;
+}
 
 .toolbar .search .has-search {
     margin-right: 5%;
