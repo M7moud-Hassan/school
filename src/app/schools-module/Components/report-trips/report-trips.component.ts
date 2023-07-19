@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { SchoolReportService } from '../../Services/school-report.service';
 import { JourneyReportModel } from '../../Core/Models/journey-report-model';
 import { SupervisorReportModel } from '../../Core/Models/supervisor-report-model';
 import { AbsenceReportModel } from '../../Core/Models/absence-report-model';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { PrintPopUpComponent } from '../print-pop-up/print-pop-up.component';
 
 @Component({
   selector: 'app-report-trips',
@@ -18,7 +20,7 @@ export class ReportTripsComponent {
   supervisorReportModel:SupervisorReportModel = {} as SupervisorReportModel;
   absenceReportModel:AbsenceReportModel = {} as AbsenceReportModel;
 
-  constructor(private schoolReportService:SchoolReportService,private fb:FormBuilder){}
+  constructor(private schoolReportService:SchoolReportService,private fb:FormBuilder,private elementRef:ElementRef,private dialog: MatDialog,){}
 
   journeyReportForm = this.fb.group({
     studentId:['',[Validators.required]],
@@ -143,6 +145,7 @@ export class ReportTripsComponent {
     }
   }
   getJourneyReportSubmit(){
+    // this.openDialog();
     this.mapJourneyReport();
     alert(`
         groupId         ${this.journeyReportModel.groupId         } ,     
@@ -225,6 +228,30 @@ export class ReportTripsComponent {
 
       }
     })
+  }
+
+  openDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+  
+    dialogConfig.position = {
+      top: `${this.elementRef.nativeElement.offsetTop - 30}px`,
+      left: `${this.elementRef.nativeElement.offsetLeft}px`
+    };
+    const dialogRef: MatDialogRef<PrintPopUpComponent> = this.dialog.open(PrintPopUpComponent, dialogConfig);
+
+    // dialogRef.afterOpened().subscribe(() => {
+    //   this.imageSource =
+    //  "assets/images/close.svg";
+    // });
+  
+    // dialogRef.afterClosed().subscribe(() => {
+    //   this.imageSource =
+    //  "assets/images/message.svg";
+    // });
+  }
+  @ViewChild('dialog', { static: true }) set content(content: ElementRef) {
+    this.elementRef = content;
   }
 
 }

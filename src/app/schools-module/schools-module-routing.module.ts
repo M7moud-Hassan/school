@@ -12,6 +12,7 @@ import { ParentsListComponent } from './Components/parents-list/parents-list.com
 import { TrackingTripComponent } from './Components/tracking-trip/tracking-trip.component';
 import { GoogleMapsModule } from '@angular/google-maps'
 import { TodayJourneyComponent } from './Components/today-journey/today-journey.component';
+import { PrintPopUpComponent } from './Components/print-pop-up/print-pop-up.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'parents-list',component:ParentsListComponent},
   {path:'tracking',component:TrackingTripComponent},
   {path:'today-journey',component:TodayJourneyComponent},
+  {path:'print',component:PrintPopUpComponent},
 ];
 
 @NgModule({

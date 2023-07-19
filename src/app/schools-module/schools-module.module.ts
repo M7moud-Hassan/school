@@ -28,7 +28,8 @@ import { TrackingTripComponent } from './Components/tracking-trip/tracking-trip.
 import { GoogleMapsModule } from '@angular/google-maps';
 import { InfoWindowComponent } from './Components/info-window/info-window.component';
 import { TodayJourneyComponent } from './Components/today-journey/today-journey.component';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { PrintPopUpComponent } from './Components/print-pop-up/print-pop-up.component'
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {MatIconModule} from '@angular/material/icon'
     TrackingTripComponent,
     InfoWindowComponent,
     TodayJourneyComponent,
+    PrintPopUpComponent,
   ],
   imports: [
     CommonModule,
