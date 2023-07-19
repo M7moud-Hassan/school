@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-statistics',
@@ -6,6 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent {
+  @ViewChild('cardsContainer') cardsContainerRef!: ElementRef;
+
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    const speed = 20;
+    const cardsContainer = this.cardsContainerRef.nativeElement as HTMLElement;
+
+    if (event.pageX < cardsContainer.getBoundingClientRect().left + 20) {
+      cardsContainer.scrollLeft -= speed;
+    } else if (event.pageX > cardsContainer.getBoundingClientRect().right - 20) {
+      cardsContainer.scrollLeft += speed;
+    }
+  }
+
   statisctics=[
     {label:'المجموعات',count:5,image:'/assets/images/contact.png'},
     {label:'طلبات الغياب',count:31,image:'/assets/images/contact.png'},
