@@ -20,6 +20,13 @@ import { NewSupervisorComponent } from './Components/new-supervisor/new-supervis
 import { GroupPopupComponent } from './Components/group-popup/group-popup.component';
 import { SupportComponent } from './Components/support/support.component';
 import { NewAskComponent } from './Components/new-ask/new-ask.component';
+import { NotificationsComponent } from './Components/notifications/notifications.component';
+import { NewNotificationComponent } from './Components/new-notification/new-notification.component';
+import { DeliveryComponent } from './Components/delivery/delivery.component';
+import { DoneDeliveryComponent } from './Components/done-delivery/done-delivery.component';
+import { AdsComponent } from './Components/ads/ads.component';
+import { NewAdsComponent } from './Components/new-ads/new-ads.component';
+import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -37,7 +44,14 @@ const routes: Routes = [
   {path:'new-supervisor',component:NewSupervisorComponent},
   {path:'popup',component:GroupPopupComponent},
   {path:'support',component:SupportComponent},
-  {path:'new-ask',component:NewAskComponent}
+  {path:'new-ask',component:NewAskComponent},
+  {path:'notifications',component:NotificationsComponent},
+  {path:'new-notification',component:NewNotificationComponent},
+  {path:'delivery',component:DeliveryComponent},
+  {path:'done-delivery',component:DoneDeliveryComponent},
+  {path:'ads',component:AdsComponent},
+  {path:'new-ads',component:NewAdsComponent},
+  {path:'details-ads',component:DetailsAdsComponent}
   
 ];
 

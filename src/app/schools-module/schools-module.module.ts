@@ -40,6 +40,15 @@ import { SupportComponent } from './Components/support/support.component';
 import { DetailsAskComponent } from './Components/details-ask/details-ask.component';
 import { NewAskComponent } from './Components/new-ask/new-ask.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { NotificationsComponent } from './Components/notifications/notifications.component';
+import { NewNotificationComponent } from './Components/new-notification/new-notification.component';
+import { ShowNotificationComponent } from './Components/show-notification/show-notification.component';
+import { DeliveryComponent } from './Components/delivery/delivery.component';
+import { SendDialogComponent } from './Components/send-dialog/send-dialog.component';
+import { DoneDeliveryComponent } from './Components/done-delivery/done-delivery.component';
+import { AdsComponent } from './Components/ads/ads.component';
+import { NewAdsComponent } from './Components/new-ads/new-ads.component';
+import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
 
 
 @NgModule({
@@ -72,6 +81,15 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     SupportComponent,
     DetailsAskComponent,
     NewAskComponent,
+    NotificationsComponent,
+    NewNotificationComponent,
+    ShowNotificationComponent,
+    DeliveryComponent,
+    SendDialogComponent,
+    DoneDeliveryComponent,
+    AdsComponent,
+    NewAdsComponent,
+    DetailsAdsComponent,
   ],
   imports: [
     CommonModule,
