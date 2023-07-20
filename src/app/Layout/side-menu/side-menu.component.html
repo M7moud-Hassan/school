@@ -2,35 +2,35 @@
     <div class="aside-menu">
         <img src="assets/images/logo-menu.png" alt="logo-menu">
         <ng-container *ngFor="let item of list">
-        <a  *ngIf="item.isSelected" routerLink="{{item.link}}"  class="bg-menu">
-                    <div class="right">
-                        <p class="text-center">{{item.label}}</p>
-                    </div>
-                    <div class="left">
-                        <img src="{{item.selectedIcon}}" alt="">
-                    </div>
-                    <div style="height: 20px;"></div>
-                    <div class="subLink" *ngIf="item.subLink.length>0">
-                        <ng-container *ngFor="let sub of item.subLink">
-                            <a *ngIf="!sub.isSelected" routerLink="{{sub.sub_link}}" (click)="toggleSubSelectedItem(item.id,sub.id)" class="unSelectedSubLink">
-                                <img src="{{sub.unSelectedIcon}}" alt="">
-                                {{sub.label}}
-                            </a>
-                            <a *ngIf="sub.isSelected" routerLink="{{sub.sub_link}}" class="selectedSubLink" >
-                                <img src="{{sub.selectedIcon}}" alt="">
-                                {{sub.label}}
-                            </a>
+            <a *ngIf="item.isSelected" routerLink="{{item.link}}" class="bg-menu">
+                <div class="right">
+                    <p class="text-center">{{item.label}}</p>
+                </div>
+                <div class="left">
+                    <img src="{{item.selectedIcon}}" alt="">
+                </div>
+                <div style="height: 20px;"></div>
+                <div class="subLink" *ngIf="item.subLink.length>0">
+                    <ng-container *ngFor="let sub of item.subLink;let i = index">
+                        <a *ngIf="!sub.isSelected" routerLink="{{sub.sub_link}}"
+                            (click)="toggleSubSelectedItem(item.id,sub.id,i)" class="unSelectedSubLink">
+                            <img src="{{sub.unSelectedIcon}}" alt="">
+                            {{sub.label}}
+                        </a>
+                        <a *ngIf="sub.isSelected" routerLink="{{sub.sub_link}}" class="selectedSubLink">
+                            <img src="{{sub.selectedIcon}}" alt="">
+                            {{sub.label}}
+                        </a>
                     </ng-container>
-                        
-                    </div>
-        </a>
-
-        <a *ngIf="!item.isSelected" routerLink="{{item.link}}" (click)="toggleSelectedItem(item.id==1?0:item.id-1)"  class="text-decoration-none text-dark unselectedItem">
-            <div class="row-item">
-                <img src="{{item.unSelectedIcon}}" alt="">
-                <span>{{item.label}}</span>
-            </div>
-        </a>
-    </ng-container>
+                </div>
+            </a>
+            <a *ngIf="!item.isSelected" routerLink="{{item.link}}" (click)="toggleSelectedItem(item.id==1?0:item.id-1)"
+                class="text-decoration-none text-dark unselectedItem">
+                <div class="row-item">
+                    <img src="{{item.unSelectedIcon}}" alt="">
+                    <span>{{item.label}}</span>
+                </div>
+            </a>
+        </ng-container>
     </div>
 </div>

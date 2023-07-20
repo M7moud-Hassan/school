@@ -26,7 +26,7 @@ export class SideMenuComponent {
   [
 
   ]},
-    {id:5,isSelected:false,link:'/school/supervisor-list',label:'الباصات و المشرفين',selectedIcon:'assets/images/busLight.svg',unSelectedIcon:'assets/images/bus.svg',subLink:
+    {id:5,isSelected:false,link:'#',label:'الباصات و المشرفين',selectedIcon:'assets/images/busLight.svg',unSelectedIcon:'assets/images/bus.svg',subLink:
   [
     {id:50,isSelected:true,sub_link:'/school/supervisor-list',label:'المشرفين',selectedIcon:'assets/images/busLight.svg',unSelectedIcon:'assets/images/subLinkSupervisor.svg',},
     {id:51,isSelected:false,sub_link:'/school/bus-list',label:'الباصات',selectedIcon:'assets/images/subLinkbusLight.svg',unSelectedIcon:'assets/images/bus.svg',},
@@ -57,13 +57,17 @@ export class SideMenuComponent {
     for (let i = 0; i < this.list.length; i++) {
       if(no==i){
         this.list[i].isSelected = true;
+        if(this.list[i].subLink.length>0){
+          this.router.navigate([this.list[i].subLink[0].sub_link]);
+        }
       }
       else{
         this.list[i].isSelected = false;
       }
     }
   }
-  toggleSubSelectedItem(mainItemIndex:any,subItemIndex:any){
+  toggleSubSelectedItem(mainItemIndex:any,subItemIndex:any,currentIndex:any){
+    this.list[mainItemIndex-1].subLink[0].isSelected = false;
     this.list.map(item=>{
       item.subLink.map(sub=>{
         if(item.id == mainItemIndex && sub.id == subItemIndex){
@@ -72,9 +76,6 @@ export class SideMenuComponent {
           sub.isSelected=false;
         }
       })
-    });
-    this.router.navigate([this.list[mainItemIndex].subLink[subItemIndex].sub_link]).then(res=>{
-      alert("Done" + this.list[mainItemIndex].subLink[subItemIndex].sub_link);
     });
   }
 }
