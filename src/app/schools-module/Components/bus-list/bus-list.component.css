@@ -1,0 +1,10 @@
+.dropdownlist2{
+    top: 45%;
+}
+.container_page{
+    padding: 0px;
+    margin: 0px;
+}
+.custom-dialog-container .mat-dialog-container {
+    padding: 0px !important;
+  }

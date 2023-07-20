@@ -1,6 +1,6 @@
 .welcomeBack{
     background-image: url('/assets/images/welcomeBack.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 230px;
     border-radius: 25px; 

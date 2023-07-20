@@ -29,7 +29,5 @@ export class AuthService {
   profile(model:ProfileModel):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
-  addNewStudent(model:NewStudentModel):Observable<ResponseModel>{
-    return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
-  }
+
 }

@@ -1,0 +1,122 @@
+
+
+<div class="container-fluid parent-container container_page">
+    <div class="row m-0" style="padding: 30px 30px 10px 30px;">
+        <div class="col-12 col-md-6">
+            <h3 class="fw-bolder float-end" style="font-size: 18px;">بيانات الباصات : <span class="users-count">35
+                    مستخدم</span></h3>
+        </div>
+        <div class="col-12 col-md-2"></div>
+        <div class="col-12 col-md-4 float-start">
+            
+        </div>
+    </div>
+    <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
+        <div class="col-12 col-md-5">
+            <a routerLink="#" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">اضافة باص جديد </div></a>
+        </div>
+        <div class="col-12 col-md-7">
+            <div class="search-box">
+                <div class="form-group has-search-box">
+                    <span class="form-control-feedback">
+                        <img src="assets/images/Search.svg" alt="">
+                    </span>
+                    <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن باص">
+                </div>
+                <div class="btns">
+                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
+                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
+                       <div class="row">
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_1">
+                                <input type="radio" id="radio_1" name="searchBy" value="supervisorName" class="radioButton"> اسم  المشرف
+                            </label>
+                        </div>
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_2">
+                                <input type="radio" id="radio_2" name="searchBy" value="busNumber" class="radioButton"> رقم الباص
+                            </label>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="col-4 pt-2">تاريخ الاضافة</div>
+                        <div class="col-8">
+                            <input type="date" name="addDate" class="form-control datepicker dateInput">
+                        </div>
+                       </div>
+                       <hr>
+                       <div class="row">
+                        <div class="col-4">
+                            <label for="radio_1_1">
+                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
+                            </label>
+                        </div>
+                        <div class="col-5">
+                            <label for="radio_1_2">
+                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
+                            </label>
+                        </div>
+                        <div class="col-3"></div>
+                       </div>
+                       <hr>
+                       <div class="row pb-3">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 text-end">
+                                    <label for="groupName" class="pb-2 text-muted d-inline-block ">حدد المجموعة : </label>
+                                </div>
+                            </div>
+                            <div (click)="openSelectGroupDialog()" class="form-control text-start">
+                                <img src="/assets/images/list.svg">
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <table class="table table">
+            <tr class="tableHeader">
+                <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()"  id="checkbox-all" /></td>
+                <td>الاســـم  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select></td>
+                  <td>رقم الباص</td>
+                  <td>الشركة المنتجة</td>
+                <td>آخر نشاط</td>
+                <td>الفاعلية</td>
+                <td>التحكم</td>
+            </tr>
+             <tr class="mt-3">
+                <td colspan="7"></td>
+             </tr>
+            <tbody *ngFor="let item of bus_data | paginate: 
+                { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
+                <tr id="first_{{i}}">
+                    <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="item.isSelected" (change)="checkBoxChange()" id="checkbox-{{i}}" /></td>
+                    <td><img src="{{item.image}}" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
+                    <td>{{item.busNumber}}</td>
+                    <td>{{item.manufacturingCompany}} </td>
+                    <td>{{item.lastActiveDate}}</td>
+                    <td [className]="item.isActive?'parentActive':'parentInActive'">
+                        <span></span>{{item.isActive?'فعـــــال':'غير فعال'}}
+                    </td>
+                    <td>
+                        <a routerLink="#" class="d-inline-block ms-2"> <img src="assets/images/Edit.svg"  width="20px" height="20px" alt=""> </a>
+                        <a routerLink="#" class="d-inline-block"> <img src="assets/images/Delete.svg" width="20px" height="20px" alt=""> </a>
+                    </td>
+            </tbody>
+        </table>
+    </div>
+    <div class="row my-5 m-0">
+        <div class="d-flex align-items-center justify-content-center">
+            <pagination-controls (pageChange)="pageNo = $event" id="foo" nextLabel="" previousLabel=""></pagination-controls>
+        </div>
+    </div>
+</div>

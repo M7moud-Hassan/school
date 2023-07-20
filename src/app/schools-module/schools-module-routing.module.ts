@@ -13,6 +13,11 @@ import { TrackingTripComponent } from './Components/tracking-trip/tracking-trip.
 import { GoogleMapsModule } from '@angular/google-maps'
 import { TodayJourneyComponent } from './Components/today-journey/today-journey.component';
 import { PrintPopUpComponent } from './Components/print-pop-up/print-pop-up.component';
+import { StudentListComponent } from './Components/student-list/student-list.component';
+import { BusListComponent } from './Components/bus-list/bus-list.component';
+import { SupervisorsListComponent } from './Components/supervisors-list/supervisors-list.component';
+import { NewSupervisorComponent } from './Components/new-supervisor/new-supervisor.component';
+import { GroupPopupComponent } from './Components/group-popup/group-popup.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -21,9 +26,15 @@ const routes: Routes = [
   {path:'parents',component:ParentsComponent},
   {path:'home',component:HomePageComponent},
   {path:'parents-list',component:ParentsListComponent},
+  {path:'students-list',component:StudentListComponent},
   {path:'tracking',component:TrackingTripComponent},
   {path:'today-journey',component:TodayJourneyComponent},
   {path:'print',component:PrintPopUpComponent},
+  {path:'bus-list',component:BusListComponent},
+  {path:'supervisor-list',component:SupervisorsListComponent},
+  {path:'new-supervisor',component:NewSupervisorComponent},
+  {path:'popup',component:GroupPopupComponent},
+  
 ];
 
 @NgModule({

@@ -160,3 +160,73 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
     border: .1px solid #2199e8;
 }
 /* pagination---------------------------------------------------------------------- */
+/* saveButton cancelButton============================================================ */
+.saveButton, .cancelButton{
+  display: inline-block;
+  padding: 7px;
+  text-align: center;
+  border: 1px solid #3AA7CE;
+  background-color: #3AA7CE;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.cancelButton{
+  border-color: #575757;
+  background-color: white;
+  color: #575757;
+}
+
+.dropdownlist2 {
+  position: absolute;
+  width: 22%;
+  /*
+  in each component define the top value  
+  top: 35%;
+   */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  left: 2%;
+  background-color: white;
+  z-index: 100;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 20px;
+}
+.schoolLogoButtton{
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+  /* position: relative; */
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid grey;
+  width: 15px;
+  height: 15px;
+  border-radius: 50% 50%;
+  outline: none;
+  margin: 0 10px;
+}
+input[type="radio"]:checked {
+  background-color: #F06030;
+  border-color: #F06030;
+}
+.radioButton{
+  cursor: pointer;
+  display: inline-block;
+}
+
+
+.custom-dialog-container .mat-dialog-container {
+  padding: 0px !important;
+}

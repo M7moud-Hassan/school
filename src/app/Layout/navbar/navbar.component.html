@@ -1,8 +1,8 @@
 <div class="toolbar" dir="ltr">
     <div class="school">
-        <img src="assets/images/school_logoo.png" alt="">
+        <button (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton"><img src="assets/images/school_logoo.png" alt=""></button>
         <span style="width: 100%;">اسم المدرسة</span>
-        <div class="dropdownlist2">
+        <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2">
             <img src="assets/images/school_logoo.png"  alt="">
             <p>SCHOOL NAME</p>
            <p class="email">school email.com</p>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NewStudentModel } from '../../Core/Models/new-student-model';
 import { AuthService } from '../../Services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { StudentService } from '../../Services/student.service';
 
 @Component({
   selector: 'app-new-student',
@@ -11,7 +12,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class NewStudentComponent {
   newStudentModelModel:NewStudentModel = {} as NewStudentModel;
-  constructor(private fb:FormBuilder,private authService:AuthService){
+  constructor(private fb:FormBuilder,private studentService:StudentService){
 
   }
 
@@ -67,7 +68,7 @@ export class NewStudentComponent {
 
     if(this.newStudentModelForm.valid){
       this.mapValues();
-      this.authService.addNewStudent(this.newStudentModelModel).subscribe({
+      this.studentService.addNewStudent(this.newStudentModelModel).subscribe({
         next:(response)=>{
 
         },

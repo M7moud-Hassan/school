@@ -29,7 +29,14 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { InfoWindowComponent } from './Components/info-window/info-window.component';
 import { TodayJourneyComponent } from './Components/today-journey/today-journey.component';
 import {MatIconModule} from '@angular/material/icon';
-import { PrintPopUpComponent } from './Components/print-pop-up/print-pop-up.component'
+import { PrintPopUpComponent } from './Components/print-pop-up/print-pop-up.component';
+import { StudentListComponent } from './Components/student-list/student-list.component';
+import { SupervisorsListComponent } from './Components/supervisors-list/supervisors-list.component';
+import { BusListComponent } from './Components/bus-list/bus-list.component';
+import { NewSupervisorComponent } from './Components/new-supervisor/new-supervisor.component';
+import { GroupPopupComponent } from './Components/group-popup/group-popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +60,11 @@ import { PrintPopUpComponent } from './Components/print-pop-up/print-pop-up.comp
     InfoWindowComponent,
     TodayJourneyComponent,
     PrintPopUpComponent,
+    StudentListComponent,
+    SupervisorsListComponent,
+    BusListComponent,
+    NewSupervisorComponent,
+    GroupPopupComponent,
   ],
   imports: [
     CommonModule,
@@ -64,7 +76,8 @@ import { PrintPopUpComponent } from './Components/print-pop-up/print-pop-up.comp
     NgxIntlTelInputModule,
     NgxPaginationModule,
     GoogleMapsModule,
-    MatIconModule,    
+    MatIconModule,   
+    MatDialogModule 
   ]
 })
 export class SchoolsModuleModule { }

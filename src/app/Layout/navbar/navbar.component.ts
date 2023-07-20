@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  isSchoolAccountDropdownVisible:boolean = false;
+  toggleSchoolAccountDropDown(){
+    this.isSchoolAccountDropdownVisible = ! this.isSchoolAccountDropdownVisible;
+  }
 }

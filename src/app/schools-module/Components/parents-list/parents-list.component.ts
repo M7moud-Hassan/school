@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-parents-list',
   templateUrl: './parents-list.component.html',
   styleUrls: ['./parents-list.component.css']
 })
-export class ParentsListComponent {
+export class ParentsListComponent implements OnInit{
+  childrenNumber:any  = [...Array(11).keys()].splice(1,10);
+  ngOnInit(): void {
+  }
+
+  isSchoolAccountDropdownVisible:boolean = false;
+  
   parents_data = [
     {id:1,name:'حساب ولى الأمر 1',phone:'047868736783',isSelected:false,lastActiveDate:'2023/07/01',isActive:false,childrenInfo:[{
       id:100,
@@ -135,5 +141,9 @@ export class ParentsListComponent {
   }
   get getAllSelectedItems(){
     return this.parents_data.filter(e=>e.isSelected);
+  }
+
+  toggleSchoolAccountDropDown(){
+    this.isSchoolAccountDropdownVisible = ! this.isSchoolAccountDropdownVisible;
   }
 }

@@ -113,5 +113,10 @@ export class WelcomePageComponent implements OnInit {
   ngOnInit() {
     
   }
+
+  isSchoolAccountDropdownVisible:boolean = false;
+  toggleSchoolAccountDropDown(){
+    this.isSchoolAccountDropdownVisible = ! this.isSchoolAccountDropdownVisible;
+  }
   
 }

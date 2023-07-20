@@ -1,3 +1,15 @@
+<div class="dropdown">
+  <button onclick="toggleSchoolAccountDropDown()" >Dropdown</button>
+  <div *ngIf="isSchoolAccountDropdownVisible">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    hellow world
+  </div>
+</div>
+
+
+
 <div class="container p-4">
     <div class="row mb-3" *ngFor="let item of collection | paginate: 
     { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
