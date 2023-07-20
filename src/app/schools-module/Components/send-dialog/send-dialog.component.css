@@ -1,0 +1,25 @@
+.div-head{
+    width: 100%;
+}
+.div-head p{
+    float: right;
+    padding-left: 10px !important;
+}
+.div-head img{
+    float: left;
+}
+.container-text{
+   clear: both;
+  
+}
+.btn-rounded{
+    background-color: #3AA7CE;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+.btn-outline{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
