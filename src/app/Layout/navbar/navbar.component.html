@@ -35,9 +35,9 @@
             <input type="text" class="form-control" placeholder="أدخل نص البحث">
         </div>
         <div class="btns">
-            <img src="assets/images/Filter.svg" alt="">
+            <img (click)="toggleSearchBox()" src="assets/images/Filter.svg" alt="">
         </div>
-        <div class="dropdownlist">
+        <div *ngIf="isSearchBoxVisible" class="dropdownlist">
             
           <div>
             <span style="margin-right: 10%; margin-top: 10%;">One</span>

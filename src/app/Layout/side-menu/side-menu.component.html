@@ -1,78 +1,36 @@
 <div class="main-home">
     <div class="aside-menu">
         <img src="assets/images/logo-menu.png" alt="logo-menu">
-        <div class="bg-menu">
-            <div class="right">
-                <p class="text-center">لوحة التحكم</p>
-            </div>
-            <div class="left">
-                <img src="assets/images/menu.svg" alt="">
-            </div>
-        </div>
-        <div class="items">
-            <a routerLink="/welcome" routerLinkActive="bg-menu" class="text-decoration-none text-dark ">
-                <div class="row-item">
-                    <img src="assets/images/tracking.svg" alt="">
-                    <span>لوحة التحكم</span>
-                </div>
-            </a>
-            <a routerLink="/school/today-journey" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
-                <div class="row-item">
-                    <img src="assets/images/tracking.svg" alt="">
-                    <span>تتبع الرحلات</span>
-                </div>
-            </a>
-            <a routerLink="/school/students-list" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
+        <ng-container *ngFor="let item of list">
+        <a  *ngIf="item.isSelected" routerLink="{{item.link}}"  class="bg-menu">
+                    <div class="right">
+                        <p class="text-center">{{item.label}}</p>
+                    </div>
+                    <div class="left">
+                        <img src="{{item.selectedIcon}}" alt="">
+                    </div>
+                    <div style="height: 20px;"></div>
+                    <div class="subLink" *ngIf="item.subLink.length>0">
+                        <ng-container *ngFor="let sub of item.subLink">
+                            <a *ngIf="!sub.isSelected" routerLink="{{sub.sub_link}}" (click)="toggleSubSelectedItem(item.id,sub.id)" class="unSelectedSubLink">
+                                <img src="{{sub.unSelectedIcon}}" alt="">
+                                {{sub.label}}
+                            </a>
+                            <a *ngIf="sub.isSelected" routerLink="{{sub.sub_link}}" class="selectedSubLink" >
+                                <img src="{{sub.selectedIcon}}" alt="">
+                                {{sub.label}}
+                            </a>
+                    </ng-container>
+                        
+                    </div>
+        </a>
+
+        <a *ngIf="!item.isSelected" routerLink="{{item.link}}" (click)="toggleSelectedItem(item.id==1?0:item.id-1)"  class="text-decoration-none text-dark unselectedItem">
             <div class="row-item">
-                <img src="assets/images/students.svg" alt="">
-                <span> الطلاب </span>
+                <img src="{{item.unSelectedIcon}}" alt="">
+                <span>{{item.label}}</span>
             </div>
         </a>
-        <a routerLink="/school/parents-list" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
-            <div class="row-item">
-                <img src="assets/images/parents.svg" alt="">
-                <span>أولياء الأمور</span>
-            </div>
-        </a>
-        <a routerLink="/school/supervisor-list" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
-            <div class="row-item">
-                <img src="assets/images/bus.svg" alt="">
-                <span>الباصات و المشرفين</span>
-            </div>
-        </a>
-        <a routerLink="#" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
-            <div class="row-item">
-                <img src="assets/images/trips.svg" alt="">
-                <span>الرحلات و المجموعات</span>
-            </div>
-        </a>
-        <a routerLink="#" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
-            <div class="row-item">
-                <img src="assets/images/ads.svg" alt="">
-                <span>الإعلانات</span>
-            </div>
-        </a>
-        <a routerLink="#" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
-            <div class="row-item">
-                <img src="assets/images/notifications.svg" alt="">
-                <span>الإشعارات</span>
-            </div>
-        </a>
-        <a routerLink="#" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
-            <div class="row-item">
-                <img src="assets/images/absent.svg" alt="">
-                <span>طلبات الغياب</span>
-            </div>
-        </a>
-        <a routerLink="#" routerLinkActive="bg-menu" class="text-decoration-none text-dark">
-            <div class="row-item help">
-                <!-- <img src="assets/images/noti.svg" class="noti" alt=""> -->
-                <span class="noti d-flex align-items-center">3</span>
-                <img src="assets/images/help.svg" alt="">
-                <span>الدعم الفني</span>
-            </div>
-            </a>
-        </div>
+    </ng-container>
     </div>
- 
 </div>

@@ -18,17 +18,19 @@ body{
 }
 .aside-menu  .items{
     padding-right: 10%;
-    padding-top: 8%;
+    padding-top: 10px;
 }
 .main-home .bg-menu {
-    margin-top: 15%;
-    height: 8%;
-    background-color: azure;
+    margin-top: 0px;
+    height: auto;
+    background-color: white;
+    margin-bottom: 35px;
+    display: block;
 }
 
 .main-home .bg-menu .right p {
     color: white;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-top: 2%;
 }
 
@@ -59,6 +61,8 @@ body{
     border: 2px solid transparent ;
     border-radius: 7px;
     transition: all .5s ease-in-out ;
+    /* padding: 40px; */
+    text-align: right;
 }
 /* .row-item:hover{
     border: 2px solid blue;
@@ -67,6 +71,11 @@ body{
 .row-item img {
     width: 20px;
     height: 20px;
+}
+.left img{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
 }
 
 .row-item span {
@@ -94,4 +103,35 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.unselectedItem{
+    cursor: pointer;
+}
+
+.unSelectedSubLink,.selectedSubLink{
+    display: inline-block;
+    background-color: #3AA7CE;
+    color: white;
+    padding: 5px 25px 5px 5px;
+    width: 100%;
+    text-decoration: none;
+    text-align: right;
+}
+.subLink{
+    margin: 0px;
+    margin-top: 30px;
+    height: 10px;
+    padding-bottom: 30px;
+}
+.subLink a img{
+    width: 15px;
+    min-height: 15px;
+    margin-left: 10px;
+}
+.unSelectedSubLink{
+    color: black;
+    background-color: white;
+}
+.subLink a:last-child{
+   box-shadow: 1px 1px 5px black;
 }

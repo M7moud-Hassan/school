@@ -11,4 +11,8 @@ export class NavbarComponent {
   toggleSchoolAccountDropDown(){
     this.isSchoolAccountDropdownVisible = ! this.isSchoolAccountDropdownVisible;
   }
+  isSearchBoxVisible:boolean = false;
+  toggleSearchBox(){
+    this.isSearchBoxVisible = ! this.isSearchBoxVisible;
+  }
 }
