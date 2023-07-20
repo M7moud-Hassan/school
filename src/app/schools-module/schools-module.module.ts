@@ -36,6 +36,10 @@ import { BusListComponent } from './Components/bus-list/bus-list.component';
 import { NewSupervisorComponent } from './Components/new-supervisor/new-supervisor.component';
 import { GroupPopupComponent } from './Components/group-popup/group-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SupportComponent } from './Components/support/support.component';
+import { DetailsAskComponent } from './Components/details-ask/details-ask.component';
+import { NewAskComponent } from './Components/new-ask/new-ask.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 @NgModule({
@@ -65,6 +69,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     BusListComponent,
     NewSupervisorComponent,
     GroupPopupComponent,
+    SupportComponent,
+    DetailsAskComponent,
+    NewAskComponent,
   ],
   imports: [
     CommonModule,
@@ -77,7 +84,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     NgxPaginationModule,
     GoogleMapsModule,
     MatIconModule,   
-    MatDialogModule 
+    MatDialogModule ,
+    EditorModule
   ]
 })
 export class SchoolsModuleModule { }
