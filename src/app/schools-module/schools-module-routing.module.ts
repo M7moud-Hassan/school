@@ -18,6 +18,8 @@ import { BusListComponent } from './Components/bus-list/bus-list.component';
 import { SupervisorsListComponent } from './Components/supervisors-list/supervisors-list.component';
 import { NewSupervisorComponent } from './Components/new-supervisor/new-supervisor.component';
 import { GroupPopupComponent } from './Components/group-popup/group-popup.component';
+import { SupportComponent } from './Components/support/support.component';
+import { NewAskComponent } from './Components/new-ask/new-ask.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -34,6 +36,8 @@ const routes: Routes = [
   {path:'supervisor-list',component:SupervisorsListComponent},
   {path:'new-supervisor',component:NewSupervisorComponent},
   {path:'popup',component:GroupPopupComponent},
+  {path:'support',component:SupportComponent},
+  {path:'new-ask',component:NewAskComponent}
   
 ];
 
