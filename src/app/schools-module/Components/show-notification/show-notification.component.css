@@ -1,0 +1,19 @@
+.div-head{
+    width: 100%;
+}
+.div-head p{
+    float: right;
+    padding-left: 10px !important;
+}
+.div-head img{
+    float: left;
+}
+.container-text p{
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: #3AA7CE;
+    border-radius: 10px;
+   text-align: right;
+   padding: 10px;
+   color: white;
+}

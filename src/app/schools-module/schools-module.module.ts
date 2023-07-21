@@ -47,6 +47,15 @@ import { NewTripGroupComponent } from './Components/new-trip-group/new-trip-grou
 import { ChangeSupervisorPopUpComponent } from './Components/change-supervisor-pop-up/change-supervisor-pop-up.component';
 import { AddNewStudentToGroupPopUpComponent } from './Components/add-new-student-to-group-pop-up/add-new-student-to-group-pop-up.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { NotificationsComponent } from './Components/notifications/notifications.component';
+import { NewNotificationComponent } from './Components/new-notification/new-notification.component';
+import { ShowNotificationComponent } from './Components/show-notification/show-notification.component';
+import { DeliveryComponent } from './Components/delivery/delivery.component';
+import { SendDialogComponent } from './Components/send-dialog/send-dialog.component';
+import { DoneDeliveryComponent } from './Components/done-delivery/done-delivery.component';
+import { AdsComponent } from './Components/ads/ads.component';
+import { NewAdsComponent } from './Components/new-ads/new-ads.component';
+import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
 
 
 @NgModule({
@@ -85,6 +94,15 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     NewTripGroupComponent,
     ChangeSupervisorPopUpComponent,
     AddNewStudentToGroupPopUpComponent,
+    NotificationsComponent,
+    NewNotificationComponent,
+    ShowNotificationComponent,
+    DeliveryComponent,
+    SendDialogComponent,
+    DoneDeliveryComponent,
+    AdsComponent,
+    NewAdsComponent,
+    DetailsAdsComponent,
   ],
   imports: [
     CommonModule,

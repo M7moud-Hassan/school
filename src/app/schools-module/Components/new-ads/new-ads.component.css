@@ -1,0 +1,23 @@
+.prev {
+    color: #575757;
+    font-size: 12px;
+}
+
+.new {
+    width: 50%;
+    border-radius: 10px;
+    background-color: white;
+    padding-right: 20px;
+}
+
+.btn-rounded{
+    background-color: #3AA7CE;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+.btn-outline{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}

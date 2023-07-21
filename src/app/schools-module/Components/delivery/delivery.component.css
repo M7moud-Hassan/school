@@ -1,0 +1,24 @@
+.item{
+    background-color: #3AA7CE;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.item .label{
+    color: white;
+}
+.item .number{
+    color: #F06030;
+}
+.item-out{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 10px;
+}
+
+.card-item{
+    background-color: white;
+    border-radius: 25px;
+}

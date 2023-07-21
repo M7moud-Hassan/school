@@ -24,6 +24,13 @@ import { AbsenceListComponent } from './Components/absence-list/absence-list.com
 import { AddAbsenceOrderComponent } from './Components/add-absence-order/add-absence-order.component';
 import { TripsAndGroupsComponent } from './Components/trips-and-groups/trips-and-groups.component';
 import { NewTripGroupComponent } from './Components/new-trip-group/new-trip-group.component';
+import { NotificationsComponent } from './Components/notifications/notifications.component';
+import { NewNotificationComponent } from './Components/new-notification/new-notification.component';
+import { DeliveryComponent } from './Components/delivery/delivery.component';
+import { DoneDeliveryComponent } from './Components/done-delivery/done-delivery.component';
+import { AdsComponent } from './Components/ads/ads.component';
+import { NewAdsComponent } from './Components/new-ads/new-ads.component';
+import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -46,6 +53,14 @@ const routes: Routes = [
   {path:'new-absence-order',component:AddAbsenceOrderComponent},
   {path:'trips-and-groups',component:TripsAndGroupsComponent},
   {path:'new-group',component:NewTripGroupComponent},
+  {path:'notifications',component:NotificationsComponent},
+  {path:'new-notification',component:NewNotificationComponent},
+  {path:'delivery',component:DeliveryComponent},
+  {path:'done-delivery',component:DoneDeliveryComponent},
+  {path:'ads',component:AdsComponent},
+  {path:'new-ads',component:NewAdsComponent},
+  {path:'details-ads',component:DetailsAdsComponent}
+  
 ];
 
 @NgModule({
