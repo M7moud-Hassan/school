@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NewParentsModel, StudentDataModel } from '../../Core/Models/new-parents-model';
 import { ParentService } from '../../Services/parent.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-parents',
@@ -95,6 +96,38 @@ export class ParentsComponent {
         }
       })
     }
+  }
+
+  imageSrc: string | null = null;
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    const files = event.dataTransfer?.files;
+    if (files) {
+      this.handleImageDrop(files);
+    }
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.handleImageDrop(input.files);
+  }
+
+  private handleImageDrop(files: FileList | null) {
+    if (!files || files.length === 0) return;
+
+    const file = files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e: ProgressEvent<FileReader>) => {
+      this.imageSrc = e.target?.result as string;
+    };
+
+    reader.readAsDataURL(file);
   }
 
 }

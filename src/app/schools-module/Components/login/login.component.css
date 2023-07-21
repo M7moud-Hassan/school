@@ -31,6 +31,7 @@
     display: inline-block;
     width: 18%;
     height: 18%;
+    cursor: pointer;
 }
 .main-index .right-div .logo_txt{
     width: 30%;
@@ -72,6 +73,7 @@
 .main-index .left-div .under-image .logo{
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }
 .main-index .left-div .under-image span{
   cursor: pointer;
@@ -104,7 +106,7 @@
     color: #575757;
   }
 
-.main-index .right-div .input-box input:is(:focus, :valid) {
+.main-index .right-div .input-box input:is(:focus) {
     border-color: #4070f4;
   }
   
@@ -122,7 +124,7 @@
     font-size: 20px;
 }
   
-.main-index .right-div  input:is(:focus, :valid) ~ i {
+.main-index .right-div  input:is(:focus) ~ i {
     color: #4070f4;
   }
  

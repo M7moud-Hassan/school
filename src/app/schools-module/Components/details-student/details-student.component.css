@@ -1,0 +1,54 @@
+
+
+.input-box-d .emial-input-d {
+    position: static;
+    text-align: right;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 10px 50px 10px 0px;
+    box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+    transition: all 0.2s linear;
+}
+
+.input-box-d input:is(:focus) {
+    border-color: #4070f4;
+}
+
+.input-box-d :is(i) {
+    position: relative;
+    top: -70%;
+
+    transform: translateY(-50%);
+    color: #999;
+    transition: all 0.2s linear;
+}
+
+.input-box-d i {
+    left: -43%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+input:is(:focus)~i {
+    color: #4070f4;
+}
+
+.input-box-d label {
+    text-align: right;
+    padding-bottom: 5px;
+}
+
+.icon-email-d{
+    
+    display: inline;
+    position: relative;
+    top: -36%;
+    right: -0%;
+    z-index: 10;
+    border-left: 2px solid gray;
+    padding-left: 10px;
+    padding-right: 5px;
+}

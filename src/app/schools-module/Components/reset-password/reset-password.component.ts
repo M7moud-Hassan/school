@@ -6,6 +6,7 @@ import { DilaogContactComponent } from '../dilaog-contact/dilaog-contact.compone
 import { AuthService } from '../../Services/auth.service';
 import { LoginModel } from '../../Core/Models/login-model';
 import { ResetPasswordModel } from '../../Core/Models/reset-password-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
@@ -22,7 +23,7 @@ export class ResetPasswordComponent implements OnInit, AfterViewInit {
   // showContainer:boolean=true;
   resetPasswordModel:ResetPasswordModel = {} as ResetPasswordModel;
 
-  constructor(private fb:FormBuilder,private dialog: MatDialog, private elementRef: ElementRef,private authService:AuthService) {
+  constructor(private router:Router,private fb:FormBuilder,private dialog: MatDialog, private elementRef: ElementRef,private authService:AuthService) {
   }
   loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -77,7 +78,7 @@ export class ResetPasswordComponent implements OnInit, AfterViewInit {
     ${this.resetPasswordModel.userNumber},
     ${this.resetPasswordModel.email},
     `)
-
+    this.router.navigate(['/new-password'])
     if(this.loginForm.valid){
       this.mapValues();
       this.authService.resetPassword(this.resetPasswordModel).subscribe({

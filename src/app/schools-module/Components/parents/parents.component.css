@@ -17,3 +17,17 @@ width: 10%;
 border-radius: 10px;
 margin-bottom: 10px;
 }
+.load-image{
+  cursor: pointer;
+}
+.prev {
+  color: #575757;
+  font-size: 12px;
+}
+
+.new {
+  width: 50%;
+  border-radius: 10px;
+  background-color: white;
+  padding-right: 20px;
+}

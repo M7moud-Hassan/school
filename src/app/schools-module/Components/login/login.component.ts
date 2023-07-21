@@ -5,6 +5,7 @@ import { MatCheckbox } from '@angular/material/checkbox';
 import { DilaogContactComponent } from '../dilaog-contact/dilaog-contact.component';
 import { AuthService } from '../../Services/auth.service';
 import { LoginModel } from '../../Core/Models/login-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
   showContainer:boolean=true;
   loginModel:LoginModel = {} as LoginModel;
 
-  constructor(private fb:FormBuilder,private dialog: MatDialog, private elementRef: ElementRef,private authService:AuthService) {
+  constructor(private fb:FormBuilder,private dialog: MatDialog, private elementRef: ElementRef,private authService:AuthService,
+    private router: Router) {
   }
   loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -79,11 +81,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
     ${this.loginModel.rememberMe},
     `)
 
+    this.router.navigate(['/home']); 
     if(this.loginForm.valid){
       this.mapValues();
       this.authService.login(this.loginModel).subscribe({
         next:(response)=>{
-
+          
         },
         error:(error)=>{
 

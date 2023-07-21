@@ -1,4 +1,12 @@
-import { Component } from '@angular/core';
+import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
+import { TemplatePortal } from '@angular/cdk/portal';
+import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SelectGroupsComponent } from '../select-groups/select-groups.component';
+import { DetailsStudentComponent } from '../details-student/details-student.component';
+import { DeleteStudentComponent } from '../delete-student/delete-student.component';
+import { LocationComponent } from '../location/location.component';
+import { StudentPasswordComponent } from '../student-password/student-password.component';
 
 @Component({
   selector: 'app-student-list',
@@ -7,7 +15,13 @@ import { Component } from '@angular/core';
 })
 export class StudentListComponent {
   isSchoolAccountDropdownVisible:boolean = false;
+
   
+  constructor(private overlay: Overlay,private overlayPositionBuilder: OverlayPositionBuilder,
+    private viewContainerRef: ViewContainerRef,private dialog: MatDialog) {
+
+    
+  }
   student_data = [
     {id:1,name:'طالب رقم 1',groupName:'مجموعة رقم 1',userNumber:'8763763786383',lastActiveDate:'12-7-2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
     {id:2,name:'طالب رقم 2',groupName:'مجموعة رقم 2',userNumber:'8763763786383',lastActiveDate:'14-7-2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
@@ -110,5 +124,56 @@ export class StudentListComponent {
 
   toggleSchoolAccountDropDown(){
     this.isSchoolAccountDropdownVisible = ! this.isSchoolAccountDropdownVisible;
+  }
+
+  @ViewChild('trigger') trigger: any;
+  @ViewChild('overlayTemplate', { static: false }) overlayTemplate!: TemplateRef<any>;
+
+  overlayRef: OverlayRef | null = null;
+
+  openDialogSelectGroup(){
+    const dialogRef = this.dialog.open(SelectGroupsComponent, {
+      width: '50%',
+    });
+  }
+
+  openDialogDetailsStudent(){
+    const dialogRef = this.dialog.open(DetailsStudentComponent, {
+      width: '50%',
+    });
+  }
+
+  deleteDialog(){
+    const dialogRef = this.dialog.open(DeleteStudentComponent, {
+      width: '50%',
+    });
+  }
+  locationDialog(){
+    const dialogRef = this.dialog.open(LocationComponent, {
+      width: '50%',
+    });
+  }
+  passwordStudentDialog(){
+    const dialogRef = this.dialog.open(StudentPasswordComponent, {
+      width: '50%',
+    });
+  }
+  showOverlay() {
+    this.isSchoolAccountDropdownVisible = !this.isSchoolAccountDropdownVisible;
+    if (!this.overlayRef) {
+      const positionStrategy = this.overlayPositionBuilder
+        .flexibleConnectedTo(this.trigger.nativeElement)
+        .withPositions([{ originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top' }]);
+      this.overlayRef = this.overlay.create({ positionStrategy });
+    }
+
+    const portal = new TemplatePortal(this.overlayTemplate, this.viewContainerRef);
+    this.overlayRef.attach(portal);
+  }
+
+  hideOverlay() {
+    if (this.overlayRef) {
+      this.overlayRef.detach();
+    }
   }
 }

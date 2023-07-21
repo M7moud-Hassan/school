@@ -6,13 +6,14 @@ import { LoginComponent } from './schools-module/Components/login/login.componen
 import { RegisterComponent } from './schools-module/Components/register/register.component';
 import { ResetPasswordComponent } from './schools-module/Components/reset-password/reset-password.component';
 import { HomePageComponent } from './schools-module/Components/home-page/home-page.component';
+import { NewPasswordComponent } from './schools-module/Components/new-password/new-password.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
+  {path:'',component:RegisterComponent},
   {path:'reset-password',component:ResetPasswordComponent},
+  {path:'new-password',component:NewPasswordComponent},
   {path:'',component:MainLayoutComponent,children:[
-    {path:'',redirectTo:'/home',pathMatch:'full'},
     {path:'home',component:HomePageComponent},
     {path:'welcome',component:WelcomePageComponent},
     {path:'school',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},

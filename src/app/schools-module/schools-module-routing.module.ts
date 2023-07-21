@@ -34,6 +34,7 @@ import { DetailsAdsComponent } from './Components/details-ads/details-ads.compon
 import { ChangePasswordComponent } from './Components/change-password/change-password.component';
 import { SocialMediaComponent } from './Components/social-media/social-media.component';
 import { SchoolAccountDetailsComponent } from './Components/school-account-details/school-account-details.component';
+import { AccountUserComponent } from './Components/account-user/account-user.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -66,6 +67,7 @@ const routes: Routes = [
   {path:'change-password',component:ChangePasswordComponent},
   {path:'social-media',component:SocialMediaComponent},
   {path:'school-account-details',component:SchoolAccountDetailsComponent},
+  {path:'account-user',component:AccountUserComponent}
   
 ];
 

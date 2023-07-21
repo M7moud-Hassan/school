@@ -1,0 +1,10 @@
+.right-div{
+    width: 100% !important;
+}
+.main-index {
+
+    position: relative !important;
+}
+.right-div label{
+    background-color: #F5F5F5;
+}

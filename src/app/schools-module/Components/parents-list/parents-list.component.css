@@ -12,6 +12,20 @@
     color: white;
     font-weight: 900;
   }
+  .search-box .has-search-box {
+    margin-right: 0 !important;
+    width: 83% !important;
+
+  }
+  .search-box .btns{
+    width: 15%;
+    height: 45px;
+  }
+
+  .btn-add{
+    background-color: #3AA7CE;
+    color: white;
+  }
 .select-size{
   padding: 0;
   display:table-row !important;    
@@ -74,6 +88,17 @@ option{
   .dangerBackground{
     background-color: #FFD8BF;
   }
-  .dropdownlist2{
-    top: 35%;
+  .dropasd{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    padding-top: 10px;
+  padding-bottom: 10px;
+  left: 2%;
+  background-color: white;
+  z-index: 100;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 20px;
   }

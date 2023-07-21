@@ -59,6 +59,15 @@ import { DetailsAdsComponent } from './Components/details-ads/details-ads.compon
 import { ChangePasswordComponent } from './Components/change-password/change-password.component';
 import { SocialMediaComponent } from './Components/social-media/social-media.component';
 import { SchoolAccountDetailsComponent } from './Components/school-account-details/school-account-details.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
+import { SelectGroupsComponent } from './Components/select-groups/select-groups.component';
+import { DetailsStudentComponent } from './Components/details-student/details-student.component';
+import { AccountUserComponent } from './Components/account-user/account-user.component';
+import { DeleteStudentComponent } from './Components/delete-student/delete-student.component';
+import { LocationComponent } from './Components/location/location.component';
+import { StudentPasswordComponent } from './Components/student-password/student-password.component';
 
 
 @NgModule({
@@ -109,6 +118,12 @@ import { SchoolAccountDetailsComponent } from './Components/school-account-detai
     ChangePasswordComponent,
     SocialMediaComponent,
     SchoolAccountDetailsComponent,
+    SelectGroupsComponent,
+    DetailsStudentComponent,
+    AccountUserComponent,
+    DeleteStudentComponent,
+    LocationComponent,
+    StudentPasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -123,7 +138,10 @@ import { SchoolAccountDetailsComponent } from './Components/school-account-detai
     MatIconModule,   
     MatDialogModule ,
     EditorModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    DragDropModule,
+    OverlayModule,
+    PortalModule
   ]
 })
 export class SchoolsModuleModule { }
