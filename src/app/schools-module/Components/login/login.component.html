@@ -5,7 +5,7 @@
         </div>
         <div #dialog class="under-image">
             <!-- src="assets/images/message.svg" -->
-            <img [src]="imageSource" alt="logo" class="logo">
+            <img [src]="imageSource" (click)="openDialog()" alt="logo" class="logo">
             <span (click)="openDialog()">Busway مرحباً بك في باص واي </span>
         </div>
     </div>
@@ -28,14 +28,13 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-center mt-4" >
                     <p *ngIf="showContainer">
-                        <a routerLink="/forgot-password">نسيت كلمة المرور ؟</a>
+                        <a routerLink="/reset-password">نسيت كلمة المرور ؟</a>
                     </p>
                     <mat-checkbox *ngIf="showContainer" formControlName="rememberMe" name="rememberMe" class="example-margin " dir="rtl">تذكرني</mat-checkbox>
                 </div>
                 <p class="hint" *ngIf="!showContainer" >سوف تصلك رسالة عل البريد الالكتروني / رقم الهاتف بكلمة المرور الجديدة</p>
                 <button class="rounded-button">{{labelSubmit}}</button>
             </form>
-
         </div>
     </div>
 </div>

@@ -11,6 +11,8 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { NavbarComponent } from './Layout/navbar/navbar.component';
 import { WelcomePageComponent } from './Layout/welcome-page/welcome-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ComponentLoaderFactory } from 'ngx-bootstrap/component-loader';
+import { PositioningService } from 'ngx-bootstrap/positioning';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     
   ],
   providers: [
-    AppComponent
+    AppComponent,
+    ComponentLoaderFactory,
+    PositioningService
   ],
   bootstrap: [AppComponent]
 })

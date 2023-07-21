@@ -17,7 +17,7 @@
         <div >
             <form [formGroup]="registerForm" (ngSubmit)="submit()">
                 <h5>تسجيل جديد <span>للمدارس فقط</span></h5>
-                <div class="input-box">
+                <div class="input-box" style="margin-top: 0 !important;">
                     <label for="nameInArabic">الاسم بالعربية</label>
                     <input type="text" spellcheck="false" formControlName="nameInArabic" name="nameInArabic" id="nameInArabic" placeholder="ادخل اسم المدرسة باللغة العربية" >
                 </div>
@@ -36,7 +36,7 @@
                 <div class="input-box">
                     <label for="phone">رقم الهاتف</label>
                    
-                <!-- <ngx-intl-tel-input
+                <ngx-intl-tel-input
                 [cssClass]="'custom'"
                 [preferredCountries]="preferredCountries"
                 [enableAutoCountrySelect]="true"
@@ -54,10 +54,9 @@
                 [separateDialCode]="separateDialCode"
                 [numberFormat]="PhoneNumberFormat.National"
                 name="phone"
-                formControlName="phone"
-                id="phone"
+                    formControlName="phone"
               >
-              </ngx-intl-tel-input> -->
+              </ngx-intl-tel-input>
               <div class="code-phone">
                 +{{countryCode}}  
             </div>
@@ -93,7 +92,7 @@
                 <p class="hint" *ngIf="!showContainer" >سوف تصلك رسالة عل البريد الالكتروني / رقم الهاتف بكلمة المرور الجديدة</p> -->
                 <br/>
                 <button class="rounded-button" [value]="labelSubmit">{{labelSubmit}}</button>
-                <p class="register-link">لدي حساب ؟ <a>تسجيل دخول</a></p>
+                <p class="register-link">لدي حساب ؟ <a routerLink="/login">تسجيل دخول</a></p>
             </form>
 
         </div>

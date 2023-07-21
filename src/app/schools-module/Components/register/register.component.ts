@@ -6,6 +6,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { AuthService } from '../../Services/auth.service';
 import { RegisterModel } from '../../Core/Models/register-model';
 import { DilaogContactComponent } from '../dilaog-contact/dilaog-contact.component';
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -22,10 +23,14 @@ export class RegisterComponent {
   CountryISO = CountryISO;
   PhoneNumberFormat = PhoneNumberFormat;
   preferredCountries: CountryISO[] = [CountryISO.SaudiArabia, CountryISO.UnitedKingdom];
+
+  phoneForm = new FormGroup({
+    phone: new FormControl(undefined, [Validators.required])
+  });
   // phoneForm = new FormGroup({
   //   phone: new FormControl(undefined, [Validators.required])
   // });
-  constructor(private fb:FormBuilder,private authService:AuthService,private dialog: MatDialog, private elementRef: ElementRef,){}
+  constructor(private router: Router,private fb:FormBuilder,private authService:AuthService,private dialog: MatDialog, private elementRef: ElementRef,){}
 
 
   registerForm = this.fb.group({
@@ -66,6 +71,7 @@ export class RegisterComponent {
     ${this.registerModel.nameInEnglish} , 
     `);
 
+    this.router.navigate(['/home'])
     if(this.registerForm.valid){
       this.authService.register(this.registerModel).subscribe({
         next:(response)=>{
