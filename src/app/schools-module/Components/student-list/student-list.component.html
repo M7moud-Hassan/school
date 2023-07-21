@@ -14,7 +14,9 @@
                     <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن طالب">
                 </div>
                 <div class="btns">
-                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
+                    <img src="assets/images/Filter.svg" alt="" #trigger (click)="showOverlay()" class="schoolLogoButtton">
+                    <ng-template #overlayTemplate>
+                        <div class="positioned-element" dir="rtl">
                     <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
                        <div class="row">
                         <div class="col-6 mt-2 text-end">
@@ -57,28 +59,34 @@
                                     <label for="groupName" class="pb-2 text-muted d-inline-block ">حدد المجموعة : </label>
                                 </div>
                             </div>
-                            <select class="d-inline-block pt-1 w-100" style="border-radius: 5px;border: .1px solid #575757;" name="groupName" id="groupName" >
+                            <div class="menu_group">
+                                <img src="assets/images/menu_groups.svg" alt="" (click)="openDialogSelectGroup()">
+                            </div>
+                            <!-- <select class="d-inline-block pt-1 w-100" style="border-radius: 5px;border: .1px solid #575757;" name="groupName" id="groupName" >
                                 <option *ngFor="let item of groups" class="d-inline-block" value="{{item.id}}">{{item.name}}</option>
-                            </select>
+                            </select> -->
                         </div>
                        </div>
                     </div>
+                </div>
+            </ng-template>
+       
                 </div>
             </div>
         </div>
     </div>
     <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
         <div class="col-12 col-md-5">
-            <a routerLink="/school/new-student" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">اضافة  طالب جديد </div></a>
+            <a routerLink="/school/new-student" class="text-muted"><div class="action-button" style="background-color: #3AA7CE; color: white;"><img src="assets/images/add.png" alt="">اضافة  طالب جديد </div></a>
             <a routerLink="/school/profile" class="text-muted"><div class="action-button"><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
-            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/Delete.svg" alt="">حذف </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button" (click)="deleteDialog()"><img src="assets/images/Delete.svg" alt="" >حذف </div></a>
         </div>
         <div class="col-12 col-md-7 float-end">
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/uploadModel.svg" alt="">تحميل نموذج </div></a>
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/upload.svg" alt="">رفع بيانات </div></a>
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/print.svg" alt="">طباعة </div></a>
-            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
-            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
+            <a routerLink="#" class="text-muted"><div style="background-color: #E2FFE3;" class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
+            <a routerLink="#" class="text-muted"><div style="background-color: #F9E7E7;" class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
         </div>
     </div>
     <div>
@@ -104,7 +112,7 @@
                 { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
                 <tr id="first_{{i}}">
                     <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="item.isSelected" (change)="checkBoxChange()" id="checkbox-{{i}}" /></td>
-                    <td><img src="{{item.image}}" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
+                    <td style="cursor: pointer;" (click)="openDialogDetailsStudent()"><img src="{{item.image}}" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
                     <td>{{item.groupName}}</td>
                     <td>{{item.userNumber}} </td>
                     <td>{{item.lastActiveDate}}</td>
@@ -112,8 +120,8 @@
                         <span></span>{{item.isActive?'فعـــــال':'غير فعال'}}
                     </td>
                     <td>
-                        <a routerLink="#" class="d-inline-block ms-2"> <img src="assets/images/Location.svg"  width="20px" height="20px" alt=""> </a>
-                        <a routerLink="#" class="d-inline-block"> <img src="assets/images/lock.svg" width="20px" height="20px" alt=""> </a>
+                        <a routerLink="#" class="d-inline-block ms-2" (click)="locationDialog()"> <img src="assets/images/Location.svg"  width="20px" height="20px" alt=""> </a>
+                        <a routerLink="#" class="d-inline-block" (click)="passwordStudentDialog()"> <img src="assets/images/lock.svg" width="20px" height="20px" alt=""> </a>
                     </td>
             </tbody>
         </table>

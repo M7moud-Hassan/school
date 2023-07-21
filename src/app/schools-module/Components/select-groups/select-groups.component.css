@@ -1,0 +1,19 @@
+.navv{
+    width: 100%;
+    background-color: #3AA7CE;
+    padding: 10px;
+    height: 50px;
+}
+.navv p{
+    float: right; text-align: center; color: white;
+}
+.navv img{
+    float: left;
+}
+.labelX{
+    color: #575757;
+    font-size: 12px;
+}
+.details-c{
+    height: 150px;
+}

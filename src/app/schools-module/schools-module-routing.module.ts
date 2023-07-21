@@ -27,6 +27,7 @@ import { DoneDeliveryComponent } from './Components/done-delivery/done-delivery.
 import { AdsComponent } from './Components/ads/ads.component';
 import { NewAdsComponent } from './Components/new-ads/new-ads.component';
 import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
+import { AccountUserComponent } from './Components/account-user/account-user.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -51,7 +52,8 @@ const routes: Routes = [
   {path:'done-delivery',component:DoneDeliveryComponent},
   {path:'ads',component:AdsComponent},
   {path:'new-ads',component:NewAdsComponent},
-  {path:'details-ads',component:DetailsAdsComponent}
+  {path:'details-ads',component:DetailsAdsComponent},
+  {path:'account-user',component:AccountUserComponent}
   
 ];
 

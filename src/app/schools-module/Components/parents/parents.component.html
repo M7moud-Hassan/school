@@ -1,88 +1,108 @@
+<div class="container">
+    <div>
+        <span class="prev">أولياء الأمور</span>
+        <img src="assets/images/next.svg" alt="arrow_left.svg">
+        <span>اضافة ولي أمر</span>
 
-    <div class="container">
-    <div class="row">
-        
+    </div>
+    <div class="row mt-4">
+
         <div class="col-12 col-md-6 ">
             <form [formGroup]="newparentForm" (ngSubmit)="onSubmit()">
-            <div class="con-div mx-md-2 mx-sm-0">
-            <h2>بيانات الحساب</h2>
-                 <div class="load-image d-flex justify-content-center align-items-center">
-                   <div class="text-center">
-                    <img src="assets/images/Image.svg" alt="not found">
-                    <p>اسحب صورة أو <span style="color: blue;">حمّلها</span> </p>
-                    <p>يجب أن يكون الصورة بصيغة jpg أو png</p>
-                   </div>
-                 </div>
-                 
-                 <div class="input-box">
-                    <label for="userNumber">رقم المستخدم</label>
-                    <input type="text" spellcheck="false" formControlName="userNumber" name="userNumber" id="userNumber" placeholder="" >
+                <div class="con-div mx-md-2 mx-sm-0">
+                    <h2>بيانات الحساب</h2>
+                    <div (dragover)="onDragOver($event)" (drop)="onDrop($event)" (click)="selectFileInput.click()"
+                        class="load-image d-flex justify-content-center align-items-center">
+                        <div class="text-center">
+                            <img *ngIf="!imageSrc" src="assets/images/Image.svg" alt="Placeholder Image" />
+                            <img *ngIf="imageSrc" [src]="imageSrc" alt="Dropped Image" style="width: 50px; height: 50px;" />
+                            <input style="width: 0px; height: 0px;" #selectFileInput type="file" accept="image/*" (change)="onFileSelected($event)" />
+                            <p>اسحب صورة أو <span style="color: blue;">حمّلها</span> </p>
+                            <p>يجب أن يكون الصورة بصيغة jpg أو png</p>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="userNumber">رقم المستخدم</label>
+                        <input type="text" spellcheck="false" formControlName="userNumber" name="userNumber"
+                            id="userNumber" placeholder="">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="name">اسم المستخدم بالعربى</label>
+                        <input type="text" spellcheck="false" formControlName="name" name="name" id="name"
+                            placeholder="">
+                    </div>
+                    <div class="input-box">
+                        <label for="nameEn">اسم المستخدم بالانجليزية</label>
+                        <input type="text" spellcheck="false" formControlName="nameEn" name="nameEn" id="nameEn"
+                            placeholder="">
+                    </div>
+                    <div class="input-box">
+                        <label for="email">البريد الالكترونى</label>
+                        <input type="text" spellcheck="false" formControlName="email" name="email" id="email"
+                            placeholder="">
+                    </div>
+                    <div class="input-box">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="text" spellcheck="false" formControlName="phone" name="phone" id="phone"
+                            placeholder="">
+                    </div>
+                    <div class="input-box">
+                        <label for="address">العنوان</label>
+                        <input type="text" spellcheck="false" formControlName="address" name="address" id="address"
+                            placeholder="">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">كلمة المرور</label>
+                        <input type="password" spellcheck="false" formControlName="password" name="password"
+                            id="password" placeholder="">
+                    </div>
+
+
                 </div>
-    
-                <div class="input-box">
-                    <label for="name">اسم المستخدم بالعربى</label>
-                    <input type="text" spellcheck="false" formControlName="name" name="name" id="name" placeholder="" >
+                <div class="row my-5">
+                    <div class="col-12 col-md-1"></div>
+                    <div class="col-12 col-md-5">
+                        <button class="saveButton">حفظ البيانات</button>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <button class="cancelButton">إلغاء</button>
+                    </div>
+                    <div class="col-12 col-md-1"></div>
                 </div>
-                <div class="input-box">
-                    <label for="nameEn">اسم المستخدم بالانجليزية</label>
-                    <input type="text" spellcheck="false" formControlName="nameEn" name="nameEn" id="nameEn" placeholder="" >
-                </div>
-                <div class="input-box">
-                    <label for="email">البريد الالكترونى</label>
-                    <input type="text" spellcheck="false" formControlName="email" name="email" id="email" placeholder="" >
-                </div>
-                <div class="input-box">
-                    <label for="phone">رقم الهاتف</label>
-                    <input type="text" spellcheck="false" formControlName="phone" name="phone" id="phone" placeholder="" >
-                </div>
-                <div class="input-box">
-                    <label for="address">العنوان</label>
-                    <input type="text" spellcheck="false" formControlName="address" name="address" id="address" placeholder="" >
-                </div>
-                <div class="input-box">
-                    <label for="password">كلمة المرور</label>
-                    <input type="password" spellcheck="false" formControlName="password" name="password" id="password" placeholder="" >
-                </div>
-                  
-          
-             </div>
-             <div class="row my-5">
-                <div class="col-12 col-md-1"></div>
-                <div class="col-12 col-md-5">
-                    <button class="saveButton">حفظ البيانات</button>
-                 </div>
-                 <div class="col-12 col-md-5">
-                     <button class="cancelButton">إلغاء</button>
-                 </div>
-                 <div class="col-12 col-md-1"></div>
-             </div>
-            </form> 
-            </div>
-            
-           
+            </form>
+        </div>
+
+
         <div class="col-12 col-md-6 mt-5 mt-md-0 ">
             <form [formGroup]="studentDataForm" (ngSubmit)="submitStudentData()">
-            <div class="studentInfo mx-md-2 mx-sm-0">
-            <h2>بيانات متعلقة بالطالب</h2>
-            <div class="input-box">
-                <label for="relativeType">صلة القرابة</label>
-                <select class="d-inline-block px-3 py-1 w-100" style="border-radius: 5px;border: .1px solid #575757;" formControlName="relativeType" name="relativeType" id="relativeType">
-                    <option *ngFor="let item of relativeTypes" class="p-4  d-inline-block" value="{{item.id}}">{{item.type}}</option>
-                </select>
-            </div>
-            <div class="input-box">
-                <label for="numberOfChildren">عدد الأبناء</label>
-                <input type="number" spellcheck="false" formControlName="numberOfChildren" name="numberOfChildren" id="numberOfChildren" placeholder="" >
-            </div>
-            <div class="input-box">
-                <label for="studentName">اسم الطالب</label>
-                <input type="text" spellcheck="false" formControlName="studentName" name="studentName" id="studentName" placeholder="" >
-            </div>
-            <div class="col-12 text-center">
-                <button type="submit" class="addStudentButton">+</button>
-            </div>
+                <div class="studentInfo mx-md-2 mx-sm-0">
+                    <h2>بيانات متعلقة بالطالب</h2>
+                    <div class="input-box">
+                        <label for="relativeType">صلة القرابة</label>
+                        <select  class="d-inline-block px-3 py-1 w-100"
+                            style="border-radius: 5px;border: .1px solid #575757; background-color: white;"  formControlName="relativeType"
+                            name="relativeType" id="relativeType">
+                            <option *ngFor="let item of relativeTypes" class="p-4  d-inline-block" value="{{item.id}}">
+                                {{item.type}}</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="numberOfChildren">عدد الأبناء</label>
+                        <input type="number" spellcheck="false" formControlName="numberOfChildren"
+                            name="numberOfChildren" id="numberOfChildren" placeholder="">
+                    </div>
+                    <div class="input-box">
+                        <label for="studentName">اسم الطالب</label>
+                        <input type="text" spellcheck="false" formControlName="studentName" name="studentName"
+                            id="studentName" placeholder="">
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="addStudentButton">+</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
     </div>
-    </div>       
-    </div>
+</div>

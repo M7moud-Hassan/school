@@ -1,0 +1,9 @@
+.menu_group{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    text-align: left;
+    border-radius: 10px;
+}
+.menu_group img{
+    cursor: pointer;
+}

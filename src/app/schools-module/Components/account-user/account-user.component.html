@@ -1,0 +1,414 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="main-profile">
+        <div class="title">
+            <h1 style="text-align: right;">: تفاصيل الحساب  <img src="assets/images/Arrow-Up.svg" alt=""></h1>
+        </div>
+        
+        <div style="clear: both;"></div>
+        <div class="container-image">
+            <img src="assets/images/user.png" alt="user">
+            <div class="edit-image" [style.top]="topPosition+'%'" >
+               <img src="assets/images/Camera.svg" alt="">
+            </div>
+        </div>
+        <div class="container-fauid">
+            <div class="row  m-0 p-0">
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="name">الاسم</label>
+                                <input class="emial-input" type="text" name="name" id="name" formControlName="name" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/user_p.svg" alt="name">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="nameEn">الاسم بالانجليزية</label>
+                                <input class="emial-input" type="text" name="nameEn" id="nameEn" formControlName="nameEn" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/user_p.svg" alt="name in english">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="userNumber">رقم المستخدم</label>
+                                <input class="emial-input" type="text" name="userNumber" id="userNumber" formControlName="userNumber" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/Exit.svg" alt="userNumber">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-fauid mt-4">
+            <div class="row  m-0 p-0">
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="email">البريد الالكتروني</label>
+                                <input class="emial-input" type="text" name="email" id="email" formControlName="email" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/email.svg" alt="email">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="phone">رقم الهاتف</label>
+                                <input class="emial-input" type="text" name="phone" id="phone" formControlName="phone"  spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/Call.svg" alt="phone">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="address">العنوان</label>
+                                <input class="emial-input" type="text" name="address" id="address" formControlName="address" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/Location.svg" alt="address">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="container-fauid mt-4">
+            <div class="row  m-0 p-0">
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="email">المدينة</label>
+                                <input class="emial-input" type="text" name="email" id="email" formControlName="email" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/profile.svg" alt="email">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                
+                
+            </div>
+        </div>
+        
+        <div style="height: 80px;"></div>
+        <hr>
+
+        <div class="title">
+            <h1 style="text-align: right;">: المجموعات  <img src="assets/images/Arrow-Up.svg" alt=""></h1>
+        </div>
+        
+        <div style="clear: both;"></div>
+
+        <div class="mt-5 mt-md-0 groupsTypes ">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="card border-0  shadow">
+                        <div class="card-body">
+                            <label class="checkbox-customize">
+                                <input type="checkbox" formControlName="outboundJourney" (change)="togglegoShow()" name="outboundJourney" id="outboundJourney">
+                                <span class="checkmark"></span>
+                                
+                              </label>
+                              <span>
+                                رحلة ذهاب
+                              </span>
+                        </div>
+                        <div *ngIf="goShow" class="container mt-2">
+                            <select  class="d-inline-block px-3 py-1 w-100 selectIte"
+                              formControlName="relativeType"
+                            name="relativeType" id="relativeType">
+                           <option value="1" selected>اختر مجموعة</option>
+                        </select>
+                        <p class="mt-2">حدد الأيام </p>
+                        <div class="row p-0 m-0 mb-4">
+                            <div class="col-3">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الكل
+                                  </span>
+                            </div>
+                            <div class="col-3">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    السبت
+                                  </span>
+                            </div>
+                
+                            <div class="col-3">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الأحد
+                                  </span>
+                            </div>
+                            
+                            <div class="col-3">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الاثنين
+                                  </span>
+                            </div>
+                            <div class="col-3"></div>
+                            <div class="col-3 mt-2">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الثلاثاء
+                                  </span>
+                            </div>
+                
+                            <div class="col-3 mt-2">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الأربعاء
+                                  </span>
+                            </div>
+                            
+                            <div class="col-3 mt-2">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الخميس
+                                  </span>
+                            </div>
+                        </div>
+                         </div>  
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card border-0  shadow">
+                        <div class="card-body">
+                            <label class="checkbox-customize">
+                                <input type="checkbox"  (change)="toggleReturn()" >
+                                <span class="checkmark"></span>
+                                
+                              </label>
+                              <span>
+                                رحلة عودة
+                              </span>
+                        </div>
+                        <div *ngIf="goReturn" class="container mt-2">
+                            <select  class="d-inline-block px-3 py-1 w-100 selectIte"
+                              formControlName="relativeType"
+                            name="relativeType" id="relativeType">
+                           <option value="1" selected>اختر مجموعة</option>
+                        </select>
+                        <p class="mt-2">حدد الأيام </p>
+                        <div class="row p-0 m-0 mb-4">
+                            <div class="col-3">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الكل
+                                  </span>
+                            </div>
+                            <div class="col-3">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    السبت
+                                  </span>
+                            </div>
+                
+                            <div class="col-3">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الأحد
+                                  </span>
+                            </div>
+                            
+                            <div class="col-3">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الاثنين
+                                  </span>
+                            </div>
+                            <div class="col-3"></div>
+                            <div class="col-3 mt-2">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الثلاثاء
+                                  </span>
+                            </div>
+                
+                            <div class="col-3 mt-2">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الأربعاء
+                                  </span>
+                            </div>
+                            
+                            <div class="col-3 mt-2">
+                                <label class="checkbox-customize">
+                                    <input type="checkbox"  >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span>
+                                    الخميس
+                                  </span>
+                            </div>
+                        </div>
+                         </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    
+        <div style="height: 80px;"></div>
+        <hr>
+        <div class="title">
+            <h1 style="text-align: right;">موقع المدرسة  <img src="assets/images/Arrow-Up.svg" alt=""></h1>
+        </div>
+        <div style="clear: both;">
+    
+        </div>
+        <div class="location-school">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div id="googleMap" style="width:100%;height:400px;">
+                        <google-map height="400px"
+                        width="100%"
+                        [center]="center"
+                        [zoom]="zoom"
+                       >  
+            </google-map>
+                    </div>
+                  
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="location">موقع المدرسة</label>
+                                <input class="emial-input" type="text" type="text" name="location" id="location" formControlName="location" spellcheck="false" placeholder=""
+                                    required>
+                                
+                                <div class="icon-email search-icon" dir="ltr">
+                                    <img src="assets/images/Search_light.svg" alt="edit">
+                                    <span >  بحث  </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+         
+         
+            </div>
+           <div style="clear: both;">
+            <div class="btns-save text-center">
+                <button class="rounded-button">حفظ التعديلات</button>
+                <div style="width: 3vw; height: 10px; display: inline-block;"></div>
+                <button class="outline-button">إلغاء</button>
+            </div>
+           </div>
+    </div>
+    </form>

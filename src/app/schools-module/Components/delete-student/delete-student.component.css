@@ -1,0 +1,14 @@
+.btn-red{
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+.btn-cancel{
+    padding: 10px;
+outline: 1px solid black;
+    color: black;
+    border-radius: 15px;
+    text-align: center;
+}

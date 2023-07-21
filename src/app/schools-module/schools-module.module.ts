@@ -49,6 +49,15 @@ import { DoneDeliveryComponent } from './Components/done-delivery/done-delivery.
 import { AdsComponent } from './Components/ads/ads.component';
 import { NewAdsComponent } from './Components/new-ads/new-ads.component';
 import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
+import { SelectGroupsComponent } from './Components/select-groups/select-groups.component';
+import { DetailsStudentComponent } from './Components/details-student/details-student.component';
+import { AccountUserComponent } from './Components/account-user/account-user.component';
+import { DeleteStudentComponent } from './Components/delete-student/delete-student.component';
+import { LocationComponent } from './Components/location/location.component';
+import { StudentPasswordComponent } from './Components/student-password/student-password.component';
 
 
 @NgModule({
@@ -90,6 +99,12 @@ import { DetailsAdsComponent } from './Components/details-ads/details-ads.compon
     AdsComponent,
     NewAdsComponent,
     DetailsAdsComponent,
+    SelectGroupsComponent,
+    DetailsStudentComponent,
+    AccountUserComponent,
+    DeleteStudentComponent,
+    LocationComponent,
+    StudentPasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -103,7 +118,10 @@ import { DetailsAdsComponent } from './Components/details-ads/details-ads.compon
     GoogleMapsModule,
     MatIconModule,   
     MatDialogModule ,
-    EditorModule
+    EditorModule,
+    DragDropModule,
+    OverlayModule,
+    PortalModule
   ]
 })
 export class SchoolsModuleModule { }

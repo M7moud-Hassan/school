@@ -75,7 +75,7 @@ padding-bottom: 10px;
 /* --------------------------start search------------------------------------------ */
 
 .search-box {
-width: 90%;
+width: 100%;
 /* height: 70%; */
 background-color: #fff;
 }
@@ -118,7 +118,7 @@ color: #aaa;
 .action-button{
 background-color: transparent;
 border: 1px solid silver;
-border-radius: 7px;
+border-radius: 15px;
 display: inline-block;
 padding: 4px 10px;
 margin-left: 7px;
@@ -181,7 +181,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 .dropdownlist2 {
   position: absolute;
-  width: 22%;
+  width: 25%;
   /*
   in each component define the top value  
   top: 35%;

@@ -14,64 +14,69 @@
                     <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن ولى الأمر">
                 </div>
                 <div class="btns">
-                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
-                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
-                       <div class="row">
-                        <div class="col-6 mt-2 text-end">
-                            <label for="radio_1">
-                                <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton"> اسم ولى الأمر
-                            </label>
+                    <img src="assets/images/Filter.svg" alt=""  #trigger (click)="showOverlay()"  class="schoolLogoButtton">
+                    <ng-template #overlayTemplate>
+                        <div class="positioned-element">
+                            <div dir="rtl" *ngIf="isSchoolAccountDropdownVisible" class="dropasd p-2">
+                                <div class="row">
+                                 <div class="col-6 mt-2 text-end">
+                                     <label for="radio_1">
+                                         <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton"> اسم ولى الأمر
+                                     </label>
+                                 </div>
+                                 <div class="col-6 mt-2 text-end">
+                                     <label for="radio_2">
+                                         <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> رقم المستخدم
+                                     </label>
+                                 </div>
+                                 <div class="col-6 mt-2 text-end">
+                                     <label for="radio_3">
+                                         <input type="radio" id="radio_3" name="searchBy" value="childName" class="radioButton"> اسم الابـــن
+                                     </label>
+                                 </div>
+                                </div>
+                                <hr/>
+                                <div class="row">
+                                 <div class="col-4 pt-2">تاريخ الاضافة</div>
+                                 <div class="col-8">
+                                     <input type="date" name="addDate" class="form-control datepicker dateInput">
+                                 </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                 <div class="col-4">
+                                     <label for="radio_1_1">
+                                         <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
+                                     </label>
+                                 </div>
+                                 <div class="col-5">
+                                     <label for="radio_1_2">
+                                         <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
+                                     </label>
+                                 </div>
+                                 <div class="col-3"></div>
+                                </div>
+                                <hr>
+                                <div class="row pb-3">
+                                 <div class="col-4 pt-2">عدد الأبناء</div>
+                                 <div class="col-6">
+                                     <select class="d-inline-block pt-1 w-100" style="border-radius: 5px;border: .1px solid #575757;" name="children_Number" >
+                                         <option *ngFor="let item of childrenNumber" class="d-inline-block" value="{{item}}">{{item}}</option>
+                                     </select>
+                                 </div>
+                                 <div class="col-2"></div>
+                                </div>
+                             </div>
                         </div>
-                        <div class="col-6 mt-2 text-end">
-                            <label for="radio_2">
-                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> رقم المستخدم
-                            </label>
-                        </div>
-                        <div class="col-6 mt-2 text-end">
-                            <label for="radio_3">
-                                <input type="radio" id="radio_3" name="searchBy" value="childName" class="radioButton"> اسم الابـــن
-                            </label>
-                        </div>
-                       </div>
-                       <hr/>
-                       <div class="row">
-                        <div class="col-4 pt-2">تاريخ الاضافة</div>
-                        <div class="col-8">
-                            <input type="date" name="addDate" class="form-control datepicker dateInput">
-                        </div>
-                       </div>
-                       <hr>
-                       <div class="row">
-                        <div class="col-4">
-                            <label for="radio_1_1">
-                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
-                            </label>
-                        </div>
-                        <div class="col-5">
-                            <label for="radio_1_2">
-                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
-                            </label>
-                        </div>
-                        <div class="col-3"></div>
-                       </div>
-                       <hr>
-                       <div class="row pb-3">
-                        <div class="col-4 pt-2">عدد الأبناء</div>
-                        <div class="col-6">
-                            <select class="d-inline-block pt-1 w-100" style="border-radius: 5px;border: .1px solid #575757;" name="children_Number" >
-                                <option *ngFor="let item of childrenNumber" class="d-inline-block" value="{{item}}">{{item}}</option>
-                            </select>
-                        </div>
-                        <div class="col-2"></div>
-                       </div>
-                    </div>
+                      </ng-template>
+                 
                 </div>
             </div>
         </div>
     </div>
     <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
         <div class="col-12 col-md-5">
-            <a routerLink="/school/parents" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">اضافة ولى الأمر </div></a>
+            <a routerLink="/school/parents" class="text-muted"><div class="action-button btn-add" ><img src="assets/images/add.png" alt="">اضافة ولى الأمر </div></a>
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/Delete.svg" alt="">حذف </div></a>
         </div>
@@ -79,8 +84,8 @@
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/uploadModel.svg" alt="">تحميل نموذج </div></a>
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/upload.svg" alt="">رفع بيانات </div></a>
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/print.svg" alt="">طباعة </div></a>
-            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
-            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
+            <a routerLink="#" class="text-muted"><div  style="background-color: #E2FFE3;"  class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
+            <a routerLink="#" class="text-muted"><div style="background-color: #F9E7E7;" class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
         </div>
     </div>
     <div>
