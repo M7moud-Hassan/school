@@ -1,16 +1,13 @@
-<h3  class="fw-bolder" style="font-size: 18px;">المجموعات :</h3>
-<div class="groups"  >
-        <div class="row">
-            <div *ngFor="let item of groups" class="group" class="col-12 col-md-3">
-                <div class="cardGroupItem">
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="text-start pt-4 pb-3" style="color: #3AA7CE;font-size: 17px;">{{item.groupName}}</div>
-                        </div>
-                        <div class="col-4">
-                            <img src="assets/images/group.png" alt="group">
-                        </div>
+<div class="container-fluid">
+    <h3  class="fw-bolder" style="font-size: 18px;">المجموعات :</h3>
+    <div class="row">
+        <div *ngFor="let item of groups" class="col-12 col-md-3">
+            <div class="groupItemContainer">
+                <div class="row">
+                    <div class="col-9 center">
+                        <div class="text-start pt-4 pb-3" style="color: #3AA7CE;font-size: 17px;">{{item.groupName}}</div>
                     </div>
+                </div>
                     <div class="row mt-2">
                         <div class="col-5 text-center">
                             <div style="color: #575757;"> المشــــرف : </div>
@@ -46,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
+    </div>
 </div>

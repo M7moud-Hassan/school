@@ -1,0 +1,188 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="main-profile">
+        <div class="title">
+            <h1 style="text-align: right;">: تفاصيل الحساب</h1>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="row">
+            <div class="col-md-5 col-12"></div>
+            <div class="col-md-2 col-12 text-end">
+                <div class='contStack' (click)="fileInput.click()" >
+                    <div class="imageCont">
+                        <img src="assets/images/userAccount.jpg"  (click)="fileInput.click()" width="120" height="120" alt="user">
+                        <input type="file" name="image" formControlName="image" accept="image/*" (change)="onFileSelected($event)" #fileInput style="display:none">
+                    </div>
+                    <div class="iconCont"></div>
+                </div>
+            </div>
+            <div class="col-5"></div>
+        </div>
+        <div class="container-fauid">
+            <div class="row  m-0 p-0">
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="nameAr">الاسم</label>
+                                <input class="emial-input" type="text" name="name" id="nameAr" formControlName="nameAr" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/profile.svg" alt="name">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="nameEn">الاسم بالانجليزية</label>
+                                <input class="emial-input" type="text" name="nameEn" id="nameEn" formControlName="nameEn" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/profile.svg" alt="name in english">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="userNumber">رقم المستخدم</label>
+                                <input class="emial-input" type="text" name="userNumber" id="userNumber" formControlName="userNumber" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/userNumber.svg" alt="userNumber">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div style="height: 30px;">
+    
+        </div>
+        <div class="container-fauid">
+            <div class="row  m-0 p-0">
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="email">البريد الالكتروني</label>
+                                <input class="emial-input" type="text" name="email" id="email" formControlName="email" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/email.svg" alt="email">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="phone">رقم الهاتف</label>
+                                <input class="emial-input" type="text" name="phone" id="phone" formControlName="phone"  spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/Call.svg" alt="phone">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="address">العنوان</label>
+                                <input class="emial-input" type="text" name="address" id="address" formControlName="address" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/Location.svg" alt="address">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div style="height: 80px;"></div>
+        <div class="title">
+            <h1 style="text-align: right;">موقع المدرسة </h1>
+        </div>
+        <div style="clear: both;">
+    
+        </div>
+        <div class="location-school">
+            <div class="left">
+                <div class="main-index">
+                    <div class="right-div text-center">
+                        <div class="input-box">
+                            <label for="schoolLocation">موقع المدرسة</label>
+                            <input class="emial-input" type="text" type="text" name="schoolLocation" id="schoolLocation" formControlName="schoolLocation" spellcheck="false" placeholder=""
+                                required>
+                            
+                            <div class="icon-email search-icon" dir="ltr">
+                                <img src="assets/images/Search_light.svg" alt="edit">
+                                <span >  بحث  </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div id="googleMap" style="width:100%;height:400px;">
+                <img src="assets/images/Figmap.png" width="100%" height="100%" alt="">
+                </div>
+              
+            </div>
+            </div>
+           <div style="clear: both;">
+            <div class="btns-save text-center">
+                <div style="height: 80px;"></div>
+                <div class="row">
+                    <div class="col-12 col-md-4"></div>
+                    <div class="col-12 col-md-4">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <button class="saveButton">حفظ التعديلات</button>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <button class="cancelButton">إلغاء</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4"></div>
+                </div>
+            </div>
+           </div>
+    </div>
+    </form>
+

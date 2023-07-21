@@ -56,6 +56,9 @@ import { DoneDeliveryComponent } from './Components/done-delivery/done-delivery.
 import { AdsComponent } from './Components/ads/ads.component';
 import { NewAdsComponent } from './Components/new-ads/new-ads.component';
 import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
+import { ChangePasswordComponent } from './Components/change-password/change-password.component';
+import { SocialMediaComponent } from './Components/social-media/social-media.component';
+import { SchoolAccountDetailsComponent } from './Components/school-account-details/school-account-details.component';
 
 
 @NgModule({
@@ -103,6 +106,9 @@ import { DetailsAdsComponent } from './Components/details-ads/details-ads.compon
     AdsComponent,
     NewAdsComponent,
     DetailsAdsComponent,
+    ChangePasswordComponent,
+    SocialMediaComponent,
+    SchoolAccountDetailsComponent,
   ],
   imports: [
     CommonModule,

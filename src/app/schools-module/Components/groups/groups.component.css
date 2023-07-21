@@ -81,7 +81,7 @@
   .cardGroupItem{
     background-color: white;
     border-radius: 20px;
-    width: 100%;
+    /* width: 100%; */
     display: block;
     margin: auto;
     margin-bottom: 20px;
@@ -89,4 +89,15 @@
 }
 .cardGroupItem img{
     width: 100%;
+}
+
+.groupItemContainer{
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: white;
+    background-image: url('/assets/images/group.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 60px 60px;
+    margin-bottom: 20px;
 }

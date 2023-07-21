@@ -31,6 +31,9 @@ import { DoneDeliveryComponent } from './Components/done-delivery/done-delivery.
 import { AdsComponent } from './Components/ads/ads.component';
 import { NewAdsComponent } from './Components/new-ads/new-ads.component';
 import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
+import { ChangePasswordComponent } from './Components/change-password/change-password.component';
+import { SocialMediaComponent } from './Components/social-media/social-media.component';
+import { SchoolAccountDetailsComponent } from './Components/school-account-details/school-account-details.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -59,7 +62,10 @@ const routes: Routes = [
   {path:'done-delivery',component:DoneDeliveryComponent},
   {path:'ads',component:AdsComponent},
   {path:'new-ads',component:NewAdsComponent},
-  {path:'details-ads',component:DetailsAdsComponent}
+  {path:'details-ads',component:DetailsAdsComponent},
+  {path:'change-password',component:ChangePasswordComponent},
+  {path:'social-media',component:SocialMediaComponent},
+  {path:'school-account-details',component:SchoolAccountDetailsComponent},
   
 ];
 

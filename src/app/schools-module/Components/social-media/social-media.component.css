@@ -1,0 +1,19 @@
+.input-box input {
+    text-align: right;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 22px;
+    box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+    transition: all 0.2s linear;
+  }
+  .imageBg{
+    height: calc(75vh);
+    width: 100%;
+    background-image: url('/assets/images/media.svg');
+    background-position: center;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+  }

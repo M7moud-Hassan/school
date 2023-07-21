@@ -133,7 +133,8 @@ body{
     text-align: center;
     position: absolute;
     top: 15%;
-    width: 8%;
+    /* width: 120px; */
+    padding: 15px 10px;
     background-color: white;
     z-index: 10;
     border-radius: 10px;
@@ -212,8 +213,8 @@ body{
   
   .checkmark {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 2px;
+    left: 5px;
     height: 15px;
     width: 15px;
     background-color: #eee;

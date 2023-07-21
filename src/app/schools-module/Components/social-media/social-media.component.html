@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h2 class="mb-4">مواقع التواصل الاجتماعي :</h2>
+            <form [formGroup]="socilaMediaLinksForm" (ngSubmit)="submit()">
+            <div class="row mb-3">
+                <div class="col-10">
+                    <div class="input-box">
+                        <input type="text" spellcheck="false" name="facebook" id="facebook" formControlName="facebook">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="/assets/images/facebook2.svg">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-10">
+                    <div class="input-box">
+                        <input type="text" spellcheck="false" name="whatsApp" id="whatsApp" formControlName="whatsApp">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="/assets/images/whatsApp.svg">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-10">
+                    <div class="input-box">
+                        <input type="text" spellcheck="false" name="twitter" id="twitter" formControlName="twitter">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="/assets/images/twitter.svg">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-10">
+                    <div class="input-box">
+                        <input type="text" spellcheck="false" name="instagram" id="instagram" formControlName="instagram">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="/assets/images/instagram.svg">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-10">
+                    <div class="input-box">
+                        <input type="text" spellcheck="false" name="telegram" id="telegram" formControlName="telegram">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="/assets/images/telegram.svg">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-10">
+                    <div class="input-box">
+                        <input type="text" spellcheck="false" name="snapChat" id="snapChat" formControlName="snapChat">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="/assets/images/snapChat.svg">
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-md-2"></div>
+                <div class="col-12 col-md-6">
+                    <button class="saveButton">حفظ</button>
+                </div>
+                <div class="col-12 col-md-4"></div>
+            </div>
+        </form>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="imageBg"></div>
+        </div>
+    </div>
+</div>

@@ -231,24 +231,16 @@ export class ReportTripsComponent {
   }
 
   openDialog() {
+    const dialogRef = this.dialog.open(PrintPopUpComponent, {
+      width: '40%',
+      direction:'rtl',
+      panelClass:'custom-dialog-container',
+      data: { name: 'Angular Material' }
+    });
 
-    const dialogConfig = new MatDialogConfig();
-  
-    dialogConfig.position = {
-      top: `${this.elementRef.nativeElement.offsetTop - 30}px`,
-      left: `${this.elementRef.nativeElement.offsetLeft}px`
-    };
-    const dialogRef: MatDialogRef<PrintPopUpComponent> = this.dialog.open(PrintPopUpComponent, dialogConfig);
-
-    // dialogRef.afterOpened().subscribe(() => {
-    //   this.imageSource =
-    //  "assets/images/close.svg";
-    // });
-  
-    // dialogRef.afterClosed().subscribe(() => {
-    //   this.imageSource =
-    //  "assets/images/message.svg";
-    // });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog closed:', result);
+    });
   }
   @ViewChild('dialog', { static: true }) set content(content: ElementRef) {
     this.elementRef = content;
