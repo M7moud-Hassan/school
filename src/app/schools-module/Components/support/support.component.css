@@ -1,3 +1,10 @@
 .dropdownlist2{
-    top: 55%;
+    top: 45%;
+    left: 30px;
+}
+.topHeaderContainer{
+    background-image: url('/assets/images/support.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }

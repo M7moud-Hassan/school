@@ -20,6 +20,10 @@ import { NewSupervisorComponent } from './Components/new-supervisor/new-supervis
 import { GroupPopupComponent } from './Components/group-popup/group-popup.component';
 import { SupportComponent } from './Components/support/support.component';
 import { NewAskComponent } from './Components/new-ask/new-ask.component';
+import { AbsenceListComponent } from './Components/absence-list/absence-list.component';
+import { AddAbsenceOrderComponent } from './Components/add-absence-order/add-absence-order.component';
+import { TripsAndGroupsComponent } from './Components/trips-and-groups/trips-and-groups.component';
+import { NewTripGroupComponent } from './Components/new-trip-group/new-trip-group.component';
 import { NotificationsComponent } from './Components/notifications/notifications.component';
 import { NewNotificationComponent } from './Components/new-notification/new-notification.component';
 import { DeliveryComponent } from './Components/delivery/delivery.component';
@@ -46,6 +50,10 @@ const routes: Routes = [
   {path:'popup',component:GroupPopupComponent},
   {path:'support',component:SupportComponent},
   {path:'new-ask',component:NewAskComponent},
+  {path:'absence-list',component:AbsenceListComponent},
+  {path:'new-absence-order',component:AddAbsenceOrderComponent},
+  {path:'trips-and-groups',component:TripsAndGroupsComponent},
+  {path:'new-group',component:NewTripGroupComponent},
   {path:'notifications',component:NotificationsComponent},
   {path:'new-notification',component:NewNotificationComponent},
   {path:'delivery',component:DeliveryComponent},

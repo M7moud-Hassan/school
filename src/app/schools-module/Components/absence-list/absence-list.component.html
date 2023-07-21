@@ -2,18 +2,23 @@
     <div class="topHeaderContainer">
     <div class="row" style="padding: 30px 30px 10px 30px;">
         <div class="col-12 col-md-4">
-            <h3 class="fw-bolder float-end" style="font-size: 18px;">طلبات الدعم الفني<span class="users-count">12 طلب</span></h3>
+            <h3 class="fw-bolder float-end" style="font-size: 18px;">إدارة الغيابات<span class="users-count">12 مستخدم</span></h3>
         </div>
         <div class="col-12 col-md-4 float-start">
            
         </div>
     </div>
     <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
-        <div class="col-12 col-md-5">
-            <a routerLink="/school/new-ask" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">طلب جديد </div></a>
+        <div class="col-12 col-md-8">
+            <a routerLink="/school/new-absence-order" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">إضافة غياب</div></a>
+            <a routerLink="/school/profile" class="text-muted"><div class="action-button"><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/Delete.svg" alt="">حذف </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/print.svg" alt="">طباعة </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
         </div>
-        <div class="col-md-2"></div>
-        <div class="col-12 col-md-5 text-start">
+        <!-- <div class="col-md-2"></div> -->
+        <div class="col-12 col-md-4 text-start">
             <div class="search-box">
                 <div class="form-group has-search-box">
                     <span class="form-control-feedback">
@@ -25,37 +30,33 @@
                     <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
                     <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
                        <div class="row">
-                        <div class="col-6 mt-2 text-end">
+                        <div class="col-5 mt-2 text-end" style="font-size: 12px;">
                             <label for="radio_1">
-                                <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton">اسم المرسل
+                                <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton">اسم الطالب
                             </label>
                         </div>
-                        <div class="col-6 mt-2 text-end">
+                        <div class="col-7 mt-2 text-end">
                             <label for="radio_2">
-                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> عنوان الطلب
+                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton">  أضيف بواسطة من
                             </label>
                         </div>
                        </div>
                        <hr/>
-                       <div class="row">
+                       <div class="row pb-2">
                         <div class="col-4 pt-2">تاريخ الاضافة</div>
                         <div class="col-8">
                             <input type="date" name="addDate" class="form-control datepicker dateInput">
                         </div>
-                       </div>
-                       <hr>
-                       <div class="row">
-                        <div class="col-4">
-                            <label for="radio_1_1">
-                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> تم الرد 
-                            </label>
+                        <hr class="mt-3">
+                        <div class="col-4 pt-2">تاريخ الاضافة</div>
+                        <div class="col-8">
+                            <input type="date" name="addDate" class="form-control datepicker dateInput">
                         </div>
-                        <div class="col-5">
-                            <label for="radio_1_2">
-                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> لم يتم الرد 
-                            </label>
+                        <hr class="mt-3">
+                        <div class="col-4 pt-2">تاريخ الاضافة</div>
+                        <div class="col-8">
+                            <input type="date" name="addDate" class="form-control datepicker dateInput">
                         </div>
-                        <div class="col-3"></div>
                        </div>
                        
                     </div>
@@ -68,38 +69,32 @@
         <table class="table table">
             <tr class="tableHeader">
                 <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()"  id="checkbox-all" /></td>
-                <td>الطلب  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">
+                <td>الطالب  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="20">20</option>
                   </select></td>
-                  <td>تاريخ الطلب</td>
-                  <td>حالة الطلب</td>
-                <td>التحكم</td>
+                  <td>من تاريخ</td>
+                  <td>الى تاريخ</td>
+                  <td>السبب</td>
+                  <td>تم بواسطة</td>
+                <td>تاريخ الإضافة</td>
             </tr>
              <tr class="mt-3">
                 <td colspan="7"></td>
              </tr>
-            <tbody *ngFor="let item of help_data | paginate: 
+            <tbody *ngFor="let item of absence_data | paginate: 
                 { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
                 <tr id="first_{{i}}">
                     <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="item.isSelected" (change)="checkBoxChange()" id="checkbox-{{i}}" /></td>
-                    <td>{{item.title}}</td>
-                    <td>{{item.date}}</td>
-                     <td>
-                         <!-- anther image called replay.svg -->
-                         <div class="d-inline-block text-end">
-                            <span class="text-start px-4 d-inline-block"> {{item.status?'فعـــــال':'غير فعال'}} </span>
-                        </div>
-                        <div class="d-inline-block text-end">
-                            <img class="  d-inline-block" src="assets/images/{{item.status?'replay.svg':'no-replay.svg'}}" alt="no-replay">
-                        </div>
-                    </td>
-                    <td>
-                        <a routerLink="#"  (click)="openDialogDetails()" class="d-inline-block ms-2"> <img src="assets/images/info.svg"  width="20px" height="20px" alt=""> </a>
-                        <a routerLink="#" class="d-inline-block"> <img src="assets/images/lock.svg" width="20px" height="20px" alt=""> </a>
-                    </td>
+                    <td><img src="{{item.image}}" width="25" height="25" class="ms-2" alt=""> {{item.studentName}}</td>
+                    <td>{{item.from}}</td>
+                    <td>{{item.to}} </td>
+                    <td>{{item.reason}}</td>
+                    <td>{{item.by}}</td>
+                    <td>{{item.createdAt}}</td>
+                </tr>
             </tbody>
         </table>
     </div>

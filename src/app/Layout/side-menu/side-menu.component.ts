@@ -14,7 +14,7 @@ export class SideMenuComponent {
   [
 
   ]},
-    {id:2,isSelected:false,link:'/school/tracking',label:'رحلات التتبع',selectedIcon:'assets/images/trackingLight.svg',unSelectedIcon:'assets/images/tracking.svg',subLink:
+    {id:2,isSelected:false,link:'/school/today-journey',label:'رحلات التتبع',selectedIcon:'assets/images/trackingLight.svg',unSelectedIcon:'assets/images/tracking.svg',subLink:
   [
 
   ]},
@@ -31,7 +31,7 @@ export class SideMenuComponent {
     {id:50,isSelected:true,sub_link:'/school/supervisor-list',label:'المشرفين',selectedIcon:'assets/images/busLight.svg',unSelectedIcon:'assets/images/subLinkSupervisor.svg',},
     {id:51,isSelected:false,sub_link:'/school/bus-list',label:'الباصات',selectedIcon:'assets/images/subLinkbusLight.svg',unSelectedIcon:'assets/images/bus.svg',},
   ]},
-    {id:6,isSelected:false,link:'#',label:'الرحلات و المجموعات',selectedIcon:'assets/images/tripLight.svg',unSelectedIcon:'assets/images/trips.svg',subLink:
+    {id:6,isSelected:false,link:'/school/trips-and-groups',label:'الرحلات و المجموعات',selectedIcon:'assets/images/tripLight.svg',unSelectedIcon:'assets/images/trips.svg',subLink:
   [
 
   ]},
@@ -43,11 +43,11 @@ export class SideMenuComponent {
   [
 
   ]},
-    {id:9,isSelected:false,link:'#',label:'طلبات الغياب',selectedIcon:'assets/images/absentLight.svg',unSelectedIcon:'assets/images/absent.svg',subLink:
+    {id:9,isSelected:false,link:'/school/absence-list',label:'طلبات الغياب',selectedIcon:'assets/images/absentLight.svg',unSelectedIcon:'assets/images/absent.svg',subLink:
   [
 
   ]},
-    {id:10,isSelected:false,link:'#',label:'الدعم الفنى',selectedIcon:'assets/images/helpLight.svg',unSelectedIcon:'assets/images/help.svg',subLink:
+    {id:10,isSelected:false,link:'/school/support',label:'الدعم الفنى',selectedIcon:'assets/images/helpLight.svg',unSelectedIcon:'assets/images/help.svg',subLink:
   [
 
   ]},

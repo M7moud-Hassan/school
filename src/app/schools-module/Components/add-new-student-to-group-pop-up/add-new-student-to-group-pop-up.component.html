@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row headerPopUp">
+        <div class="col-12 col-md-11">
+            اضافة طالب جديد للمجموعة :
+        </div>
+        <div class="col-12 col-md-1">
+            <a routerLink="#"><img src="assets/images/closeD.svg" ></a>
+        </div>
+    </div>
+    <div class="row mt-5 mb-4">
+        <form>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-3">
+                    <label for="studentName" class="defaultLabel">اسم الطالب</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="defaultTextBox" name="studentName" id="studentName" placeholder="اسم الطالب الجديد" formControlName="">
+                </div>
+            </div>
+            <div>
+                <label  class="defaultLabel">الرحلات</label>
+            </div>
+            <div class="row px-3">
+                    <div class="col-5 checkBoxContainer">
+                        <div class="row">
+                            <div class="col-3">
+                                <input type="checkbox" class="SquarecheckboxButton" name="outboundTrip" id="outboundTrip" formControlName="">
+                            </div>
+                            <div class="col-9">
+                                <label for="outboundTrip" class="defaultLabel">رحلة الذهاب</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-5 checkBoxContainer">
+                        <div class="row">
+                            <div class="col-3">
+                                <input type="checkbox" class="SquarecheckboxButton" name="returnTrip" id="returnTrip" formControlName="">
+                            </div>
+                            <div class="col-9">
+                                <label for="returnTrip" class="defaultLabel">رحلة العودة</label>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <button class="saveButton">حفظ التعديل</button>
+                </div>
+                <div class="col-3">
+                    <button class="cancelButton">إلغاء</button>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>

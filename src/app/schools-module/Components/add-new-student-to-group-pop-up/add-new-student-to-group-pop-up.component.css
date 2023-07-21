@@ -1,0 +1,7 @@
+.checkBoxContainer{
+    border: 1px solid lightgray; 
+    padding: 7px 5px;
+    border-radius: 7px;
+    text-align: right;
+    padding-bottom: 0px;
+}

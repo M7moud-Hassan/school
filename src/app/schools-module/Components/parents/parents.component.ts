@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../Services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NewParentsModel, StudentDataModel } from '../../Core/Models/new-parents-model';
 import { ParentService } from '../../Services/parent.service';

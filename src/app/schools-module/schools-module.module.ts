@@ -40,6 +40,13 @@ import { SupportComponent } from './Components/support/support.component';
 import { DetailsAskComponent } from './Components/details-ask/details-ask.component';
 import { NewAskComponent } from './Components/new-ask/new-ask.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { AbsenceListComponent } from './Components/absence-list/absence-list.component';
+import { AddAbsenceOrderComponent } from './Components/add-absence-order/add-absence-order.component';
+import { TripsAndGroupsComponent } from './Components/trips-and-groups/trips-and-groups.component';
+import { NewTripGroupComponent } from './Components/new-trip-group/new-trip-group.component';
+import { ChangeSupervisorPopUpComponent } from './Components/change-supervisor-pop-up/change-supervisor-pop-up.component';
+import { AddNewStudentToGroupPopUpComponent } from './Components/add-new-student-to-group-pop-up/add-new-student-to-group-pop-up.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { NotificationsComponent } from './Components/notifications/notifications.component';
 import { NewNotificationComponent } from './Components/new-notification/new-notification.component';
 import { ShowNotificationComponent } from './Components/show-notification/show-notification.component';
@@ -90,6 +97,12 @@ import { StudentPasswordComponent } from './Components/student-password/student-
     SupportComponent,
     DetailsAskComponent,
     NewAskComponent,
+    AbsenceListComponent,
+    AddAbsenceOrderComponent,
+    TripsAndGroupsComponent,
+    NewTripGroupComponent,
+    ChangeSupervisorPopUpComponent,
+    AddNewStudentToGroupPopUpComponent,
     NotificationsComponent,
     NewNotificationComponent,
     ShowNotificationComponent,
@@ -121,7 +134,8 @@ import { StudentPasswordComponent } from './Components/student-password/student-
     EditorModule,
     DragDropModule,
     OverlayModule,
-    PortalModule
+    PortalModule,
+    MatAutocompleteModule
   ]
 })
 export class SchoolsModuleModule { }

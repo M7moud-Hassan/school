@@ -230,3 +230,196 @@ input[type="radio"]:checked {
 .custom-dialog-container .mat-dialog-container {
   padding: 0px !important;
 }
+
+.tox:not([dir=rtl]) .tox-toolbar__group{
+  background-color: #F06030;
+  color: white;
+}
+.tox .tox-tbtn svg{
+  filled: white;
+}
+.tox .tox-tbtn svg {
+  display: block;
+  fill: #ebf0f5;
+}
+
+
+/* //////////////////////////////////////////////dialog--------------------------------- */
+.custom-dialog-container .mat-dialog-container {
+  padding: 0px !important;
+}
+a:hover{
+  cursor: pointer;
+}
+
+.headerPopUp{
+  background-color: #3AA7CE;
+  padding: 20px 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+.headerPopUp img{
+  width: 100%;
+  height: 100%;
+}
+/* //////////////////////////////////////////////dialog--------------------------------- */
+
+/* =================================form field================================================================ */
+.defaultMainFromHeader{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  margin-right: 15px;
+}
+.defaultLabel{
+  padding: 0px 5px 10px 0px;
+  font-size: 14px;
+  color: black;
+  font-weight: 600;
+}
+.defaultTextBox{
+  display: inline-block;
+  width: 100%;
+  padding: 7px;
+  font-size: 13px;
+  color: black;
+  border-radius: 7px;
+  margin-bottom: 25px;
+  border: .1px solid #3AA7CE;
+}
+.defaultTextBox:focus{
+  display: inline-block;
+  border: .1px solid #3AA7CE;
+}
+.defaultFormContainer{
+  background-color: white;
+  padding: 30px 15px;
+  border-radius: 10px;
+}
+
+
+input[type=radio].SquareRadioButton {
+  border: 1px solid #fff;
+  padding: 0.5em;
+  -webkit-appearance: none;
+  background: url('/assets/images/rect.svg') no-repeat center center;
+  background-size: 30px;
+  border: none;
+  border-radius: 0;
+}
+
+
+input[type=radio].SquareRadioButton:checked {
+  background: url('/assets/images/activeRect.svg') no-repeat center center;
+  background-size: 30px;
+  border: none;
+  border-radius: 0;
+}
+
+
+input[type=radio].SquareRadioButton:focus {
+  outline-color: transparent;
+  border-radius: 0;
+}
+
+input[type=checkbox].SquarecheckboxButton {
+  border: 1px solid #fff;
+  padding: 0.5em;
+  -webkit-appearance: none;
+  background: url('/assets/images/rect.svg') no-repeat center center;
+  background-size: 30px;
+  border: none;
+  border-radius: 0;
+}
+
+
+input[type=checkbox].SquarecheckboxButton:checked {
+  background: url('/assets/images/activeRect.svg') no-repeat center center;
+  background-size: 30px;
+  border: none;
+  border-radius: 0;
+}
+
+
+input[type=checkbox].SquarecheckboxButton:focus {
+  outline-color: transparent;
+  border-radius: 0;
+}
+
+input[type="date"].defaultDateInput::-webkit-calendar-picker-indicator {
+  background: url('/assets/images/Calendar.svg') no-repeat;
+  background-size: 25px;
+  padding: 5px;
+}
+.defaultSelectOption{
+
+
+
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  border-radius: 7px;
+  border: .1px solid #3AA7CE;
+
+
+   /* styling */
+   background-color: white;
+   border: .1px solid #3AA7CE;
+   border-radius: 4px;
+   display: inline-block;
+   font: inherit;
+   line-height: 1.5em;
+   padding: 0.5em 3.5em 0.5em 1em;
+ 
+   /* reset */
+ 
+   margin: 0;      
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+ 
+
+
+  
+  background-image:
+  linear-gradient(45deg, transparent 50%, gray 50%),
+  linear-gradient(135deg, gray 50%, transparent 50%),
+  linear-gradient(to right, #ccc, #ccc);
+background-position:
+  calc(100% - 20px) calc(1em + 2px),
+  calc(100% - 15px) calc(1em + 2px),
+  calc(100% - 2.5em) 0.5em;
+background-size:
+  5px 5px,
+  5px 5px,
+  1px 1.5em;
+background-repeat: no-repeat;
+direction: rtl;
+}
+.defaultSelectOption:focus{
+  border: .1px solid #3AA7CE;
+
+
+  background-image:
+  linear-gradient(45deg, #3AA7CE 50%, transparent 50%),
+  linear-gradient(135deg, transparent 50%, #3AA7CE 50%),
+  linear-gradient(to right, #ccc, #ccc);
+background-position:
+  calc(100% - 15px) 1em,
+  calc(100% - 20px) 1em,
+  calc(100% - 2.5em) 0.5em;
+background-size:
+  5px 5px,
+  5px 5px,
+  1px 1.5em;
+background-repeat: no-repeat;
+border-color: #3AA7CE;
+outline: 0;
+  
+}
+
+
+/* =================================form field================================================================ */

@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="content">
-                            <button class="itemActionButton">تتبع الرحلة</button>
+                            <button routerLink="/school/tracking" class="itemActionButton">تتبع الرحلة</button>
                             <button class="itemActionButton orangeButton">انهاء الرحلة</button>
                         </div>
                     </div>
@@ -90,42 +90,45 @@
                     <div class="row">
                         <div class="col-10">
                             <p class="title">مجموعة <span class="itemTitle">{{item.groupNameAr}}</span> <span> ( {{item.groupNameEn}} )</span></p>
-                            <div class="row mt-3">
-                                <div class="col-5 MiddleGroup">
-                                    <span>{{item.supervisorName}}</span>
-                                <img src="assets/images/reload.svg" alt="">
-                                </div>
-                                <div class="col-4 MiddleGroup">
-                                    <span>عدد الطلاب {{item.studentCount}}</span>
+                            <div>
+                                <span class="MiddleGroup">
+                                    <span class="spanTitle">{{item.supervisorName}}</span>
+                                    <img src="assets/images/reload.svg" alt="">
+                                </span>
+                                <span>
+                                    <span class="spanTitle">عدد الطلاب {{item.studentCount}}</span>
                                     <img src="assets/images/reload.svg"  alt="">
-                                </div>
-                                <div class="col-3 MiddleGroup">
+                                </span>
+                                <span>
                                     <span class="activeStateTransparent"> 
                                         <span [style.backgroundColor]="item.active?'#3AA7CE':'#ff0000'" class="dotColor"></span>
-                                        <span [style.color]="item.active?'#3AA7CE':'#ff0000'" class=" pe-2">{{item.active?'فعال':'غير فعال'}}</span>
+                                        <span [style.color]="item.active?'#3AA7CE':'#ff0000'" class="spanTitle">{{item.active?'فعال':'غير فعال'}}</span>
                                     </span>
-                                </div>
+                                </span>
                             </div>
+                            
                         </div>
-                        <div class="col-2">
+                        <!-- <div class="col-2">
                             <img src="assets/images/group.png" class="cardImage" alt="">
-                        </div>
+                        </div> -->
                     </div>
                     <hr class="px-5 mx-3">
-                    <div class="row">
-                        <div class="col-12 mb-md-0 col-md-3">
-                            <img src="assets/images/Calendar.svg"  alt="">
-                            <span>{{item.date}}</span>
-                        </div>
-                        <div class="col-12 mb-md-0 col-md-6">
-                            <span>الإنهاء باستخدام الكود</span>
-                            <span class="activeState" [style.backgroundColor]="item.codeActive?'#E0FFD9':'#FFF0EB'" > <span [style.backgroundColor]="item.codeActive?'#3AA7CE':'#ff0000'" class="dotColor"></span> {{item.codeActive?'فعال':'غير فعال'}}</span>
-                        </div>
-                        <div class="col-12 mb-md-0 col-md-3 actionIcons">
-                            <a routerLink="#"><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
-                            <a routerLink="#"><img src="assets/images/Edit.svg"   width="30" height="30" alt="" ></a>
-                            <a routerLink="#"><img src="assets/images/Delete.svg" width="30" height="30" alt=""></a>
-                        </div>
+                    <div class="row ">
+                        <span class="d-inline-block">
+                            <span class="MiddleGroup">
+                                <img src="assets/images/Calendar.svg"  alt="">
+                                <span>{{item.date}}</span>
+                            </span>
+                            <span class="MiddleGroup ">
+                                <span>الإنهاء باستخدام الكود</span>
+                                <span class="activeState" [style.backgroundColor]="item.codeActive?'#E0FFD9':'#FFF0EB'" > <span [style.backgroundColor]="item.codeActive?'#24FF00':'#ff0000'" class="dotColor"></span> {{item.codeActive?'فعال':'غير فعال'}}</span>
+                            </span>
+                            <span class="actionIcons float-start">
+                                <a routerLink="#"><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
+                                <a routerLink="#"><img src="assets/images/Edit.svg"   width="30" height="30" alt="" ></a>
+                                <a routerLink="#"><img src="assets/images/Delete.svg" width="30" height="30" alt=""></a>
+                            </span>
+                        </span>
                     </div>
                 </div>
             </div>

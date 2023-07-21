@@ -12,44 +12,55 @@ export class SupportComponent {
 
   isSchoolAccountDropdownVisible:boolean = false;
   
-  supervisor_data = [
-    {id:1,name:'مشرف رقم 1',phoneNumber:'01987373873731',groupName:'المجموعة رقم 1',lastActiveDate:'15/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:2,name:'مشرف رقم 2',phoneNumber:'01987373873831',groupName:'المجموعة رقم 2',lastActiveDate:'13/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:3,name:'مشرف رقم 3',phoneNumber:'01987373873791',groupName:'المجموعة رقم 3',lastActiveDate:'12/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:4,name:'مشرف رقم 4',phoneNumber:'01987373873721',groupName:'المجموعة رقم 4',lastActiveDate:'17/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:5,name:'مشرف رقم 5',phoneNumber:'01987373873231',groupName:'المجموعة رقم 5',lastActiveDate:'19/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:6,name:'مشرف رقم 6',phoneNumber:'01987373873431',groupName:'المجموعة رقم 6',lastActiveDate:'125/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:7,name:'مشرف رقم 7',phoneNumber:'01987373873901',groupName:'المجموعة رقم 7',lastActiveDate:'12/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:8,name:'مشرف رقم 8',phoneNumber:'01987373873101',groupName:'المجموعة رقم 8',lastActiveDate:'15/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:9,name:'مشرف رقم 9',phoneNumber:'01987373873873',groupName:'المجموعة رقم 9',lastActiveDate:'16/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:10,name:'مشرف رقم 10',phoneNumber:'01987373873878',groupName:'المجموعة رقم 10',lastActiveDate:'20/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    
-    {id:11,name:'1مشرف رقم 1',phoneNumber:'01987373873731',groupName:'المجموعة رقم 11',lastActiveDate:'15/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:12,name:'1مشرف رقم 2',phoneNumber:'01987373873831',groupName:'المجموعة رقم 12',lastActiveDate:'13/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:13,name:'1مشرف رقم 3',phoneNumber:'01987373873791',groupName:'المجموعة رقم 13',lastActiveDate:'12/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:14,name:'1مشرف رقم 4',phoneNumber:'01987373873721',groupName:'المجموعة رقم 14',lastActiveDate:'17/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:15,name:'1مشرف رقم 5',phoneNumber:'01987373873231',groupName:'المجموعة رقم 15',lastActiveDate:'19/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:16,name:'1مشرف رقم 6',phoneNumber:'01987373873431',groupName:'المجموعة رقم 16',lastActiveDate:'125/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:17,name:'1مشرف رقم 7',phoneNumber:'01987373873901',groupName:'المجموعة رقم 17',lastActiveDate:'12/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:18,name:'1مشرف رقم 8',phoneNumber:'019873738731031',groupName:'المجموعة رقم 18',lastActiveDate:'15/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:19,name:'1مشرف رقم 9',phoneNumber:'01987373873873',groupName:'المجموعة رقم 19',lastActiveDate:'16/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:20,name:'مشرف رقم 20',phoneNumber:'01987373873878',groupName:'المجموعة رقم 20',lastActiveDate:'20/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
+  help_data = [
+    {id:1,title:' مشكلة فى حساب المشرف رقم 1',date:'15/6/2013',isSelected:false,status:true,},
+    {id:2,title:' مشكلة فى حساب المشرف رقم 2',date:'15/6/2013',isSelected:false,status:true,},
+    {id:3,title:' مشكلة فى حساب المشرف رقم 3',date:'15/6/2013',isSelected:false,status:false,},
+    {id:4,title:' مشكلة فى حساب المشرف رقم 4',date:'15/6/2013',isSelected:false,status:true,},
+    {id:5,title:' مشكلة فى حساب المشرف رقم 5',date:'15/6/2013',isSelected:false,status:true,},
+    {id:6,title:' مشكلة فى حساب المشرف رقم 6',date:'15/6/2013',isSelected:false,status:true,},
+    {id:7,title:' مشكلة فى حساب المشرف رقم 7',date:'15/6/2013',isSelected:false,status:true,},
+    {id:8,title:' مشكلة فى حساب المشرف رقم 8',date:'15/6/2013',isSelected:false,status:false,},
+    {id:9,title:' مشكلة فى حساب المشرف رقم 9',date:'15/6/2013',isSelected:false,status:true,},
+    {id:10,title:' مشكلة فى حساب المشرف رقم 10',date:'15/6/2013',isSelected:false,status:true,},
 
-    {id:21,name:'2مشرف رقم 1',phoneNumber:'01987373873731',groupName:'المجموعة رقم 21',lastActiveDate:'15/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:22,name:'2مشرف رقم 2',phoneNumber:'01987373873831',groupName:'المجموعة رقم 22',lastActiveDate:'13/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:23,name:'2مشرف رقم 3',phoneNumber:'01987373873791',groupName:'المجموعة رقم 23',lastActiveDate:'12/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:24,name:'2مشرف رقم 4',phoneNumber:'01987373873721',groupName:'المجموعة رقم 24',lastActiveDate:'17/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:25,name:'2مشرف رقم 5',phoneNumber:'01987373873231',groupName:'المجموعة رقم 25',lastActiveDate:'19/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:26,name:'2مشرف رقم 6',phoneNumber:'01987373873431',groupName:'المجموعة رقم 26',lastActiveDate:'125/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
-    {id:27,name:'2مشرف رقم 7',phoneNumber:'01987373873901',groupName:'المجموعة رقم 27',lastActiveDate:'12/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:28,name:'2مشرف رقم 8',phoneNumber:'01987373873103',groupName:'المجموعة رقم 81',lastActiveDate:'15/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:29,name:'2مشرف رقم 9',phoneNumber:'01987373873873',groupName:'المجموعة رقم 28',lastActiveDate:'16/6/2013',isSelected:false,isActive:true,image:'/assets/images/user.png'},
-    {id:20,name:'مشرف رقم 20',phoneNumber:'01987373873878',groupName:'المجموعة رقم 29',lastActiveDate:'20/6/2013',isSelected:false,isActive:false,image:'/assets/images/user.png'},
+    {id:11,title:' مشكلة فى حساب المشرف رقم 11',date:'15/6/2013',isSelected:false,status:true,},
+    {id:12,title:' مشكلة فى حساب المشرف رقم 12',date:'15/6/2013',isSelected:false,status:true,},
+    {id:13,title:' مشكلة فى حساب المشرف رقم 13',date:'15/6/2013',isSelected:false,status:true,},
+    {id:14,title:' مشكلة فى حساب المشرف رقم 14',date:'15/6/2013',isSelected:false,status:true,},
+    {id:15,title:' مشكلة فى حساب المشرف رقم 15',date:'15/6/2013',isSelected:false,status:false,},
+    {id:16,title:' مشكلة فى حساب المشرف رقم 16',date:'15/6/2013',isSelected:false,status:true,},
+    {id:17,title:' مشكلة فى حساب المشرف رقم 17',date:'15/6/2013',isSelected:false,status:true,},
+    {id:18,title:' مشكلة فى حساب المشرف رقم 18',date:'15/6/2013',isSelected:false,status:true,},
+    {id:19,title:' مشكلة فى حساب المشرف رقم 19',date:'15/6/2013',isSelected:false,status:false,},
+    {id:20,title:'مشكلة فى حساب المشرف رقم 20 ',date:'15/6/2013',isSelected:false,status:true,},
+    
+    {id:21,title:' مشكلة فى حساب المشرف رقم 21',date:'15/6/2013',isSelected:false,status:false,},
+    {id:22,title:' مشكلة فى حساب المشرف رقم 22',date:'15/6/2013',isSelected:false,status:true,},
+    {id:23,title:' مشكلة فى حساب المشرف رقم 23',date:'15/6/2013',isSelected:false,status:true,},
+    {id:24,title:' مشكلة فى حساب المشرف رقم 24',date:'15/6/2013',isSelected:false,status:true,},
+    {id:25,title:' مشكلة فى حساب المشرف رقم 25',date:'15/6/2013',isSelected:false,status:true,},
+    {id:26,title:' مشكلة فى حساب المشرف رقم 26',date:'15/6/2013',isSelected:false,status:false,},
+    {id:27,title:' مشكلة فى حساب المشرف رقم 27',date:'15/6/2013',isSelected:false,status:false,},
+    {id:28,title:' مشكلة فى حساب المشرف رقم 28',date:'15/6/2013',isSelected:false,status:false,},
+    {id:29,title:' مشكلة فى حساب المشرف رقم 29',date:'15/6/2013',isSelected:false,status:false,},
+    {id:30,title:' مشكلة فى حساب المشرف رقم 30',date:'15/6/2013',isSelected:false,status:true,},
+
+    {id:41,title:' مشكلة فى حساب المشرف رقم 41',date:'15/6/2013',isSelected:false,status:true,},
+    {id:42,title:' مشكلة فى حساب المشرف رقم 42',date:'15/6/2013',isSelected:false,status:false,},
+    {id:43,title:' مشكلة فى حساب المشرف رقم 43',date:'15/6/2013',isSelected:false,status:true,},
+    {id:44,title:' مشكلة فى حساب المشرف رقم 44',date:'15/6/2013',isSelected:false,status:false,},
+    {id:45,title:' مشكلة فى حساب المشرف رقم 45',date:'15/6/2013',isSelected:false,status:true,},
+    {id:46,title:' مشكلة فى حساب المشرف رقم 46',date:'15/6/2013',isSelected:false,status:true,},
+    {id:47,title:' مشكلة فى حساب المشرف رقم 47',date:'15/6/2013',isSelected:false,status:true,},
+    {id:48,title:' مشكلة فى حساب المشرف رقم 48',date:'15/6/2013',isSelected:false,status:true,},
+    {id:49,title:' مشكلة فى حساب المشرف رقم 49',date:'15/6/2013',isSelected:false,status:true,},
+    {id:50,title:' مشكلة فى حساب المشرف رقم 50',date:'15/6/2013',isSelected:false,status:false,},
   ];
 
   pageNo: number = 1;
   pageSize: number = 10;
-  total :number =  this.supervisor_data.length;
+  total :number =  this.help_data.length;
 
   selectAll:boolean = false;
   detailsVisible: boolean[] = [false, false, false];
@@ -63,23 +74,23 @@ export class SupportComponent {
     return this.detailsVisible[row - 1];
   }
   toggleSelectAll(){
-    this.supervisor_data.forEach(e=>e.isSelected=this.selectAll);
+    this.help_data.forEach(e=>e.isSelected=this.selectAll);
   }
   checkBoxChange(){
     if(this.isAllCheckboxSelected()) this.selectAll=true;
     else this.selectAll=false;
   }
   isAllCheckboxSelected(){
-    return this.supervisor_data.every(e=>e.isSelected==true);
+    return this.help_data.every(e=>e.isSelected==true);
   }
   get getAllSelectedItems(){
-    return this.supervisor_data.filter(e=>e.isSelected);
+    return this.help_data.filter(e=>e.isSelected);
   }
 
   toggleSchoolAccountDropDown(){
     this.isSchoolAccountDropdownVisible = ! this.isSchoolAccountDropdownVisible;
   }
-  openSelectGroupDialog(){
+  openChangeGroupSupervisorDialog(){
     this.openDialog();
   }
   openDialog() {
