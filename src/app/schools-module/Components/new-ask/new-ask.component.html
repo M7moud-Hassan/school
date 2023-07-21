@@ -1,50 +1,52 @@
 <div class="container-fluid">
-    <div>
-        <span class="prev">الدعم الفني</span>
-        <img src="assets/images/next.svg" alt="arrow_left.svg">
-        <span>اضافة طلب</span>
-
-    </div>
-    <div class="new pt-4">
-        <p>إضافة طلب جديد :</p>
-        <div class="row">
-            <div class="col-3 pt-2">عنوان الطلب :</div>
-            <div class="col-8">
-                <div class="input-box">
-                    <input type="text" spellcheck="false" name="email" id="email" formControlName="email">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div>
+                <span class="prev">الدعم الفني</span>
+                <img src="assets/images/next.svg" alt="arrow_left.svg">
+                <span>اضافة طلب</span>
+        
+            </div>
+            <div class="new pt-4 mt-4">
+                <p>إضافة طلب جديد :</p>
+                <div class="row">
+                    <div class="col-12 col-md-3 pt-2">عنوان الطلب :</div>
+                    <div class="col-12 col-md-8">
+                        <div class="input-box">
+                            <input type="text" spellcheck="false" name="email" id="email" formControlName="email">
+                        </div>
+                    </div>
                 </div>
+                <p class="my-3 my-md-1">نص الطلب :</p>
+                <div class="px-2 py-3">
+                    <editor
+                apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
+                 [init]="{
+             height: 300,
+             menubar: false,
+             plugins: [
+               'advlist autolink lists link image charmap print preview anchor',
+               'searchreplace visualblocks code fullscreen',
+               'insertdatetime media table paste code help wordcount'
+             ],
+             toolbar:
+               'undo redo | formatselect | bold italic backcolor | \
+               alignleft aligncenter alignright alignjustify | \
+               bullist numlist outdent indent | removeformat | help'
+           }"></editor>
+                </div>
+           <div class="row my-2">
+            <div class="col-12 col-md-1"></div>
+            <div class="col-12 col-md-5">
+                <button class="saveButton">ارسال</button>
+            </div>
+            <div class="col-12 col-md-5">
+                <button class="cancelButton">إالغاء</button>
+            </div>
+            <div class="col-12 col-md-1"></div>
+           </div>
             </div>
         </div>
-        <p>نص الطلب :</p>
-        <editor
-        apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
-         [init]="{
-     height: 300,
-     menubar: false,
-     plugins: [
-       'advlist autolink lists link image charmap print preview anchor',
-       'searchreplace visualblocks code fullscreen',
-       'insertdatetime media table paste code help wordcount'
-     ],
-     toolbar:
-       'undo redo | formatselect | bold italic backcolor | \
-       alignleft aligncenter alignright alignjustify | \
-       bullist numlist outdent indent | removeformat | help'
-   }"></editor>
-   <div class="row text-center p-4">
-    <div class="col-2">
-    </div>
-    <div class="col-4">
-        <div class="btn-rounded d-flex align-items-center justify-content-center">
-            إرسال
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="btn-out d-flex align-items-center justify-content-center outline-info">
-            إرسال
-        </div>
-    </div>
-    
-   </div>
+        <div class="col-12 col-md-6"></div>
     </div>
 </div>

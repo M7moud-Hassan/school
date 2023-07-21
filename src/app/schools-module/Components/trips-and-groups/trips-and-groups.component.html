@@ -1,0 +1,318 @@
+<div class="container-fluid">
+<div class="row" style="padding: 30px 30px 10px 30px;">
+    <div class="col-12 col-md-12">
+        <a (click)="changePage(1)" class="headerSimpleLink"  [class.headerSimpleLinkActive]="showGroupsManagment"><span> إدارة المجموعات  </span></a>
+        <a (click)="changePage(2)" class="headerSimpleLink"  [class.headerSimpleLinkActive]="showTripReport"><span> تقارير الرحلات </span></a>
+        <a (click)="changePage(3)" class="headerSimpleLink"  [class.headerSimpleLinkActive]="showtripAppointment"><span> تحديد موعد الرحلات </span></a>
+        <!-- <h3 class="fw-bolder float-end" style="font-size: 16px;"><span class="text-decoration-underline"> إدارة المجموعات  </span><span style="font-size: 14px;" class="text-muted px-3" >تقارير الرحلات </span><span style="font-size: 14px;" class="text-muted px-3">تحديد موعد الرحلات</span></h3> -->
+    </div>
+</div>
+<div *ngIf="showGroupsManagment"  class="row mt-2 mb-5 " style="padding: 0px 30px;">
+    <div class="col-12 col-md-8">
+        <a routerLink="/school/new-group" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;color: white;"><img src="assets/images/add.png" alt="">إضافة مجموعة جديدة</div></a>
+        <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/print.svg" alt="">طباعة </div></a>
+        <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
+        <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
+    </div>
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-12 col-md-4 text-start">
+        <div class="search-box">
+            <div class="form-group has-search-box">
+                <span class="form-control-feedback">
+                    <img src="assets/images/Search.svg" alt="">
+                </span>
+                <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن مجموعة ">
+            </div>
+            <div class="btns">
+                <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
+                <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
+                   <div class="row" style="font-size: 10px;">
+                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                        <label for="radio_1">
+                            <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton">اسم المجموعة
+                        </label>
+                    </div>
+                    <div class="col-7 mt-2 text-end">
+                        <label for="radio_2">
+                            <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton">    احد طلاب المجموعة
+                        </label>
+                    </div>
+                    <div class="col-5 mt-2 text-end">
+                        <label for="radio_2">
+                            <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton">    اسم المشرف
+                        </label>
+                    </div>
+                    <div class="col-7 mt-2 text-end">
+                        <label for="radio_2">
+                            <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton">   عدد طلاب المجموعة
+                        </label>
+                    </div>
+                   </div>
+                   <hr>
+                   
+                  <div class="row">
+                    <label class="d-inline-block text-end">نوع الحساب</label>
+                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                        <label for="active">
+                            <input type="radio" id="active" name="status" value="active" class="radioButton"> فعال
+                        </label>
+                    </div>
+                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                        <label for="inActive">
+                            <input type="radio" id="inActive" name="status" value="inActive" class="radioButton"> غير فعال
+                        </label>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                      <label class="d-inline-block text-end">الإنهاء باستخدام الكود</label>
+                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                        <label for="active_code">
+                            <input type="radio" id="active_code" name="code" value="active" class="radioButton"> فعال
+                        </label>
+                    </div>
+                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                        <label for="inActive_code">
+                            <input type="radio" id="inActive_code" name="code" value="inActive" class="radioButton"> غير فعال
+                        </label>
+                    </div>
+                  </div>
+                   <hr/>
+                   <div class="row pb-2">
+                    <div class="col-4 pt-1">تاريخ الاضافة</div>
+                    <div class="col-8">
+                        <input type="date" name="addDate" class="form-control py-1 datepicker dateInput">
+                    </div>
+                    
+                   </div>
+                   
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
+<div *ngIf="showGroupsManagment" >
+<div  class="row">
+    <div *ngFor="let item of journies | paginate: 
+    { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index" class="col-12 col-md-6">
+        <div class="tripItem">
+            <div class="row">
+                <div class="col-10">
+                    <p class="title">مجموعة <span class="itemTitle">{{item.groupNameAr}}</span> <span> ( {{item.groupNameEn}} )</span></p>
+                    <div>
+                        <span class="MiddleGroup">
+                            <span class="spanTitle">{{item.supervisorName}}</span>
+                            <img src="assets/images/reload.svg" alt="">
+                        </span>
+                        <span>
+                            <span class="spanTitle">عدد الطلاب {{item.studentCount}}</span>
+                            <img src="assets/images/reload.svg"  alt="">
+                        </span>
+                        <span>
+                            <span class="activeStateTransparent"> 
+                                <span [style.backgroundColor]="item.active?'#3AA7CE':'#ff0000'" class="dotColor"></span>
+                                <span [style.color]="item.active?'#3AA7CE':'#ff0000'" class="spanTitle">{{item.active?'فعال':'غير فعال'}}</span>
+                            </span>
+                        </span>
+                    </div>
+                    
+                </div>
+                <!-- <div class="col-2">
+                    <img src="assets/images/group.png" class="cardImage" alt="">
+                </div> -->
+            </div>
+            <hr class="px-5 mx-3">
+            <div class="row ">
+                <span class="d-inline-block">
+                    <span class="MiddleGroup">
+                        <img src="assets/images/Calendar.svg"  alt="">
+                        <span>{{item.date}}</span>
+                    </span>
+                    <span class="MiddleGroup ">
+                        <span>الإنهاء باستخدام الكود</span>
+                        <span class="activeState" [style.backgroundColor]="item.codeActive?'#E0FFD9':'#FFF0EB'" > <span [style.backgroundColor]="item.codeActive?'#24FF00':'#ff0000'" class="dotColor"></span> {{item.codeActive?'فعال':'غير فعال'}}</span>
+                    </span>
+                    <span class="actionIcons float-start">
+                        <a (click)="addStudentToGroupDialog()"><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
+                        <a (click)="openChangeGroupSupervisorDialog()"><img src="assets/images/Edit.svg"   width="30" height="30" alt="" ></a>
+                        <a routerLink="#"><img src="assets/images/Delete.svg" width="30" height="30" alt=""></a>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-5 m-0">
+    <div class="d-flex align-items-center justify-content-center">
+        <pagination-controls (pageChange)="pageNo = $event" id="foo" nextLabel="" previousLabel=""></pagination-controls>
+    </div>
+    <div class="d-flex align-items-center justify-content-center">اجمالى عدد المجموعات  : {{total}}</div>
+</div>
+</div>
+<div *ngIf="showTripReport" class="pt-4">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div  class="formContainer">
+                <form [formGroup]="tripSearchReportForm" (ngSubmit)="getJourneyReportSubmit()">
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-12">
+                            <div class="dropdownMenu pb-3">
+                                <label for="groupId" class="fw-bolder fs-6 pb-3">اختر المجموعة</label>
+                                <select class="d-inline-block px-3 py-1 w-100 " style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="groupId" name="groupId" id="groupId">
+                                    <option *ngFor="let item of groups" class="p-4 d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="dropdownMenu pb-3">
+                                <label for="supervisorId" class="fw-bolder fs-6 pb-3">اختر المشرف</label>
+                                <select class="d-inline-block px-3 py-1 w-100" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="supervisorId" name="supervisorId" id="supervisorId">
+                                    <option *ngFor="let item of supervisors" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-12">
+                            <div class="dropdownMenu pb-3">
+                                <label for="studentId" class="fw-bolder fs-6 pb-3">اختر الطالب</label>
+                                <select class="d-inline-block px-3 py-1 w-100" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="studentId" name="studentId" id="studentId">
+                                    <option *ngFor="let item of students" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12" dir="rtl">
+                            <div class="form-group" >
+                                <label for="journeyDate"  class="fw-bolder fs-6 pb-2 mb-2">تاريخ الرحلة</label>
+                                <input type="date" id="journeyDate"   name="journeyDate" formControlName="journeyDate" style="font-size: 14px; padding:7.5px 15px;" class="form-control datepicker dateInput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-12">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="card-body" >
+                                        <label class="checkbox-customize">
+                                            <input type="checkbox" formControlName="outboundJourney" name="outboundJourney" id="outboundJourney">
+                                            <span class="checkmark"></span>
+                                            
+                                          </label>
+                                          <span style="font-size: 15px;">
+                                            رحلة ذهاب
+                                          </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="card-body">
+                                        <label class="checkbox-customize">
+                                            <input type="checkbox" formControlName="returnJourney" name="returnJourney" id="returnJourney">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <span style="font-size: 15px;">
+                                            رحلة عودة
+                                          </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6"></div>
+                    </div>
+                    <div style="margin-top:80px;"></div>
+                    <div class="row">
+                        <div class="col-12 col-md-1"></div>
+                        <div class="col-12 col-md-5">
+                            <button class="saveButton">بحث</button>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <button class="cancelButton">إلغــاء</button>
+                        </div>
+                        <div class="col-12 col-md-1"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-12 col-md-6"></div>
+    </div>
+</div>
+<div *ngIf="showtripAppointment" class="pt-4">
+    <h4 class="fw-bold">وقت الذهاب</h4>
+    <div class="row">
+        <div class="col-12 col-md-9">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-3 ">
+                            <label for="from_outbound" class="pt-2 fs-6">من وقت</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="time" class="form-control" name="from_outbound" id="from_outbound">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-3 ">
+                            <label for="to_outbound" class="pt-2 fs-6">إلى وقت</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="time" class="form-control" name="to_outbound" id="to_outbound">
+                        </div>
+                        <div class="col-1 text-right pt-2">
+                            <img src="/assets/images/Edit.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3"></div>
+    </div>
+    <div class="py-4"></div>
+    <h4 class="fw-bold"> وقت العودة</h4>
+    <div class="row">
+        <div class="col-12 col-md-9">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-3 ">
+                            <label for="return_outbound" class="pt-2 fs-6">من وقت</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="time" class="form-control" name="return_outbound" id="return_outbound">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-3 ">
+                            <label for="return_to_outbound" class="pt-2 fs-6">إلى وقت</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="time" class="form-control" name="return_to_outbound" id="return_to_outbound">
+                        </div>
+                        <div class="col-1 text-right pt-2">
+                            <img src="/assets/images/Edit.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3"></div>
+    </div>
+    <div class="row pt-5">
+        <div class="col-12 col-md-6">
+            <div class="row pt-5">
+                <div class="col-12 col-md-1"></div>
+                <div class="col-12 col-md-5">
+                    <button class="saveButton">حفظ التعديل</button>
+                </div>
+                <div class="col-12 col-md-5">
+                    <button class="cancelButton">إلغاء</button>
+                </div>
+                <div class="col-12 col-md-1"></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6"></div>
+    </div>
+</div>
+</div>

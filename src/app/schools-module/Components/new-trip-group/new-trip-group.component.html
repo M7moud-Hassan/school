@@ -1,0 +1,60 @@
+
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div  class="defaultFormContainer">
+                    <form [formGroup]="newTripGroupForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div>
+                                <div class="defaultMainFromHeader">بيانات المجموعة : </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                    <label for="groupNameAr" class="defaultLabel">اسم المجموعة</label>
+                                    <input type="text" class="defaultTextBox" formControlName="groupNameAr" name="groupNameAr" id="groupNameAr"  >
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <label for="groupNameEn" class="defaultLabel">الاسم بالإنجليزية </label>
+                                <input type="text" class="defaultTextBox" formControlName="groupNameEn" name="groupNameEn" id="groupNameEn"  >
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-12">
+                                <div class="row" style="margin-bottom: 25px;">
+                                    <label class="defaultLabel">حالة QR Code</label>
+                                    <div class="col-12 col-md-6">
+                                        <input type="radio"  class="SquareRadioButton" value="true" formControlName="qrCodeStatus" name="qrCode" id="qrCodeStatus_active"  >
+                                        <label for="qrCodeStatus_active" class="defaultLabel">فعال</label>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <input type="radio"  class="SquareRadioButton" value="false" formControlName="qrCodeStatus" name="qrCode" id="qrCodeStatus_inActive"  >
+                                        <label for="qrCodeStatus_inActive" class="defaultLabel">غير فعال</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="defaultLabel" for="students">إضافة طلاب</label>
+                                <select class="defaultSelectOption" formControlName="students" name="students" id="students">
+                                    <option *ngFor="let item of students" value="{{item.id}}">{{item.name}}</option>                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div style="margin-top:80px;"></div>
+                        <div class="row">
+                            <div class="col-12 col-md-1"></div>
+                            <div class="col-12 col-md-5">
+                                <button class="saveButton">بحث</button>
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <button class="cancelButton">إلغــاء</button>
+                            </div>
+                            <div class="col-12 col-md-1"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-6"></div>
+        </div>
+</div>

@@ -1,0 +1,47 @@
+.dropdownlist2{
+    top: 42%;
+    left: 40px;
+}
+a:not([href]):not([class]), a:not([href]):not([class]):hover{
+    display: inline-block;
+    border: 0px;
+    background-color: transparent;
+}
+.headerSimpleLink:hover{
+    cursor: pointer;
+}
+.headerSimpleLink,.headerSimpleLinkActive{
+    font-size: 14px;
+    color: gray;
+    display: inline-block;
+    margin: 5px 10px;
+}
+.headerSimpleLinkActive{
+    display: inline-block;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+}
+.headerSimpleLink span{
+    display: inline-block;
+}
+.headerSimpleLinkActive span{
+    text-decoration: underline;
+}
+
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .example-input {
+    max-width: 100%;
+    width: 300px;
+  }
