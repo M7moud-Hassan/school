@@ -129,7 +129,7 @@ export class EditSupervisorPopUpComponent implements OnInit {
 
     if(this.editSupervisorForm.valid){
       this.mapValues();
-      this.supervisorService.addNewSupervisor(this.editSupervisorModel).subscribe({
+      this.supervisorService.editBus(this.editSupervisorModel).subscribe({
         next:(response)=>{
 
         },

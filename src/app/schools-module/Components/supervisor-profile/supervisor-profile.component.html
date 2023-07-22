@@ -1,0 +1,515 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="fw-bold fs-6" >تفاصيل الحساب : <img (click)="isDetailsVisable = !isDetailsVisable" style="cursor: pointer;" src="{{isDetailsVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-3 d-inline-block"></div>
+            <img src="/assets/images/dashedLine.svg">
+        </div>
+        <div class="col-12 col-md-8"></div>
+    </div>
+    <div *ngIf="isDetailsVisable">
+        <div class="row">
+            <div class="col-12 col-md-5"></div>
+            <div class="col-12 col-md-2">col-12 col-md-2</div>
+            <div class="col-12 col-md-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div>
+                    <label for="" class="defaultLabel">العنوان</label>
+                    <div class="input-container">
+                        <input type="text" name="" id="" formControlName class="input-field">
+                        <div class="icon-container">
+                            <img class="edit-icon" src="/assets/images/Edit.svg">
+                            <div class="vertical-bar"></div>
+                        </div>
+                        <img class="end-icon" src="/assets/images/Edit.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="fw-bold fs-6" > المجموعات :  <img (click)="isGroupsVisable = !isGroupsVisable" style="cursor: pointer;" src="{{isGroupsVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-5 d-inline-block"></div>
+            <img src="/assets/images/dashedLine.svg">
+        </div>
+        <div class="col-12 col-md-8"></div>
+    </div>
+    <div *ngIf="isGroupsVisable">
+        <div class="row">
+            <div class="col-12 col-md-5">col-12 col-md-5</div>
+            <div class="col-12 col-md-5">col-12 col-md-5</div>
+            <div class="col-12 col-md-2">col-12 col-md-2</div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="fw-bold fs-6" >موقع المنزل :  <img (click)="isLocationVisable = !isLocationVisable" style="cursor: pointer;" src="{{isLocationVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-5 d-inline-block"></div>
+            <img src="/assets/images/dashedLine.svg">
+        </div>
+        <div class="col-12 col-md-8"></div>
+    </div>
+    <div *ngIf="isLocationVisable">
+        <div class="row">
+            <div class="col-12 col-md-6">col-12 col-md-6</div>
+            <div class="col-12 col-md-6">col-12 col-md-6</div>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-12 col-md-4"></div>
+        <div class="col-12 col-md-4">
+            <div class="row">
+                <div class="col-12 col-md-6"><button class="saveButton">حفظ التعديل</button></div>
+                <div class="col-12 col-md-6"><button class="cancelButton">إلغاء</button></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4"></div>
+    </div>
+</div> -->
+
+
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="main-profile">
+        <div class="title">
+            <h1 style="text-align: right;">: تفاصيل الحساب  <img (click)="isDetailsVisable = !isDetailsVisable" style="cursor: pointer;" src="{{isDetailsVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-3 d-inline-block"></h1>
+        </div>
+        
+        <div style="clear: both;"></div>
+        <div *ngIf="isDetailsVisable">
+        <div class="row">
+            <div class="col-md-5 col-12"></div>
+            <div class="col-md-2 col-12 text-end">
+                <div class='contStack' (click)="fileInput.click()" >
+                    <div class="imageCont">
+                        <img src="assets/images/userAccount.jpg"  (click)="fileInput.click()" width="120" height="120" alt="user">
+                        <input type="file" name="image" formControlName="image" accept="image/*" (change)="onFileSelected($event)" #fileInput style="display:none">
+                    </div>
+                    <div class="iconCont"></div>
+                </div>
+            </div>
+            <div class="col-5"></div>
+        </div>
+        <div class="container-fauid">
+            <div class="row  m-0 p-0">
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="name">الاسم</label>
+                                <input class="emial-input" type="text" name="name" id="name" formControlName="name" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/user_p.svg" alt="name">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="nameEn">الاسم بالانجليزية</label>
+                                <input class="emial-input" type="text" name="nameEn" id="nameEn" formControlName="nameEn" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/user_p.svg" alt="name in english">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="userNumber">رقم المستخدم</label>
+                                <input class="emial-input" type="text" name="userNumber" id="userNumber" formControlName="userNumber" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/Exit.svg" alt="userNumber">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-fauid mt-4">
+            <div class="row  m-0 p-0">
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="email">البريد الالكتروني</label>
+                                <input class="emial-input" type="text" name="email" id="email" formControlName="email" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/email.svg" alt="email">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="phone">رقم الهاتف</label>
+                                <input class="emial-input" type="text" name="phone" id="phone" formControlName="phone"  spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/Call.svg" alt="phone">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="address">العنوان</label>
+                                <input class="emial-input" type="text" name="address" id="address" formControlName="address" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/Location.svg" alt="address">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="container-fauid mt-4">
+            <div class="row  m-0 p-0">
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="city">المدينة</label>
+                                <input class="emial-input" type="text" name="city" id="city" formControlName="city" spellcheck="false" placeholder=""
+                                    required>
+                                <div class="icon-email">
+                                    <img src="assets/images/profile.svg" alt="email">
+                                </div>
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-12">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="busNumber">رقم الباص</label>
+                                <input class="emial-input" type="text" name="busNumber" id="busNumber" formControlName="busNumber" spellcheck="false" placeholder=""
+                                    required>
+                                
+                                <div class="icon-email edit-icon">
+                                    <img src="assets/images/Edit.svg" style="margin-left: -40px;" alt="edit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+                
+                <div class="col-12 col-md-4 pt-4 mt-1">
+                    <label for="busType" class="text-start">نوع الباص و  لونه</label>
+                    <div class="input-container_2_icon_end">
+                        <span style="left: 3%;"><span style="width: 20px; height: 20px;" [style.backgroundColor]="busColor"></span></span>
+                        <div style="left: 15%;" class="vertical-bar_2_icon_end"></div>
+                        <input type="text" name="busType" id="busType" formControlName="busType" style="font-size: 16px;box-shadow: 1px 1px 4px grey;" class="input-field_2_icon_end busInput p-1 m-0 border-0">
+                      </div>
+                </div>
+                
+               
+                
+                
+            </div>
+        </div>
+    </div>
+        <div style="height: 20px;"></div>
+        <hr>
+
+        <div class="title">
+            <h1 style="text-align: right;">: المجموعات  <img (click)="isGroupsVisable = !isGroupsVisable" style="cursor: pointer;" src="{{isGroupsVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-5 d-inline-block"></h1>
+        </div>
+        
+        <div style="clear: both;"></div>
+
+        <div *ngIf="isGroupsVisable" class="mt-5 mt-md-0 groupsTypes ">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <div class="card border-0  shadow" style="background-color: white;">
+                        <div class="card-body" style="text-align: right;">
+                            <label class="checkbox-customize">
+                                <input type="checkbox"  (change)="isOutboundTripVisable = !isOutboundTripVisable" name="group" id="group">
+                                <span class="checkmark"></span>
+                                
+                              </label>
+                              <span>
+                                رحلة ذهاب
+                              </span>
+                        </div>
+                        <div *ngIf="isOutboundTripVisable" class="container mt-2">
+                            <select  class="d-inline-block px-3 py-1 w-100 selectIte"
+                              
+                            name="outbound" id="outbound">
+                           <option *ngFor="let item of groups" value="{{item.id}}" > {{item.name}} </option>
+                        </select>
+                        <p class="mt-2 text-end fw-bold mt-3 pe-2">حدد الأيام </p>
+                        <div class="row pb-3">
+                            <div *ngFor="let item of outBoundDays;let i = index" class="col-12 col-md-3 text-end mt-3">
+                                <label *ngIf="item.id!=-1" class="checkbox-customize" >
+                                    <input type="checkbox" name="{{item.day}}" (change)="checkBoxChange(item.id)" [value]="item.isSelected"  [checked]="item.isSelected" >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span style="font-size: 11px;" *ngIf="item.id!=-1">
+                                    {{item.day}}
+                                  </span>
+                            </div>
+                        </div>
+                         </div>  
+                    </div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <div class="card border-0  shadow" style="background-color: white;">
+                        <div class="card-body" style="text-align: right;">
+                            <label class="checkbox-customize">
+                                <input type="checkbox"  (change)="isReturnTripVisable = !isReturnTripVisable" name="group" id="group">
+                                <span class="checkmark"></span>
+                                
+                              </label>
+                              <span>
+                                رحلة العودة
+                              </span>
+                        </div>
+                        <div *ngIf="isReturnTripVisable" class="container mt-2">
+                            <select  class="d-inline-block px-3 py-1 w-100 selectIte"
+                              
+                            name="outbound" id="outbound">
+                           <option *ngFor="let item of groups" value="{{item.id}}" > {{item.name}} </option>
+                        </select>
+                        <p class="mt-2 text-end fw-bold mt-3 pe-2">حدد الأيام </p>
+                        <div class="row pb-3">
+                            <div *ngFor="let item of outBoundDays;let i = index" class="col-12 col-md-3 text-end mt-3">
+                                <label *ngIf="item.id!=-1" class="checkbox-customize" >
+                                    <input type="checkbox" name="{{item.day}}" (change)="checkBoxChange(item.id)" [value]="item.isSelected"  [checked]="item.isSelected" >
+                                    <span class="checkmark"></span>
+                                    
+                                  </label>
+                                  <span style="font-size: 11px;" *ngIf="item.id!=-1">
+                                    {{item.day}}
+                                  </span>
+                            </div>
+                        </div>
+                         </div>  
+                    </div>
+                </div>
+               
+                <div class="col-12 col-md-2"></div>
+            </div>
+        </div>
+    
+        <div style="height: 20px;"></div>
+        <hr>
+        <div class="title">
+            <h1 style="text-align: right;">موقع المدرسة  <img (click)="isLocationVisable = !isLocationVisable" style="cursor: pointer;" src="{{isLocationVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-5 d-inline-block"></h1>
+        </div>
+        <div style="clear: both;">
+    
+        </div>
+        <div *ngIf="isLocationVisable" class="location-school">
+            <div class="row" >
+                <div class="col-12 col-md-6" >
+                    <div id="googleMap" style="width:100%;height:400px;">
+                        <google-map height="400px"
+                        width="100%"
+                        [center]="center"
+                        [zoom]="zoom"
+                       >  
+            </google-map>
+                    </div>
+                  
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="main-index">
+                        <div class="right-div text-center">
+                            <div class="input-box">
+                                <label for="location">موقع المدرسة</label>
+                                <input class="emial-input" type="text" type="text" name="location" id="location" formControlName="location" spellcheck="false" placeholder=""
+                                    required>
+                                
+                                <div class="icon-email search-icon" dir="ltr">
+                                    <img src="assets/images/Search_light.svg" alt="edit">
+                                    <span >  بحث  </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+         
+         
+            </div>
+           <div style="clear: both;">
+            <div class="btns-save text-center">
+                <div style="width: 3vw; height: 10px; display: inline-block;"></div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4"></div>
+                <div class="col-12 col-md-4">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <button class="saveButton">حفظ التعديلات</button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button class="cancelButton">إلغاء</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4"></div>
+            </div>
+           </div>
+    </div>
+    </form>

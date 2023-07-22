@@ -6,13 +6,23 @@
             <form [formGroup]="newSupervisorForm" (ngSubmit)="onSubmit()">
             <div class="con-div mx-md-2 mx-sm-0">
             <h2>بيانات الحساب</h2>
-                 <div class="load-image d-flex justify-content-center align-items-center">
+                 <!-- <div class="load-image d-flex justify-content-center align-items-center">
                    <div class="text-center">
                     <img src="assets/images/Image.svg" alt="not found">
                     <p>اسحب صورة أو <span style="color: blue;">حمّلها</span> </p>
                     <p>يجب أن يكون الصورة بصيغة jpg أو png</p>
                    </div>
+                 </div> -->
+                 <div (dragover)="onDragOver($event)" (drop)="onDrop($event)" (click)="selectFileInput.click()"
+                 class="load-image d-flex justify-content-center align-items-center">
+                 <div class="text-center">
+                     <img *ngIf="!imageSrc" src="assets/images/Image.svg" alt="Placeholder Image" />
+                     <img *ngIf="imageSrc" [src]="imageSrc" alt="Dropped Image" style="width: 50px; height: 50px;" />
+                     <input style="width: 0px; height: 0px;" #selectFileInput type="file" accept="image/*" (change)="onFileSelected($event)" />
+                     <p>اسحب صورة أو <span style="color: blue;">حمّلها</span> </p>
+                     <p>يجب أن يكون الصورة بصيغة jpg أو png</p>
                  </div>
+             </div>
                  
                  <div class="input-box">
                     <label for="userNumber">رقم المستخدم</label>

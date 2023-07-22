@@ -12,3 +12,19 @@ export interface NewSupervisorModel {
     busColor:any,
     image:any
 }
+
+export interface EditSupervisorModel {
+    name:any,
+    nameEn:any,
+    userNumber:any,
+    email:any,
+    phone:any,
+    address:any,
+    city:any,
+    busNumber:any,
+    busType:any,
+    busColor:any,
+    group:any,
+    location:any,
+    image:any
+}

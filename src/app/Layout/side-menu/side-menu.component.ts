@@ -14,7 +14,7 @@ export class SideMenuComponent {
   [
 
   ]},
-    {id:2,isSelected:false,link:'/school/today-journey',label:'رحلات التتبع',selectedIcon:'assets/images/trackingLight.svg',unSelectedIcon:'assets/images/tracking.svg',subLink:
+    {id:2,isSelected:false,link:'/school/today-journey',label:'تتبع الرحلات',selectedIcon:'assets/images/trackingLight.svg',unSelectedIcon:'assets/images/tracking.svg',subLink:
   [
 
   ]},

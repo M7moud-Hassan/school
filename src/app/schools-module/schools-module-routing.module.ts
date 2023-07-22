@@ -36,6 +36,7 @@ import { SocialMediaComponent } from './Components/social-media/social-media.com
 import { SchoolAccountDetailsComponent } from './Components/school-account-details/school-account-details.component';
 import { AccountUserComponent } from './Components/account-user/account-user.component';
 import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-up/edit-supervisor-pop-up.component';
+import { SupervisorProfileComponent } from './Components/supervisor-profile/supervisor-profile.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -69,7 +70,8 @@ const routes: Routes = [
   {path:'social-media',component:SocialMediaComponent},
   {path:'school-account-details',component:SchoolAccountDetailsComponent},
   {path:'account-user',component:AccountUserComponent},
-  {path:'edit-supervisor',component:EditSupervisorPopUpComponent},
+  {path:'edit-bus',component:EditSupervisorPopUpComponent},
+  {path:'supervisor-profile',component:SupervisorProfileComponent},
   
 ];
 

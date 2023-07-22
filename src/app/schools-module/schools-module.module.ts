@@ -69,6 +69,7 @@ import { DeleteStudentComponent } from './Components/delete-student/delete-stude
 import { LocationComponent } from './Components/location/location.component';
 import { StudentPasswordComponent } from './Components/student-password/student-password.component';
 import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-up/edit-supervisor-pop-up.component';
+import { SupervisorProfileComponent } from './Components/supervisor-profile/supervisor-profile.component';
 
 
 @NgModule({
@@ -126,6 +127,7 @@ import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-u
     LocationComponent,
     StudentPasswordComponent,
     EditSupervisorPopUpComponent,
+    SupervisorProfileComponent,
   ],
   imports: [
     CommonModule,

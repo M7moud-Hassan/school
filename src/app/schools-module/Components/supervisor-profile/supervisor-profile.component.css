@@ -1,0 +1,58 @@
+.input-container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+  }
+  
+  .icon-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .edit-icon {
+    font-size: 20px;
+    color: #999;
+  }
+  
+  .vertical-bar {
+    height: 20px;
+    width: 1px;
+    background-color: #999;
+    margin: 0 10px;
+  }
+  
+  .input-field {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    padding-right: 15%;
+  }
+  
+  .end-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    font-size: 15px;
+    color: #999;
+  }
+  .busInput:focus{
+border: 1px solid blue !important;
+  }
+  #busType{
+   border-color: bisque; 
+  }
+  .groupsTypes{
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 20px;
+    vertical-align: middle;
+  }
