@@ -45,7 +45,10 @@
 .label-ch {
     padding-top: 10px;
     padding-right: 10px;
-    font-size: 22px;
+    font-size: 12px;
+}
+.emial-input{
+    font-size: 14px !important;
 }
 
 .all {

@@ -34,3 +34,20 @@
 .load-image{
     background-color: white;
 }
+.edit-icon{
+    right: 44% !important;
+}
+.emial-input{
+    font-size: 11px !important;
+    padding: 0 !important;
+}
+.input-box input{
+    padding: 0 !important;
+}
+.input-box  label{
+    background-color: white;
+}
+.edit-editor{
+    right: 87% !important;
+top: -89%;
+}
