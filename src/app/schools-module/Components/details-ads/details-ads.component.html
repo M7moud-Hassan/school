@@ -5,7 +5,7 @@
         <div class="col-12 col-md-6 ">
             <form>
             <div class="con-div mx-md-2 mx-sm-0">
-            <h2>بيانات الحساب</h2>
+            <h2>تفاصيل الاعلان</h2>
                  <div class="load-image">
                    <div class="text-center" >
                     <img src="assets/images/user.png" alt="not found">
@@ -13,15 +13,25 @@
                   
                  </div>
                  
-                 <div class="input-box">
-                    <label for="userNumber">رقم المستخدم</label>
-                    <input type="text" spellcheck="false" formControlName="userNumber" name="userNumber" id="userNumber" placeholder="" >
+                 <div class="main-index">
+                    <div class="right-div text-center">
+                        <div class="input-box">
+                            <label for="phone">رقم الهاتف</label>
+                            <input class="emial-input" type="text" value="عنوان افتراضي" name="phone" id="phone" formControlName="phone"  spellcheck="false" placeholder=""
+                                required>
+                           
+                            <div class="icon-email edit-icon">
+                                <img src="assets/images/Edit.svg" alt="edit">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <p>التفاصيل :</p>
+               <div>
                 <editor
                 apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
                  [init]="{
-             height: 150,
+             height: 300,
              menubar: false,
              plugins: [
                'advlist autolink lists link image charmap print preview anchor',
@@ -32,7 +42,11 @@
                'undo redo | formatselect | bold italic backcolor | \
                alignleft aligncenter alignright alignjustify | \
                bullist numlist outdent indent | removeformat | help'
-           }"></editor>
+           }">
+         
+        </editor>
+       
+       </div>
            <div class="row text-center p-4">
             <div class="col-4">
             </div>

@@ -70,6 +70,7 @@ import { LocationComponent } from './Components/location/location.component';
 import { StudentPasswordComponent } from './Components/student-password/student-password.component';
 import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-up/edit-supervisor-pop-up.component';
 import { SupervisorProfileComponent } from './Components/supervisor-profile/supervisor-profile.component';
+import { TrackingAllComponent } from './Components/tracking-all/tracking-all.component';
 
 
 @NgModule({
@@ -128,6 +129,7 @@ import { SupervisorProfileComponent } from './Components/supervisor-profile/supe
     StudentPasswordComponent,
     EditSupervisorPopUpComponent,
     SupervisorProfileComponent,
+    TrackingAllComponent,
   ],
   imports: [
     CommonModule,
@@ -145,7 +147,11 @@ import { SupervisorProfileComponent } from './Components/supervisor-profile/supe
     MatAutocompleteModule,
     DragDropModule,
     OverlayModule,
-    PortalModule
+    PortalModule,
+    DragDropModule,
+    OverlayModule,
+    PortalModule,
+    MatAutocompleteModule
   ]
 })
 export class SchoolsModuleModule { }

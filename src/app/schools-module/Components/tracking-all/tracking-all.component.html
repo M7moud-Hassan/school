@@ -7,11 +7,9 @@
             <map-marker  #marker="mapMarker" *ngFor="let markerPosition of markerPositions; index as i"
               [position]="markerPosition"
               [icon]="i%2==0?markerIcon:markerIcon_green"
-              (mapClick)="openInfoWindow(marker)"
+             
              ></map-marker>
-             <map-info-window>
-                <app-info-window></app-info-window>
-             </map-info-window>
+             
 </google-map>
 
 

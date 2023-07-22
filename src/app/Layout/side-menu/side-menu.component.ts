@@ -35,11 +35,11 @@ export class SideMenuComponent {
   [
 
   ]},
-    {id:7,isSelected:false,link:'#',label:'الإعلانات',selectedIcon:'assets/images/adsLight.svg',unSelectedIcon:'assets/images/ads.svg',subLink:
+    {id:7,isSelected:false,link:'/school/ads',label:'الإعلانات',selectedIcon:'assets/images/adsLight.svg',unSelectedIcon:'assets/images/ads.svg',subLink:
   [
 
   ]},
-    {id:8,isSelected:false,link:'#',label:'الإشعارات',selectedIcon:'assets/images/notificationLight.svg',unSelectedIcon:'assets/images/notifications.svg',subLink:
+    {id:8,isSelected:false,link:'/school/notifications',label:'الإشعارات',selectedIcon:'assets/images/notificationLight.svg',unSelectedIcon:'assets/images/notifications.svg',subLink:
   [
 
   ]},

@@ -1,42 +1,37 @@
 <h3>تم التسليم إلى :</h3>
 <div>
-    <span class="item">
+    <span [ngClass]="index==0?'item':'item-out'" style="cursor: pointer;" (click)="show(0)">
         <span class="label">الكل </span>
-        <span class="number">18</span>
+        <span class="number">{{all.length}}</span>
     </span>
 
-    <span class="item-out ">
-        <span class="label">الكل </span>
-        <span class="number">18</span>
+    <span [ngClass]="index==1?'item':'item-out'" style="cursor: pointer;" (click)="show(1)">
+        <span class="label">طلاب  </span>
+        <span class="number">{{student.length}}</span>
     </span>
 
-    <span class="item-out ">
-        <span class="label">الكل </span>
-        <span class="number">18</span>
+    <span [ngClass]="index==2?'item':'item-out'" style="cursor: pointer;"  (click)="show(2)">
+        <span class="label">أولياء أمور </span>
+        <span class="number">{{parents.length}}</span>
     </span>
 
-    <span class="item-out ">
-        <span class="label">الكل </span>
-        <span class="number">18</span>
-    </span>
-
-    <span class="item-out ">
-        <span class="label">الكل </span>
-        <span class="number">18</span>
+    <span [ngClass]="index==3?'item':'item-out'" style="cursor: pointer;"  (click)="show(3)">
+        <span class="label">مشرفين </span>
+        <span class="number">{{supervisor.length}}</span>
     </span>
 </div>
 
 <div class="container ">
     <div class="row">
-        <div class="col-3 mt-4">
+        <div class="col-3 mt-4" *ngFor="let item of items">
             <div class="card-item">
                 <div class="row m-0 p-2">
                     <div class="col-3">
                         <img src="assets/images/img-fill.png" alt="">
                     </div>
                     <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
+                        <p>{{item.name}}</p>
+                        <p>{{item.type}}</p>
                     </div>
                     <div class="col-3">
                         <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
@@ -44,141 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-3 mt-4">
-            <div class="card-item">
-                <div class="row m-0 p-2">
-                    <div class="col-3">
-                        <img src="assets/images/img-fill.png" alt="">
-                    </div>
-                    <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
-                    </div>
-                    <div class="col-3">
-                        <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 mt-4">
-            <div class="card-item">
-                <div class="row m-0 p-2">
-                    <div class="col-3">
-                        <img src="assets/images/img-fill.png" alt="">
-                    </div>
-                    <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
-                    </div>
-                    <div class="col-3">
-                        <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 mt-4">
-            <div class="card-item">
-                <div class="row m-0 p-2">
-                    <div class="col-3">
-                        <img src="assets/images/img-fill.png" alt="">
-                    </div>
-                    <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
-                    </div>
-                    <div class="col-3">
-                        <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 mt-4">
-            <div class="card-item">
-                <div class="row m-0 p-2">
-                    <div class="col-3">
-                        <img src="assets/images/img-fill.png" alt="">
-                    </div>
-                    <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
-                    </div>
-                    <div class="col-3">
-                        <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 mt-4">
-            <div class="card-item">
-                <div class="row m-0 p-2">
-                    <div class="col-3">
-                        <img src="assets/images/img-fill.png" alt="">
-                    </div>
-                    <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
-                    </div>
-                    <div class="col-3">
-                        <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 mt-4">
-            <div class="card-item">
-                <div class="row m-0 p-2">
-                    <div class="col-3">
-                        <img src="assets/images/img-fill.png" alt="">
-                    </div>
-                    <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
-                    </div>
-                    <div class="col-3">
-                        <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 mt-4">
-            <div class="card-item">
-                <div class="row m-0 p-2">
-                    <div class="col-3">
-                        <img src="assets/images/img-fill.png" alt="">
-                    </div>
-                    <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
-                    </div>
-                    <div class="col-3">
-                        <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 mt-4">
-            <div class="card-item">
-                <div class="row m-0 p-2">
-                    <div class="col-3">
-                        <img src="assets/images/img-fill.png" alt="">
-                    </div>
-                    <div class="col-6">
-                        <p>احمد احمد</p>
-                        <p>طالب</p>
-                    </div>
-                    <div class="col-3">
-                        <img class="minus" src="assets/images/minus.svg" alt="flow.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
+       
        
     </div>
 

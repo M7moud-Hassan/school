@@ -1,18 +1,18 @@
-import { Component ,ViewChild  } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 
 @Component({
-  selector: 'app-tracking-trip',
-  templateUrl: './tracking-trip.component.html',
-  styleUrls: ['./tracking-trip.component.css']
+  selector: 'app-tracking-all',
+  templateUrl: './tracking-all.component.html',
+  styleUrls: ['./tracking-all.component.css']
 })
-export class TrackingTripComponent {
+export class TrackingAllComponent {
   display: any;
   center: google.maps.LatLngLiteral = {
       lat: 21.467420120714536,
       lng:  48.39095806484077
   };
-  @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | undefined;
+
   zoom = 5;
   moveMap(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.center = (event.latLng.toJSON());
@@ -46,14 +46,10 @@ export class TrackingTripComponent {
   ];
 
   markerIcon: google.maps.Icon = {
-    url: 'assets/images/marker_red.svg',
+    url: 'assets/images/bus_green.svg',
   };
   markerIcon_green: google.maps.Icon = {
-    url: 'assets/images/marker_green.svg',
+    url: 'assets/images/bus_red.svg',
   };
-  openInfoWindow(marker: MapMarker) {
-    if (this.infoWindow != undefined) this.infoWindow.open(marker);
-}
-}
 
-
+}
