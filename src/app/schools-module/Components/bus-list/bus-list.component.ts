@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { GroupPopupComponent } from '../group-popup/group-popup.component';
+import { EditSupervisorPopUpComponent } from '../edit-supervisor-pop-up/edit-supervisor-pop-up.component';
 
 @Component({
   selector: 'app-bus-list',
@@ -91,5 +92,21 @@ export class BusListComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog closed:', result);
     });
+  }
+  openDetails() {
+    const dialogRef = this.dialog.open(EditSupervisorPopUpComponent, {
+      width: '50%',
+      height:'100%',
+      direction:'rtl',
+      panelClass:'custom-dialog-container',
+      data: { name: 'Angular Material' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog closed:', result);
+    });
+  }
+  openDetailsDialog(){
+this.openDetails();
   }
 }

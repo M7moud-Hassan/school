@@ -14,4 +14,7 @@ export class SupervisorService {
   addNewSupervisor(model:NewSupervisorModel):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
+  editSupervisor(model:NewSupervisorModel):Observable<ResponseModel>{
+    return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
+  }
 }

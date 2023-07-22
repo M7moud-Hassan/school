@@ -68,6 +68,7 @@ import { AccountUserComponent } from './Components/account-user/account-user.com
 import { DeleteStudentComponent } from './Components/delete-student/delete-student.component';
 import { LocationComponent } from './Components/location/location.component';
 import { StudentPasswordComponent } from './Components/student-password/student-password.component';
+import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-up/edit-supervisor-pop-up.component';
 
 
 @NgModule({
@@ -124,6 +125,7 @@ import { StudentPasswordComponent } from './Components/student-password/student-
     DeleteStudentComponent,
     LocationComponent,
     StudentPasswordComponent,
+    EditSupervisorPopUpComponent,
   ],
   imports: [
     CommonModule,

@@ -432,3 +432,89 @@ outline: 0;
 
 
 /* =================================form field================================================================ */
+
+
+/* ====================style of input field start with edit and vartical bar (|)=================================================== */
+.input-container_2_icon_begining {
+  position: relative;
+  width: 100%;
+  padding: 5px 0px;
+  margin: 20px;
+  margin-top: 0px;
+  margin-right: 0px;
+}
+
+.input-container_2_icon_begining span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-size: 20px;
+  color: #999;
+}
+
+.vertical-bar_2_icon_begining {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 9%;
+  width: 2px;
+  height: 30px;
+  margin: auto;
+  background-color: #999;
+}
+
+.input-field_2_icon_begining {
+  width: 100%;
+  height: 100%;
+  padding: 10px 11%;
+  border: none;
+  border-radius: 10px;
+  margin-left: 30px;
+  border: 1px solid grey;
+
+}
+/* ====================style of input field start with edit and vartical bar (|)=================================================== */
+
+
+/* ====================style of input field end with edit and vartical bar (|)=================================================== */
+.input-container_2_icon_end {
+  position: relative;
+  width: 100%;
+  padding: 5px 0px;
+  margin: 20px;
+  margin-top: 0px;
+  margin-right: 0px;
+}
+
+.input-container_2_icon_end span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  font-size: 20px;
+  color: #999;
+}
+
+.vertical-bar_2_icon_end {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9%;
+  width: 2px;
+  height: 30px;
+  margin: auto;
+  background-color: #999;
+}
+
+.input-field_2_icon_end {
+  width: 100%;
+  height: 100%;
+  padding: 10px 11%;
+  border: none;
+  border-radius: 10px;
+  margin-left: 30px;
+  border: 1px solid grey;
+
+}
+/* ====================style of input field end with edit and vartical bar (|)=================================================== */
