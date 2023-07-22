@@ -32,6 +32,7 @@ import { AdsComponent } from './Components/ads/ads.component';
 import { NewAdsComponent } from './Components/new-ads/new-ads.component';
 import { DetailsAdsComponent } from './Components/details-ads/details-ads.component';
 import { AccountUserComponent } from './Components/account-user/account-user.component';
+import { TrackingAllComponent } from './Components/tracking-all/tracking-all.component';
 
 const routes: Routes = [
   {path:'profile',component:ProfileComponent},
@@ -61,7 +62,8 @@ const routes: Routes = [
   {path:'ads',component:AdsComponent},
   {path:'new-ads',component:NewAdsComponent},
   {path:'details-ads',component:DetailsAdsComponent},
-  {path:'account-user',component:AccountUserComponent}
+  {path:'account-user',component:AccountUserComponent},
+  {path:'tracking-all',component:TrackingAllComponent}
   
 ];
 
