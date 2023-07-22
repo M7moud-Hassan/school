@@ -232,8 +232,26 @@ input[type="radio"]:checked {
 }
 
 .tox:not([dir=rtl]) .tox-toolbar__group{
-  background-color: #F06030;
+ 
   color: white;
+}
+.tox-toolbar__primary{
+  background-color: transparent !important;
+}
+.tox-editor-header{
+  background-color: #F06030 !important;
+  border-radius: 20px !important;
+  position: relative !important;
+  top: 250px !important;
+}
+.tox-toolbar__overflow{
+  background-color: #F06030 !important;
+}
+.tox .tox-tbtn svg{
+ fill: white !important; 
+}
+.tox-toolbar-overlord{
+  background-color: transparent !important;
 }
 .tox .tox-tbtn svg{
   filled: white;
