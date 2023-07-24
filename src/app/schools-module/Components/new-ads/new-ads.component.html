@@ -9,7 +9,6 @@
     <div class="row mt-4">
         <form [formGroup]="newAdForm" (ngSubmit)="submit()">
         <div class="col-12 col-md-6 ">
-            <form>
                 <div class="con-div mx-md-2 mx-sm-0">
                     <h2>بيانات الحساب</h2>
                     <div (dragover)="onDragOver($event)" (drop)="onDrop($event)" (click)="selectFileInput.click()"
@@ -31,7 +30,7 @@
                             id="userNumber" placeholder="">
                     </div>
                     <p>التفاصيل :</p>
-                    <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z" [init]="{
+                    <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z" formControlName="details" name="details" [init]="{
              height: 300,
              menubar: false,
              plugins: [
@@ -51,7 +50,7 @@
                         <div class="row">
                             <div class="col-12 col-md-1"></div>
                             <div class="col-12 col-md-5">
-                                <button class="saveButton">إرسال</button>
+                                <button type="submit" class="saveButton">إرسال</button>
                             </div>
                             <div class="col-12 col-md-5">
                                 <button class="cancelButton">إلغاء</button>
@@ -61,8 +60,6 @@
 
                     </div>
                 </div>
-
-            </form>
         </div>
     </form>
     </div>

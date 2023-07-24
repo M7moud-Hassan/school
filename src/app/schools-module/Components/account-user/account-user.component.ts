@@ -1,8 +1,9 @@
 import { Component ,AfterViewInit, OnInit} from '@angular/core';
 import { ProfileModel } from '../../Core/Models/profile-model';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../Services/auth.service';
 import { MainService } from '../../Services/main.service';
+import { groupSimpleModel } from '../../Services/groups.service';
 
 @Component({
   selector: 'app-account-user',
@@ -11,20 +12,41 @@ import { MainService } from '../../Services/main.service';
   '../new-student/new-student.component.css','../profile/profile.component.css','./account-user.component.css']
 })
 export class AccountUserComponent implements AfterViewInit,OnInit{
-  profileModel:ProfileModel = {} as ProfileModel;
-  topPosition=0;
-  display='none'
-  goShow:boolean=false
-  goReturn:boolean=false
+  isDetailsVisable:boolean = true;
+  isGroupsVisable:boolean = true;
+  isLocationVisable:boolean = true;
+  isReturnTripVisable:boolean = false ; 
+  isOutboundTripVisable:boolean = false ;
+  groups:groupSimpleModel[]=[]; 
+  profileForm:FormGroup = new FormGroup({});
+  outBoundDays:any[] = [];
+  topPosition = 0;
+  display = 'none';
+  zoom = 5;
+  goShow: boolean = false
+  goReturn: boolean = false
   center: google.maps.LatLngLiteral = {
     lat: 21.467420120714536,
-    lng:  48.39095806484077
-};
-zoom=5
-  constructor(private fb:FormBuilder,private authService:AuthService,private service:MainService){
-  }
+    lng: 48.39095806484077
+  };
+  constructor(private service:MainService){ }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.outBoundDays = [
+      {id:0,day:'الـكل',isSelected:false},
+      {id:1,day:'السبت',isSelected:false},
+      {id:2,day:'الأحد',isSelected:false},
+      {id:3,day:'الإثنين',isSelected:false},
+      {id:-1,day:'',isSelected:false},
+      {id:4,day:'الثلاثاء',isSelected:true},
+      {id:5,day:'الأربعاء',isSelected:false},
+      {id:6,day:'الخميس',isSelected:false},
+    ];
+    this.getGroups();
+    this.createForm();
+    this.getProfileData();
+  }
+  getGroups(){
+    this.groups = this.service.groupService.getGroups();
   }
   ngAfterViewInit(): void {
    setInterval(()=>{
@@ -32,45 +54,28 @@ zoom=5
    },100)
   }
 
-  profileForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    phone: ['', [Validators.required]],
-    name: ['', [Validators.required]],
-    nameEn: ['', [Validators.required]],
-    userNumber: ['', [Validators.required]],
-    address: ['', [Validators.required]],
-    location: ['', [Validators.required]],
-  });
-  
-  mapValues(){
-    this.profileModel = {
-      name : this.profileForm.controls['name'].value,
-      nameEn : this.profileForm.controls['nameEn'].value,
-      email : this.profileForm.controls['email'].value,
-      userNumber : this.profileForm.controls['userNumber'].value,
-      phone : this.profileForm.controls['phone'].value,
-      address : this.profileForm.controls['address'].value,
-      location : this.profileForm.controls['location'].value,
-      image : this.profileForm.controls['location'].value,
-    }
+  createForm(){
+    this.profileForm = this.service.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      nameEn: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      userNumber: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      location: ['', [Validators.required]],
+      image: ['', [Validators.required]],
+    });
   }
-  onSubmit() {
-    //TODO: remove
-    this.mapValues();
-    //TODO: remove
-    alert(`
-    userNumber : ${this.profileModel.userNumber},
-    email : ${this.profileModel.email},
-    phone : ${this.profileModel.phone},
-    name : ${this.profileModel.name},
-    nameEn : ${this.profileModel.nameEn},
-    location : ${this.profileModel.location},
-    address : ${this.profileModel.address},
-    `)
 
+  getProfileData(){
+    this.profileForm.patchValue(this.service.studentService.getStudentDataForEdit());
+   }
+
+  onSubmit() {
+   this.service.printFormValues(this.profileForm);
     if(this.profileForm.valid){
-      this.mapValues();
-      this.service.schoolService.Editprofile(this.profileModel).subscribe({
+      this.service.schoolService.Editprofile(this.profileForm.value).subscribe({
         next:(response)=>{
 
         },
@@ -88,5 +93,23 @@ zoom=5
     
     this.goShow=!this.goShow;
     
+  }
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    // Do something with the selected file...
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.profileForm.controls['image'].setValue(URL.createObjectURL(file));
+    };
+    reader.readAsDataURL(file);
+  }
+  get getAllSelectedItems(){
+    return this.outBoundDays.filter((e:any)=>e.isSelected);
+  }
+  get getBusColor(){
+    return this.profileForm.controls['busColor'].value;
+  }
+  get getImage(){
+    return this.profileForm.controls['image'].value;
   }
 }

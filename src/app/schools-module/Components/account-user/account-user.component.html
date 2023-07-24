@@ -1,15 +1,23 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <div class="main-profile">
         <div class="title">
-            <h1 style="text-align: right;">: تفاصيل الحساب  <img src="assets/images/Arrow-Up.svg" alt=""></h1>
+            <h1 style="text-align: right;">: تفاصيل الحساب  <img (click)="isDetailsVisable = !isDetailsVisable" style="cursor: pointer;" src="{{isDetailsVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-3 d-inline-block"></h1>
         </div>
         
         <div style="clear: both;"></div>
-        <div class="container-image">
-            <img src="assets/images/user.png" alt="user">
-            <div class="edit-image" [style.top]="topPosition+'%'" >
-               <img src="assets/images/Camera.svg" alt="">
+        <div *ngIf="isDetailsVisable">
+        <div class="row">
+            <div class="col-md-5 col-12"></div>
+            <div class="col-md-2 col-12 text-end">
+                <div class='contStack' (click)="fileInput.click()" >
+                    <div class="imageCont">
+                        <img src={{getImage}}  (click)="fileInput.click()" width="120" height="120" alt="user">
+                        <input type="file" name="image" formControlName="image" accept="image/*" (change)="onFileSelected($event)" #fileInput style="display:none">
+                    </div>
+                    <div class="iconCont"></div>
+                </div>
             </div>
+            <div class="col-5"></div>
         </div>
         <div class="container-fauid">
             <div class="row  m-0 p-0">
@@ -130,8 +138,8 @@
                     <div class="main-index">
                         <div class="right-div text-center">
                             <div class="input-box">
-                                <label for="email">المدينة</label>
-                                <input class="emial-input" type="text" name="email" id="email" formControlName="email" spellcheck="false" placeholder=""
+                                <label for="city">المدينة</label>
+                                <input class="emial-input" type="text" name="city" id="city" formControlName="city" spellcheck="false" placeholder=""
                                     required>
                                 <div class="icon-email">
                                     <img src="assets/images/profile.svg" alt="email">
@@ -143,28 +151,27 @@
                         </div>
                     </div>
                 </div>
-               
-                
+                               
                 
             </div>
         </div>
-        
-        <div style="height: 80px;"></div>
+    </div>
+        <div style="height: 20px;"></div>
         <hr>
 
         <div class="title">
-            <h1 style="text-align: right;">: المجموعات  <img src="assets/images/Arrow-Up.svg" alt=""></h1>
+            <h1 style="text-align: right;">: المجموعات  <img (click)="isGroupsVisable = !isGroupsVisable" style="cursor: pointer;" src="{{isGroupsVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-5 d-inline-block"></h1>
         </div>
         
         <div style="clear: both;"></div>
 
-        <div class="mt-5 mt-md-0 groupsTypes ">
+        <div *ngIf="isGroupsVisable" class="mt-5 mt-md-0 groupsTypes ">
             <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="card border-0  shadow">
-                        <div class="card-body">
+                <div class="col-12 col-md-5">
+                    <div class="card border-0  shadow" style="background-color: white;">
+                        <div class="card-body" style="text-align: right;">
                             <label class="checkbox-customize">
-                                <input type="checkbox" formControlName="outboundJourney" (change)="togglegoShow()" name="outboundJourney" id="outboundJourney">
+                                <input type="checkbox"  (change)="isOutboundTripVisable = !isOutboundTripVisable" name="group" id="group">
                                 <span class="checkmark"></span>
                                 
                               </label>
@@ -172,206 +179,78 @@
                                 رحلة ذهاب
                               </span>
                         </div>
-                        <div *ngIf="goShow" class="container mt-2">
+                        <div *ngIf="isOutboundTripVisable" class="container mt-2">
                             <select  class="d-inline-block px-3 py-1 w-100 selectIte"
-                              formControlName="relativeType"
-                            name="relativeType" id="relativeType">
-                           <option value="1" selected>اختر مجموعة</option>
+                              
+                            name="outbound" id="outbound">
+                           <option *ngFor="let item of groups" value="{{item.id}}" > {{item.name}} </option>
                         </select>
-                        <p class="mt-2">حدد الأيام </p>
-                        <div class="row p-0 m-0 mb-4">
-                            <div class="col-3">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox">
+                        <p class="mt-2 text-end fw-bold mt-3 pe-2">حدد الأيام </p>
+                        <div class="row pb-3">
+                            <div *ngFor="let item of outBoundDays;let i = index" class="col-12 col-md-3 text-end mt-3">
+                                <label *ngIf="item.id!=-1" class="checkbox-customize" >
+                                    <input type="checkbox" name="{{item.day}}"  [value]="item.isSelected"  [checked]="item.isSelected" >
                                     <span class="checkmark"></span>
                                     
                                   </label>
-                                  <span>
-                                    الكل
-                                  </span>
-                            </div>
-                            <div class="col-3">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    السبت
-                                  </span>
-                            </div>
-                
-                            <div class="col-3">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الأحد
-                                  </span>
-                            </div>
-                            
-                            <div class="col-3">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الاثنين
-                                  </span>
-                            </div>
-                            <div class="col-3"></div>
-                            <div class="col-3 mt-2">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الثلاثاء
-                                  </span>
-                            </div>
-                
-                            <div class="col-3 mt-2">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الأربعاء
-                                  </span>
-                            </div>
-                            
-                            <div class="col-3 mt-2">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الخميس
+                                  <span style="font-size: 11px;" *ngIf="item.id!=-1">
+                                    {{item.day}}
                                   </span>
                             </div>
                         </div>
                          </div>  
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="card border-0  shadow">
-                        <div class="card-body">
+                <div class="col-12 col-md-5">
+                    <div class="card border-0  shadow" style="background-color: white;">
+                        <div class="card-body" style="text-align: right;">
                             <label class="checkbox-customize">
-                                <input type="checkbox"  (change)="toggleReturn()" >
+                                <input type="checkbox"  (change)="isReturnTripVisable = !isReturnTripVisable" name="group" id="group">
                                 <span class="checkmark"></span>
                                 
                               </label>
                               <span>
-                                رحلة عودة
+                                رحلة العودة
                               </span>
                         </div>
-                        <div *ngIf="goReturn" class="container mt-2">
+                        <div *ngIf="isReturnTripVisable" class="container mt-2">
                             <select  class="d-inline-block px-3 py-1 w-100 selectIte"
-                              formControlName="relativeType"
-                            name="relativeType" id="relativeType">
-                           <option value="1" selected>اختر مجموعة</option>
+                              
+                            name="outbound" id="outbound">
+                           <option *ngFor="let item of groups" value="{{item.id}}" > {{item.name}} </option>
                         </select>
-                        <p class="mt-2">حدد الأيام </p>
-                        <div class="row p-0 m-0 mb-4">
-                            <div class="col-3">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox">
+                        <p class="mt-2 text-end fw-bold mt-3 pe-2">حدد الأيام </p>
+                        <div class="row pb-3">
+                            <div *ngFor="let item of outBoundDays;let i = index" class="col-12 col-md-3 text-end mt-3">
+                                <label *ngIf="item.id!=-1" class="checkbox-customize" >
+                                    <input type="checkbox" name="{{item.day}}"  [value]="item.isSelected"  [checked]="item.isSelected" >
                                     <span class="checkmark"></span>
                                     
                                   </label>
-                                  <span>
-                                    الكل
-                                  </span>
-                            </div>
-                            <div class="col-3">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    السبت
-                                  </span>
-                            </div>
-                
-                            <div class="col-3">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الأحد
-                                  </span>
-                            </div>
-                            
-                            <div class="col-3">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الاثنين
-                                  </span>
-                            </div>
-                            <div class="col-3"></div>
-                            <div class="col-3 mt-2">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الثلاثاء
-                                  </span>
-                            </div>
-                
-                            <div class="col-3 mt-2">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الأربعاء
-                                  </span>
-                            </div>
-                            
-                            <div class="col-3 mt-2">
-                                <label class="checkbox-customize">
-                                    <input type="checkbox"  >
-                                    <span class="checkmark"></span>
-                                    
-                                  </label>
-                                  <span>
-                                    الخميس
+                                  <span style="font-size: 11px;" *ngIf="item.id!=-1">
+                                    {{item.day}}
                                   </span>
                             </div>
                         </div>
-                         </div>
-                      </div>
+                         </div>  
+                    </div>
                 </div>
+               
+                <div class="col-12 col-md-2"></div>
             </div>
         </div>
     
-        <div style="height: 80px;"></div>
+        <div style="height: 20px;"></div>
         <hr>
         <div class="title">
-            <h1 style="text-align: right;">موقع المدرسة  <img src="assets/images/Arrow-Up.svg" alt=""></h1>
+            <h1 style="text-align: right;">موقع المدرسة  <img (click)="isLocationVisable = !isLocationVisable" style="cursor: pointer;" src="{{isLocationVisable?'/assets/images/ArrowDown.svg':'/assets/images/ArrowUp.svg'}}" class="pe-5 d-inline-block"></h1>
         </div>
         <div style="clear: both;">
     
         </div>
-        <div class="location-school">
-            <div class="row">
-                <div class="col-12 col-md-6">
+        <div *ngIf="isLocationVisable" class="location-school">
+            <div class="row" >
+                <div class="col-12 col-md-6" >
                     <div id="googleMap" style="width:100%;height:400px;">
                         <google-map height="400px"
                         width="100%"
@@ -404,7 +283,10 @@
          
             </div>
            <div style="clear: both;">
-            <div class="row mt-5">
+            <div class="btns-save text-center">
+                <div style="width: 3vw; height: 10px; display: inline-block;"></div>
+            </div>
+            <div class="row">
                 <div class="col-12 col-md-4"></div>
                 <div class="col-12 col-md-4">
                     <div class="row">

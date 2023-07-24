@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ResponseModel } from '../Core/Models/response-model';
 import { environment } from 'src/environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
+import { ProfileModel } from '../Core/Models/profile-model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,20 @@ export class StudentService {
 
   addNewStudent(model:NewStudentModel):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
+  }
+  getStudentDataForEdit():studentEditProfileModel{
+    let model:studentEditProfileModel = {
+      name:'محمد الشوالى',
+      nameEn:'Mohammed Elshawally',
+      email:'moh722652@gmail.co',
+      address:'Cairo - Egypt',
+      image:'/assets/images/user.png',
+      city:'العاشر',
+      userNumber:'432487622',
+      phone:'+2033763783637',
+     location:'Cairo , Egypt',
+    }
+   return model;
   }
   getStudents():studentSimpleModel[]{
     return [
@@ -113,4 +128,16 @@ export interface studentModel{
   isSelected:any,
   isActive:any,
   image:any,
+}
+
+export interface studentEditProfileModel{
+  name:any,
+  nameEn:any,
+  userNumber:any,
+  email:any,
+  phone:any,
+  address:any,
+  city:any,
+  location:any,
+  image:any
 }

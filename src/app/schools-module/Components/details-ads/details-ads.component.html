@@ -3,22 +3,33 @@
     <div class="row mt-4">
         
         <div class="col-12 col-md-6 ">
-            <form>
+            <form [formGroup]="detailsAdForm" (ngSubmit)="submit()">
             <div class="con-div mx-md-2 mx-sm-0">
             <h2>تفاصيل الاعلان</h2>
-                 <div class="load-image">
+                 <!-- <div class="load-image">
                    <div class="text-center" >
                     <img src="assets/images/user.png" alt="not found">
                    </div>
                   
-                 </div>
-                 
+                 </div> -->
+                 <div class="row">
+                    <div class="col-md-5 col-12"></div>
+                    <div class="col-md-2 col-12 text-end">
+                        <div class='contStack' (click)="fileInput.click()" >
+                            <div class="imageCont">
+                                <img src={{getImage}}  (click)="fileInput.click()" width="120" height="120" alt="user">
+                                <input type="file" name="image" formControlName="image" accept="image/*" (change)="onFileSelected($event)" #fileInput style="display:none">
+                            </div>
+                            <div class="iconCont"></div>
+                        </div>
+                    </div>
+                    <div class="col-5"></div>
+                </div>
                  <div class="main-index">
                     <div class="right-div text-center">
                         <div class="input-box">
-                            <label for="phone">رقم الهاتف</label>
-                            <input class="emial-input" type="text" value="عنوان افتراضي" name="phone" id="phone" formControlName="phone"  spellcheck="false" placeholder=""
-                                required>
+                            <label for="title">عنوان الإعلان</label>
+                            <input class="emial-input" style="font-size: 16px !important;" type="text"  name="title" id="title" formControlName="title"  spellcheck="false" placeholder="">
                            
                             <div class="icon-email edit-icon">
                                 <img src="assets/images/Edit.svg" alt="edit">
@@ -26,10 +37,12 @@
                         </div>
                     </div>
                 </div>
-                <p>التفاصيل :</p>
+                <p>تفاصيل الإعلان:</p>
                <div>
                 <editor
                 apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
+                formControlName="details"
+                name="details"
                  [init]="{
              height: 300,
              menubar: false,
@@ -51,20 +64,15 @@
             <div class="col-4">
             </div>
             <div class="container-text mt-2 mb-4">
-                <div class="row m-0 p-0">
-                    <div class="col-2">
-            
+                <div class="row">
+                    <div class="col-12 col-md-1"></div>
+                    <div class="col-12 col-md-5">
+                        <button type="submit" class="saveButton">إرسال</button>
                     </div>
-                    <div class="col-4">
-                        <div class="btn-rounded d-flex align-items-center justify-content-center">
-                            إرسال 
-                        </div>
+                    <div class="col-12 col-md-5">
+                        <button class="cancelButton">إلغاء</button>
                     </div>
-                    <div class="col-4">
-                        <div class="btn-outline d-flex align-items-center justify-content-center">
-                            إلغاء
-                        </div>
-                    </div>
+                    <div class="col-12 col-md-1"></div>
                 </div>
             </div>
             

@@ -14,6 +14,14 @@ export class AdsService {
   addNewAd(model:any):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
+  getDetailsAd():adsEditModel{
+    let model:adsEditModel = {
+      details:'<p>this is details for the Ads</p>',
+      image:'/assets/images/user.png',
+      title:'this is simple title for the Ads'
+    }
+    return model
+  }
 
   getAllAds():adsModel[]{
    return [
@@ -42,4 +50,9 @@ export interface adsModel{
   isShown:any,
   isSelected:any,
   creationDate:any,
+}
+export interface adsEditModel{
+  image:any,
+  title:any,
+  details:any,
 }
