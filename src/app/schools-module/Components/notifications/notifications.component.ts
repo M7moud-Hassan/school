@@ -24,6 +24,7 @@ export class NotificationsComponent implements OnInit {
   
   ngOnInit(): void {
     this.getNotificationList();
+    this.total =  this.notificationList.length;
   }
   getNotificationList(){
     this.notificationList = this.service.notificationService.getNotificationList();

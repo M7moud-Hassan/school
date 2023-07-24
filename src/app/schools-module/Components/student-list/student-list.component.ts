@@ -30,6 +30,7 @@ export class StudentListComponent implements OnInit {
   
   ngOnInit(): void {
     this.getAllStudents();
+    this.total =  this.student_data.length;
   }
   getAllStudents(){
     this.student_data = this.service.studentService.getStudentList();
@@ -71,6 +72,9 @@ export class StudentListComponent implements OnInit {
   openDialogDetailsStudent(){
     const dialogRef = this.service.dialog.open(DetailsStudentComponent, {
       width: '50%',
+      height:'100%',
+      direction:'rtl',
+      panelClass:'custom-dialog-container',
     });
   }
 

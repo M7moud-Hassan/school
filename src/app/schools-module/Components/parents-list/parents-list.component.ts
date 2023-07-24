@@ -27,6 +27,7 @@ export class ParentsListComponent implements OnInit {
 
   ngOnInit(): void {
   this.getParentList();
+  this.total = this.parents_data.length;
   }
   getParentList(){
     this.parents_data = this.service.parentService.getParentList();

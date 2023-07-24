@@ -21,6 +21,7 @@ export class BusListComponent implements OnInit {
   constructor(private service:MainService) {}
   ngOnInit(): void {
     this.getBusList();
+    this.total =  this.bus_data.length;
   }
   getBusList(){
     this.bus_data = this.service.supervisorService.getBusList();

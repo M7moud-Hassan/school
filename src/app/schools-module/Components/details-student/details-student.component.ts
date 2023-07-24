@@ -1,24 +1,50 @@
-import { Component,AfterViewInit ,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators } from '@angular/forms';
+import { MainService } from '../../Services/main.service';
 
 @Component({
   selector: 'app-details-student',
   templateUrl: './details-student.component.html',
-  styleUrls: ['./details-student.component.css']
+  styleUrls: ['../edit-supervisor-pop-up/edit-supervisor-pop-up.component.css','./details-student.component.css']
 })
-export class DetailsStudentComponent implements AfterViewInit,OnInit {
+export class DetailsStudentComponent implements OnInit {
+  profileForm:FormGroup=new FormGroup({});
+
+  constructor(private service:MainService){}
+
+  loadStudentData(){
+    this.profileForm.patchValue(this.service.studentService.getStudentDetails());
+  }
+
   ngOnInit(): void {
-  setInterval(() => {
-    const iconElements = document.querySelectorAll('.icon-email-d');
-  
-    iconElements.forEach((iconElement: Element, index: number) => {
-      (iconElement as HTMLElement).style.top = `-37%`;
-    
+    this.createForm();
+    this.loadStudentData();
+  }
+
+  createForm(){
+    this.profileForm = this.service.formBuilder.group({
+      name:['',[Validators.required]],
+      nameEn:['',[Validators.required]],
+      userNumber:['',[Validators.required]],
+      email:['',[Validators.required]],
+      address:['',[Validators.required]],
+      city:['',[]],
+      phone:['',[Validators.required]],
+      group:['',[Validators.required]],
+      image:['',[]],
     });
-   }, 200);
   }
-  
-  ngAfterViewInit(): void {
    
+  get getName() {
+    return this.profileForm.controls['name'].value;
   }
+  get getNameEn() {
+    return this.profileForm.controls['nameEn'].value;
+  }
+  get getImage() {
+    return this.profileForm.controls['image'].value;
+  }
+
+
 
 }

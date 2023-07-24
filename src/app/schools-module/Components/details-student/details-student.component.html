@@ -1,109 +1,81 @@
-<div class="container">
-    <div>
-        <img src="assets/images/close-dark.svg" alt="">
-    </div>
-    <div class="row p-0 m-0">
-        <div class="col-4">
-            <img src="assets/images/student-left.png" width="100%" height="150px" alt="">
+<div class="container-fluid bg-white pt-2">
+    <form [formGroup]="profileForm">
+    <div class="row">
+        <div class="row">
+        <div class="col-11"></div>
+        <div class="col-1 text-start">
+            <a routerLink="#"><img src="/assets/images/x.svg"></a>
         </div>
-        <div class="col-4 text-center pt-4">
-                <img src="assets/images/student.png" width="70px" alt="">
-                <h3>فهد ناصر</h3>
-                <a routerLink="/school/account-user" style="color: #3AA7CE;">fahad</a>
         </div>
-        <div class="col-4">
-            <img src="assets/images/student-right.png" width="100%" height="150px"  alt="">
-        </div>
-    </div>
-   
-    <div class="row p-0 m-0">
-        <div class="col-6">
-                <div class="" >
-                    <div class="input-box-d text-end">
-                        <label for="name">البريد الالكتروني</label>
-                        <div class="emial-input-d"  type="text" name="name" id="name" formControlName="name" spellcheck="false" placeholder=""
-                            required>
-                            n77h@hotmail.com</div>
-                        <div class="icon-email-d"> 
-                            <img src="assets/images/email.svg" alt="name">
-                        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 rightImage"></div>
+            <div class="col-12 col-md-4">
+                <div class="center">
+                    <div class="imageContainer">
+                        <img src="{{getImage}}">
                     </div>
+                </div>
+                <div class="text-center pt-2 fs-5 fw-bolder pt-3">{{getName}}</div>
+                <div class="text-center pt-3" style="color: #3AA7CE; font-size: 16px;">{{getNameEn}}</div>
+            </div>
+            <div class="col-12 col-md-4 leftImage"></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 col-md-6">
+                <!-- -----------------if you use this div outside popup remove any style attribute------------------------ -->
+                <label for="userNumber" class="defaultLabel">رقم المستخدم</label>
+                <div class="input-container_2_icon_begining">
+                    <span style="padding-right: 2%"><img src="/assets/images/userNumber.svg"></span>
+                    <div style="margin-right: 8%"  class="vertical-bar_2_icon_begining"></div>
+                    <input readOnly type="text" name="userNumber" id="userNumber" style="padding-right: 22%" formControlName="userNumber" class="input-field_2_icon_begining">
+                  </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="email" class="defaultLabel">البريد الإليكترونى</label>
+                <div class="input-container_2_icon_begining">
+                    <span style="padding-right: 2%"><img src="/assets/images/email.svg"></span>
+                    <div  style="margin-right: 8%" class="vertical-bar_2_icon_begining"></div>
+                    <input readOnly type="text" name="email" id="email" style="padding-right: 22%" formControlName="email" class="input-field_2_icon_begining">
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label for="phone" class="defaultLabel">رقم الهاتف</label>
+                <div class="input-container_2_icon_begining">
+                    <span style="padding-right: 2%"><img src="/assets/images/Call.svg"></span>
+                    <div  style="margin-right: 8%" class="vertical-bar_2_icon_begining"></div>
+                    <input readOnly type="text" name="phone" id="phone" style="padding-right: 22%" formControlName="phone" class="input-field_2_icon_begining">
+                  </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="address" class="defaultLabel">العنوان</label>
+                <div class="input-container_2_icon_begining">
+                    <span style="padding-right: 2%"><img src="/assets/images/Location.svg"></span>
+                    <div  style="margin-right: 8%" class="vertical-bar_2_icon_begining"></div>
+                    <input readOnly type="text" name="address" id="address" style="padding-right: 22%" formControlName="address" class="input-field_2_icon_begining">
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label for="city" class="defaultLabel">المدينة</label>
+                <div class="input-container_2_icon_begining">
+                    <span style="padding-right: 2%"><img src="/assets/images/Call.svg"></span>
+                    <div  style="margin-right: 8%" class="vertical-bar_2_icon_begining"></div>
+                    <input readOnly type="text" name="city" id="city" style="padding-right: 22%" formControlName="city" class="input-field_2_icon_begining">
+                  </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="group" class="defaultLabel">المجموعة</label>
+                <div class="input-container_2_icon_begining">
+                    <span style="padding-right: 2%"><img src="/assets/images/Location.svg"></span>
+                    <div  style="margin-right: 8%" class="vertical-bar_2_icon_begining"></div>
+                    <input readOnly type="text" name="group" id="group" style="padding-right: 22%" formControlName="group" class="input-field_2_icon_begining">
+                  </div>
             </div>
         </div>
 
-        <div class="col-6">
-            <div class="" >
-                <div class="input-box-d text-end">
-                    <label for="name">رقم المستخدم</label>
-                    <div class="emial-input-d"  type="text" name="name" id="name" formControlName="name" spellcheck="false" placeholder=""
-                        required>
-                        1111111111</div>
-                    <div class="icon-email-d"> 
-                        <img src="assets/images/Exit.svg" alt="name">
-                    </div>
-                </div>
-        </div>
     </div>
-       
-    </div>
-    <div class="row p-0 m-0">
-        <div class="col-6">
-                <div class="" >
-                    <div class="input-box-d text-end">
-                        <label for="name">العنوان</label>
-                        <div class="emial-input-d"  type="text" name="name" id="name" formControlName="name" spellcheck="false" placeholder=""
-                            required>
-                            حي الملز</div>
-                        <div class="icon-email-d"> 
-                            <img src="assets/images/Location.svg" alt="name">
-                        </div>
-                    </div>
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="" >
-                <div class="input-box-d text-end">
-                    <label for="name">رقم الهاتف</label>
-                    <div class="emial-input-d"  type="text" name="name" id="name" formControlName="name" spellcheck="false" placeholder=""
-                        required>
-                        0123456789</div>
-                    <div class="icon-email-d"> 
-                        <img src="assets/images/Call.svg" alt="name">
-                    </div>
-                </div>
-        </div>
-    </div>
-       
-    </div>
-    <div class="row p-0 m-0">
-        <div class="col-6">
-                <div class="" >
-                    <div class="input-box-d text-end">
-                        <label for="name">المجموعة</label>
-                        <div class="emial-input-d"  type="text" name="name" id="name" formControlName="name" spellcheck="false" placeholder=""
-                            required>
-                            المجموعة الثانية</div>
-                        <div class="icon-email-d"> 
-                            <img src="assets/images/3 User.svg" alt="name">
-                        </div>
-                    </div>
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="" >
-                <div class="input-box-d text-end">
-                    <label for="name">المدينة</label>
-                    <div class="emial-input-d"  type="text" name="name" id="name" formControlName="name" spellcheck="false" placeholder=""
-                        required>
-                        بريدة</div>
-                    <div class="icon-email-d"> 
-                        <img src="assets/images/city.svg" alt="name">
-                    </div>
-                </div>
-        </div>
-    </div>
-       
-    </div>
+</form>
 </div>

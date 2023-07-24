@@ -16,6 +16,20 @@ export class StudentService {
   addNewStudent(model:NewStudentModel):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
+  getStudentDetails():studentDetailsModel{
+    let model:studentDetailsModel = {
+      name:'حسن محمد حسن',
+      nameEn:'Hassan Mohammed Hassan',
+      address:'Egypt - Cairo',
+      city:'Dar Elsalam',
+      email:'hassan29827289@gmail.com',
+      image:'/assets/images/user.png',
+      phone:'+2092278627822',
+      userNumber:'87526522',
+      group:'Group Number #01'
+    }; 
+    return model;
+  }
   getStudentDataForEdit():studentEditProfileModel{
     let model:studentEditProfileModel = {
       name:'محمد الشوالى',
@@ -206,6 +220,17 @@ export interface studentEditProfileModel{
   city:any,
   location:any,
   image:any
+}
+export interface studentDetailsModel{
+  name:any,
+  nameEn:any,
+  userNumber:any,
+  email:any,
+  phone:any,
+  address:any,
+  city:any,
+  group:any,
+  image:any,
 }
 export interface student_SendNotification_Model{
     name:any,

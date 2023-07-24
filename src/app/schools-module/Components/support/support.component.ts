@@ -23,6 +23,7 @@ export class SupportComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSupportList();
+    this.total =  this.help_data.length;
   }
 
   getSupportList(){

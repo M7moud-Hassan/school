@@ -22,6 +22,7 @@ export class SupervisorsListComponent implements OnInit {
   
   ngOnInit(): void {
     this.getAllSupervisor();
+    this.total =  this.supervisor_data.length;
   }
   getAllSupervisor(){
     this.supervisor_data = this.service.supervisorService.getAll();

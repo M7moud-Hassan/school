@@ -23,6 +23,7 @@ export class AdsComponent implements OnInit {
   constructor(private service:MainService){}
   ngOnInit(): void {
     this.getAdsList();
+    this.total =  this.adsList.length;
   }
 
   getAdsList(){

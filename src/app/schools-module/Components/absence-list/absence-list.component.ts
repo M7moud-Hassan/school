@@ -22,6 +22,7 @@ export class AbsenceListComponent implements OnInit{
   constructor(private service:MainService) {}
   ngOnInit(): void {
     this.getAbsenceList();
+    this.total =  this.absence_data.length;
   }
   
   getAbsenceList(){
