@@ -1,21 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { activitiesModel } from '../../Services/activities.service';
+import { MainService } from '../../Services/main.service';
 
 @Component({
   selector: 'app-activities',
   templateUrl: './activities.component.html',
   styleUrls: ['./activities.component.css']
 })
-export class ActivitiesComponent {
+export class ActivitiesComponent implements OnInit {
   currentDate = Date.now();
-  activities=[
-    {label:'إجمالي عدد الطلاب : 30',activityName:'طلبات الغياب',count:'9',percent:'15'},
-    {label:'إجمالي عدد الرحلات : 30',activityName:'عدد الرحلات',count:'28',percent:'70'},
-    {label:'إجمالي عدد الرحلات اليوم : 30',activityName:'الرحلات الفعالة',count:'س',percent:'58'},
-  ];
+  activities:activitiesModel[]=[];
   strokArray:any[] = this.activities.map(val=>`${val.percent}, 100`);
-  // strokArray:any[] = [
-  //   '90, 100',
-  //   '80, 100',
-  //   '10, 100',
-  // ];
+
+  constructor(private service:MainService){}
+
+  ngOnInit(): void {
+    this.getAllActivities();
+  }
+  getAllActivities(){
+    this.activities = this.service.activitiesService.getAll();
+  }
+
+
 }

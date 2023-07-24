@@ -1,12 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MainService } from '../../Services/main.service';
+import { FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-ads',
   templateUrl: './new-ads.component.html',
   styleUrls: ['../new-student/new-student.component.css','./new-ads.component.css']
 })
-export class NewAdsComponent {
+export class NewAdsComponent implements OnInit {
+  newAdForm:FormGroup = new FormGroup({});
   imageSrc: string | null = null;
+
+  constructor(private sevice:MainService){}
+
+  ngOnInit(): void {
+    this.createForm();
+  }
+  createForm(){
+    this.newAdForm = this.sevice.formBuilder.group({
+      image:['',[Validators.required]],
+      userNumber:['',[Validators.required]],
+      details:['',[Validators.required]],
+    });
+  }
+  submit(){
+    this.sevice.printFormValues(this.newAdForm);
+    this.sevice.adsService.addNewAd(this.newAdForm.value).subscribe({
+      next:(res)=>{
+
+      },
+      error:(error)=>{
+        
+      }
+    });
+  }
+
 
   onDragOver(event: DragEvent) {
     event.preventDefault();

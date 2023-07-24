@@ -6,4 +6,5 @@ export interface ProfileModel {
     address:any,
     email:any,
     location:any,
+    image:any
 }

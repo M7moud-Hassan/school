@@ -1,27 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../Services/auth.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ChangePasswordModel } from '../../Core/Models/change-password-model';
+import { MainService } from '../../Services/main.service';
 
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.css']
 })
-export class ChangePasswordComponent {
+export class ChangePasswordComponent implements OnInit {
   old:boolean = false;
   newPwd:boolean = false;
   confirm:boolean = false;
   isMAtch:boolean = true ;
-  changePasswordModel:ChangePasswordModel = {} as ChangePasswordModel;
+  changePasswordForm:FormGroup = new FormGroup({});
 
-  constructor(private fb:FormBuilder,private authService:AuthService) {
+  constructor(private service:MainService) {}
+
+  ngOnInit(): void {
+    this.createForm();
   }
-  changePasswordForm = this.fb.group({
-    oldPassword: ['', [Validators.required, ]],
-    newPassword: ['', [Validators.required, ]],
-    confirmPassword: ['', [Validators.required, ]],
-    });
+  createForm(){
+    this.changePasswordForm = this.service.formBuilder.group({
+      oldPassword: ['', [Validators.required, ]],
+      newPassword: ['', [Validators.required, ]],
+      confirmPassword: ['', [Validators.required, ]],
+      });
+  }
     checkMatch(){
       if(!(this.changePasswordForm.controls['newPassword'].value == this.changePasswordForm.controls['confirmPassword'].value && 
       (this.changePasswordForm.controls['newPassword'].value != "" && this.changePasswordForm.controls['confirmPassword'].value != ""))){
@@ -45,27 +51,13 @@ export class ChangePasswordComponent {
     });
   }
 
-
   get isPasswordAreIdentical(){
     return this.changePasswordForm.controls['newPassword'].value == this.changePasswordForm.controls['confirmPassword'].value;
   }
   onSubmit() {
-
-    //TODO: remove
-    this.mapValues();
-    if(!this.isPasswordAreIdentical){
-      alert('password not identical !');
-    }
-    //TODO: remove
-
-    alert(`
-    ${this.changePasswordModel.oldPassword},
-    ${this.changePasswordModel.newPassword},
-    `)
-
+    this.service.printFormValues(this.changePasswordForm);
     if(this.changePasswordForm.valid){
-      this.mapValues();
-      this.authService.changePassword(this.changePasswordModel).subscribe({
+      this.service.authService.changePassword(this.changePasswordForm.value).subscribe({
         next:(response)=>{
 
         },
@@ -76,12 +68,5 @@ export class ChangePasswordComponent {
     }
   }
   
-  mapValues(){
-    this.changePasswordModel = {
-      oldPassword : this.changePasswordForm.controls['oldPassword'].value,
-      newPassword : this.changePasswordForm.get('newPassword')?.value,
-      confirmPassword : this.changePasswordForm.get('confirmPassword')?.value,
-    }
-  }
 
 }

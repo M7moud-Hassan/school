@@ -1,6 +1,6 @@
 
 <div class="container-fluid bg-white pt-2">
-    <form [formGroup]="editSupervisorForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="editSupervisorForm">
     <div class="row">
         <div class="col-11"></div>
         <div class="col-1">
@@ -9,11 +9,11 @@
         <div class="row">
             <div class="center">
                 <div class="imageContainer">
-                    <img src="{{editSupervisorModel.image}}">
+                    <img src="{{getImage}}">
                 </div>
             </div>
-            <div class="text-center pt-2 fs-5 fw-bolder pt-3">{{editSupervisorModel.name}}</div>
-            <div class="text-center pt-3" style="color: #3AA7CE; font-size: 16px;">{{editSupervisorModel.nameEn}}</div>
+            <div class="text-center pt-2 fs-5 fw-bolder pt-3">{{getName}}</div>
+            <div class="text-center pt-3" style="color: #3AA7CE; font-size: 16px;">{{getNameEn}}</div>
         </div>
         <div class="row mt-5">
             <div class="col-12 col-md-6">
@@ -63,7 +63,7 @@
             <div class="col-12 col-md-6">
                 <label for="manufacturingCompany" class="defaultLabel">نوع الباص</label>
                 <div class="input-container_2_icon_end">
-                    <span style="left: 3%;"><span style="width: 20px; height: 20px;" [style.backgroundColor]="busColorValue"></span></span>
+                    <span style="left: 3%;"><span style="width: 20px; height: 20px;" [style.backgroundColor]="getBusColcor"></span></span>
                     <div style="left: 15%;" class="vertical-bar_2_icon_end"></div>
                     <input type="text" name="manufacturingCompany" id="manufacturingCompany" formControlName="manufacturingCompany" class="input-field_2_icon_end">
                   </div>

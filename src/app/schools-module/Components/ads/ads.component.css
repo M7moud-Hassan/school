@@ -1,8 +1,14 @@
 .dropdownlist2{
     top: 55%;
 }
-.showed{
+.showed,.disappear{
+    display: inline-block;
+    text-align: center;
     padding: 10px;
     border-radius: 10px;
     background-color: #E4F8FF;
+    min-width: 90px;
+}
+.disappear{
+    background-color: #FFF0EB;
 }

@@ -1,21 +1,18 @@
-import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
+import { Component, ElementRef, AfterViewInit, ViewChild, OnInit } from '@angular/core';
 import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-import { AuthService } from '../../Services/auth.service';
 import { RegisterModel } from '../../Core/Models/register-model';
 import { DilaogContactComponent } from '../dilaog-contact/dilaog-contact.component';
-import { Route, Router } from '@angular/router';
+import { MainService } from '../../Services/main.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['../login/login.component.css', './register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
   imageSource:string = "assets/images/message.svg";
   labelSubmit:string='دخول' ;
-  registerModel:RegisterModel = {} as RegisterModel;
   input:any ;
   countryCode=966;
   separateDialCode = false;
@@ -24,23 +21,27 @@ export class RegisterComponent {
   PhoneNumberFormat = PhoneNumberFormat;
   preferredCountries: CountryISO[] = [CountryISO.SaudiArabia, CountryISO.UnitedKingdom];
 
-  phoneForm = new FormGroup({
-    phone: new FormControl(undefined, [Validators.required])
-  });
+
   // phoneForm = new FormGroup({
   //   phone: new FormControl(undefined, [Validators.required])
   // });
-  constructor(private router: Router,private fb:FormBuilder,private authService:AuthService,private dialog: MatDialog, private elementRef: ElementRef,){}
+
+  constructor(private service:MainService, private elementRef: ElementRef,){}
+   ngOnInit(): void {
+    this.createForm();
+  }
 
 
-  registerForm = this.fb.group({
+  registerForm:FormGroup = new FormGroup({});
+  createForm(){
+   this.registerForm = this.service.formBuilder.group({
     email:['',[Validators.required]],
     phone:['',[Validators.required]],
     address:['',[Validators.required]],
     nameInArabic:['',[Validators.required]],
     nameInEnglish:['',[Validators.required]],
   });
-
+  }
   onCountrySelected(event: any) {
     this.countryCode=event.dialCode;
     // TODo : do something with the selected country code
@@ -60,22 +61,15 @@ export class RegisterComponent {
 
   }
   submit(){
-    //TODO : remove 
+    this.service.printFormValues(this.registerForm);
 
-    this.mapValues();
-    alert(`
-    ${this.registerModel.email} , 
-    ${this.registerModel.address} , 
-    ${this.registerModel.phone} , 
-    ${this.registerModel.nameInArabic} , 
-    ${this.registerModel.nameInEnglish} , 
-    `);
+    //TODO : remove
+    this.service.router.navigate(['/home'])
 
-    this.router.navigate(['/home'])
     if(this.registerForm.valid){
-      this.authService.register(this.registerModel).subscribe({
+      this.service.authService.register(this.registerForm.value).subscribe({
         next:(response)=>{
-
+           this.service.router.navigate(['/home'])
         },
         error:(error)=>{
 
@@ -83,16 +77,6 @@ export class RegisterComponent {
       })
     }
   }
-  mapValues(){
-    this.registerModel = {
-      email : this.registerForm.controls['email'].value,
-      address : this.registerForm.controls['address'].value,
-      phone : this.registerForm.controls['phone'].value,
-      nameInArabic : this.registerForm.controls['nameInArabic'].value,
-      nameInEnglish : this.registerForm.controls['nameInEnglish'].value,
-    }
-  }
-
 
   @ViewChild('dialog', { static: true }) set content(content: ElementRef) {
     this.elementRef = content;
@@ -100,18 +84,18 @@ export class RegisterComponent {
   openDialog() {
 
     const dialogConfig = new MatDialogConfig();
-  
+
     dialogConfig.position = {
       top: `${this.elementRef.nativeElement.offsetTop - 30}px`,
       left: `${this.elementRef.nativeElement.offsetLeft}px`
     };
-    const dialogRef: MatDialogRef<DilaogContactComponent> = this.dialog.open(DilaogContactComponent, dialogConfig);
+    const dialogRef: MatDialogRef<DilaogContactComponent> = this.service.dialog.open(DilaogContactComponent, dialogConfig);
 
     dialogRef.afterOpened().subscribe(() => {
       this.imageSource =
      "assets/images/close.svg";
     });
-  
+
     dialogRef.afterClosed().subscribe(() => {
       this.imageSource =
      "assets/images/message.svg";

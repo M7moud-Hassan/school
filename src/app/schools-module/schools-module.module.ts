@@ -63,7 +63,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 import { SelectGroupsComponent } from './Components/select-groups/select-groups.component';
-import { DetailsStudentComponent } from './Components/details-student/details-student.component';
 import { AccountUserComponent } from './Components/account-user/account-user.component';
 import { DeleteStudentComponent } from './Components/delete-student/delete-student.component';
 import { LocationComponent } from './Components/location/location.component';
@@ -71,6 +70,7 @@ import { StudentPasswordComponent } from './Components/student-password/student-
 import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-up/edit-supervisor-pop-up.component';
 import { SupervisorProfileComponent } from './Components/supervisor-profile/supervisor-profile.component';
 import { TrackingAllComponent } from './Components/tracking-all/tracking-all.component';
+import { DetailsStudentComponent } from './Components/details-student/details-student.component';
 
 
 @NgModule({
@@ -122,7 +122,6 @@ import { TrackingAllComponent } from './Components/tracking-all/tracking-all.com
     SocialMediaComponent,
     SchoolAccountDetailsComponent,
     SelectGroupsComponent,
-    DetailsStudentComponent,
     AccountUserComponent,
     DeleteStudentComponent,
     LocationComponent,
@@ -130,6 +129,7 @@ import { TrackingAllComponent } from './Components/tracking-all/tracking-all.com
     EditSupervisorPopUpComponent,
     SupervisorProfileComponent,
     TrackingAllComponent,
+    DetailsStudentComponent
   ],
   imports: [
     CommonModule,

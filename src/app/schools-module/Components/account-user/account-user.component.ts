@@ -1,7 +1,8 @@
-import { Component ,AfterViewInit} from '@angular/core';
+import { Component ,AfterViewInit, OnInit} from '@angular/core';
 import { ProfileModel } from '../../Core/Models/profile-model';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../Services/auth.service';
+import { MainService } from '../../Services/main.service';
 
 @Component({
   selector: 'app-account-user',
@@ -9,7 +10,7 @@ import { AuthService } from '../../Services/auth.service';
   styleUrls: ['../login/login.component.css', '../register/register.component.css',
   '../new-student/new-student.component.css','../profile/profile.component.css','./account-user.component.css']
 })
-export class AccountUserComponent implements AfterViewInit{
+export class AccountUserComponent implements AfterViewInit,OnInit{
   profileModel:ProfileModel = {} as ProfileModel;
   topPosition=0;
   display='none'
@@ -20,7 +21,10 @@ export class AccountUserComponent implements AfterViewInit{
     lng:  48.39095806484077
 };
 zoom=5
-  constructor(private fb:FormBuilder,private authService:AuthService){
+  constructor(private fb:FormBuilder,private authService:AuthService,private service:MainService){
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
   ngAfterViewInit(): void {
    setInterval(()=>{
@@ -47,6 +51,7 @@ zoom=5
       phone : this.profileForm.controls['phone'].value,
       address : this.profileForm.controls['address'].value,
       location : this.profileForm.controls['location'].value,
+      image : this.profileForm.controls['location'].value,
     }
   }
   onSubmit() {
@@ -65,7 +70,7 @@ zoom=5
 
     if(this.profileForm.valid){
       this.mapValues();
-      this.authService.profile(this.profileModel).subscribe({
+      this.service.schoolService.Editprofile(this.profileModel).subscribe({
         next:(response)=>{
 
         },
