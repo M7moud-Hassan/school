@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SchoolsLayoutComponent } from './Components/schools-layout/schools-layout.component';
-import { SchoolsHomePageComponent } from './Components/schools-home-page/schools-home-page.component';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ReportTripsComponent } from './Components/report-trips/report-trips.component';
@@ -10,7 +8,6 @@ import { ParentsComponent } from './Components/parents/parents.component';
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { ParentsListComponent } from './Components/parents-list/parents-list.component';
 import { TrackingTripComponent } from './Components/tracking-trip/tracking-trip.component';
-import { GoogleMapsModule } from '@angular/google-maps'
 import { TodayJourneyComponent } from './Components/today-journey/today-journey.component';
 import { PrintPopUpComponent } from './Components/print-pop-up/print-pop-up.component';
 import { StudentListComponent } from './Components/student-list/student-list.component';
@@ -70,11 +67,10 @@ const routes: Routes = [
   {path:'change-password',component:ChangePasswordComponent},
   {path:'social-media',component:SocialMediaComponent},
   {path:'school-account-details',component:SchoolAccountDetailsComponent},
-  {path:'account-user',component:AccountUserComponent},
   {path:'edit-bus',component:EditSupervisorPopUpComponent},
   {path:'supervisor-profile',component:SupervisorProfileComponent},
   {path:'account-user',component:AccountUserComponent},
-  {path:'tracking-all',component:TrackingAllComponent}
+  {path:'tracking-all',component:TrackingAllComponent},
   
 ];
 

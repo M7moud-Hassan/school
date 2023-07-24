@@ -1,6 +1,6 @@
 
 <div class="container-fluid bg-white pt-2">
-    <form [formGroup]="editSupervisorForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="editSupervisorForm">
     <div class="row">
         <div class="col-11"></div>
         <div class="col-1">
@@ -9,11 +9,11 @@
         <div class="row">
             <div class="center">
                 <div class="imageContainer">
-                    <img src="{{editSupervisorModel.image}}">
+                    <img src="{{getImage}}">
                 </div>
             </div>
-            <div class="text-center pt-2 fs-5 fw-bolder pt-3">{{editSupervisorModel.name}}</div>
-            <div class="text-center pt-3" style="color: #3AA7CE; font-size: 16px;">{{editSupervisorModel.nameEn}}</div>
+            <div class="text-center pt-2 fs-5 fw-bolder pt-3">{{getName}}</div>
+            <div class="text-center pt-3" style="color: #3AA7CE; font-size: 16px;">{{getNameEn}}</div>
         </div>
         <div class="row mt-5">
             <div class="col-12 col-md-6">
@@ -22,7 +22,7 @@
                 <div class="input-container_2_icon_begining">
                     <span style="padding-right: 2%"><img src="/assets/images/userNumber.svg"></span>
                     <div style="margin-right: 8%"  class="vertical-bar_2_icon_begining"></div>
-                    <input type="text" name="userNumber" id="userNumber" style="padding-right: 22%" formControlName="userNumber" class="input-field_2_icon_begining">
+                    <input readonly type="text" name="userNumber" id="userNumber" style="padding-right: 22%" formControlName="userNumber" class="input-field_2_icon_begining">
                   </div>
             </div>
             <div class="col-12 col-md-6">
@@ -30,7 +30,7 @@
                 <div class="input-container_2_icon_begining">
                     <span style="padding-right: 2%"><img src="/assets/images/email.svg"></span>
                     <div  style="margin-right: 8%" class="vertical-bar_2_icon_begining"></div>
-                    <input type="text" name="email" id="email" style="padding-right: 22%" formControlName="email" class="input-field_2_icon_begining">
+                    <input readonly type="text" name="email" id="email" style="padding-right: 22%" formControlName="email" class="input-field_2_icon_begining">
                   </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 <div class="input-container_2_icon_begining">
                     <span style="padding-right: 2%"><img src="/assets/images/Call.svg"></span>
                     <div  style="margin-right: 8%" class="vertical-bar_2_icon_begining"></div>
-                    <input type="text" name="phone" id="phone" style="padding-right: 22%" formControlName="phone" class="input-field_2_icon_begining">
+                    <input readonly type="text" name="phone" id="phone" style="padding-right: 22%" formControlName="phone" class="input-field_2_icon_begining">
                   </div>
             </div>
             <div class="col-12 col-md-6">
@@ -48,7 +48,7 @@
                 <div class="input-container_2_icon_begining">
                     <span style="padding-right: 2%"><img src="/assets/images/Location.svg"></span>
                     <div  style="margin-right: 8%" class="vertical-bar_2_icon_begining"></div>
-                    <input type="text" name="address" id="address" style="padding-right: 22%" formControlName="address" class="input-field_2_icon_begining">
+                    <input readonly type="text" name="address" id="address" style="padding-right: 22%" formControlName="address" class="input-field_2_icon_begining">
                   </div>
             </div>
         </div>
@@ -57,15 +57,15 @@
                 <label class="defaultLabel">رقم الباص</label>
                 <div class="input-container_2_icon_begining">
                     
-                    <input type="text" name="busNumber" id="busNumber" formControlName="busNumber" class="defaultTextBox" style="padding: 12px; border: 1px solid grey;padding-right: 11%;">
+                    <input readonly type="text" name="busNumber" id="busNumber" formControlName="busNumber" class="defaultTextBox" style="padding: 12px; border: 1px solid grey;padding-right: 11%;">
                   </div>
             </div>
             <div class="col-12 col-md-6">
                 <label for="manufacturingCompany" class="defaultLabel">نوع الباص</label>
                 <div class="input-container_2_icon_end">
-                    <span style="left: 3%;"><span style="width: 20px; height: 20px;" [style.backgroundColor]="busColorValue"></span></span>
+                    <span style="left: 3%;"><span style="width: 20px; height: 20px;" [style.backgroundColor]="getBusColcor"></span></span>
                     <div style="left: 15%;" class="vertical-bar_2_icon_end"></div>
-                    <input type="text" name="manufacturingCompany" id="manufacturingCompany" formControlName="manufacturingCompany" class="input-field_2_icon_end">
+                    <input readonly type="text" name="manufacturingCompany" id="manufacturingCompany" formControlName="manufacturingCompany" class="input-field_2_icon_end">
                   </div>
             </div>
         </div>

@@ -1,47 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SocilaMediaLinksModel } from '../../Core/Models/socila-media-links-model';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../Services/auth.service';
+import { MainService } from '../../Services/main.service';
 
 @Component({
   selector: 'app-social-media',
   templateUrl: './social-media.component.html',
   styleUrls: ['./social-media.component.css']
 })
-export class SocialMediaComponent {
-  socilaMediaLinksModel:SocilaMediaLinksModel = {} as SocilaMediaLinksModel;
+export class SocialMediaComponent implements OnInit {
+  socilaMediaLinksForm:FormGroup = new FormGroup({});
 
-  constructor(private fb:FormBuilder,private authService:AuthService){}
-
-  socilaMediaLinksForm = this.fb.group({
-    facebook:['',[Validators.required]],
-    instagram:['',[Validators.required]],
-    whatsApp:['',[Validators.required]],
-    telegram:['',[Validators.required]],
-    twitter:['',[Validators.required]],
-    snapChat:['',[Validators.required]],
-  });
-  mapsocilaMediaLinksModel(){
-    this.socilaMediaLinksModel = {
-      facebook :this.socilaMediaLinksForm.controls['facebook'].value,
-      instagram:this.socilaMediaLinksForm.controls['instagram'].value,
-      whatsApp :this.socilaMediaLinksForm.controls['whatsApp'].value,
-      telegram :this.socilaMediaLinksForm.controls['telegram'].value,
-      twitter  :this.socilaMediaLinksForm.controls['twitter'].value,
-      snapChat :this.socilaMediaLinksForm.controls['snapChat'].value,
-    }
+  constructor(private service:MainService){}
+  ngOnInit(): void {
+    this.createForm();
   }
+  createForm(){
+    this. socilaMediaLinksForm = this.service.formBuilder.group({
+      facebook:['',[Validators.required]],
+      instagram:['',[Validators.required]],
+      whatsApp:['',[Validators.required]],
+      telegram:['',[Validators.required]],
+      twitter:['',[Validators.required]],
+      snapChat:['',[Validators.required]],
+    });
+  }
+ 
+  
   submit(){
-    this.mapsocilaMediaLinksModel();
-    alert(`
-    ${this.socilaMediaLinksForm.controls['facebook'].value}
-    ${this.socilaMediaLinksForm.controls['instagram'].value}
-    ${this.socilaMediaLinksForm.controls['whatsApp'].value}
-    ${this.socilaMediaLinksForm.controls['telegram'].value}
-    ${this.socilaMediaLinksForm.controls['twitter'].value}
-    ${this.socilaMediaLinksForm.controls['snapChat'].value}
-    `)
-    this.authService.saveSocialMediaLinks(this.socilaMediaLinksModel).subscribe({
+    this.service.printFormValues(this.socilaMediaLinksForm);
+    this.service.authService.saveSocialMediaLinks(this.socilaMediaLinksForm.value).subscribe({
       next:(res)=>{
 
       },

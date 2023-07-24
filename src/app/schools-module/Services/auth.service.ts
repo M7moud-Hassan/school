@@ -18,23 +18,25 @@ export class AuthService {
   
   constructor(private http:HttpClient) { }
   
-  login(model:LoginModel):Observable<ResponseModel>{
+  login(model:any):Observable<ResponseModel>{
+    alert(',,,,,,,,,,,,,,,,,the Form is Valid,,,,,,,,,,,,,,');
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
 
-  register(model:RegisterModel):Observable<ResponseModel>{
+  register(model:any):Observable<ResponseModel>{
+    alert(',,,,,,,,,,,,,,,,,the Form is Valid,,,,,,,,,,,,,,');
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
-  resetPassword(model:ResetPasswordModel):Observable<ResponseModel>{
+  resetPassword(model:any):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
-  profile(model:ProfileModel):Observable<ResponseModel>{
+
+  changePassword(model:any):Observable<ResponseModel>{
+    alert(',,,,,,,,,,,,,,,,,the Form is Valid,,,,,,,,,,,,,,');
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
-  changePassword(model:ChangePasswordModel):Observable<ResponseModel>{
-    return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
-  }
-  saveSocialMediaLinks(model:SocilaMediaLinksModel):Observable<ResponseModel>{
+  saveSocialMediaLinks(model:any):Observable<ResponseModel>{
+    alert(',,,,,,,,,,,,,,,,,the Form is Valid,,,,,,,,,,,,,,');
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
   

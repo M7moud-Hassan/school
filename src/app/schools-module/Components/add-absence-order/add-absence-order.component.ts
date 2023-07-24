@@ -1,28 +1,28 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AbsenceOrderModel } from '../../Core/Models/absence-order-model';
 import { AbsenceService } from '../../Services/absence.service';
+import { MainService } from '../../Services/main.service';
 
 @Component({
   selector: 'app-add-absence-order',
   templateUrl: './add-absence-order.component.html',
-  // styleUrls: ['../new-student/new-student.component.css','../login/login.component.css', '../register/register.component.css','../profile/profile.component.css','./add-absence-order.component.css']
   styleUrls: ['./add-absence-order.component.css']
 })
-export class AddAbsenceOrderComponent {
-
-  absenceOrderModel:AbsenceOrderModel = {} as AbsenceOrderModel;
+export class AddAbsenceOrderComponent implements OnInit {
+  absenceOrderForm:FormGroup = new FormGroup({});
+  // absenceOrderModel:AbsenceOrderModel = {} as AbsenceOrderModel;
   selectAll:boolean = false;
   journeyList = [
     {label:'outbound',isSelected:false},
     {label:'return',isSelected:true},
   ];
-
-  constructor(private fb:FormBuilder,private absenceService:AbsenceService){
-
+  constructor(private service:MainService){}
+  ngOnInit(): void {
+    this.createForm();
   }
-
-  absenceOrderForm = this.fb.group({
+ createForm(){
+   this.absenceOrderForm = this.service.formBuilder.group({
     studentName : ['',[Validators.required]],
     from : ['',[Validators.required]],
     to : ['',[Validators.required]],
@@ -31,38 +31,14 @@ export class AddAbsenceOrderComponent {
     isOutboundJourneyAbsent : [false,[Validators.required]],
     isReturnJourneyAbsent : [false,[Validators.required]],
   });
-
-   
-  mapValues(){
-    this.absenceOrderModel = {
-      studentName:this.absenceOrderForm.controls['studentName'].value,
-      from:this.absenceOrderForm.controls['from'].value,
-      to:this.absenceOrderForm.controls['to'].value,
-      reason:this.absenceOrderForm.controls['reason'].value,
-      by:this.absenceOrderForm.controls['by'].value,
-      isOutboundJourneyAbsent:this.absenceOrderForm.controls['isOutboundJourneyAbsent'].value,
-      isReturnJourneyAbsent:this.absenceOrderForm.controls['isReturnJourneyAbsent'].value,
-    }
-  }
-
+ }
+  
 
   onSubmit() {
-    //TODO: remove
-    this.mapValues();
-    //TODO: remove
-    alert(`
-    studentName ${this.absenceOrderModel.studentName},
-    from ${this.absenceOrderModel.from},
-    to ${this.absenceOrderModel.to},
-    reason ${this.absenceOrderModel.reason},
-    by ${this.absenceOrderModel.by},
-    isOutboundJourneyAbsent ${this.absenceOrderModel.isOutboundJourneyAbsent},
-    isReturnJourneyAbsent ${this.absenceOrderModel.isReturnJourneyAbsent},
-    `)
-
+    this.service.printFormValues(this.absenceOrderForm);
     if(this.absenceOrderForm.valid){
-      this.mapValues();
-      this.absenceService.addNewAbsence(this.absenceOrderModel).subscribe({
+
+      this.service.absenceService.addNewAbsence(this.absenceOrderForm.value).subscribe({
         next:(response)=>{
 
         },
@@ -74,28 +50,29 @@ export class AddAbsenceOrderComponent {
   }
  
   toggleSelectAll(){
-    debugger;
-    alert(`
-    ${this.selectAll}
-    ${this.journeyList[0].isSelected}
-    ${this.journeyList[1].isSelected}
-    `);
-    this.journeyList.forEach(e=>e.isSelected=this.selectAll);
-    alert(`
-    ${this.selectAll}
-    ${this.journeyList[0].isSelected}
-    ${this.journeyList[1].isSelected}
-    `);
+    this.selectAll = !this.selectAll;
+    if(this.selectAll==true){
+      this.absenceOrderForm.controls['isOutboundJourneyAbsent'].setValue(true);
+      this.absenceOrderForm.controls['isReturnJourneyAbsent'].setValue(true);
+    }else{
+      this.absenceOrderForm.controls['isReturnJourneyAbsent'].setValue(false);
+      this.absenceOrderForm.controls['isOutboundJourneyAbsent'].setValue(false);
+    }
   }
   checkBoxChange(){
     if(this.isAllCheckboxSelected()) this.selectAll=true;
     else this.selectAll=false;
   }
   isAllCheckboxSelected(){
-    return this.journeyList.every(e=>e.isSelected==true);
+   let checkOne = this.absenceOrderForm.controls['isOutboundJourneyAbsent'].value;
+   let checkTwo =   this.absenceOrderForm.controls['isReturnJourneyAbsent'].value;
+   return (checkOne==true && checkTwo==true);
   }
-  get getAllSelectedItems(){
-    return this.journeyList.filter(e=>e.isSelected);
+  getReturnJourneyAbsent(){
+    return this.absenceOrderForm.controls['isOutboundJourneyAbsent'];
+  }
+  getOutboundJourneyAbsent(){
+    return this.absenceOrderForm.controls['isOutboundJourneyAbsent'];
   }
 
 }

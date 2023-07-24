@@ -18,7 +18,7 @@
                  <div class="text-center">
                      <img *ngIf="!imageSrc" src="assets/images/Image.svg" alt="Placeholder Image" />
                      <img *ngIf="imageSrc" [src]="imageSrc" alt="Dropped Image" style="width: 50px; height: 50px;" />
-                     <input style="width: 0px; height: 0px;" #selectFileInput type="file" accept="image/*" (change)="onFileSelected($event)" />
+                     <input style="width: 0px; height: 0px;" name="image" formControlName="image" #selectFileInput type="file" accept="image/*" (change)="onFileSelected($event)" />
                      <p>اسحب صورة أو <span style="color: blue;">حمّلها</span> </p>
                      <p>يجب أن يكون الصورة بصيغة jpg أو png</p>
                  </div>
@@ -83,7 +83,7 @@
                             <!-- <label for="busColor">لون الباص</label> -->
                             <!-- <input type="color" spellcheck="false" formControlName="busColor" name="busColor" id="busColor" placeholder="" > -->  
                             <!-- <div class="d-inline-block">                          -->
-                                <label for="exampleColorInput" class="form-label d-inline-block" style="padding-left: 30px; border-left: 1px solid grey;"> لون الباص</label>
+                                <label for="exampleColorInput" class="form-label d-inline-block" style="padding-left: 30px; border-left: 1px solid grey;padding-bottom: 0px;"> لون الباص</label>
                                 
                                 <span class="justify-content-center " style="margin: 10px 20px;">{{busColorValue}}</span>
                                 <input type="color" class="border-0 form-control-color  px-0 d-inline-block" style="width: 20px;height: 20px; margin-right: 50%;" formControlName="busColor" name="busColor" id="busColor" [(ngModel)]="busColorValue"> 

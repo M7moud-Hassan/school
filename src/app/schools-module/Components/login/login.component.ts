@@ -1,11 +1,10 @@
 import { Component,AfterViewInit,OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-import { MatCheckbox } from '@angular/material/checkbox';
 import { DilaogContactComponent } from '../dilaog-contact/dilaog-contact.component';
 import { AuthService } from '../../Services/auth.service';
-import { LoginModel } from '../../Core/Models/login-model';
 import { Router } from '@angular/router';
+import { MainService } from '../../Services/main.service';
 
 @Component({
   selector: 'app-login',
@@ -20,18 +19,22 @@ export class LoginComponent implements OnInit, AfterViewInit {
   titleForm:string='تسجيل الدخول';
   label2:string='كلمة المرور' ;
   showContainer:boolean=true;
-  loginModel:LoginModel = {} as LoginModel;
+  loginForm:FormGroup = new FormGroup({});
 
   constructor(private fb:FormBuilder,private dialog: MatDialog, private elementRef: ElementRef,private authService:AuthService,
-    private router: Router) {
+    private router: Router,private service:MainService) {
   }
-  loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      rememberMe: [false]
-    });
-
   
+    ngOnInit() {
+     this.createForm();
+    }
+    createForm(){
+      this.loginForm = this.service.formBuilder.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(8)]],
+        rememberMe: [false]
+      });
+    }
 
 
   ngAfterViewInit(): void {
@@ -58,7 +61,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       top: `${this.elementRef.nativeElement.offsetTop - 30}px`,
       left: `${this.elementRef.nativeElement.offsetLeft}px`
     };
-    const dialogRef: MatDialogRef<DilaogContactComponent> = this.dialog.open(DilaogContactComponent, dialogConfig);
+    const dialogRef: MatDialogRef<DilaogContactComponent> = this.service.dialog.open(DilaogContactComponent, dialogConfig);
 
     dialogRef.afterOpened().subscribe(() => {
       this.imageSource =
@@ -71,22 +74,16 @@ export class LoginComponent implements OnInit, AfterViewInit {
     });
   }
 
-  onSubmit() {
-    //TODO: remove
-    this.mapValues();
-    //TODO: remove
-    alert(`
-    ${this.loginModel.userNumber},
-    ${this.loginModel.password},
-    ${this.loginModel.rememberMe},
-    `)
+  onSubmit() {  
+    this.service.printFormValues(this.loginForm);
 
-    this.router.navigate(['/home']); 
+    //TODO : To be removed .
+    this.service.router.navigate(['/home']); 
+
     if(this.loginForm.valid){
-      this.mapValues();
-      this.authService.login(this.loginModel).subscribe({
+      this.service.authService.login(this.loginForm.value).subscribe({
         next:(response)=>{
-          
+          this.router.navigate(['/home']);       
         },
         error:(error)=>{
 
@@ -100,16 +97,5 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
   toggleInputVisibility() {
     this.showInput = !this.showInput;
-  }
-  
-  mapValues(){
-    this.loginModel = {
-      userNumber : this.loginForm.controls['email'].value,
-      password : this.loginForm.get('password')?.value,
-      rememberMe : this.loginForm.get('rememberMe')?.value,
-    }
-  }
-
-  ngOnInit() {
   }
 }

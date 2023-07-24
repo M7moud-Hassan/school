@@ -1,8 +1,20 @@
 .dropdownlist2{
     top: 55%;
 }
-.showed{
+.showed,.disappear{
+    display: inline-block;
+    text-align: center;
     padding: 10px;
     border-radius: 10px;
     background-color: #E4F8FF;
+    min-width: 90px;
+}
+.disappear{
+    background-color: #FFF0EB;
+}
+.pageHeadr{
+    background-image: url('/assets/images/ads.png');
+    background-size:  120px 120px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 }

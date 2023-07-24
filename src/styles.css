@@ -350,7 +350,7 @@ input[type=radio].SquareRadioButton:focus {
   border-radius: 0;
 }
 
-input[type=checkbox].SquarecheckboxButton {
+input[type=checkbox].SquarecheckboxButton,input[type=checkbox].Square_Sign_checkboxButton {
   border: 1px solid #fff;
   padding: 0.5em;
   -webkit-appearance: none;
@@ -361,11 +361,15 @@ input[type=checkbox].SquarecheckboxButton {
 }
 
 
-input[type=checkbox].SquarecheckboxButton:checked {
+input[type=checkbox].SquarecheckboxButton:checked,input[type=checkbox].Square_Sign_checkboxButton:checked {
   background: url('/assets/images/activeRect.svg') no-repeat center center;
   background-size: 30px;
   border: none;
   border-radius: 0;
+}
+input[type=checkbox].Square_Sign_checkboxButton:checked{
+  background-image: url('/assets/images/checkedWithSign.svg');
+  background-size: 15px;
 }
 
 
@@ -548,6 +552,7 @@ outline: 0;
   width: 120px;
   height: 120px;
   border-radius: 15px;
+  cursor: pointer;
 }
 .imageCont{
   position: absolute;
