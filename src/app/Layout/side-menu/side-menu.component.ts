@@ -31,7 +31,7 @@ export class SideMenuComponent {
     {id:50,isSelected:true,sub_link:'/school/supervisor-list',label:'المشرفين',selectedIcon:'assets/images/busLight.svg',unSelectedIcon:'assets/images/subLinkSupervisor.svg',},
     {id:51,isSelected:false,sub_link:'/school/bus-list',label:'الباصات',selectedIcon:'assets/images/subLinkbusLight.svg',unSelectedIcon:'assets/images/bus.svg',},
   ]},
-    {id:6,isSelected:false,link:'/school/trips-and-groups',label:'الرحلات و المجموعات',selectedIcon:'assets/images/tripLight.svg',unSelectedIcon:'assets/images/trips.svg',subLink:
+    {id:6,isSelected:false,link:'/school/trips-and-groups',label:'الرحلات و المجموعات',selectedIcon:'assets/images/tripsAndGroups.svg',unSelectedIcon:'assets/images/trips.svg',subLink:
   [
 
   ]},

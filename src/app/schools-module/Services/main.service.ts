@@ -16,6 +16,7 @@ import { AdsService } from './ads.service';
 import { AbsenceService } from './absence.service';
 import { SupportService } from './support.service';
 import { NotificationService } from './notification.service';
+import { TripsAndGroupsService } from './trips-and-groups.service';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,7 @@ export class MainService {
     private _absenceService:AbsenceService,
     private _supportService:SupportService,
     private _notificationService:NotificationService,
+    private _tripsAndGroupsService:TripsAndGroupsService,
   ) { }
   
   
@@ -94,6 +96,10 @@ export class MainService {
   get  notificationService():NotificationService{
     return this._notificationService;
   }
+  get  tripsAndGroupsService():TripsAndGroupsService{
+    return this._tripsAndGroupsService;
+  }
+
 
 
 
