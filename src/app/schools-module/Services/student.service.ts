@@ -113,6 +113,50 @@ export class StudentService {
     
   ];
   }
+  getStudentForSendNotification():student_SendNotification_Model[]{
+    return [
+      {
+        name: "احمد محمد",
+        type: "طالب",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "طالب",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "طالب",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "طالب",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "طالب",
+        date: "2020-09-05"
+      }
+      , {
+        name: "احمد محمد",
+        type: "طالب",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "طالب",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "طالب",
+        date: "2020-09-05"
+      }
+    ]
+  }
   
 }
 export interface studentSimpleModel{
@@ -140,4 +184,9 @@ export interface studentEditProfileModel{
   city:any,
   location:any,
   image:any
+}
+export interface student_SendNotification_Model{
+    name:any,
+    type: any,
+    date: any
 }

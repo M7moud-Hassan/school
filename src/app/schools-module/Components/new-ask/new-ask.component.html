@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-md-6">
+            <form [formGroup]="newNewAskForm" (ngSubmit)="submit()">
             <div>
                 <span class="prev">الدعم الفني</span>
                 <img src="assets/images/next.svg" alt="arrow_left.svg">
@@ -13,7 +14,7 @@
                     <div class="col-12 col-md-3 pt-2">عنوان الطلب :</div>
                     <div class="col-12 col-md-8">
                         <div class="input-box">
-                            <input type="text" spellcheck="false" name="email" id="email" formControlName="email">
+                            <input type="text" spellcheck="false" name="title" id="title" formControlName="title">
                         </div>
                     </div>
                 </div>
@@ -21,6 +22,8 @@
                 <div class="px-2 py-3">
                     <editor
                 apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
+                name="details"
+                formControlName="details"
                  [init]="{
              height: 300,
              menubar: false,
@@ -48,6 +51,7 @@
             <div class="col-12 col-md-1"></div>
            </div>
             </div>
+        </form>
         </div>
         <div class="col-12 col-md-6"></div>
     </div>

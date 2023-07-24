@@ -13,6 +13,9 @@ import { StudentService } from './student.service';
 import { ParentService } from './parent.service';
 import { TripsTrackingService } from './trips-tracking.service';
 import { AdsService } from './ads.service';
+import { AbsenceService } from './absence.service';
+import { SupportService } from './support.service';
+import { NotificationService } from './notification.service';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +37,9 @@ export class MainService {
     private _parentService:ParentService,
     private _tripsTrackingService:TripsTrackingService,
     private _adsService:AdsService,
+    private _absenceService:AbsenceService,
+    private _supportService:SupportService,
+    private _notificationService:NotificationService,
   ) { }
   
   
@@ -78,6 +84,15 @@ export class MainService {
   }
   get  adsService():AdsService{
     return this._adsService;
+  }
+  get  absenceService():AbsenceService{
+    return this._absenceService;
+  }
+  get  supportService():SupportService{
+    return this._supportService;
+  }
+  get  notificationService():NotificationService{
+    return this._notificationService;
   }
 
 

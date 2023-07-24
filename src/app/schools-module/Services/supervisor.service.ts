@@ -170,6 +170,25 @@ export class SupervisorService {
     }
    return model;
   }
+  getSupervisorForSendNotification():supervisor_SendNotification_Model[]{
+    return [
+      {
+        name: "احمد محمد",
+        type: "مشرف",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "مشرف",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "مشرف",
+        date: "2020-09-05"
+      },
+    ];
+  }
 }
 
 export interface supervisorModel{
@@ -200,4 +219,9 @@ export interface busListModel{
   isSelected:any,
   isActive:any,
   image:any
+}
+export interface supervisor_SendNotification_Model{
+  name:any,
+  type: any,
+  date: any
 }

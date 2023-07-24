@@ -1,3 +1,9 @@
 .dropdownlist2{
     top: 55%;
 }
+.mainHeadre{
+    background-image: url('/assets/images/notifications.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px 90%;
+}

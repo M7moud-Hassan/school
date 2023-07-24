@@ -75,7 +75,7 @@
                 <div class="card border-0  shadow mt-4">
                     <div class="card-body">
                         <label for="all" class="checkbox-customize">
-                            <input type="checkbox" id="all"  [(ngModel)]="selectAll" (change)="toggleSelectAll()">
+                            <input type="checkbox" class="SquarecheckboxButton" id="all"  name="selectAll" [checked]="selectAll" [(ngModel)]="selectAll" (change)="toggleSelectAll()" >
                             <span style="padding-right: 20px; font-size: 15px;font-weight: 500;" >الــكل</span>
                             <span class="checkmark"></span>
                         </label>
@@ -85,7 +85,7 @@
                 <div class="card border-0  shadow mt-4">
                     <div class="card-body">
                         <label for="isOutboundJourneyAbsent" class="checkbox-customize">
-                            <input type="checkbox" class="" [(ngModel)]="journeyList[0].isSelected" (click)="checkBoxChange()" formControlName="isOutboundJourneyAbsent" name="isOutboundJourneyAbsent" id="isOutboundJourneyAbsent">
+                            <input type="checkbox" class="Square_Sign_checkboxButton"  (change)="checkBoxChange()" formControlName="isOutboundJourneyAbsent" name="isOutboundJourneyAbsent" id="isOutboundJourneyAbsent">
                             <span style="padding-right: 20px; font-size: 15px;font-weight: 500;">رحلة ذهاب</span>
                             <span class="checkmark"></span>
                         </label>
@@ -95,7 +95,7 @@
                 <div class="card border-0  shadow mt-4">
                     <div class="card-body">
                         <label for="isReturnJourneyAbsent" class="checkbox-customize">
-                            <input type="checkbox" class=""  [(ngModel)]="journeyList[1].isSelected" (click)="checkBoxChange()" formControlName="isReturnJourneyAbsent" name="isReturnJourneyAbsent" id="isReturnJourneyAbsent">
+                            <input type="checkbox" class="Square_Sign_checkboxButton" (change)="checkBoxChange()" formControlName="isReturnJourneyAbsent" name="isReturnJourneyAbsent" id="isReturnJourneyAbsent">
                             <span style="padding-right: 20px; font-size: 15px;font-weight: 500;">رحلة عودة</span>
                             <span class="checkmark"></span>
                         </label>

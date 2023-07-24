@@ -165,6 +165,32 @@ export class ParentService {
       {id:10,type:'جدة'},
     ];
   }
+  getParentForSendNotification():parent_SendNotification_Model[]{
+    return [
+      {
+        name: "احمد محمد",
+        type: "ولي امر",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "ولي امر",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "ولي امر",
+        date: "2020-09-05"
+      },
+      {
+        name: "احمد محمد",
+        type: "ولي امر",
+        date: "2020-09-05"
+      },
+      
+    ];
+  
+  }
 }
 
 export interface childInfoModel{
@@ -181,9 +207,12 @@ export interface parentListModel{
   isActive: any,
   childrenInfo:childInfoModel[],
 }
-
-
 export interface relativeModel{
   id:any,
   type:any
+}
+export interface parent_SendNotification_Model{
+  name:any,
+  type: any,
+  date: any
 }

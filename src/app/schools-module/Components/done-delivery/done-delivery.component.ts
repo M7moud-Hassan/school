@@ -1,99 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MainService } from '../../Services/main.service';
+import { student_SendNotification_Model } from '../../Services/student.service';
+import { parent_SendNotification_Model } from '../../Services/parent.service';
+import { supervisor_SendNotification_Model } from '../../Services/supervisor.service';
 
 @Component({
   selector: 'app-done-delivery',
   templateUrl: './done-delivery.component.html',
   styleUrls: ['./done-delivery.component.css']
 })
-export class DoneDeliveryComponent {
+export class DoneDeliveryComponent implements OnInit {
+  student:student_SendNotification_Model[] = []; 
+  parents:parent_SendNotification_Model[] = []; 
+  supervisor:supervisor_SendNotification_Model[] = []; 
+  all:any[]=[];
+  items:any[]=[];
   index:Number=0
-  student = [
-    {
-      name: "احمد محمد",
-      type: "طالب",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "طالب",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "طالب",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "طالب",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "طالب",
-      date: "2020-09-05"
-    }
-    , {
-      name: "احمد محمد",
-      type: "طالب",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "طالب",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "طالب",
-      date: "2020-09-05"
-    }
-  ]
+  constructor(private service:MainService){}
+  ngOnInit(): void {
+   this.getParents();
+   this.getStudents();
+   this.getSupervisors();
+   this.all = [...this.student,...this.supervisor,...this.parents];
+   this.items=this.all
+  }
+  getStudents(){
+   this.student = this.service.studentService.getStudentForSendNotification();
+  }
+  getParents(){
+    this.parents = this.service.parentService.getParentForSendNotification();
+   }
+   getSupervisors(){
+    this.supervisor = this.service.supervisorService.getSupervisorForSendNotification();
+   }
 
-  parents = [
-    {
-      name: "احمد محمد",
-      type: "ولي امر",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "ولي امر",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "ولي امر",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "ولي امر",
-      date: "2020-09-05"
-    },
-    
-  ]
 
-  supervisor = [
-    {
-      name: "احمد محمد",
-      type: "مشرف",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "مشرف",
-      date: "2020-09-05"
-    },
-    {
-      name: "احمد محمد",
-      type: "مشرف",
-      date: "2020-09-05"
-    },
-  ]
 
-all=[...this.student,...this.supervisor,...this.parents]
-items=this.all
 show(i:Number){
   this.index=i
   if(i==0)

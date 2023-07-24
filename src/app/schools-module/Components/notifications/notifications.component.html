@@ -1,10 +1,11 @@
 <div class="container-fluid parent-container">
+    <div class="mainHeadre">
     <div class="row" style="padding: 30px 30px 10px 30px;">
         <div class="col-12 col-md-4">
             <h3 class="fw-bolder float-end" style="font-size: 18px;">الاشعارات<span class="users-count">972 اشعار</span></h3>
         </div>
         <div class="col-12 col-md-2">
-            <img src="assets/images/notifications.png" alt="support.png" style="width: 100%; height: 100%;">
+            <!-- <img src="assets/images/notifications.png" alt="support.png" style="width: 100%; height: 100%;"> -->
         </div>
         <div class="col-12 col-md-4 float-start">
            
@@ -32,11 +33,6 @@
                                 <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton">عنوان الاشعار
                             </label>
                         </div>
-                        <!-- <div class="col-6 mt-2 text-end">
-                            <label for="radio_2">
-                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> عنوان الطلب
-                            </label>
-                        </div> -->
                        </div>
                        <hr/>
                        <div class="row">
@@ -45,26 +41,12 @@
                             <input type="date" name="addDate" class="form-control datepicker dateInput">
                         </div>
                        </div>
-                       <!-- <hr>
-                       <div class="row">
-                        <div class="col-4">
-                            <label for="radio_1_1">
-                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> تم الرد 
-                            </label>
-                        </div>
-                        <div class="col-5">
-                            <label for="radio_1_2">
-                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> لم يتم الرد 
-                            </label>
-                        </div>
-                        <div class="col-3"></div>
-                       </div> -->
-                       
                     </div>
                 </div>
             </div>   
         </div>
     </div>
+</div>
     <div>
         <table class="table table">
             <tr class="tableHeader">
@@ -81,18 +63,18 @@
              <tr class="mt-3">
                 <td colspan="7"></td>
              </tr>
-            <tbody *ngFor="let item of supervisor_data | paginate: 
+            <tbody *ngFor="let item of notificationList | paginate: 
                 { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
                 <tr id="first_{{i}}">
                     <td>
-                        تأخير الرحلة الصباحية
+                        {{item.title}}
                         <img src="assets/images/nit.svg" alt="" class="cursor-pointer" alt="" (click)="openDialogDetails()">
                     </td>
                     <td>
-                        18 جهة معنية
+                        {{item.recievedTo}}
                         <a routerLink="/school/delivery" ><img src="assets/images/eye.svg" ></a>
                     </td>
-                    <td>2020-09-05</td>
+                    <td>{{item.recievedDate}}</td>
                      
                     <td>
                         <a routerLink="/school/done-delivery"  class="d-inline-block ms-2"> <img src="assets/images/Delete.svg"  width="20px" height="20px" alt=""> </a>
