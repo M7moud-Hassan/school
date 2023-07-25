@@ -1,0 +1,23 @@
+<div class="main-home">
+    <div class="aside-menu">
+        <img src="assets/images/logo-menu.png" alt="logo-menu">
+        <ng-container *ngFor="let item of list">
+            <a *ngIf="item.isSelected" routerLink="{{item.link}}" class="bg-menu">
+                <div class="right">
+                    <p class="text-center">{{item.label}}</p>
+                </div>
+                <div class="left">
+                    <img src="{{item.selectedIcon}}" alt="">
+                </div>
+                <div style="height: 20px;"></div>
+            </a>
+            <a *ngIf="!item.isSelected" routerLink="{{item.link}}" (click)="toggleSelectedItem(item.id==1?0:item.id-1)"
+                class="text-decoration-none text-dark unselectedItem">
+                <div class="row-item">
+                    <img src="{{item.unSelectedIcon}}" alt="">
+                    <span>{{item.label}}</span>
+                </div>
+            </a>
+        </ng-container>
+    </div>
+</div>
