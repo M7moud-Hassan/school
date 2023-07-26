@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProfileModel } from '../../Core/Models/profile-model';
-import { AuthService } from '../../Services/auth.service';
-import { MainService } from '../../Services/main.service';
+import { FormGroup, Validators } from '@angular/forms';
+import { MainAgentService } from '../../Services/main-agent.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['../login/login.component.css', '../register/register.component.css','./profile.component.css']
+  selector: 'app-agent-profile',
+  templateUrl: './agent-profile.component.html',
+  styleUrls: ['./agent-profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class AgentProfileComponent implements OnInit {
   profileForm:FormGroup = new FormGroup({});
   userImage:any = "assets/images/userAccount.jpg";
 
@@ -23,7 +21,7 @@ export class ProfileComponent implements OnInit {
     lng: 48.39095806484077
   };
 
-  constructor(private service:MainService){}
+  constructor(private service:MainAgentService){}
   ngOnInit(): void {
     this.createForm();
     this.getSchoolProfileData();
@@ -31,21 +29,21 @@ export class ProfileComponent implements OnInit {
   }
   createForm(){
     this.profileForm = this.service.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required]],
       name: ['', [Validators.required]],
       nameEn: ['', [Validators.required]],
       userNumber: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required]],
       address: ['', [Validators.required]],
       location: ['', [Validators.required]],
       image: ['', [Validators.required]],
     });
   }
-
   getSchoolProfileData(){
-    let model = this.service.schoolService.getSchoolProfile();
+    let model = this.service.agentAuthService.getSchoolProfile();
     this.profileForm.patchValue(model);
   }
+
 
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
@@ -60,7 +58,7 @@ export class ProfileComponent implements OnInit {
   onSubmit() {
     this.service.printFormValues(this.profileForm);
     if(this.profileForm.valid){
-      this.service.schoolService.Editprofile(this.profileForm.value).subscribe({
+      this.service.agentAuthService.Editprofile(this.profileForm.value).subscribe({
         next:(response)=>{
 
         },

@@ -8,40 +8,5 @@ import { Router } from '@angular/router';
 })
 export class AgentsService {
 
-  constructor(
-    private _formBuilder:FormBuilder,
-    private _dialog: MatDialog,
-    private _router: Router,
-    private _agentsService: AgentsService,
-    ){}
-
-    get formBuilder():FormBuilder{
-      return this._formBuilder;
-    }
-    get dialog():MatDialog{
-      return this._dialog;
-    }
-    get router():Router{
-      return this._router;
-    }
-    get agentsService():AgentsService{
-      return this._agentsService;
-    }
-
-
-
-
-
-    printFormValues(myForm:FormGroup): void {
-      let  i = 0;
-      let displayedValues:String = "";
-      for (const controlName in myForm.controls) {
-        i++;
-        if (myForm.controls.hasOwnProperty(controlName)) {
-          displayedValues += `${i} - ${controlName}: ${myForm.controls[controlName].value} \n`;
-          console.log(`${controlName}: ${myForm.controls[controlName].value}`);
-        }
-      }
-      alert(displayedValues);
-    }
+  constructor(){}
 }

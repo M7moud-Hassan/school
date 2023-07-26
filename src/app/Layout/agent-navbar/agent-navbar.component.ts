@@ -15,8 +15,8 @@ export class AgentNavbarComponent {
     this.isSearchBoxVisible = ! this.isSearchBoxVisible;
   }
   searchType = [
-    {id:1,label:'ولى أمر',},
-    {id:2,label:'طالـــب',},
+    {id:1,label:'مشترك',},
+    {id:2,label:'مدرسة',},
     {id:3,label:'رحـلة',},
     {id:4,label:'بـاص',},
     {id:5,label:'مشـرف',},
