@@ -36,7 +36,7 @@
   padding-right: 20px;
 }
 .input-box {
-    margin-top: 25px;
+    /* margin-top: 25px; */
     height: 40px;
     margin-bottom: 45px;
   }
@@ -139,4 +139,86 @@
   }
   #homeLocation::placeholder{
     font-size: 13px;
+  }
+
+
+
+  
+.studentInfo{
+    min-height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    vertical-align: middle;
+  }
+  .addStudentButton{
+    display: inline-block;
+  padding: 7px;
+  text-align: center;
+  border: 1px solid #3AA7CE;
+  background-color: #3AA7CE;
+  color: white;
+  font-size: 16px;
+  width: 10%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  }
+  .load-image{
+    cursor: pointer;
+  }
+  .prev {
+    color: #575757;
+    font-size: 12px;
+  }
+  
+  .new {
+    width: 50%;
+    border-radius: 10px;
+    background-color: white;
+    padding-right: 20px;
+  }
+  .locationSection{
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px 0px;
+  }
+
+
+
+
+  .buttonContainer{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    /* border: 1px solid blue; */
+  }
+  .searchContainer{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 45px;
+    border-radius: 15px 0px 0px 15px;
+    background-color: #3AA7CE;
+    color: white;
+    font-size: 15px;
+    margin: 0px auto;
+  }
+  .searchInputContainer{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: 1px solid grey;
+    width: 80%;
+    height: 45px;
+    border-radius: 0px 15px 15px 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 18px;
+  }
+  .searchInputContainer:focus{
+    border: 1px solid grey;
   }

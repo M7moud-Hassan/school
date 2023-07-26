@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AgentsService } from './agents.service';
 import { AgentHomeService } from './agent-home.service';
 import { AgentAuthService } from './agent-auth.service';
+import { AgentUsersService } from './agent-users.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class MainAgentService {
     private _agentHomeService: AgentHomeService,
     private _agentsService: AgentsService,
     private _agentAuthService: AgentAuthService,
+    private _agentUsersService: AgentUsersService,
     ){}
 
     get formBuilder():FormBuilder{
@@ -38,6 +40,11 @@ export class MainAgentService {
     get agentAuthService():AgentAuthService{
       return this._agentAuthService;
     }
+    get agentUsersService():AgentUsersService{
+      return this._agentUsersService;
+    }
+
+
 
 
 

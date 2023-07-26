@@ -9,6 +9,10 @@ import { AgentSpeedNotificationComponent } from './Components/agent-speed-notifi
 import { AgentSpeedNotificationPopUpComponent } from './Components/agent-speed-notification-pop-up/agent-speed-notification-pop-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { AgentUsersComponent } from './Components/agent-users/agent-users.component';
+import { AgentUsersWarningPopUpComponent } from './Components/agent-users-warning-pop-up/agent-users-warning-pop-up.component';
+import { AgentAddNewUserComponent } from './Components/agent-add-new-user/agent-add-new-user.component';
 
 
 @NgModule({
@@ -18,13 +22,17 @@ import { GoogleMapsModule } from '@angular/google-maps';
     AgentProfileComponent,
     AgentSpeedNotificationComponent,
     AgentSpeedNotificationPopUpComponent,
+    AgentUsersComponent,
+    AgentUsersWarningPopUpComponent,
+    AgentAddNewUserComponent,
   ],
   imports: [
     CommonModule,
     AgentModuleRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    NgxPaginationModule
     // SharedModuleModule
   ]
 })
