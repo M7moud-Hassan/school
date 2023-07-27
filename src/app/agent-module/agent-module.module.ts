@@ -17,6 +17,12 @@ import { AgentAddNewSubscribersComponent } from './Components/agent-add-new-subs
 import { AgentSubscribersListComponent } from './Components/agent-subscribers-list/agent-subscribers-list.component';
 import { AgentExtendSubscriptionPopUpComponent } from './Components/agent-extend-subscription-pop-up/agent-extend-subscription-pop-up.component';
 import { AgentSchoolLocationPopUpComponent } from './Components/agent-school-location-pop-up/agent-school-location-pop-up.component';
+import { AgentAdsListComponent } from './Components/agent-ads-list/agent-ads-list.component';
+import { AgentAddNewAdsComponent } from './Components/agent-add-new-ads/agent-add-new-ads.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { AgentAddNewNotificationComponent } from './Components/agent-add-new-notification/agent-add-new-notification.component';
+import { AgentNotificationListComponent } from './Components/agent-notification-list/agent-notification-list.component';
+import { AgentSupportListComponent } from './Components/agent-support-list/agent-support-list.component';
 
 
 @NgModule({
@@ -33,6 +39,11 @@ import { AgentSchoolLocationPopUpComponent } from './Components/agent-school-loc
     AgentSubscribersListComponent,
     AgentExtendSubscriptionPopUpComponent,
     AgentSchoolLocationPopUpComponent,
+    AgentAdsListComponent,
+    AgentAddNewAdsComponent,
+    AgentAddNewNotificationComponent,
+    AgentNotificationListComponent,
+    AgentSupportListComponent,
   ],
   imports: [
     CommonModule,
@@ -40,7 +51,8 @@ import { AgentSchoolLocationPopUpComponent } from './Components/agent-school-loc
     FormsModule,
     ReactiveFormsModule,
     GoogleMapsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    EditorModule
     // SharedModuleModule
   ]
 })

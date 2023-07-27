@@ -1,125 +1,58 @@
-<div class="container-fluid parent-container">
-    <div class="row" style="padding: 30px 30px 10px 30px;">
-        <div class="col-12 col-md-6">
-            <h3 class="fw-bolder float-end" style="font-size: 18px;">بيانات المشتركين  : <span class="users-count">{{total}}
-                    مستخدم</span></h3>
-        </div>
-        <div class="col-12 col-md-2"></div>
-        <div class="col-12 col-md-4 float-start">
-            <!-- اااااااا -->
-        </div>
-    </div>
-    <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
-        <div class="col-12 col-md-5">
-            <a routerLink="/agent/add-new-subscriber" class="text-muted"><div class="action-button" style="background-color: #3AA7CE; color: white;"><img src="assets/images/add.png" alt="">اضافة مستخدم </div></a>
-            <a routerLink="#" class="text-muted"><div style="background-color: #E2FFE3;" class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
-            <a routerLink="#" class="text-muted"><div style="background-color: #F9E7E7;" class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
-        </div>
-        <div class="col-12 col-md-2"></div>  
-        <div class="col-12 col-md-5 float-end">  
-            <div class="search-box">
-                <div class="form-group has-search-box">
-                    <span class="form-control-feedback">
-                        <img src="assets/images/Search.svg" alt="">
-                    </span>
-                    <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن المستخدم">
-                </div>
-                <div class="btns">
-                    <img src="assets/images/Filter.svg" alt="" #trigger (click)="showOverlay()" class="schoolLogoButtton">
-                    <ng-template #overlayTemplate>
-                        <div class="positioned-element" dir="rtl">
-                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
-                       <div class="row">
-                        <div class="col-6 mt-2 text-end">
-                            <label for="radio_1">
-                                <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton"> اسم  المستخدم
-                            </label>
-                        </div>
-                        <div class="col-6 mt-2 text-end">
-                            <label for="radio_2">
-                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> رقم المستخدم
-                            </label>
-                        </div>
-                        <div class="col-6 mt-2 text-end">
-                            <label for="radio_3">
-                                <input type="radio" id="radio_3" name="searchBy" value="userPhone" class="radioButton"> رقم الهاتف
-                            </label>
-                        </div>
-                       </div>
-                       <hr/>
-                       <div class="row">
-                        <label class="defaultLabel text-end d-inline-block pe-3" style="color: grey;">نوع الحساب</label>
-                        <div class="col-6 text-end">
-                                <input type="radio" id="accountTypeTrue" name="accountType" value="true" class="radioButton">   
-                                <label for="accountTypeTrue" class="pb-3 d-inline-block">فعال </label>
-                        </div>
-                        <div class="col-6  text-end">
-                            <input type="radio" id="accountTypeFalse" name="accountType" value="false" class="radioButton"> 
-                            <label for="accountTypeFalse" class="pb-3 d-inline-block">غير فعال </label>
-                        </div>
-                       </div>
-                       <hr class="p-0 m-0 py-2"/>
-                       <div class="row">
-                        <label class="defaultLabel text-end d-inline-block pe-3" style="color: grey;">الإنهاء باستخدام الكود</label>
-                        <div class="col-6 text-end">
-                                <input type="radio" id="enableQRTrue" name="enableQR" value="true" class="radioButton">   
-                                <label for="enableQRTrue" class="pb-3 d-inline-block">فعال </label>
-                        </div>
-                        <div class="col-6  text-end">
-                            <input type="radio" id="enableQRFalse" name="enableQR" value="false" class="radioButton"> 
-                            <label for="enableQRFalse" class="pb-3 d-inline-block">غير فعال </label>
-                        </div>
-                       </div>
-                       <hr class="p-0 m-0 py-2"/>
-                       <div class="row">
-                        <label class="defaultLabel text-end d-inline-block pe-3" style="color: grey;">رسم المسار</label>
-                        <div class="col-6 text-end">
-                                <input type="radio" id="drawPathTrue" name="drawPath" value="true" class="radioButton">   
-                                <label for="drawPathTrue" class="pb-3 d-inline-block">فعال </label>
-                        </div>
-                        <div class="col-6  text-end">
-                            <input type="radio" id="drawPathFalse" name="drawPath" value="false" class="radioButton"> 
-                            <label for="drawPathFalse" class="pb-3 d-inline-block">غير فعال </label>
-                        </div>
-                       </div>
-                       <hr class="p-0 m-0 py-2"/>
-                       <div class="row">
-                        <label class="defaultLabel text-end d-inline-block pe-3" style="color: grey;">حفظ مسار الرحلة</label>
-                        <div class="col-6 text-end">
-                                <input type="radio" id="savePathTrue" name="savePath" value="true" class="radioButton">   
-                                <label for="savePathTrue" class="pb-3 d-inline-block">فعال </label>
-                        </div>
-                        <div class="col-6  text-end">
-                            <input type="radio" id="savePathFalse" name="savePath" value="false" class="radioButton"> 
-                            <label for="savePathFalse" class="pb-3 d-inline-block">غير فعال </label>
-                        </div>
-                       </div>
-                       <hr class="p-0 m-0 py-2"/>
-                       <div class="row">
-                        <div class="col-4 pt-2">تاريخ الاشتراك</div>
-                        <div class="col-8">
-                            <input type="date" name="subscriptionDate" class="form-control defaultDateInput">
-                        </div>
-                       </div>
-                       <hr class="p-0 m-0 py-2"/>
-                       <div class="row">
-                        <div class="col-4 pt-2">تاريخ الانتهاء</div>
-                        <div class="col-8">
-                            <input type="date" name="finishingDate" class="form-control defaultDateInput">
-                        </div>
-                       </div>
+<div>
+    <h3>الرحلات الفعالة <span class="me-4 title-b p-2">112 رحلة</span> </h3>
+</div>
+
+<div class="row">
+    <div class="col-9 col-md-6 row">
+        <div class="col-3 m-0 p-0">
+            <div class="dropdown"  style="height: 100%;">
+                <button class="btn  h-100 w-100 dropdown-toggle btn-drop" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">الكل
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu w-25">
+                    <div class="float-end">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            الكل 
+                          </span>
                     </div>
-                </div>
-            </ng-template>
-       
-                </div>
-            </div>
-
-
+                    <div style="clear: both;"></div>
+                    <hr/>
+                    <div class="form-group has-search">
+                        <input type="text" id="dropdown-menu"  class="form-control" placeholder="أدخل نص البحث" #myInput   (keyup)="filterItems(myInput.value)">
+                        <span class="form-control-feedback">
+                            <img src="assets/images/Search.svg" class="img-search" alt="" [style.top]="topSearch+'%'">
+                        </span>
+                    </div>
+                  
+                  <li *ngFor="let item of dropdownItems" [hidden]="!item.visible">
+                   <div class="text-center">
+                    <p>{{item.text}}</p>
+                    <hr>
+                   </div>
+                  </li>
+                </ul>
+              </div>
+        </div>
+        <div class="col-9 m-0 p-0">
+            <div class="search-container">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="ابحث عن رحلة معينة" name="ابحث عن رحلة معينة">
+                </form>
+              </div>
         </div>
     </div>
-    <div>
-        <table class="table table">
+    <div class="col-2 col-md-1 d-flex align-items-center justify-content-center" style="background-color: #3AA7CE;">
+        <img src="assets/images/Filter.svg" alt="">
+    </div>
+</div>
+
+<div class="container-fluid parent-container mt-4">
+    <div class="table-responsive">
+        <table class="table">
             <tr class="tableHeader">
                 <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()"  id="checkbox-all" /></td>
                 <td>الاســـم  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">

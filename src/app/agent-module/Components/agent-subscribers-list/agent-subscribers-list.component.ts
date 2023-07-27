@@ -7,7 +7,8 @@ import { TemplatePortal } from '@angular/cdk/portal';
 @Component({
   selector: 'app-agent-subscribers-list',
   templateUrl: './agent-subscribers-list.component.html',
-  styleUrls: ['./agent-subscribers-list.component.css']
+  styleUrls: ['../../../schools-module/Components/today-journey/today-journey.component.css', '../../../schools-module/Components/activities/activities.component.css','../../../Layout/admin-navbar/admin-navbar.component.css','../../../schools-module/Components/register/register.component.css','../../../schools-module/Components/login/login.component.css',
+  '../../../schools-module/Components/profile/profile.component.css','../../../schools-module/Components/new-student/new-student.component.css','./agent-subscribers-list.component.css']
 })
 export class AgentSubscribersListComponent implements OnInit {
   childrenNumber: any = [...Array(11).keys()].splice(1, 10);
@@ -24,6 +25,24 @@ export class AgentSubscribersListComponent implements OnInit {
   
   @ViewChild('trigger') trigger: any;
   @ViewChild('overlayTemplate', { static: false }) overlayTemplate!: TemplateRef<any>;
+
+
+  topSearch=0;
+  dropdownItems = [
+    { text: 'HTML', visible: true },
+    { text: 'CSS', visible: true },
+    { text: 'JavaScript', visible: true },
+    { text: 'jQuery', visible: true },
+    { text: 'Bootstrap', visible: true },
+    { text: 'Angular', visible: true },
+  ];
+
+  filterItems(value: string) {
+    const lowerCaseValue = value.toLowerCase();
+    this.dropdownItems.forEach(item => {
+      item.visible = item.text.toLowerCase().indexOf(lowerCaseValue) > -1;
+    });
+  }
 
   ngOnInit(): void {
   this.getParentList();

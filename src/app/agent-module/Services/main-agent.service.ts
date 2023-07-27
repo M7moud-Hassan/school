@@ -7,6 +7,9 @@ import { AgentHomeService } from './agent-home.service';
 import { AgentAuthService } from './agent-auth.service';
 import { AgentUsersService } from './agent-users.service';
 import { AgentSubscriptionService } from './agent-subscription.service';
+import { AgentAdsService } from './agent-ads.service';
+import { AgentNotificationService } from './agent-notification.service';
+import { AgentSupportService } from './agent-support.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +25,9 @@ export class MainAgentService {
     private _agentAuthService: AgentAuthService,
     private _agentUsersService: AgentUsersService,
     private _AgentSubscriptionService: AgentSubscriptionService,
+    private _agentAdsService: AgentAdsService,
+    private _agentNotificationService: AgentNotificationService,
+    private _agentSupportService: AgentSupportService,
     ){}
 
     get formBuilder():FormBuilder{
@@ -47,6 +53,15 @@ export class MainAgentService {
     }
     get agentSubscriptionService():AgentSubscriptionService{
       return this._AgentSubscriptionService;
+    }
+    get agentAdsService():AgentAdsService{
+      return this._agentAdsService;
+    }
+    get agentNotificationService():AgentNotificationService{
+      return this._agentNotificationService;
+    }
+    get agentSupportService():AgentSupportService{
+      return this._agentSupportService;
     }
 
 

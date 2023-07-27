@@ -1,0 +1,146 @@
+.prev {
+    color: #575757;
+    font-size: 12px;
+}
+
+.new {
+    width: 50%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px ;
+}
+
+.input-box {
+    width: 100%;
+    height: 40px;
+}
+
+.input-box input {
+    text-align: right;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 22px;
+    box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+    transition: all 0.2s linear;
+}
+
+.btn-rounded {
+    border-radius: 15px;
+    background-color: #3AA7CE;
+    padding: 5px;
+    color: #fff;
+}
+
+.btn-out {
+    border-radius: 15px;
+    outline: 1px solid black;
+    ;
+    padding: 5px;
+    color: black;
+}
+
+.label-ch {
+    padding-top: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+.emial-input{
+    font-size: 14px !important;
+}
+
+.all {
+    position: relative;
+    left: -39%;
+    top: -100%;
+   
+}
+.label-add{
+    float: right;
+    padding-right: 30px;
+}
+.add {
+    width: 30%;
+    background-color: #E9F9FF;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.add-m{
+    width: 99%;
+    background-color: #E9F9FF;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.add .icon{
+    position: relative;
+    left: -18%;
+    background-color: #3AA7CE; border-radius: 50%; height: 30px; width: 30px;
+}
+
+.container-ch {
+    display: inline;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ddd {
+    position: relative;
+    top: 17%;
+    left: 0%;
+    height: 40px;
+    border-right: 2px solid black;
+}
+
+.container-ch input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+.checkmark {
+    position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 30%;
+}
+
+.container-ch:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.container-ch input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+.container-ch input:checked~.checkmark:after {
+    display: block;
+}
+
+.container-ch .checkmark:after {
+    top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}

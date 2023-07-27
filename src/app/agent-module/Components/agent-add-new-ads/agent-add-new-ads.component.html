@@ -1,0 +1,66 @@
+<div class="container">
+    <div>
+        <span class="prev">الاشعارات</span>
+        <img src="assets/images/next.svg" alt="arrow_left.svg">
+        <span>اضافة اعلان جديد</span>
+
+    </div>
+
+    <div class="row mt-4">
+        <form [formGroup]="newAdForm" (ngSubmit)="submit()">
+        <div class="col-12 col-md-6 ">
+                <div class="con-div mx-md-2 mx-sm-0">
+                    <h2>بيانات الاعلان</h2>
+                    <div (dragover)="onDragOver($event)" (drop)="onDrop($event)" (click)="selectFileInput.click()"
+                        class="load-image d-flex justify-content-center align-items-center">
+                        <div class="text-center">
+                            <img *ngIf="!imageSrc" src="assets/images/Image.svg" alt="Placeholder Image" />
+                            <img *ngIf="imageSrc" [src]="imageSrc" alt="Dropped Image"
+                                style="width: 50px; height: 50px;" />
+                            <input style="width: 0px; height: 0px;" formControlName="image" #selectFileInput type="file" accept="image/*"
+                                (change)="onFileSelected($event)" />
+                            <p>اسحب صورة أو <span style="color: blue;">حمّلها</span> </p>
+                            <p>يجب أن يكون الصورة بصيغة jpg أو png</p>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="title">عنوان الاعلان</label>
+                        <input type="text" spellcheck="false" formControlName="title" name="title"
+                            id="title" placeholder="">
+                    </div>
+                    <p>تفاصيل الاعلان</p>
+                    <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z" formControlName="details" name="details" [init]="{
+             height: 300,
+             menubar: false,
+             plugins: [
+               'advlist autolink lists link image charmap print preview anchor',
+               'searchreplace visualblocks code fullscreen',
+               'insertdatetime media table paste code help wordcount'
+             ],
+             toolbar:
+               'undo redo | formatselect | bold italic backcolor | \
+               alignleft aligncenter alignright alignjustify | \
+               bullist numlist outdent indent | removeformat | help'
+           }"></editor>
+                    <div class="row text-center p-4">
+                        <div class="col-4">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-md-1"></div>
+                            <div class="col-12 col-md-5">
+                                <button type="submit" class="saveButton">إرسال</button>
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <button class="cancelButton">إلغاء</button>
+                            </div>
+                            <div class="col-12 col-md-1"></div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+    </form>
+    </div>
+</div>
