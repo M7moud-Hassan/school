@@ -6,6 +6,8 @@ import { AgentProfileComponent } from './Components/agent-profile/agent-profile.
 import { AgentSpeedNotificationComponent } from './Components/agent-speed-notification/agent-speed-notification.component';
 import { AgentUsersComponent } from './Components/agent-users/agent-users.component';
 import { AgentAddNewUserComponent } from './Components/agent-add-new-user/agent-add-new-user.component';
+import { AgentAddNewSubscribersComponent } from './Components/agent-add-new-subscribers/agent-add-new-subscribers.component';
+import { AgentSubscribersListComponent } from './Components/agent-subscribers-list/agent-subscribers-list.component';
 
 const routes: Routes = [
   {path:'home',component:AgentHomePageComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path:'speed-notification',component:AgentSpeedNotificationComponent},
   {path:'users',component:AgentUsersComponent},
   {path:'add-new-user',component:AgentAddNewUserComponent},
+  {path:'add-new-subscriber',component:AgentAddNewSubscribersComponent},
+  {path:'subscribers-list',component:AgentSubscribersListComponent},
 ];
 
 @NgModule({

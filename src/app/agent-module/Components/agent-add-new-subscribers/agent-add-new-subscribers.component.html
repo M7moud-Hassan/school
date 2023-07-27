@@ -1,0 +1,190 @@
+
+<div class="container">
+    <div>
+        <span class="prev">الإشتراكات</span>
+        <img src="assets/images/next.svg" alt="arrow_left.svg">
+        <span>اضافة مشترك جديد</span>
+
+    </div>
+    <div class="row mt-4">
+
+        <div class="col-12 col-md-12 ">
+            <form [formGroup]="newSubscriberForm" (ngSubmit)="onSubmit()">
+                <div class="con-div mx-md-2 mx-sm-0">
+                    <h2>بيانات الحساب</h2>
+                    <div class="row pb-5">
+                        <div class="col-12 col-md-4"></div>
+                        <div class="col-12 col-md-4">
+                            <div (dragover)="onDragOver($event)" (drop)="onDrop($event)" (click)="selectFileInput.click()"
+                        class="load-image d-flex justify-content-center align-items-center">
+                        <div class="text-center">
+                            <img *ngIf="!imageSrc" src="assets/images/Image.svg" alt="Placeholder Image" />
+                            <img *ngIf="imageSrc" [src]="imageSrc" alt="Dropped Image" style="width: 50px; height: 50px;" />
+                            <input style="width: 0px; height: 0px;" #selectFileInput type="file" accept="image/*" (change)="onFileSelected($event)" />
+                            <p>اسحب صورة أو <span style="color: blue;">حمّلها</span> </p>
+                            <p>يجب أن يكون الصورة بصيغة jpg أو png</p>
+                        </div>
+                    </div>
+                        </div>
+                        <div class="col-12 col-md-4"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="userNumber">رقم المستخدم</label>
+                                <input type="text" spellcheck="false" formControlName="userNumber" name="userNumber"
+                                    id="userNumber" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="name">اسم المستخدم بالعربى</label>
+                                <input type="text" spellcheck="false" formControlName="name" name="name" id="name"
+                                    placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="nameEn">اسم المستخدم بالانجليزية</label>
+                                <input type="text" spellcheck="false" formControlName="nameEn" name="nameEn" id="nameEn"
+                                    placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="phone">رقم الهاتف</label>
+                                <input type="text" spellcheck="false" formControlName="phone" name="phone" id="phone"
+                                    placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="email">البريد الالكترونى</label>
+                                <input type="text" spellcheck="false" formControlName="email" name="email" id="email"
+                                    placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="password">كلمة المرور</label>
+                                <input type="password" spellcheck="false" formControlName="password" name="password"
+                                    id="password" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="city">المدينة</label>
+                                <input type="text" spellcheck="false" formControlName="city" name="city" id="city"
+                                    placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="region">المنطقة</label>
+                                <input type="text" spellcheck="false" formControlName="region" name="region" id="region"
+                                    placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="input-box">
+                                <label class="defaultLabel" for="address">العنوان</label>
+                                <input type="text" spellcheck="false" formControlName="address" name="address" id="address"
+                                    placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                           <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div>
+                                    <label class="defaultLabel" for="saveTripPath">حفظ مسار الرحلة</label>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="radio" class="SquareRadioButton" spellcheck="false" value="true" formControlName="saveTripPath" name="saveTripPath" id="saveTripPathTrue" />
+                                            <label  for="saveTripPathTrue">تفعيل</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="radio" class="SquareRadioButton" spellcheck="false" value="false" formControlName="saveTripPath" name="saveTripPath" id="saveTripPathFalse" />
+                                            <label  for="saveTripPathFalse">تعطيل</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div>
+                                    <label class="defaultLabel">انهاء الرحلة باستخدام QR</label>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="radio" class="SquareRadioButton" spellcheck="false" value="true" formControlName="finishingTripUsingQR" name="finishingTripUsingQR" id="finishingTripUsingQRTrue" />
+                                            <label  for="finishingTripUsingQRTrue">تفعيل</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="radio" class="SquareRadioButton" spellcheck="false" value="false" formControlName="finishingTripUsingQR" name="finishingTripUsingQR" id="finishingTripUsingQRFalse" />
+                                            <label  for="finishingTripUsingQRFalse">تعطيل</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                           </div>
+                        </div>
+                        <div class="col-12 col-md-6"></div>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="locationSection">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <label class="defaultLabel">موقع المستخدم</label>
+                                <div id="googleMap" style="width:100%;height:400px;">
+                                    <google-map height="400px"
+                                    width="100%"
+                                    [center]="center"
+                                    [zoom]="zoom"
+                                   >  
+                        </google-map>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="defaultLabel" >موقع الوكيل</label>
+                                <div class="buttonContainer">
+                                    <div class="searchContainer">
+                                         <div class="m-2">
+                                            بحث <i class="fas fa-search pe-2 fs-5"></i>
+                                         </div>
+                                    </div>
+                                    <input type="text" class="searchInputContainer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-5">
+                    <div class="col-12 col-md-3"></div>
+                    <div class="col-12 col-md-3">
+                        <button class="saveButton">حفظ البيانات</button>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <button class="cancelButton">إلغاء</button>
+                    </div>
+                    <div class="col-12 col-md-3"></div>
+                </div>
+            </form>
+        </div>
+
+
+        
+    </div>
+</div>

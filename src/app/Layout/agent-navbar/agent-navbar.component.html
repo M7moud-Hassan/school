@@ -1,7 +1,7 @@
 <div class="toolbar" dir="ltr">
     <div class="school">
         <button (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton"><img src="assets/images/school_logoo.png" alt=""></button>
-        <span style="width: 100%;">اسم المدرسة</span>
+        <span style="width: 100%;">الوكيل</span>
         <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2">
             <img src="assets/images/school_logoo.png"  alt="">
             <p>AGENT NAME</p>
@@ -11,6 +11,18 @@
             <a routerLink="/agent/agent-profile" class="text-decoration-none">
             <span>الملف الشخصي</span>
             <img src="assets/images/profile.svg" alt="profile">
+            </a>
+           </div>
+           <div class="row-item">
+            <a (click)="openSubscriptionDialog()" class="text-decoration-none">
+            <span>تمديد الإشتراك</span>
+            <img src="assets/images/subscriptionExtend.svg" alt="profile">
+            </a>
+           </div>
+           <div class="row-item">
+            <a (click)="openSchoolLocationDialog()" class="text-decoration-none">
+                <span>موقع المدرسة</span>
+                <img src="assets/images/Location.svg" alt="profile">
             </a>
            </div>
            <div class="row-item">

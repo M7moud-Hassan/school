@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AgentExtendSubscriptionPopUpComponent } from 'src/app/agent-module/Components/agent-extend-subscription-pop-up/agent-extend-subscription-pop-up.component';
+import { AgentSchoolLocationPopUpComponent } from 'src/app/agent-module/Components/agent-school-location-pop-up/agent-school-location-pop-up.component';
+import { MainAgentService } from 'src/app/agent-module/Services/main-agent.service';
 
 @Component({
   selector: 'app-agent-navbar',
@@ -7,10 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AgentNavbarComponent {
   isSchoolAccountDropdownVisible:boolean = false;
+  isSearchBoxVisible:boolean = false;
+  constructor(private service:MainAgentService){}
   toggleSchoolAccountDropDown(){
     this.isSchoolAccountDropdownVisible = ! this.isSchoolAccountDropdownVisible;
   }
-  isSearchBoxVisible:boolean = false;
   toggleSearchBox(){
     this.isSearchBoxVisible = ! this.isSearchBoxVisible;
   }
@@ -23,4 +27,19 @@ export class AgentNavbarComponent {
     {id:6,label:'مجموعة',},
     {id:7,label:'إعـلان'},
   ];
+  openSubscriptionDialog(){
+    const dialogRef = this.service.dialog.open(AgentExtendSubscriptionPopUpComponent, {
+      width: '30%',
+      direction:'rtl',
+      panelClass:'custom-dialog-container',
+    });
+  }
+  openSchoolLocationDialog(){
+    const dialogRef = this.service.dialog.open(AgentSchoolLocationPopUpComponent, {
+      width: '50%',
+      // height: '70%',
+      direction:'rtl',
+      panelClass:'custom-dialog-container',
+    });
+  }
 }
