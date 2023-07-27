@@ -1,0 +1,47 @@
+.welcomeBack {
+    background-image: url('/assets/images/admin_bg.png');
+    padding: 18px 20px 20px 20px;
+}
+
+.card-nofification {
+    border-radius: 15px;
+
+}
+
+.notification-item {
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    height: 100px;
+}
+
+.div-images img,
+.div-images span {
+    position: relative;
+}
+
+.div-images img:nth-child(1) {
+    left: -70%;
+}
+
+.div-images img:nth-child(2) {
+    top: -33%;
+    left: -42%;
+}
+
+.div-images img:nth-child(3) {
+    top: -66%;
+    left: -23%;
+}
+
+.div-images span {
+
+    top: -66%;
+    left: 15%;
+}
+.notification-item-2{
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+.open-notification{
+    position: relative;
+}

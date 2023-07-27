@@ -1,0 +1,63 @@
+<div class="container-fluid parent-container">
+    <div class="row" style="padding: 30px 30px 10px 30px;">
+        <div class="col-12 col-md-6">
+            <h3 class="fw-bolder float-end" style="font-size: 18px;">شركة 5-Minutes - مصر</h3>
+        </div>
+    </div>
+    <button type="button" class="btn btn-icon me-4 mb-2">
+        <img src="assets/images/plus.svg" alt=""> <span class="me-2">مدرسة جديدة</span>
+    </button>
+    <div>
+        <table class="table table">
+            <tr class="tableHeader">
+                <td>الاســـم  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select></td>
+                  <td>رقم المستخدم</td>
+                <td>أخر ظهور</td>
+                <td>رسم المسار</td>
+                <td>المشرفين</td>
+                <td>المجموعات</td>
+                <td>الطلاب</td>
+                <td>التحكم</td>
+            </tr>
+             <tr class="mt-3">
+                <td colspan="7"></td>
+             </tr>
+            <tbody *ngFor="let item of school_data | paginate: 
+                { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
+                <tr id="first_{{i}}">
+                    <td style="cursor: pointer;" ><img src="{{item.image}}" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
+                    <td>{{item.userNumber}}</td>
+                    <td>{{item.lastView}} </td>
+                    <td [className]="item.isActive?'parentActive':'parentInActive'">
+                        <span></span>{{item.isActive?'فعـــــال':'غير فعال'}}
+                    </td>
+                    <td>
+                        <span class="ms-2">{{item.numSuper}}</span>
+                        <img src="assets/images/eye.svg" (click)="openDialogSupervisors()" alt="">
+                    </td>
+                    <td>
+                        <span class="ms-2">5</span>
+                        <img src="assets/images/eye.svg" alt="">
+                    </td>
+                    <td>
+                        <span class="ms-2">5</span>
+                        <img src="assets/images/eye.svg" alt="">
+                    </td>
+                    <td>
+                        <a routerLink="#" class="d-inline-block ms-2" > <img src="assets/images/Edit.svg"  width="20px" height="20px" alt=""> </a>
+                        <a routerLink="#" class="d-inline-block"> <img src="assets/images/Delete.svg" width="20px" height="20px" alt=""> </a>
+                    </td>
+            </tbody>
+        </table>
+    </div>
+    <div class="row my-5 m-0">
+        <div class="d-flex align-items-center justify-content-center">
+            <pagination-controls (pageChange)="pageNo = $event" id="foo" nextLabel="" previousLabel=""></pagination-controls>
+        </div>
+    </div>
+</div>
