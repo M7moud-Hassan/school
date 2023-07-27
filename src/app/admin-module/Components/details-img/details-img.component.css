@@ -1,0 +1,16 @@
+.header-D{
+    background-color: #3AA7CE;
+}
+.edit-icon{
+    height: 45%;
+    border-radius: 15px;
+    position: relative;
+    top: -50%;
+    background-color: rgba(0, 0, 0, 0.395);
+}
+.shadow-d{
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
+}
+.active-item{
+    background-color: #C1E3EF;
+}

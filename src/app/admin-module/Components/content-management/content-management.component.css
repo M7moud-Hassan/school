@@ -1,0 +1,9 @@
+.toolbar-hi{
+    font-size: 13px;
+}
+.toolbar-hi .col-1{
+    cursor: pointer;
+}
+.toolbar-hi .active{
+    font-weight: bold;
+}

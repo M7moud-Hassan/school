@@ -8,6 +8,7 @@ import { UsersSystemComponent } from './Components/users-system/users-system.com
 import { AddUsersComponent } from './Components/add-users/add-users.component';
 import { SubscriptionsComponent } from './Components/subscriptions/subscriptions.component';
 import { TripsActiveComponent } from './Components/trips-active/trips-active.component';
+import { ContentManagementComponent } from './Components/content-management/content-management.component';
 
 const routes: Routes = [
   {path:'home',component:AdminHomePageComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'users-system',component:UsersSystemComponent},
   {path:'add-user',component:AddUsersComponent},
   {path:'subscriptions',component:SubscriptionsComponent},
-  {path:'trips-active',component:TripsActiveComponent}
+  {path:'trips-active',component:TripsActiveComponent},
+  {path:'content-management',component:ContentManagementComponent}
 ];
 
 @NgModule({
