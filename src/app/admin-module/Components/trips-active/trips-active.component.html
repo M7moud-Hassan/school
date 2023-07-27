@@ -1,0 +1,90 @@
+<div>
+    <h3>الرحلات الفعالة <span class="me-4 title-b p-2">112 رحلة</span> </h3>
+</div>
+
+<div class="row">
+    <div class="col-9 col-md-6 row">
+        <div class="col-3 m-0 p-0">
+            <div class="dropdown"  style="height: 100%;">
+                <button class="btn  h-100 w-100 dropdown-toggle btn-drop" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">الكل
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu w-25">
+                    <div class="float-end">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            الكل 
+                          </span>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <hr/>
+                    <div class="form-group has-search">
+                        <input type="text" id="dropdown-menu"  class="form-control" placeholder="أدخل نص البحث" #myInput   (keyup)="filterItems(myInput.value)">
+                        <span class="form-control-feedback">
+                            <img src="assets/images/Search.svg" class="img-search" alt="" [style.top]="topSearch+'%'">
+                        </span>
+                    </div>
+                  
+                  <li *ngFor="let item of dropdownItems" [hidden]="!item.visible">
+                   <div class="text-center">
+                    <p>{{item.text}}</p>
+                    <hr>
+                   </div>
+                  </li>
+                </ul>
+              </div>
+        </div>
+        <div class="col-9 m-0 p-0">
+            <div class="search-container">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="ابحث عن رحلة معينة" name="ابحث عن رحلة معينة">
+                </form>
+              </div>
+        </div>
+    </div>
+    <div class="col-2 col-md-1 d-flex align-items-center justify-content-center" style="background-color: #3AA7CE;">
+        <img src="assets/images/Filter.svg" alt="">
+    </div>
+</div>
+
+<div class="container-fluid mt-4" style="min-height: calc(100vh+300px);">
+    <div>
+        <div class="row">
+            <div *ngFor="let group of groups" class="col-12 col-md-3">
+                <div class="wrapper">
+                    <div class="outerContainerCardGroupItem">
+                        <div class="cardGroupItem">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="text-start pt-4 pb-3 fs-5" style="color: #3AA7CE;">{{group.name}}</div>
+                                </div>
+                                <div class="col-4">
+                                    <img src="assets/images/group.png" alt="group">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12 text-center pb-3">
+                                    <div style="color: #575757;">عدد الطلاب فى الحافلة :  <span class="px-2" style="color: black;font-weight: 800;">{{group.studentCount}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <button routerLink="/school/tracking" class="itemActionButton">تتبع الرحلة</button>
+                            <button class="itemActionButton orangeButton">انهاء الرحلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4"></div>
+            <div class="col-12 col-md-4">
+                <a routerLink="/school/tracking-all" class="itemActionButton trackingAllButton" >تتبع جميــع الرحلات</a>
+            </div>
+            <div class="col-12 col-md-4"></div>
+        </div>
+    </div>
+</div>

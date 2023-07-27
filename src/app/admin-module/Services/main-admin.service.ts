@@ -3,6 +3,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AdminUsersService } from './admin-users.service';
+import { AdminHomeService } from './admin-home.service';
+import { ProxiesService } from './proxies.service';
+import { ProxyPageService } from './proxy-page.service';
+import { UserSystemService } from './user-system.service';
+import { SubscriptionsService } from './subscriptions.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +19,19 @@ export class MainAdminService {
     private _dialog: MatDialog,
     private _router: Router,
     private _adminUsersService: AdminUsersService,
+    private _adminHomeService:AdminHomeService,
+    private _adminProxiesService:ProxiesService,
+    private _adminProxyPageService:ProxyPageService,
+    private _adminUsersSystem:UserSystemService,
+    private _adminSubscriptions:SubscriptionsService
     ){}
-
+get adminProxyPageService():ProxyPageService{
+  return this._adminProxyPageService;
+  
+}
+get adminUserssystem():UserSystemService{
+  return this._adminUsersSystem;
+}
     get formBuilder():FormBuilder{
       return this._formBuilder;
     }
@@ -27,6 +43,15 @@ export class MainAdminService {
     }
     get adminUsersService():AdminUsersService{
       return this._adminUsersService;
+    }
+    get adminHomeService():AdminHomeService{
+      return this._adminHomeService
+    }
+    get adminProxiesService():ProxiesService{
+      return this._adminProxiesService
+    }
+    get adminSubscriptions():SubscriptionsService{
+      return this._adminSubscriptions;
     }
 
 

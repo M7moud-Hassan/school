@@ -1,0 +1,26 @@
+<div class="proxies bg-white p-4">
+    <h3>الوكلاء <span class="me-2 ps-2 pe-2 number"> 7 وكلاء</span></h3>
+    <button type="button" class="btn btn-icon">
+        <img src="assets/images/plus.svg" alt=""> <span class="me-2">وكيل جديد</span>
+    </button>
+
+    <div class="row">
+        <div   *ngFor="let proxy of proxies; let i = index;" 
+            [ngClass]="{ 'col-12 col-md-3 card mt-4 shadow pt-2 ms-4 pe-auto': true, 'card-select': i === select }"
+            (click)="onSelect(i)">
+            <p  [ngClass]="{ 'text-center': true, 'fw-bold': i === select }">{{ proxy.label }}</p>
+            <hr class="m-0">
+            <div class="row">
+                <div class="col-8 p-2">
+                    <img src="assets/images/Calendar.svg" alt="">
+                    <span class="me-2" >{{ proxy.date }}</span>
+                </div>
+                <div class="col-4 p-2 text-start">
+                    <img class="ms-2" src="assets/images/Edit.svg" alt="">
+                    <img src="assets/images/Delete.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

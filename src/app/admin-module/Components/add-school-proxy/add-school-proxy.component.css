@@ -1,0 +1,8 @@
+.prev {
+    color: #575757;
+    font-size: 12px;
+  }
+  .input-box label{
+    display: block;
+    text-align: right;
+  }

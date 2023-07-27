@@ -1,0 +1,18 @@
+.head-nav{
+   background-color: #3AA7CE;
+}
+.minus{
+    position: relative;
+    left: -16px;
+}
+.btn-save{
+    width: 30%;
+    background-color: #3AA7CE;
+    border-radius: 20px;
+    color: white;
+} 
+.btn-out{
+    border-radius: 20px;
+    width: 30%;
+    color: black;
+}

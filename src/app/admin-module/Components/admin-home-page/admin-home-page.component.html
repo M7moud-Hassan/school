@@ -1,0 +1,122 @@
+<div>
+    <div class="float-end" [@shrinkWidth]="isShrunk ? 'shrunkSize' : 'fullSize'">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="welcomeBack">
+                        <h1 class="fs-4 mt-3">مرحباً بعودتــــك</h1>
+                        <h3 class="fs-3 mt-4 fw-bolder">أ . نايف</h3>
+                        <a routerLink="#" class="text-decoration-none text-white">
+                            <h4 class="mt-3">انتقل للإطلاع على التقارير <img src="assets/images/ArrowLeft.png" width="30"
+                                    height="30" alt=""></h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-4 ">
+                <div class="wrapper" #cardsContainer>
+                    <div *ngFor="let item of statisctics" class="item">
+                        <div class="row  d-flex justify-content-center align-items-center">
+                            <div class="col-5">
+                                <img src="{{item.image}}" width="60" height="60" class="mb-4">
+                            </div>
+                            <div class="col-7">
+                                <h3 class="m-0 p-0 text-muted">{{item.label}}</h3>
+                                <h2 class="fw-bolder">{{item.count}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div [@btnOpen]="isShrunk ? 'shrunkSize' : 'fullSize'" class="me-4 open-notification" (click)="toggleAnimation()">
+                        <img src="assets/images/notification.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="float-start"  [@notificationA]="isShrunk ? 'shrunkSize' : 'fullSize'">
+        <div class="row p-0">
+            <div class="col-12 bg-white card-nofification">
+                <img src="assets/images/close-dark.svg" class="float-start mt-2" alt="close icon">
+                <p class="mt-4 h5">أخر الاضافات :</p>
+                <hr class="clear-start">
+                <div class="p-2 notification-item">
+                    <p class="float-start text-muted small">11:54ص</p>
+                    <p class="float-end large">تم اضافة باص جديد</p>
+                    <div class="clear-both">
+                        &nbsp;
+                    </div>
+                    <hr>
+                    <div class="row p-0">
+                        <div class="col-8 row p-0 m-0">
+                            <div class="col-4 div-images">
+                                <img class="rounded-circle" src="assets/images/clip.svg" alt="" width="25px" height="25">
+                                <img class="rounded-circle" src="assets/images/user.png" alt="" width="25px" height="25">
+                                <img class="rounded-circle" src="assets/images/user.png" alt="" width="25px" height="25">
+                            </div>
+                            <div class="col-8">
+                                <span>3</span>
+                                <span class="small">مدرسة قامت بهذا </span>
+                            </div>
+                        </div>
+                        <div class="col-4 p-0">
+                            <p><span class="small">23-1-2023</span>
+                                <img src="assets/images/Calendar.svg" class="me-2" alt="">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 mt-2 mb-4 notification-item">
+                    <p class="float-start text-muted small">11:54ص</p>
+                    <p class="float-end large">تم اضافة باص جديد</p>
+                    <div class="clear-both">
+                        &nbsp;
+                    </div>
+                    <hr>
+                    <div class="row p-0">
+                        <div class="col-8 row p-0 m-0">
+                            <div class="col-4 div-images">
+                                <img class="rounded-circle" src="assets/images/clip.svg" alt="" width="25px" height="25">
+                                <img class="rounded-circle" src="assets/images/clip-red.svg" alt="" width="25px" height="25">
+                                <img class="rounded-circle" src="assets/images/clip-7.svg" alt="" width="25px" height="25"> <span class="small">7+</span>
+                            </div>
+                            <div class="col-8">
+                                <span>10</span>
+                                <span class="small">مدرسة قامت بهذا </span>
+                            </div>
+                        </div>
+                        <div class="col-4 p-0">
+                            <p><span class="small">23-1-2023</span>
+                                <img src="assets/images/Calendar.svg" class="me-2" alt="">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 p-0">
+            <div class="col-12 bg-white card-nofification pb-4">
+                <img src="assets/images/close-dark.svg" class="float-start mt-2" alt="close icon">
+                <p class="mt-4 h5">أخر التعديلات :</p>
+                <hr class="clear-start">
+                <div class="p-2 notification-item-2">
+                    <img src="assets/images/clip-red.svg" alt="">
+                    <span class="me-2">قامت المدرسة س بتغيير صورتها</span>
+                </div>
+                <div class="p-2 notification-item-2 mt-2">
+                    <img src="assets/images/clip-red.svg" alt="">
+                    <span class="me-2">قامت المدرسة س بتغيير صورتها</span>
+                </div>
+                <div class="p-2 notification-item-2 mt-2">
+                    <img src="assets/images/clip-red.svg" alt="">
+                    <span class="me-2">قامت المدرسة س بتغيير صورتها</span>
+                </div>
+                <div class="p-2 notification-item-2 mt-2">
+                    <img src="assets/images/clip-red.svg" alt="">
+                    <span class="me-2">قامت المدرسة س بتغيير صورتها</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear:both;"></div>
+    <app-activities></app-activities>
+</div>

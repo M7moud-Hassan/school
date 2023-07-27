@@ -1,0 +1,21 @@
+.proxies{
+    border-radius: 25px;
+
+}
+.proxies .number{
+    background-color: #F8E9FF;
+    color: #785B9D;
+    border-radius: 15px;
+  
+}
+.btn-icon{
+    background-color: #3AA7CE;
+    color: white;
+    border-radius: 25px;
+    width: 15%;
+}
+.card-select{
+    transform-origin: 50% 0;
+    transform: scale(1.15);
+    background-color: #C1EFFF;
+}

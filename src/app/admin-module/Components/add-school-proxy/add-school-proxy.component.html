@@ -1,0 +1,208 @@
+<div class="container-fluid">
+    <div>
+        <span class="prev">الوكلاء</span>
+        <img src="assets/images/next.svg" alt="arrow_left.svg">
+        <span class="prev">وكيل الشمال </span>
+        <img src="assets/images/next.svg" alt="arrow_left.svg">
+        <span>اضافة مدرسة جديدة</span>
+
+    </div>
+    <div class="container-fluid  bg-white rounded text-center pt-4">
+        <h3  class="text-end">بيانات الحساب</h3>
+        <div (dragover)="onDragOver($event)" (drop)="onDrop($event)" (click)="selectFileInput.click()"
+        class="load-image d-flex justify-content-center align-items-center w-50 mx-auto">
+        <div class="text-center">
+            <img *ngIf="!imageSrc" src="assets/images/Image.svg" alt="Placeholder Image" />
+            <img *ngIf="imageSrc" [src]="imageSrc" alt="Dropped Image" style="width: 50px; height: 50px;" />
+            <input style="width: 0px; height: 0px;" name="image"  #selectFileInput type="file" accept="image/*" (change)="onFileSelected($event)" />
+            <p>اسحب صورة أو <span style="color: blue;">حمّلها</span> </p>
+            <p>يجب أن يكون الصورة بصيغة jpg أو png</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">رقم المستخدم</label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">اسم المستخدم بالعربي</label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">اسم المستخدم بالإنجليزية</label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">رقم الهاتف</label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">البريد الإلكتروني</label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">كلمة المرور </label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">المدينة </label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">المنطقة </label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="input-box">
+                <label for="userNumber">العنوان </label>
+                <input type="text" spellcheck="false"  name="userNumber" id="userNumber" placeholder="" >
+            </div>
+        </div>
+    </div>
+    <div class="row pb-4">
+        <div class="col-12 col-md-3">
+            <h3>حفظ مسار الرحلة</h3>
+            <div class="row">
+                <div class="col-6">
+                    <div class="">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            تفعيل
+                          </span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            تعطيل
+                          </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <h3>رسم المسار</h3>
+            <div class="row">
+                <div class="col-6">
+                    <div class="">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            تعطيل
+                          </span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            تفعيل
+                          </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+           <h3>انهاء الرحلة باستخدام QR</h3>
+            <div class="row">
+                <div class="col-6">
+                    <div class="">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            تعطيل
+                          </span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            تفعيل
+                          </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="location-student mt-4">
+    <h2>موقع المنزل</h2>
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <div id="googleMap" style="width:100%;height:400px;">
+          <google-map height="400px" width="100%" [center]="center" [zoom]="zoom">
+          </google-map>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="input-box">
+          <label for="homeLocation">موقع المنزل</label>
+          <input class="emial-input" type="text" spellcheck="false"  name="homeLocation"
+            id="homeLocation" placeholder="ادخل اسم الموقع للوصول اليه على الخريطة">
+
+          <div class="icon-email search-icon" dir="ltr">
+            <img src="assets/images/Search_light.svg" alt="edit">
+            <span> بحث </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-3"></div>
+        <div class="col-12 col-md-3">
+          <button class="saveButton">حفظ البيانات</button>
+        </div>
+        <div class="col-12 col-md-3">
+          <button class="cancelButton">إلغاء</button>
+        </div>
+        <div class="col-12 col-md-1"></div>
+      </div>
+    </div>
+
+  </div>
