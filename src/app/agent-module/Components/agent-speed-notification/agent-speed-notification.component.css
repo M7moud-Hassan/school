@@ -53,6 +53,8 @@
     width: 100%;
 }
 .image-1,.image-2,.image-3,.imageMoreThan-3{
+    background-color: #3c9ee5;
+    border: .2px solid #ffffff;
     width: 25px;
     height: 25px;
     border-radius: 50%;

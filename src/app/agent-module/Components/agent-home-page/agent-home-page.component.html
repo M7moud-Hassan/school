@@ -45,7 +45,7 @@
             
                 
                 <div class="row">
-                    <div *ngFor="let activity of activities;let i= index;let e = even" class="col-12 col-md-3">
+                    <div *ngFor="let activity of activities;let i= index;let e = even" class="col-12 {{isNotificationOpened?'col-md-4':'col-md-3'}}">
                         <div class="activityCardItem">
                             <div class="activityCardTop">
                                 <div class="row d-flex align-items-center justify-content-center">
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-          <div class="{{isNotificationOpened?'col-12':'col-0 d-none d-md-block'}} {{isNotificationOpened?'col-md-4':'col-md-0'}}">
+          <div *ngIf="isNotificationOpened" class="{{isNotificationOpened?'col-12':'col-0 d-none d-md-block'}} {{isNotificationOpened?'col-md-4':'col-md-0'}}">
             <div *ngIf="isLastAddedShown" class="notificationAlertCard" dir="rtl">
                 <div class="closeIcon">
                     <div class="row">
@@ -85,45 +85,23 @@
                     </div>
                 </div>
                 <div class="notificationAlertContainer">
-                    <div class="notificationItemCard">
+                    <div *ngFor="let item of addingsList" class="notificationItemCard">
                         <div class="row">
-                            <div class="col-8 notiTitle">تمت اضافة مدرسة جديدة</div>
-                            <div class="col-4 notiTime">11:30 ص</div>
+                            <div class="col-8 notiTitle">{{item.title}}</div>
+                            <div class="col-4 notiTime">{{item.time}}</div>
                         </div>
                         <hr class="my-2">
                         <div class="row">
                             <div class="col-2">
                                 <div class="imagesStack">
-                                    <img src="/assets/images/user.png" class="image-1"/>
-                                    <img src="/assets/images/user.png" class="image-2"/>
-                                    <!-- <img src="/assets/images/user.png" class="image-3"/> -->
-                                    <span class="imageMoreThan-3">+7</span>
+                                    <img *ngFor="let img of item.images.slice(0, 2);let i= index" src="{{img}}" class="image-{{i+1}}"/>
+                                    <img *ngIf="item.images.length==3" src="{{item.images[2]}}" class="image-3"/>
+                                    <span *ngIf="item.images.length>3" class="imageMoreThan-3">+{{item.images.length - 2}}</span>
                                 </div>
                             </div>
-                            <div class="col-6" style="font-size: 13px;">3 مدرسه قامت بهذا</div>
+                            <div class="col-6" style="font-size: 13px;">{{item.description}}</div>
                             <div class="col-4">
-                                <span style="font-size: 11px;"> 12/2/2022</span> <img src="/assets/images/Calendar.svg"> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="notificationItemCard">
-                        <div class="row">
-                            <div class="col-8 notiTitle">تمت اضافة مدرسة جديدة</div>
-                            <div class="col-4 notiTime">11:30 ص</div>
-                        </div>
-                        <hr class="my-2">
-                        <div class="row">
-                            <div class="col-2">
-                                <div class="imagesStack">
-                                    <img src="/assets/images/user.png" class="image-1"/>
-                                    <img src="/assets/images/user.png" class="image-2"/>
-                                    <!-- <img src="/assets/images/user.png" class="image-3"/> -->
-                                    <span class="imageMoreThan-3">+7</span>
-                                </div>
-                            </div>
-                            <div class="col-6">3 مدرسه قامت بهذا</div>
-                            <div class="col-4">
-                                <span style="font-size: 10px;"> 12/2/2022</span> <img src="/assets/images/Calendar.svg"> 
+                                <span style="font-size: 11px;">{{item.date}}</span> <img src="/assets/images/Calendar.svg"> 
                             </div>
                         </div>
                     </div>
@@ -139,16 +117,10 @@
                     </div>
                 </div>
                 <div class="notificationAlertContainer">
-                    <div class="notificationItemCard">
+                    <div *ngFor="let item of updatesList" class="notificationItemCard">
                         <div class="lastModifiedItem d-flex">
                             <span class="lastModifiedCircle"></span>
-                            <span class="lastModifiedLabel">قامت المدرسة س بتغيير صورتها</span>
-                        </div>
-                    </div>
-                    <div class="notificationItemCard">
-                        <div class="lastModifiedItem d-flex">
-                            <span class="lastModifiedCircle"></span>
-                            <span class="lastModifiedLabel">قامت المدرسة س بتغيير صورتها</span>
+                            <span class="lastModifiedLabel">{{item.title}}</span>
                         </div>
                     </div>
                 </div>

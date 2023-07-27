@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainAgentService } from '../../Services/main-agent.service';
 import { AgentSpeedNotificationPopUpComponent } from '../agent-speed-notification-pop-up/agent-speed-notification-pop-up.component';
+import { agentLastAddon, agentLastUpdates } from '../../Services/agent-home.service';
 
 @Component({
   selector: 'app-agent-speed-notification',
@@ -8,11 +9,21 @@ import { AgentSpeedNotificationPopUpComponent } from '../agent-speed-notificatio
   styleUrls: ['./agent-speed-notification.component.css']
 })
 export class AgentSpeedNotificationComponent implements OnInit {
+  addingsList:agentLastAddon[]=[];
+  updatesList:agentLastUpdates[]=[];
   constructor(private service:MainAgentService){}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getLastAddings();
+    this.getLastUpdates();
+  }
+  getLastAddings(){
+    this.addingsList = this.service.agentHomeService.getLastAddon();
   }
 
+  getLastUpdates(){
+    this.updatesList = this.service.agentHomeService.getLastUpdates();
+  }
+  
   openDailog(){
     const dialogRef = this.service.dialog.open(AgentSpeedNotificationPopUpComponent, {
       width: '50%',

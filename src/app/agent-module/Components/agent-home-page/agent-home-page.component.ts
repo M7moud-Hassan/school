@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { statiscticsModel } from 'src/app/schools-module/Services/statistics.service';
 import { MainAgentService } from '../../Services/main-agent.service';
-import { activities_Model } from '../../Services/agent-home.service';
+import { activities_Model, agentLastAddon, agentLastUpdates } from '../../Services/agent-home.service';
 
 @Component({
   selector: 'app-agent-home-page',
@@ -12,6 +12,8 @@ export class AgentHomePageComponent implements OnInit {
   currentDate = Date.now();
   statisctics :statiscticsModel[]=[];
   activities:activities_Model[]=[];
+  addingsList:agentLastAddon[]=[];
+  updatesList:agentLastUpdates[]=[];
   strokArray:any[] = [];
   isNotificationOpened:boolean= true;
   isLastModifiedShown:boolean= true;
@@ -32,6 +34,8 @@ export class AgentHomePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getLastUpdates();
+    this.getLastAddings();
     this.getAllStatistics();
     this.getAllActivities();
     this.strokArray = this.activities.map(val=>`${val.percent}, 100`);
@@ -55,6 +59,13 @@ export class AgentHomePageComponent implements OnInit {
     this.activities = this.service.agentHomeService.getAllActivities();
   }
   
+  getLastAddings(){
+    this.addingsList = this.service.agentHomeService.getLastAddon();
+  }
+
+  getLastUpdates(){
+    this.updatesList = this.service.agentHomeService.getLastUpdates();
+  }
   
 
 
