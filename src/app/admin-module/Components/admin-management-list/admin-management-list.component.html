@@ -1,0 +1,59 @@
+<div class="container-fluid parent-container">
+    <div class="pageHeadr">
+    <div class="row" style="padding: 30px 30px 10px 30px;">
+        <div class="col-12 col-md-4">
+            <h3 class="fw-bolder float-end" style="font-size: 18px;"> القوائم :<span class="users-count">{{total}} مستخدم</span></h3>
+        </div>
+        <div class="col-12 col-md-4 float-start">  
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;padding-right: 30px;">TODO : here is the dropdown</div>
+    <div class="row" style="padding: 30px 30px 10px 30px;">
+        <div class="col-12 col-md-4">
+            <a routerLink="#" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="" >أضف قائمة</div></a>
+        </div>
+    </div>
+    
+</div>
+    <div>
+        <table class="table table">
+            <tr class="tableHeader">
+                <td>المدرسة \ الشركة  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select></td>
+                  <td>المنطقة</td>
+                  <td>تاريخ الاضافة</td>
+                <td>الفاعلية</td>
+                <td>التحكم</td>
+            </tr>
+             <tr class="mt-3">
+                <td colspan="7"></td>
+             </tr>
+            <tbody *ngFor="let item of managementList | paginate: 
+                { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
+                <tr id="first_{{i}}">
+                    <td>{{item.schoolName}}</td>
+                    <td>{{item.area}}</td>
+                     <td>{{item.creationDate}}</td>
+                    <td>
+                       <span class="{{item.isShown?'showed':'disappear'}}">
+                        <img src= "{{item.isShown?'assets/images/Ellipse.svg':'assets/images/Ellipse_red.svg'}}" alt="">
+                        {{item.isShown?'ظاهــر':'مخــفى'}}
+                       </span>
+                    </td>
+                    <td>
+                        <a routerLink="#" class="d-inline-block ms-2"> <img src="assets/images/Edit.svg"  width="20px" height="20px" alt=""> </a>
+                        <a routerLink="#" class="d-inline-block" > <img src="assets/images/Delete.svg" width="20px" height="20px" alt=""> </a>
+                    </td>
+            </tbody>
+        </table>
+    </div>
+    <div class="row my-5 m-0">
+        <div class="d-flex align-items-center justify-content-center">
+            <pagination-controls (pageChange)="pageNo = $event" id="foo" nextLabel="" previousLabel=""></pagination-controls>
+        </div>
+    </div>
+</div>

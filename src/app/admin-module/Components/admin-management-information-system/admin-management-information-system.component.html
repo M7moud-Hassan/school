@@ -1,0 +1,287 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<div>
+    <div class="row">
+        <div class="row d-flex align-items-center mb-3">
+            <div class="col-10 col-md-2">
+                <div class="websiteLogo">
+                    <img src="/assets/images/logo_busway.svg" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-2 col-md-2">
+                <span>
+                    <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                    <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-text" >اســـــم الـــموقع</span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="siteName" id="siteName" formControlName="siteName">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-text">الـــبريد الالــكتروني</span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="email" id="email" formControlName="email">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-text">رقــــــم الهـــــاتف</span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="phone" id="phone" formControlName="phone">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-img d-flex ">
+                <img src="/assets/images/facebook.svg" class="d-inline-block justify-content-center center">
+            </span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="facebook" id="facebook" formControlName="facebook">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-img d-flex ">
+                <img src="/assets/images/whatsApp.svg" class="d-inline-block justify-content-center center">
+            </span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="whatsApp" id="whatsApp" formControlName="whatsApp">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-img d-flex ">
+                <img src="/assets/images/twitter.svg" class="d-inline-block justify-content-center center">
+            </span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="twitter" id="twitter" formControlName="twitter">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-img d-flex ">
+                <img src="/assets/images/instagram.svg" class="d-inline-block justify-content-center center">
+            </span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="instagram" id="instagram" formControlName="instagram">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-img d-flex ">
+                <img src="/assets/images/telegram.svg" class="d-inline-block justify-content-center center">
+            </span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="telegram" id="telegram" formControlName="telegram">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-img d-flex ">
+                <img src="/assets/images/snapChat.svg" class="d-inline-block justify-content-center center">
+            </span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="snapChat" id="snapChat" formControlName="snapChat">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <hr class="px-5 mx-5  my-5">
+    <div class="col-12 col-md-12">
+        <div class="locationSection">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label class="defaultLabel">موقع الشركة على الخريطة :</label>
+                    <div id="googleMap" style="width:100%;height:400px;">
+                        <google-map height="400px"
+                        width="100%"
+                        [center]="center"
+                        [zoom]="zoom"
+                       >  
+            </google-map>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label class="defaultLabel" >ابحث عن عنوان </label>
+                    <div class="buttonContainer">
+                        <div class="searchContainer">
+                             <div class="m-2">
+                                بحث <i class="fas fa-search pe-2 fs-5"></i>
+                             </div>
+                        </div>
+                        <input type="text" placeholder="أدخل اسم الموقع للوصول اليه على الخريطة" class="searchInputContainer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="px-5 mx-5  my-5">
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-text">SMTP User Name</span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="SMTPUserName" id="SMTPUserName" formControlName="SMTPUserName">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-text">SMTP Password</span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="SMTPPassword" id="SMTPPassword" formControlName="SMTPPassword">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-text">SMTP Host or IP</span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="SMTPHostorIP" id="SMTPHostorIP" formControlName="SMTPHostorIP">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-2">
+            <span class="label-text">SMTP Port</span>
+        </div>
+        <div class="col-6 col-md-6">
+            <input type="text" class="input-box" spellcheck="false" name="SMTPPort" id="SMTPPort" formControlName="SMTPPort">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <hr class="px-5 mx-5  my-5">
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-1">
+            <span class="label-img d-flex ">
+                <img src="/assets/images/Google-play.svg" class="d-inline-block justify-content-center center">
+            </span>
+        </div>
+        <div class="col-6 col-md-8">
+            <input type="text" class="input-box" spellcheck="false" name="googlePlay" id="googlePlay" formControlName="googlePlay">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center pt-4">
+        <div class="col-3 col-md-1">
+            <span class="label-img d-flex ">
+                <img src="/assets/images/A-sign.svg" class="d-inline-block justify-content-center center">
+            </span>
+        </div>
+        <div class="col-6 col-md-8">
+            <input type="text" class="input-box" spellcheck="false" name="itunesApple" id="itunesApple" formControlName="itunesApple">
+        </div>
+        <div class="col-3 col-md-2">
+            <span>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+            </span>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-3"></div>
+        <div class="col-3">
+            <button class="saveButton">حفظ البيانات</button>
+        </div>
+        <div class="col-3">
+            <button class="cancelButton">إلغاء</button>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+</form>
