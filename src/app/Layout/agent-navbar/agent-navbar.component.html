@@ -1,26 +1,32 @@
 <div class="toolbar" dir="ltr">
     <div class="school">
         <button (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton"><img src="assets/images/school_logoo.png" alt=""></button>
-        <span style="width: 100%;">اسم المدرسة</span>
+        <span style="width: 100%;">الوكيل</span>
         <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2">
             <img src="assets/images/school_logoo.png"  alt="">
-            <p>SCHOOL NAME</p>
-           <p class="email">school email.com</p>
+            <p>AGENT NAME</p>
+           <p class="email">agent email.com</p>
            <hr class="m-0 p-0">
            <div class="row-item">
-            <a routerLink="/school/school-account-details" class="text-decoration-none">
+            <a routerLink="/agent/agent-profile" class="text-decoration-none">
             <span>الملف الشخصي</span>
             <img src="assets/images/profile.svg" alt="profile">
             </a>
            </div>
            <div class="row-item">
-            <a routerLink="/school/social-media" class="text-decoration-none">
-            <span>مواقع التواصل الإجتماعى</span>
-            <img src="assets/images/socialMedia.svg" alt="profile">
-        </a>
+            <a (click)="openSubscriptionDialog()" class="text-decoration-none">
+            <span>تمديد الإشتراك</span>
+            <img src="assets/images/subscriptionExtend.svg" alt="profile">
+            </a>
            </div>
            <div class="row-item">
-            <a routerLink="/school/change-password" class="text-decoration-none">
+            <a (click)="openSchoolLocationDialog()" class="text-decoration-none">
+                <span>موقع المدرسة</span>
+                <img src="assets/images/Location.svg" alt="profile">
+            </a>
+           </div>
+           <div class="row-item">
+            <a routerLink="/agent/change-password" class="text-decoration-none">
                 <span>تغيير كلمة المرور</span>
                 <img src="assets/images/lock.svg" alt="profile">
             </a>

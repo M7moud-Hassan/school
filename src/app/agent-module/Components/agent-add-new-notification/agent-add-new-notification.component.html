@@ -1,0 +1,136 @@
+<div class="container-fluid">
+
+    <div class="px-5 ">
+             <form [formGroup]="newNotificationForm" (ngSubmit)="submit()">
+         <div class="pb-2">
+             <span class="prev">الاشعارات</span>
+             <img src="assets/images/next.svg" alt="arrow_left.svg">
+             <span class="fw-bold">ارسال اشعار جديد</span>
+     
+         </div>
+         <div class="new pt-4 bg-white">
+             <p>إضافة اشعار جديد :</p>
+             <div class="row">
+                 <div class="col-3 d-flex justify-content-center align-items-center">
+                     <label class="container-ch">
+                         <input type="radio" name="radio" (click)="clearSelect()">
+                         <span class="checkmark"></span>
+                       </label>
+                      <span class="label-ch">
+                         الكل
+                      </span>
+                       
+                 </div>
+                 <div class="col-3 d-flex justify-content-center align-items-center">
+                     <label class="container-ch">
+                         <input type="radio" name="radio" (change)="onRadioParwntChange($event)">
+                         <span class="checkmark"></span>
+                       </label>
+                      <span class="label-ch">
+                         أولياء الأمور
+                      </span>
+                       
+                 </div>
+                 <div class="col-3 d-flex justify-content-center align-items-center">
+                     <label class="container-ch">
+                         <input type="radio" name="radio" (click)="clearSelect()">
+                         <span class="checkmark"></span>
+                       </label>
+                      <span class="label-ch">
+                         طلاب
+                      </span>
+                       
+                 </div>
+                 <div class="col-3 d-flex justify-content-center align-items-center">
+                     <label class="container-ch">
+                         <input type="radio" name="radio" (click)="clearSelect()">
+                         <span class="checkmark"></span>
+                       </label>
+                      <span class="label-ch">
+                         المشرفين
+                      </span>
+                       
+                 </div>
+             </div>
+           <div *ngIf="showParents">
+             <div class="input-box mt-4">
+                 <input class="emial-input" (keyup.enter)="onEnterKey($event)" type="text" type="text" name="location"  spellcheck="false" placeholder="بحث بالاسم"
+                     required>
+                
+                 <span class="all">
+     
+                     <span class=" d-flex justify-content-center align-items-center">
+                         <label class="container-ch">
+                             <input type="checkbox" name="radiom">
+                             <span class="checkmark"></span>
+                           </label>
+                          <span class="label-ch">
+                             الكل
+                          </span>
+                     </span>
+                   
+                 </span>
+             </div>
+             <hr>
+           </div>
+              <div *ngIf="showFirstItem">
+                 <div class="add mt-4 text-center">
+                     <span class="icon  align-items-center justify-content-center cursor-pointer" (click)="addItem()">
+                         <img src="assets/images/add.svg" alt="add.svg">
+                        
+                     </span>
+                     <span class="label-add">{{firstitem}}</span>
+                 </div>
+                 <hr>
+              </div>
+             <div class="row" *ngIf="addItemD">
+             <div class="col-4" *ngFor="let item of items">
+                 <div class="add-m mt-4 text-center">
+                     <span> {{item}}</span>
+                 </div>
+             </div>
+            
+            </div>
+             <div class="row mt-4">
+                 <div class="col-3 pt-2">عنوان الاشعار :</div>
+                 <div class="col-12 mt-2">
+                     <div class="input-box">
+                         <input type="text" spellcheck="false" name="title" id="title" formControlName="title">
+                     </div>
+                 </div>
+             </div>
+             <p class="mt-2">التفاصيل :</p>
+             <editor
+             apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
+             name="details"
+             formControlName="details"
+              [init]="{
+          height: 300,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+          ],
+          toolbar:
+            'undo redo | formatselect | bold italic backcolor | \
+            alignleft aligncenter alignright alignjustify | \
+            bullist numlist outdent indent | removeformat | help'
+        }"></editor>
+        <div class="row py-4">
+         <div class="col-12 col-md-1"></div>
+         <div class="col-12 col-md-5">
+             <button type="submit" class="saveButton">إرسال</button>
+         </div>
+         <div class="col-12 col-md-5">
+             <button class="cancelButton">إلغاء</button>
+         </div>
+         <div class="col-12 col-md-1"></div>
+     </div>
+         </div>
+     </form>
+     </div>
+     </div>
+
+
+<!-- </div> -->

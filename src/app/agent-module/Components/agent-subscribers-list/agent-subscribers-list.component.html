@@ -1,0 +1,111 @@
+<div>
+    <h3>الرحلات الفعالة <span class="me-4 title-b p-2">112 رحلة</span> </h3>
+</div>
+
+<div class="row">
+    <div class="col-9 col-md-6 row">
+        <div class="col-3 m-0 p-0">
+            <div class="dropdown"  style="height: 100%;">
+                <button class="btn  h-100 w-100 dropdown-toggle btn-drop" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">الكل
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu w-25">
+                    <div class="float-end">
+                        <label class="checkbox-customize">
+                            <input type="checkbox"   name="outboundJourney" id="outboundJourney" >
+                            <span class="checkmark"></span>
+                            
+                          </label>
+                          <span>
+                            الكل 
+                          </span>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <hr/>
+                    <div class="form-group has-search">
+                        <input type="text" id="dropdown-menu"  class="form-control" placeholder="أدخل نص البحث" #myInput   (keyup)="filterItems(myInput.value)">
+                        <span class="form-control-feedback">
+                            <img src="assets/images/Search.svg" class="img-search" alt="" [style.top]="topSearch+'%'">
+                        </span>
+                    </div>
+                  
+                  <li *ngFor="let item of dropdownItems" [hidden]="!item.visible">
+                   <div class="text-center">
+                    <p>{{item.text}}</p>
+                    <hr>
+                   </div>
+                  </li>
+                </ul>
+              </div>
+        </div>
+        <div class="col-9 m-0 p-0">
+            <div class="search-container">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="ابحث عن رحلة معينة" name="ابحث عن رحلة معينة">
+                </form>
+              </div>
+        </div>
+    </div>
+    <div class="col-2 col-md-1 d-flex align-items-center justify-content-center" style="background-color: #3AA7CE;">
+        <img src="assets/images/Filter.svg" alt="">
+    </div>
+</div>
+
+<div class="container-fluid parent-container mt-4">
+    <div class="table-responsive">
+        <table class="table">
+            <tr class="tableHeader">
+                <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()"  id="checkbox-all" /></td>
+                <td>الاســـم  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select></td>
+                <td>رقم الجوال</td>
+                <td>تاريخ الاشتراك</td>
+                <td>تاريخ الانتهاء</td>
+                <td>رسم المسار</td>
+                <td>حفظ مسار  الرحلة</td>
+                <td>انهاء الرحلة ب QR</td>
+                <td>التحكم</td>
+            </tr>
+             <tr class="mt-3">
+                <td colspan="9"></td>
+             </tr>
+            <tbody *ngFor="let item of subscriptionsList | paginate: 
+                { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
+                <tr id="first_{{i}}" >
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'"><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="item.isSelected" (change)="checkBoxChange()" id="checkbox-{{i}}" /></td>
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'"><img src="assets/images/user.png" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'">{{item.phone}}</td>
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'">{{item.subscriptionDate}}</td>
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'">{{item.expirationDate}}</td>
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'" ><span [className]="item.drawPath?'active':'inActive'"><span></span> {{item.drawPath?'فعـــــال':'غير فعال'}} </span></td>
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'" > <span [className]="item.saveTripPath?'parentActive':'parentInActive'"><span></span>{{item.saveTripPath?'فعـــــال':'غير فعال'}} </span></td>
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'"> <span [className]="item.finishingTripUsingQR?'parentActive':'parentInActive'"><span></span>{{item.finishingTripUsingQR?'فعـــــال':'غير فعال'}} </span></td>
+                    <td [style.backgroundColor]="item.isOpened?'#F3F3F3':'white'">
+                        <a routerLink="#" class="ms-2"> <img src="assets/images/horizontalList.svg" alt=""></a>
+                        <a data-bs-toggle="collapse" href="#parent-info-{{item.id}}" (click)="item.isOpened = !item.isOpened " > <img src="assets/images/{{item.isOpened?'ArrowUp.svg':'ArrowDown.svg'}}" alt=""></a>
+                    </td> 
+                <tr class="collapse" id="parent-info-{{item.id}}">
+                    <td colspan="9" style="background-color:#F3F3F3">
+                        <div class="extraInfor ">
+                            <span class="me-4">المشرفين : </span><span>{{item.extraInfo.supervisors}}</span>
+                            <span class="me-4">المشتركين : </span><span>{{item.extraInfo.subscribers}}</span>
+                            <span class="me-4">الطلاب : </span><span>{{item.extraInfo.students}}</span>
+                            <span class="me-4">أولياء الأمور : </span><span>{{item.extraInfo.parents}}</span>
+                            <span class="me-4">المجموعات : </span><span>{{item.extraInfo.groups}}</span>
+                            <span class="me-4">الباصات : </span><span>{{item.extraInfo.buses}}</span>
+                            <span class="me-4">رحلات اليوم : </span><span>{{item.extraInfo.todayTrips}}</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row my-5 m-0">
+        <div class="d-flex align-items-center justify-content-center">
+            <pagination-controls (pageChange)="pageNo = $event" id="foo" nextLabel="" previousLabel=""></pagination-controls>
+        </div>
+    </div>
+</div>

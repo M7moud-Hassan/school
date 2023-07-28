@@ -41,11 +41,11 @@ export class ProfileComponent implements OnInit {
       image: ['', [Validators.required]],
     });
   }
+
   getSchoolProfileData(){
     let model = this.service.schoolService.getSchoolProfile();
     this.profileForm.patchValue(model);
   }
-
 
   onFileSelected(event: any) {
     const file: File = event.target.files[0];

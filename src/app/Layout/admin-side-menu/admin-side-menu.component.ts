@@ -18,7 +18,7 @@ export class AdminSideMenuComponent {
     {id:7,isSelected:false,link:'#',label:'الإشعارات',selectedIcon:'assets/images/notificationLight.svg',unSelectedIcon:'assets/images/notifications.svg',subLink: []},
     {id:8,isSelected:false,link:'#',label:'الإشعارات المؤقتة',selectedIcon:'assets/images/tempAdsLight.svg',unSelectedIcon:'assets/images/tempAdsDark.svg',subLink: []},
     {id:9,isSelected:false,link:'#',label:'إدارة المحتوى',selectedIcon:'assets/images/contentManagementLight.svg',unSelectedIcon:'assets/images/contentMAnagementDark.svg',subLink: []},
-    {id:10,isSelected:false,link:'#',label:'إدارة النظام',selectedIcon:'assets/images/systemManagementLight.svg',unSelectedIcon:'assets/images/systemManagementDark.svg',subLink: []},
+    {id:10,isSelected:false,link:'/admin/admin-management',label:'إدارة النظام',selectedIcon:'assets/images/systemManagementLight.svg',unSelectedIcon:'assets/images/systemManagementDark.svg',subLink: []},
     {id:11,isSelected:false,link:'#',label:'الدعم الفنى',selectedIcon:'assets/images/helpLight.svg',unSelectedIcon:'assets/images/help.svg',subLink: []},
   ]
   

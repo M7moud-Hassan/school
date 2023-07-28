@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="mainTitle">إدارة النظام :</div>
+        <div class="row">
+            <div (click)="isListShown = !isListShown" class="col-6 col-md-2 {{!isListShown?'subTitleBold':'subTitleLight'}}">معلومات النظام</div>
+            <div (click)="isListShown = !isListShown" class="col-6 col-md-2 {{isListShown?'subTitleBold':'subTitleLight'}}">القوائم</div>
+        </div>
+        <div class="mt-4">
+            <div *ngIf="isListShown" class="row">
+                <app-admin-management-list></app-admin-management-list>
+            </div>
+            <div *ngIf="!isListShown" class="row">
+                <app-admin-management-information-system></app-admin-management-information-system>
+            </div>
+        </div>
+</div>

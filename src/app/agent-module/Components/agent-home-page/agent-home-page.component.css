@@ -1,0 +1,270 @@
+.welcomeBack{
+    background-image: url('/assets/images/agentNavbackgroung.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 230px; */
+    border-radius: 25px; 
+    padding: 30px 20px 20px 20px; 
+    vertical-align: bottom;
+    color: white; 
+    position: relative;
+}
+.navrightSection{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 100%;
+    min-height: 300px;
+    background-image: url('/assets/images/agentNavbarRightImage.svg');
+    background-size: 400px 300px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+.wrapper{
+    /* max-height: 120px; */
+    /* border: 1px solid grey; */
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    padding: 20px 5px;
+  
+}
+.notificationContainer{
+    position: relative;
+    cursor: pointer;
+}
+.notificationItem{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 50%;
+  top: -100px;
+  left: -10px;
+  /* border: 1px solid salmon; */
+  background-image: url('/assets/images/alarm.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% 70%;
+  box-shadow: -1px 2px 7px 2px  gray;
+  background-color: white;
+  padding: 6px;
+}
+.numberOfNotification{
+    position: absolute;
+    background-color: red;
+    color: white;
+    padding: 1px;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    font-size: 10px;
+    text-align: center;
+    right: -1px;
+    top: 3px;
+}
+.wrapper::-webkit-scrollbar{
+    width: 0;
+}
+.wrapper .item{
+    min-width: 200px;
+    text-align: center;
+    background-color: white;
+    margin-left: 20px;
+    padding: 10px 10px 0px 10px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 5px #888888;
+    display: inline-block;
+}
+
+
+/* ====================================================================================================
+======================================actvities========================================================
+==================================================================================================== */
+
+.single-chart {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
+.circular-chart.orange .circle {
+    stroke: #EA987D;
+}
+
+.circular-chart.green .circle {
+    stroke: #4CC790;
+}
+
+.circular-chart.blue .circle {
+    stroke: #3c9ee5;
+}
+
+.percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+}
+
+.contain-home .groups .group {
+    width: 30%;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+
+
+
+.activityCardItem{
+    margin: 20px 0px;
+}
+.activityCardTop{
+    background-color: white;
+    border-radius: 20px 20px 0px 0px;
+    padding: 10px;
+}
+.activityCardNumber{
+    /* background-color: #EA987D; */
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    min-width: 40px;
+}
+.activityCardLabel{
+    margin-top: 15px;
+    font-size: 12px;
+    color: #A6A6A6;
+}
+.activityCardBottom{
+    background-color: #3AA7CE;
+    color: white;
+    text-align: center;
+    padding: 10px 5px;
+    font-size: 13px;
+}
+.orange-number {
+    background-color: #ea6c4236;
+}
+.blue-number {
+    background-color: #3c9fe53f;
+}
+
+.closeIcon{
+    background-image: url('/assets/images/x.svg');
+    background-repeat: no-repeat;
+    background-position: 3% 50%;
+    background-size: 30px 30px;
+    background-color: white;
+    min-height: 50px;
+    padding: 20px 10px;
+    border-radius: 15px 15px 0px 0px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #575757;
+    /* box-shadow: -1px 2px 7px 2px  gray; */
+}
+.notificationAlertCard{
+    margin-bottom: 20px;
+}
+.notificationAlertContainer{
+    padding: 10px;
+    background-color: white;
+    border-radius:  0px 0px 10px 10px;
+}
+.notificationItemCard{
+    background-color: #F5F5F5;
+    color: #575757;
+    font-size: 14px;
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.notiTitle{
+color: black;
+font-size: 15px;
+}
+.notiTime{
+    font-size: 11px;
+}
+.imagesStack{
+    position: relative;
+    min-height: 30px;
+    width: 100%;
+}
+.image-1,.image-2,.image-3,.imageMoreThan-3{
+    background-color: #3c9ee5;
+    border: .2px solid #ffffff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    z-index: 1;
+}
+.image-2{
+    right: 10px;
+    z-index: 2;
+}
+.image-3{
+    right: 0px;
+    z-index: 3;
+}
+.imageMoreThan-3{
+    right: 0px;
+    z-index: 3;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: black;
+    background-color: #D9D9D9;
+    text-align: center;
+    font-size: 10px;
+}
+.lastModifiedCircle{
+    display: inline-block;
+    background-color: #6C3232;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.lastModifiedLabel{
+    color: black;
+    font-size: 13px;
+}
+.closeItem:hover{
+    cursor: pointer;
+}

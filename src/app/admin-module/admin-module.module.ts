@@ -22,6 +22,9 @@ import { DetailsImgComponent } from './Components/details-img/details-img.compon
 import { TargetedsComponent } from './Components/targeteds/targeteds.component';
 import { MainContentComponent } from './Components/main-content/main-content.component';
 import { DetailsImgDriverComponent } from './Components/details-img-driver/details-img-driver.component';
+import { AdminManagementListComponent } from './Components/admin-management-list/admin-management-list.component';
+import { AdminManagementInformationSystemComponent } from './Components/admin-management-information-system/admin-management-information-system.component';
+import { AdminManagementComponent } from './Components/admin-management/admin-management.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { DetailsImgDriverComponent } from './Components/details-img-driver/detai
     DetailsImgComponent,
     TargetedsComponent,
     MainContentComponent,
-    DetailsImgDriverComponent
+    DetailsImgDriverComponent,
+    AdminManagementListComponent,
+    AdminManagementInformationSystemComponent,
+    AdminManagementComponent
   ],
   imports: [
     CommonModule,

@@ -9,6 +9,10 @@ import { AddUsersComponent } from './Components/add-users/add-users.component';
 import { SubscriptionsComponent } from './Components/subscriptions/subscriptions.component';
 import { TripsActiveComponent } from './Components/trips-active/trips-active.component';
 import { ContentManagementComponent } from './Components/content-management/content-management.component';
+import { AdminManagementListComponent } from './Components/admin-management-list/admin-management-list.component';
+import { AdminManagementInformationSystemComponent } from './Components/admin-management-information-system/admin-management-information-system.component';
+import { AdminManagementComponent } from './Components/admin-management/admin-management.component';
+
 
 const routes: Routes = [
   {path:'home',component:AdminHomePageComponent},
@@ -19,7 +23,10 @@ const routes: Routes = [
   {path:'add-user',component:AddUsersComponent},
   {path:'subscriptions',component:SubscriptionsComponent},
   {path:'trips-active',component:TripsActiveComponent},
-  {path:'content-management',component:ContentManagementComponent}
+  {path:'content-management',component:ContentManagementComponent},
+  {path:'admin-management',component:AdminManagementComponent},
+  {path:'admin-management-list',component:AdminManagementListComponent},
+  {path:'admin-management-information-system',component:AdminManagementInformationSystemComponent},
 ];
 
 @NgModule({

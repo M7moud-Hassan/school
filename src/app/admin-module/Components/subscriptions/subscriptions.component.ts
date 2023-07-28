@@ -46,5 +46,5 @@ constructor(private service:MainAdminService,private overlay: Overlay,private ov
     const portal = new TemplatePortal(this.overlayTemplate, this.viewContainerRef);
     this.overlayRef.attach(portal);
   }
-
+  
 }
