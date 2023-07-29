@@ -1,5 +1,5 @@
 <div class="mt-4">
-    <img src="assets/images/img-bus.png" alt="img-bus" (click)="openDialogImg()">
+    <img src="{{image}}" alt="img-bus" (click)="openDialogImg()">
     <img src="assets/images/Show.svg" alt="">
     <img src="assets/images/Edit.svg" alt="">
     <img src="assets/images/Delete.svg" alt="">
@@ -7,7 +7,7 @@
 <div class="row ">
     <div class="col-12 col-md-6 bg-white mt-2">
         <editor
-        [initialValue]="initialContent"
+        name="title" formControlName="title"
                 apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
                 name="details"
                 formControlName="details"
@@ -27,7 +27,7 @@
 
         <div class="mt-4">
             <editor
-            [initialValue]="initialContent2"
+            name="content" formControlName="content"
                     apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
                     name="details"
                     formControlName="details"

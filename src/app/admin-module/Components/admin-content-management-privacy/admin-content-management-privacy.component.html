@@ -1,0 +1,55 @@
+<form [formGroup]="contactForm" (ngSubmit)="submit()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label for="title" class="defaultLabel mt-4">العنوان</label>
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z" formControlName="title" name="title"
+                    [init]="{
+         height: 300,
+         menubar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"></editor>
+
+                <label for="content" class="defaultLabel mt-4">المحتوى</label>
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z" formControlName="content"
+                    name="content" [init]="{
+height: 300,
+menubar: false,
+plugins: [
+  'advlist autolink lists link image charmap print preview anchor',
+  'searchreplace visualblocks code fullscreen',
+  'insertdatetime media table paste code help wordcount'
+],
+toolbar:
+  'undo redo | formatselect | bold italic backcolor | \
+  alignleft aligncenter alignright alignjustify | \
+  bullist numlist outdent indent | removeformat | help'
+}"></editor>
+                <div class="row text-center p-4">
+                    <div class="col-4">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-1"></div>
+                        <div class="col-12 col-md-5">
+                            <button type="submit" class="saveButton">حفظ البيانات</button>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <button class="cancelButton">إلغاء</button>
+                        </div>
+                        <div class="col-12 col-md-1"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -5,7 +5,7 @@ import { MainAdminService } from '../../Services/main-admin.service';
 @Component({
   selector: 'app-admin-management-information-system',
   templateUrl: './admin-management-information-system.component.html',
-  styleUrls: ['./admin-management-information-system.component.css']
+  styleUrls: ['../content-management/content-management.component.css','./admin-management-information-system.component.css']
 })
 export class AdminManagementInformationSystemComponent implements OnInit {
   profileForm:FormGroup = new FormGroup({});

@@ -3,7 +3,7 @@
 }
 .edit-icon{
     height: 45%;
-    border-radius: 15px;
+    border-radius: 0px 0px 15px 15px;
     position: relative;
     top: -50%;
     background-color: rgba(0, 0, 0, 0.395);
@@ -13,4 +13,8 @@
 }
 .active-item{
     background-color: #C1E3EF;
+}
+input:focus{
+    border: 0px;
+    outline: 0px;
 }

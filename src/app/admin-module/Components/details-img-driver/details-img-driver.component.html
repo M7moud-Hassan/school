@@ -1,57 +1,83 @@
-<div>
-    <div class="header-D p-2">
-        <img src="assets/images/closeD.svg" alt="close">
-        <span class="float-end text-white">بيانات الصورة</span>
-    </div>
-    <div class="container-fluid pt-4">
-        <div class="row" dir="rtl">
-            <div class="col-12 col-md-4 ">
-                <img src="assets/images/img-bus.png" class="w-100" alt="">
-                <div class="edit-icon d-flex align-items-center justify-content-center">
-                    <img src="assets/images/camera_Icon.svg" alt="">
+<form [formGroup]="imageForm" (ngSubmit)="onSubmit()">
+    <div>
+        <div class="header-D p-2">
+            <img src="assets/images/closeD.svg" alt="close">
+            <span class="float-end text-white fs-5 px-3">بيانات الصورة</span>
+        </div>
+        <div class="container-fluid pt-4">
+            <div class="row " dir="rtl">
+                <div class="col-12 col-md-4  text-end">
+                    <div class='contStack' (click)="fileInput.click()" >
+                        <div class="imageCont">
+                            <img src={{userImage}}   (click)="fileInput.click()" width="120" height="120" alt="user">
+                            <input type="file" name="image" formControlName="image"  accept="image/*" (change)="onFileSelected($event)" #fileInput style="display:none">
+                            
+                        </div>
+                        <div class="iconCont">
+                            <div class="iconCamerText">اعادة تعيين صورة جديدة</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 mt-2 text-end itemLabel">
+                    <div class="mb-3">
+                    <span style="width: 100px;">الشكل الخارجي</span>
+                    <div style="margin-right: 10px;" class="shadow-d rounded  col-5 row p-2 mt-4 p-0">
+                        
+                        <a (click)="changeShape('square')" class="col-4 {{shape=='square'?'active-item':''}} p-1 m-0">
+                            <i class="fas fa-square fs-5 p-2 {{shape=='square'?'text-white':'text-muted'}}"></i>
+                        </a>
+                        <a (click)="changeShape('circle')" class="col-4 {{shape=='circle'?'active-item':''}} p-1 m-0">
+                            <i class="fas fa-circle fs-5 p-2 {{shape=='circle'?'text-white':'text-muted'}}"></i>
+                        </a>
+                        <a (click)="changeShape('star')" class="col-4 p-1 {{shape=='star'?'active-item':''}} m-0">
+                            <i class="fas fa-star fs-5 p-2 {{shape=='star'?'text-white':'text-muted'}}"></i>
+                        </a>
+                        <a (click)="changeShape('triangle')" class="col-4 p-1  {{shape=='triangle'?'active-item':''}} m-0">
+                            <i class="fas fa-triangle-exclamation  fs-5 p-2 {{shape=='triangle'?'text-white':'text-muted'}}"></i>
+                        </a>
+                    
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <span style="width: 100px;">حجم الصورة</span>
+                    <span class="shadow-d rounded  p-1 px-3 me-2">
+                        <input type="text" name="imageSize" formControlName="imageSize" class="border-0" />
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <span style="width: 100px;">حجم الشكل</span>
+                    <span class="shadow-d rounded  p-1 px-3 me-2">
+                        <input type="text" name="shapeSize" formControlName="shapeSize" class="border-0" />
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <span style="width: 100px;">النص السفلي</span>
+                    <span class="shadow-d rounded  p-1 px-3 me-2">
+                        <input type="text" name="label" formControlName="label" class="border-0" />
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <span style="width: 100px;">لون الشكل</span>
+                    <span class="shadow-d rounded  p-1 px-3 me-2">
+                        <input type="text" name="shapeColor" formControlName="shapeColor" class="border-0" />
+                    </span>
+                </div>                    
                 </div>
             </div>
-            <div class="col-12 col-md-8  text-end">
-                <div>
-                    <span>حجم الصورة</span>
-                <span class="shadow-d rounded   p-2 me-2">615 * 411</span>
-              
-                </div>
-                <div class="mt-4">
-                    <span>حجم الصورة</span>
-                <span class="shadow-d rounded   p-2 me-2">615 * 411</span>
-              
-                </div>
-                <div class="mt-4">
-                    <span>حجم الصورة</span>
-                <span class="shadow-d rounded   p-2 me-2">615 * 411</span>
-              
-                </div>
-                <div class="mt-4">
-                    <span>حجم الصورة</span>
-                <span class="shadow-d rounded   p-2 me-2">615 * 411</span>
-              
-                </div>
-                <div class="mt-4">
-                    <span>حجم الصورة</span>
-                <span class="shadow-d rounded   p-2 me-2">615 * 411</span>
-                
-                </div>
+        </div>
+        <div  class="row p-0 m-0 mt-4 mb-4">
+            <div class="col-0 col-md-1"></div>
+            <div class="col-12 col-md-5">
+                <button class="btn border w-100 btn-default">
+                    إلغاء
+                </button>
             </div>
-            
+            <div class="col-12 col-md-5">
+                <button class="btn w-100 text-white" style="background-color: #3AA7CE;">
+                    حفظ البيانات
+                </button>
+            </div>
         </div>
     </div>
-    <div  class="row p-0 m-0 mt-4 mb-4">
-        <div class="col-0 col-md-1"></div>
-        <div class="col-12 col-md-5">
-            <button class="btn w-100 text-white" style="background-color: #3AA7CE;">
-                حفظ البيانات
-            </button>
-        </div>
-        <div class="col-12 col-md-5">
-            <button class="btn border w-100 btn-default">
-                إلغاء
-            </button>
-        </div>
-    </div>
-</div>
+    </form>

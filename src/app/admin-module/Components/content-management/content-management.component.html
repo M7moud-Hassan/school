@@ -1,29 +1,35 @@
-<h3>إدارة المحتوى :</h3>
-<div class="row  toolbar-hi">
-    <div class="col-1 me-4 active">
-        الرئيسية
+<div class="container-fluid">
+    <div class="row mb-5" >
+        <h3>إدارة المحتوى :</h3>
+        <div class="row mb-2">
+            <div *ngFor="let item of links;let i = index" class="col-4 text-center {{item.id==2 || item.id==4 || item.id==8 ? 'col-md-2':'col-md-1'}}">
+                <a (click)="changeSelectedLink(i)" class="navLinkItem {{item.isSelected?'activeLink':''}}">{{item.label}}</a>
+            </div>
+        </div>
     </div>
-    <div class="col-1">
-        المستهدفون
+    
+    <div *ngIf="links[0].isSelected" class="row">
+        <app-admin-content-management-home></app-admin-content-management-home>
     </div>
-    <div class="col-1 me-4">
-        المميزات
+    <div *ngIf="links[1].isSelected" class="row">
+        <app-targeteds></app-targeteds>
     </div>
-    <div class="col-1">
-        كيف نعمل
+    <div *ngIf="links[2].isSelected" class="row">
+        <app-admin-content-management-features></app-admin-content-management-features>
     </div>
-    <div class="col-1">
-        اعلان
+    <div *ngIf="links[3].isSelected" class="row">
+        <app-admin-content-management-how-we-work></app-admin-content-management-how-we-work>
     </div>
-    <div class="col-1">
-        الشركاء
+    <div *ngIf="links[4].isSelected" class="row">
+        <app-admin-content-management-ads></app-admin-content-management-ads>
     </div>
-    <div class="col-1">
-        اتصل بنا
+    <div *ngIf="links[5].isSelected" class="row">
+        <app-admin-content-management-partners></app-admin-content-management-partners>
     </div>
-    <div class="col-2">
-        سياسة الخصوصية
+    <div *ngIf="links[6].isSelected" class="row">
+        <app-admin-content-management-contact-us></app-admin-content-management-contact-us>
+    </div>
+    <div *ngIf="links[7].isSelected" class="row">
+        <app-admin-content-management-privacy></app-admin-content-management-privacy>
     </div>
 </div>
-<!-- <app-main-content></app-main-content> -->
-<app-targeteds></app-targeteds>

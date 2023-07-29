@@ -1,22 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailsImgComponent } from '../details-img/details-img.component';
+import { MainAdminService } from '../../Services/main-admin.service';
+import { FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.css']
 })
-export class MainContentComponent {
-  constructor(private dialog:MatDialog) {
-   
+export class MainContentComponent implements OnInit {
+  form:FormGroup = new FormGroup({});
+  image:string = '';
+
+  constructor(private service:MainAdminService){}
+  ngOnInit(): void {
+    this.createForm();
+    this.loadContactData();
+    this.image = this.form.get('image')?.value;
+  }
+
+  createForm(){
+    this.form = this.service.formBuilder.group({
+      image:['',[Validators.required]],
+      title:['',[Validators.required]],
+      content:['',[Validators.required]],
+    });
     
   }
-  initialContent = '<p><strong style="font-size: 50px;">باص واي Basway </strong></p>';
-  initialContent2 = '<p style="font-size: 18px;">المفضل عند الطلاب و أولياء الأمور و المدارس و المشرفين</p>';
+  loadContactData(){
+    this.form.patchValue(this.service.adminContentManagementService.getHomeData());
+  }
+  submit(){
+    this.service.printFormValues(this.form);
+    this.service.adminContentManagementService.addContact(this.form.value).subscribe({
+      next:(res)=>{
+
+      },
+      error:(error)=>{
+        
+      }
+    });
+  }
+
  
   openDialogImg(){
-    this.dialog.open(DetailsImgComponent,{
+    this.service.dialog.open(DetailsImgComponent,{
       width:'50%'
     })
   }

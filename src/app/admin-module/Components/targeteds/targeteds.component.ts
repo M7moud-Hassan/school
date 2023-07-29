@@ -1,24 +1,57 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailsImgComponent } from '../details-img/details-img.component';
 import { DetailsImgDriverComponent } from '../details-img-driver/details-img-driver.component';
+import { FormGroup, Validators } from '@angular/forms';
+import { MainAdminService } from '../../Services/main-admin.service';
 
 @Component({
   selector: 'app-targeteds',
   templateUrl: './targeteds.component.html',
-  styleUrls: ['./targeteds.component.css']
+  styleUrls: ['../content-management/content-management.component.css','./targeteds.component.css']
 })
-export class TargetedsComponent {
-  constructor(private dialog:MatDialog) {
-   
-    
+export class TargetedsComponent implements OnInit {
+  contactForm:FormGroup = new FormGroup({});
+  imageSrc:string = '';
+  list:any[] = [];
+
+  constructor(private service:MainAdminService){}
+  ngOnInit(): void {
+    this.createForm();
+    this.loadContactData();
+    this.imageSrc = this.contactForm.get('image')?.value;
+    this.getData();
   }
-  initialContent = '<p><strong style="font-size: 23px;">المستهدفون من <span style="color:#3AA7CE">باص واي</span></strong></p>';
-  initialContent2 = '<p style="font-size: 18px;">حلول جذرية يقدمها تطبيق باص واي Busway و يستهدف جميع المستفيدين والمقدمين لخدمات النقل المدرسي سواء كانت شركات النقل او المدرسة أو الطالب أو ولي الأمر.. وبهذا يتميز تطبيق باص واي Busway بخلق بيئة نقل مدرسي آمن و مريح مع باص واي.. كن مطمئن .  </p>';
- 
+
+  createForm(){
+    this.contactForm = this.service.formBuilder.group({
+      title:['',[Validators.required]],
+      details:['',[Validators.required]],
+      image:['',[Validators.required]],
+    });
+  }
+  getData(){
+    this.list = this.service.adminContentManagementService.loadTheTargetersData().imagesData;
+  }
+  loadContactData(){
+    this.contactForm.patchValue(this.service.adminContentManagementService.loadTheTargetersData());
+  }
+  submit(){
+    this.service.printFormValues(this.contactForm);
+    this.service.adminContentManagementService.editTargetData(this.contactForm.value).subscribe({
+      next:(res)=>{
+
+      },
+      error:(error)=>{
+        
+      }
+    });
+  }
   openDialogImg(){
-    this.dialog.open(DetailsImgDriverComponent,{
+    this.service.dialog.open(DetailsImgDriverComponent,{
       width:'50%'
     })
   }
+
 }
+

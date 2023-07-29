@@ -5,7 +5,7 @@ import { MainAdminService } from '../../Services/main-admin.service';
 @Component({
   selector: 'app-admin-management-list',
   templateUrl: './admin-management-list.component.html',
-  styleUrls: ['./admin-management-list.component.css']
+  styleUrls: ['../content-management/content-management.component.css','./admin-management-list.component.css']
 })
 export class AdminManagementListComponent implements OnInit {
 

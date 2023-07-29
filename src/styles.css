@@ -589,6 +589,14 @@ outline: 0;
   background-repeat: no-repeat;
   border-radius: 0px 0px 15px 15px;
 }
+.iconCamerText{
+  position: absolute;
+  bottom: 2px;
+  left: 9px;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}
 
 /* ======================================end icon and image in profile================================================= */
 

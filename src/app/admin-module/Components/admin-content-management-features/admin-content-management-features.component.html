@@ -1,1 +1,158 @@
-<p>admin-content-management-features works!</p>
+<form [formGroup]="FeaturesForm" (ngSubmit)="submit()">
+    <div class="container-fluid">    
+        <div class="row">
+        <div class="row d-flex align-items-center mb-3">
+            <div class="col-10 col-md-2">
+                <div class="websiteLogo" (click)="openDialogImg()">
+                    <img src="{{imageSrc}}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-2 col-md-2">
+                <span>
+                    <a routerLink="#" class="px-1"><img src="/assets/images/blueEye.svg"></a>
+                    <a routerLink="#" class="px-1"><img src="/assets/images/Edit.svg"></a>
+                    <a routerLink="#" class="px-1"><img src="/assets/images/Delete.svg"></a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-12 col-md-7">
+                <label for="title" class="defaultLabel mt-4">العنوان</label>
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z" formControlName="title" name="title"
+                    [init]="{
+         height: 300,
+         menubar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"></editor>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-12 col-md-6 pt-4">
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"  name="feature" formControlName="featureNo_1"
+                    [init]="{
+         height: 300,
+         menubar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"></editor>
+            </div>
+            <div  class="col-12 col-md-6 pt-4">
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"  name="feature2" formControlName="featureNo_2"
+                    [init]="{
+         height: 300,
+         menubar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"></editor>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-12 col-md-6 pt-4">
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"  name="feature3" formControlName="featureNo_3"
+                    [init]="{
+         height: 300,
+         menubar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"></editor>
+            </div>
+            <div  class="col-12 col-md-6 pt-4">
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"  name="feature4" formControlName="featureNo_4"
+                    [init]="{
+         height: 300,
+         menubar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"></editor>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-12 col-md-6 pt-4">
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"  name="feature5" formControlName="featureNo_5"
+                    [init]="{
+         height: 300,
+         menubar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"></editor>
+            </div>
+            <div  class="col-12 col-md-6 pt-4">
+                <editor apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"  name="feature6" formControlName="featureNo_6"
+                    [init]="{
+         height: 300,
+         menubar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"></editor>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12 col-md-1"></div>
+                    <div class="col-12 col-md-5">
+                        <button type="submit" class="saveButton py-2">حفظ البيانات</button>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <button class="cancelButton py-2">إلغاء</button>
+                    </div>
+                    <div class="col-12 col-md-1"></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6"></div>
+        </div>
+
+    </div>
+</form>

@@ -17,6 +17,9 @@ import { AdminContentManagementContactUsComponent } from './Components/admin-con
 import { AdminContentManagementContactUs2Component } from './Components/admin-content-management-contact-us2/admin-content-management-contact-us2.component';
 import { AdminContentManagementHowWeWorkComponent } from './Components/admin-content-management-how-we-work/admin-content-management-how-we-work.component';
 import { AdminContentManagementPartnersComponent } from './Components/admin-content-management-partners/admin-content-management-partners.component';
+import { AdminContentManagementHomeComponent } from './Components/admin-content-management-home/admin-content-management-home.component';
+import { AdminContentManagementPrivacyComponent } from './Components/admin-content-management-privacy/admin-content-management-privacy.component';
+import { MainContentComponent } from './Components/main-content/main-content.component';
 
 
 const routes: Routes = [
@@ -37,6 +40,10 @@ const routes: Routes = [
   {path:'admin-contenet-management-contact-us-2',component:AdminContentManagementContactUs2Component},
   {path:'admin-contenet-management-how-we-work',component:AdminContentManagementHowWeWorkComponent},
   {path:'admin-contenet-management-partners',component:AdminContentManagementPartnersComponent},
+  {path:'admin-contenet-management-home',component:AdminContentManagementHomeComponent},
+  {path:'admin-contenet-management-privacy',component:AdminContentManagementPrivacyComponent},
+  {path:'main-content',component:MainContentComponent},
+
 ];
 
 @NgModule({

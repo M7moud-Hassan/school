@@ -17,3 +17,20 @@
 .active-item{
     background-color: #C1E3EF;
 }
+.shadow-shapes{
+    width: 70%;
+    left: 0px;
+}
+.itemLabel span{
+    display: inline-block;
+    /* width: 120px; */
+}
+/* .itemLabel div{
+    width: 170px;
+} */
+.shape{
+    color: #E6E6E6;
+    font-size: 30px;
+    border-left: 1px solid gray;
+    padding-right: 6px;
+}

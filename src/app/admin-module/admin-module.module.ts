@@ -27,11 +27,12 @@ import { AdminManagementInformationSystemComponent } from './Components/admin-ma
 import { AdminManagementComponent } from './Components/admin-management/admin-management.component';
 import { AdminContentManagementAdsComponent } from './Components/admin-content-management-ads/admin-content-management-ads.component';
 import { AdminContentManagementContactUsComponent } from './Components/admin-content-management-contact-us/admin-content-management-contact-us.component';
-import { EditorModule } from '@tinymce/tinymce-angular';
 import { AdminContentManagementContactUs2Component } from './Components/admin-content-management-contact-us2/admin-content-management-contact-us2.component';
 import { AdminContentManagementHowWeWorkComponent } from './Components/admin-content-management-how-we-work/admin-content-management-how-we-work.component';
 import { AdminContentManagementPartnersComponent } from './Components/admin-content-management-partners/admin-content-management-partners.component';
 import { AdminContentManagementFeaturesComponent } from './Components/admin-content-management-features/admin-content-management-features.component';
+import { AdminContentManagementHomeComponent } from './Components/admin-content-management-home/admin-content-management-home.component';
+import { AdminContentManagementPrivacyComponent } from './Components/admin-content-management-privacy/admin-content-management-privacy.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,9 @@ import { AdminContentManagementFeaturesComponent } from './Components/admin-cont
     AdminContentManagementContactUs2Component,
     AdminContentManagementHowWeWorkComponent,
     AdminContentManagementPartnersComponent,
-    AdminContentManagementFeaturesComponent
+    AdminContentManagementFeaturesComponent,
+    AdminContentManagementHomeComponent,
+    AdminContentManagementPrivacyComponent
   ],
   imports: [
     CommonModule,
