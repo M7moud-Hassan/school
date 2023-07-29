@@ -9,6 +9,7 @@ import { ProxyPageService } from './proxy-page.service';
 import { UserSystemService } from './user-system.service';
 import { SubscriptionsService } from './subscriptions.service';
 import { AdminManagementService } from './admin-management.service';
+import { AdminContentManagementService } from './admin-content-management.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,7 @@ export class MainAdminService {
     private _adminUsersSystem:UserSystemService,
     private _adminSubscriptions:SubscriptionsService,
     private _adminManagementService:AdminManagementService,
+    private _adminContentManagementService:AdminContentManagementService,
     ){}
 get adminProxyPageService():ProxyPageService{
   return this._adminProxyPageService;
@@ -57,6 +59,9 @@ get adminUserssystem():UserSystemService{
     }
     get adminManagementService():AdminManagementService{
       return this._adminManagementService;
+    }
+    get adminContentManagementService():AdminContentManagementService{
+      return this._adminContentManagementService;
     }
 
 

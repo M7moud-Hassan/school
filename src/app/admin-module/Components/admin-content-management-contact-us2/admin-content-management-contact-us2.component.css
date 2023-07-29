@@ -1,0 +1,143 @@
+.mainTitle{
+    color: black;
+    font-size: 18px;
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+.subTitleBold{
+    font-size: 15px;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+.subTitleLight{
+    color: #575757;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.websiteLogo{
+    width: 150px;
+    height: 100px;
+    box-shadow: 1px 2px 5px black;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 5px;
+    vertical-align: middle;
+}
+.input-box {
+    display: inline-block;
+    width: 100%;
+    padding: 7px 20px;
+    text-align: right;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+    transition: all 0.2s linear;
+}
+.label-text{
+    color: #575757;
+    font-size: 15px;
+}
+.label-img{
+    display: inline-block;
+    margin: 0px auto;
+}
+.label-img img{
+    display: inline-block;
+    margin: 0px auto;
+    width: 38px;
+    height: 38px;
+}
+
+.locationSection{
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px 0px;
+  }
+
+
+
+
+  .buttonContainer{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    /* border: 1px solid blue; */
+  }
+  .searchContainer{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 45px;
+    border-radius: 15px 0px 0px 15px;
+    background-color: #3AA7CE;
+    color: white;
+    font-size: 15px;
+    margin: 0px auto;
+  }
+  .searchInputContainer{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: 1px solid grey;
+    width: 80%;
+    height: 45px;
+    border-radius: 0px 15px 15px 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 18px;
+    outline: none;
+  }
+  .searchInputContainer:focus{
+    border: 1px solid grey;
+  }
+#tinymce {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    height: 0px;
+    background-color: black !important;
+    color: white !important;
+}
+.availableFieldItem{
+    position: relative;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    padding: 12px;
+}
+.availableFieldItemInside{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 44px;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.60);
+    display: none;
+    transition: all 1s ease-in-out;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+.availableFieldItem:hover .availableFieldItemInside{
+    display: block;
+}
+.availableFieldItemInside a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    background-color: white;
+    border-radius: 7px;
+    padding: 5px 8px;
+}

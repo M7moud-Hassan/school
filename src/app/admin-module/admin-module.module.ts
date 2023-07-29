@@ -19,6 +19,13 @@ import { TripsActiveComponent } from './Components/trips-active/trips-active.com
 import { AdminManagementListComponent } from './Components/admin-management-list/admin-management-list.component';
 import { AdminManagementInformationSystemComponent } from './Components/admin-management-information-system/admin-management-information-system.component';
 import { AdminManagementComponent } from './Components/admin-management/admin-management.component';
+import { AdminContentManagementAdsComponent } from './Components/admin-content-management-ads/admin-content-management-ads.component';
+import { AdminContentManagementContactUsComponent } from './Components/admin-content-management-contact-us/admin-content-management-contact-us.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { AdminContentManagementContactUs2Component } from './Components/admin-content-management-contact-us2/admin-content-management-contact-us2.component';
+import { AdminContentManagementHowWeWorkComponent } from './Components/admin-content-management-how-we-work/admin-content-management-how-we-work.component';
+import { AdminContentManagementPartnersComponent } from './Components/admin-content-management-partners/admin-content-management-partners.component';
+import { AdminContentManagementFeaturesComponent } from './Components/admin-content-management-features/admin-content-management-features.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,13 @@ import { AdminManagementComponent } from './Components/admin-management/admin-ma
     TripsActiveComponent,
     AdminManagementListComponent,
     AdminManagementInformationSystemComponent,
-    AdminManagementComponent
+    AdminManagementComponent,
+    AdminContentManagementAdsComponent,
+    AdminContentManagementContactUsComponent,
+    AdminContentManagementContactUs2Component,
+    AdminContentManagementHowWeWorkComponent,
+    AdminContentManagementPartnersComponent,
+    AdminContentManagementFeaturesComponent
   ],
   imports: [
     CommonModule,
@@ -43,6 +56,7 @@ import { AdminManagementComponent } from './Components/admin-management/admin-ma
     FormsModule,
     ReactiveFormsModule,
     GoogleMapsModule,
+    EditorModule
   ]
 })
 export class AdminModuleModule { }
