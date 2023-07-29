@@ -42,8 +42,6 @@ const routes: Routes = [
   {path:'admin-contenet-management-partners',component:AdminContentManagementPartnersComponent},
   {path:'admin-contenet-management-home',component:AdminContentManagementHomeComponent},
   {path:'admin-contenet-management-privacy',component:AdminContentManagementPrivacyComponent},
-  {path:'main-content',component:MainContentComponent},
-
 ];
 
 @NgModule({
