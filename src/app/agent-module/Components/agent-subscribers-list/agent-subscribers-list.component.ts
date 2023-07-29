@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, HostListener, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { subscriptionsListModel } from '../../Services/agent-subscription.service';
 import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
 import { MainAgentService } from '../../Services/main-agent.service';
@@ -89,5 +89,14 @@ export class AgentSubscribersListComponent implements OnInit {
     if (this.overlayRef) {
       this.overlayRef.detach();
     }
+  }
+  @HostListener('window:click', ['$event'])
+  onClick(event: MouseEvent) {
+    if(event.target != document.getElementById("dropdown-menu"))
+    if(this.topSearch==0){
+      this.topSearch=-50;
+     }else{
+      this.topSearch=0;
+     }
   }
 }

@@ -1,0 +1,64 @@
+<div class="mt-4">
+    <img src="assets/images/img-bus.png" alt="img-bus" (click)="openDialogImg()">
+    <img src="assets/images/Show.svg" alt="">
+    <img src="assets/images/Edit.svg" alt="">
+    <img src="assets/images/Delete.svg" alt="">
+</div>
+<div class="row ">
+    <div class="col-12 col-md-6 bg-white mt-2">
+        <editor
+        [initialValue]="initialContent"
+                apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
+                name="details"
+                formControlName="details"
+                 [init]="{
+             height: 300,
+             menubar: false,
+             plugins: [
+               'advlist autolink lists link image charmap print preview anchor',
+               'searchreplace visualblocks code fullscreen',
+               'insertdatetime media table paste code help wordcount'
+             ],
+             toolbar:
+               'undo redo | formatselect | bold italic backcolor | \
+               alignleft aligncenter alignright alignjustify | \
+               bullist numlist outdent indent | removeformat | help'
+           }"></editor>
+
+        <div class="mt-4">
+            <editor
+            [initialValue]="initialContent2"
+                    apiKey="aul16ni1wyfshcuof1s88xy7ya3jw61q8dh5kfl26bhaxf0z"
+                    name="details"
+                    formControlName="details"
+                     [init]="{
+                 height: 300,
+                 menubar: false,
+                 plugins: [
+                   'advlist autolink lists link image charmap print preview anchor',
+                   'searchreplace visualblocks code fullscreen',
+                   'insertdatetime media table paste code help wordcount'
+                 ],
+                 toolbar:
+                   'undo redo | formatselect | bold italic backcolor | \
+                   alignleft aligncenter alignright alignjustify | \
+                   bullist numlist outdent indent | removeformat | help'
+               }"></editor>
+        </div>
+
+        <div  class="row mt-4">
+            <div class="col-0 col-md-1"></div>
+            <div class="col-12 col-md-5">
+                <button class="btn w-100 text-white" style="background-color: #3AA7CE;">
+                    حفظ البيانات
+                </button>
+            </div>
+            <div class="col-12 col-md-5">
+                <button class="btn border w-100 btn-default">
+                    إلغاء
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</div>

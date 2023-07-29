@@ -12,10 +12,16 @@ import { DialogSupervisorsComponent } from './Components/dialog-supervisors/dial
 import { AddSchoolProxyComponent } from './Components/add-school-proxy/add-school-proxy.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { UsersSystemComponent } from './Components/users-system/users-system.component';
 import { AddUsersComponent } from './Components/add-users/add-users.component';
 import { SubscriptionsComponent } from './Components/subscriptions/subscriptions.component';
 import { TripsActiveComponent } from './Components/trips-active/trips-active.component';
+import { ContentManagementComponent } from './Components/content-management/content-management.component';
+import { DetailsImgComponent } from './Components/details-img/details-img.component';
+import { TargetedsComponent } from './Components/targeteds/targeteds.component';
+import { MainContentComponent } from './Components/main-content/main-content.component';
+import { DetailsImgDriverComponent } from './Components/details-img-driver/details-img-driver.component';
 import { AdminManagementListComponent } from './Components/admin-management-list/admin-management-list.component';
 import { AdminManagementInformationSystemComponent } from './Components/admin-management-information-system/admin-management-information-system.component';
 import { AdminManagementComponent } from './Components/admin-management/admin-management.component';
@@ -39,6 +45,11 @@ import { AdminContentManagementFeaturesComponent } from './Components/admin-cont
     AddUsersComponent,
     SubscriptionsComponent,
     TripsActiveComponent,
+    ContentManagementComponent,
+    DetailsImgComponent,
+    TargetedsComponent,
+    MainContentComponent,
+    DetailsImgDriverComponent,
     AdminManagementListComponent,
     AdminManagementInformationSystemComponent,
     AdminManagementComponent,

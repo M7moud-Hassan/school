@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 export class ResetPasswordComponent implements OnInit, AfterViewInit {
   // inputValue: string = "";
   // showInput: boolean = false;
+  send:boolean=false;
   imageSource:string = "assets/images/message.svg";
   labelSubmit:string='ارسال' ;
   titleForm:string='اعادة تعيين كلمة المرور';
@@ -71,6 +72,7 @@ export class ResetPasswordComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit() {
+    this.send=true;
     //TODO: remove
     this.mapValues();
     //TODO: remove
@@ -78,7 +80,10 @@ export class ResetPasswordComponent implements OnInit, AfterViewInit {
     ${this.resetPasswordModel.userNumber},
     ${this.resetPasswordModel.email},
     `)
-    this.router.navigate(['/new-password'])
+    setTimeout(()=>{
+      this.router.navigate(['/new-password'])
+    },1000)
+   
     if(this.loginForm.valid){
       this.mapValues();
       this.authService.resetPassword(this.resetPasswordModel).subscribe({

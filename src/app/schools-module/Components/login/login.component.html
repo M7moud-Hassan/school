@@ -24,7 +24,7 @@
                 <div class="input-box">
                     <label for="password">{{label2}}</label>
                     <input [type]="showInput?'text':'password'" formControlName="password" id="password" name="password" spellcheck="false"  />
-                    <i *ngIf="showContainer==true" class="uil uil-eye-slash toggle"></i>
+                    <i *ngIf="showContainer==true" class="uil uil-eye-slash toggle" (click)="toggleInputVisibility()"></i>
                 </div>
                 <div class="d-flex justify-content-between align-items-center mt-4" >
                     <p *ngIf="showContainer">
