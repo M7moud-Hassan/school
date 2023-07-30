@@ -18,6 +18,7 @@ import { AdminNavbarComponent } from './Layout/admin-navbar/admin-navbar.compone
 import { AdminSideMenuComponent } from './Layout/admin-side-menu/admin-side-menu.component';
 import { AdminLayoutComponent } from './Layout/admin-layout/admin-layout.component';
 
+    
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { AdminLayoutComponent } from './Layout/admin-layout/admin-layout.compone
     AppRoutingModule,
     SharedModuleModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
     
   ],
   providers: [

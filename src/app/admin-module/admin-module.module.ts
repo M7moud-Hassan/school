@@ -33,6 +33,10 @@ import { AdminContentManagementPartnersComponent } from './Components/admin-cont
 import { AdminContentManagementFeaturesComponent } from './Components/admin-content-management-features/admin-content-management-features.component';
 import { AdminContentManagementHomeComponent } from './Components/admin-content-management-home/admin-content-management-home.component';
 import { AdminContentManagementPrivacyComponent } from './Components/admin-content-management-privacy/admin-content-management-privacy.component';
+import { AddProxiyComponent } from './Components/add-proxiy/add-proxiy.component';
+import { GroupsProxyComponent } from './Components/groups-proxy/groups-proxy.component';
+import { AdminNotificationListComponent } from './Components/admin-notification-list/admin-notification-list.component';
+import { AdminSpeedNotificationComponent } from './Components/admin-speed-notification/agent-speed-notification.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,10 @@ import { AdminContentManagementPrivacyComponent } from './Components/admin-conte
     AdminContentManagementPartnersComponent,
     AdminContentManagementFeaturesComponent,
     AdminContentManagementHomeComponent,
-    AdminContentManagementPrivacyComponent
+    AdminContentManagementPrivacyComponent,
+    AddProxiyComponent,
+    GroupsProxyComponent,
+    AdminNotificationListComponent
   ],
   imports: [
     CommonModule,
@@ -70,7 +77,8 @@ import { AdminContentManagementPrivacyComponent } from './Components/admin-conte
     FormsModule,
     ReactiveFormsModule,
     GoogleMapsModule,
-    EditorModule
+    EditorModule,
+   
   ]
 })
 export class AdminModuleModule { }

@@ -24,12 +24,12 @@ export class TripsActiveComponent implements AfterViewInit,OnInit{
 
   topSearch=0;
   dropdownItems = [
-    { text: 'HTML', visible: true },
-    { text: 'CSS', visible: true },
-    { text: 'JavaScript', visible: true },
-    { text: 'jQuery', visible: true },
-    { text: 'Bootstrap', visible: true },
-    { text: 'Angular', visible: true },
+    { text: 'مدرسة س', visible: true },
+    { text: 'مدرسة الصفاء و التمييز لذوي الاعقات الجسدية و العقلية ', visible: true },
+    { text: 'مدرسة ص', visible: true },
+    { text: 'مدرسة ص', visible: true },
+    { text: 'مدرسة ص', visible: true },
+    { text: 'مدرسة ص', visible: true },
   ];
 
   filterItems(value: string) {

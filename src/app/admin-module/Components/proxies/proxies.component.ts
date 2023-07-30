@@ -1,6 +1,7 @@
 import { Component ,OnInit} from '@angular/core';
 import { Proxies } from '../../Services/proxies.service';
 import { MainAdminService } from '../../Services/main-admin.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-proxies',
@@ -10,7 +11,7 @@ import { MainAdminService } from '../../Services/main-admin.service';
 export class ProxiesComponent implements OnInit {
   proxies:Proxies[]=[]
   select:Number=-1
-  constructor(private service:MainAdminService){
+  constructor(private service:MainAdminService,private router: Router){
     
   }
   ngOnInit(): void {
@@ -23,6 +24,9 @@ export class ProxiesComponent implements OnInit {
   }
   onSelect(index:Number){
     this.select=index;
+    setTimeout(()=>{
+      this.router.navigate(['/admin/proxy-page']);
+    },1000)
   }
 
 

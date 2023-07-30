@@ -20,6 +20,9 @@ import { AdminContentManagementPartnersComponent } from './Components/admin-cont
 import { AdminContentManagementHomeComponent } from './Components/admin-content-management-home/admin-content-management-home.component';
 import { AdminContentManagementPrivacyComponent } from './Components/admin-content-management-privacy/admin-content-management-privacy.component';
 import { MainContentComponent } from './Components/main-content/main-content.component';
+import { AddProxiyComponent } from './Components/add-proxiy/add-proxiy.component';
+import { GroupsProxyComponent } from './Components/groups-proxy/groups-proxy.component';
+import { AdminNotificationListComponent } from './Components/admin-notification-list/admin-notification-list.component';
 
 
 const routes: Routes = [
@@ -27,9 +30,12 @@ const routes: Routes = [
   {path:'proxies',component:ProxiesComponent},
   {path:'proxy-page',component:ProxyPageComponent},
   {path:'add-school-proxy',component:AddSchoolProxyComponent},
+  {path:'add-proxy',component:AddProxiyComponent},
+  {path:'proxy-groups',component:GroupsProxyComponent},
   {path:'users-system',component:UsersSystemComponent},
   {path:'add-user',component:AddUsersComponent},
   {path:'subscriptions',component:SubscriptionsComponent},
+  {path:'notifications',component:AdminNotificationListComponent},
   {path:'trips-active',component:TripsActiveComponent},
   {path:'content-management',component:ContentManagementComponent},
   {path:'admin-management',component:AdminManagementComponent},
