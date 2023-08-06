@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="pb-5 mb-5">
+        <div class="row">
+            <div class="col-12 col-md-7">
+                <div class="targeters-container">
+                    <div  class="targeters-container-title fs-2" [innerHTML]="model.title"></div>
+                    <div class="targeters-container-description" [innerHTML]="model.details"></div>
+                    <div class="row">
+                        <div *ngFor="let item of list" class="col-6 col-md-3 mb-2">
+                            <div class="cardTargetItem">
+                                <div class="cardTargetItemContainer d-flex" [style.backgroundColor]="item.shapeColor">
+                                    <div class="cardTargetItemContainerPersonImg">
+                                        <img src="{{item.image}}">
+                                    </div>
+                                    <div class="cardTargetItemContainerImg">
+                                        <img src="{{item.shape}}">
+                                    </div>
+                                    <div class="cardTargetItemLabel">{{item.label}}</div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-5">
+                <div class="image-container">
+                    <img src="{{model.image}}"  class="section3Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

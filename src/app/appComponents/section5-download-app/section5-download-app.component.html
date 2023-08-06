@@ -1,0 +1,25 @@
+<div class="container-fluid py-5" dir="rtl">
+    <div class="section-5-container">
+        <div class="row m-0 p-0">
+            <div class="col-12 col-md-6 p-0">
+                <div class="container-phone">
+                    <div class="black-opacity-container"></div>
+                    <div class="image-circle"></div>
+                    <div class="image-circle-curve">
+                       <span > لنقل مدرسي آمن</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 p-0">
+                <div class="black-bg-container">
+                    <img src="{{model.image}}"  width="50%" height="30%" class="pb-3">
+                <div *ngFor="let item of list" class="point-item">
+                    <img src="/assets/images/true-orange.svg" width="20" height="20">
+                    <span class="point">{{item.title}}</span>
+                </div>
+                <button class="downloadAppButton mt-3">حمل التطبيق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,6 +17,17 @@ import { AgentNavbarComponent } from './Layout/agent-navbar/agent-navbar.compone
 import { AdminNavbarComponent } from './Layout/admin-navbar/admin-navbar.component';
 import { AdminSideMenuComponent } from './Layout/admin-side-menu/admin-side-menu.component';
 import { AdminLayoutComponent } from './Layout/admin-layout/admin-layout.component';
+import { Section1BusWayComponent } from './appComponents/section1-bus-way/section1-bus-way.component';
+import { Section2FeaturesComponent } from './appComponents/section2-features/section2-features.component';
+import { Section3TargetersComponent } from './appComponents/section3-targeters/section3-targeters.component';
+import { Section4HowWeWorkComponent } from './appComponents/section4-how-we-work/section4-how-we-work.component';
+import { Section5DownloadAppComponent } from './appComponents/section5-download-app/section5-download-app.component';
+import { Section6TrustedPartnersComponent } from './appComponents/section6-trusted-partners/section6-trusted-partners.component';
+import { HomeFooterComponent } from './appComponents/home-footer/home-footer.component';
+import { HomeNavbarComponent } from './appComponents/home-navbar/home-navbar.component';
+import { TermsAndConditionsComponent } from './appComponents/terms-and-conditions/terms-and-conditions.component';
+import { SchoolHomePageComponent } from './appComponents/school-home-page/school-home-page.component';
+import { Section7ContactUsComponent } from './appComponents/section7-contact-us/section7-contact-us.component';
 
 
 @NgModule({
@@ -30,7 +41,18 @@ import { AdminLayoutComponent } from './Layout/admin-layout/admin-layout.compone
     AgentNavbarComponent,
     AdminNavbarComponent,
     AdminSideMenuComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    Section1BusWayComponent,
+    Section2FeaturesComponent,
+    Section3TargetersComponent,
+    Section4HowWeWorkComponent,
+    Section5DownloadAppComponent,
+    Section6TrustedPartnersComponent,
+    HomeFooterComponent,
+    HomeNavbarComponent,
+    TermsAndConditionsComponent,
+    SchoolHomePageComponent,
+    Section7ContactUsComponent
   ],
   imports: [
     BrowserModule,

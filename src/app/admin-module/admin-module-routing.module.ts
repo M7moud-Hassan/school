@@ -23,6 +23,7 @@ import { MainContentComponent } from './Components/main-content/main-content.com
 
 
 const routes: Routes = [
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:AdminHomePageComponent},
   {path:'proxies',component:ProxiesComponent},
   {path:'proxy-page',component:ProxyPageComponent},

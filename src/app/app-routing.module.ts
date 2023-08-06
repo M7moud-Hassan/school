@@ -8,8 +8,10 @@ import { HomePageComponent } from './schools-module/Components/home-page/home-pa
 import { NewPasswordComponent } from './schools-module/Components/new-password/new-password.component';
 import { AgentLayoutComponent } from './Layout/agent-layout/agent-layout.component';
 import { AdminLayoutComponent } from './Layout/admin-layout/admin-layout.component';
+import { SchoolHomePageComponent } from './appComponents/school-home-page/school-home-page.component';
 
 const routes: Routes = [
+  {path:'home-page',component:SchoolHomePageComponent},
   {path:'login',component:LoginComponent},
   {path:'',component:RegisterComponent},
   {path:'reset-password',component:ResetPasswordComponent},

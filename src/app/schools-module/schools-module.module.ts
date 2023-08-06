@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { SchoolsModuleRoutingModule } from './schools-module-routing.module';
 import { SchoolsLayoutComponent } from './Components/schools-layout/schools-layout.component';
-import { SchoolsHomePageComponent } from './Components/schools-home-page/schools-home-page.component';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
@@ -76,7 +75,6 @@ import { DetailsStudentComponent } from './Components/details-student/details-st
 @NgModule({
   declarations: [
     SchoolsLayoutComponent,
-    SchoolsHomePageComponent,
     LoginComponent,
     RegisterComponent,
     DilaogContactComponent,

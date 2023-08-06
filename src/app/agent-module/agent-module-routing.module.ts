@@ -15,6 +15,7 @@ import { AgentAddNewNotificationComponent } from './Components/agent-add-new-not
 import { AgentSupportListComponent } from './Components/agent-support-list/agent-support-list.component';
 
 const routes: Routes = [
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:AgentHomePageComponent},
   {path:'change-password',component:AgentChangePasswordComponent},
   {path:'agent-profile',component:AgentProfileComponent},

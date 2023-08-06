@@ -1,0 +1,13 @@
+.contact-us-container{
+    min-height: calc(50vh);
+    width: 100%;
+    background-image: url('/assets/images/contact-us-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+.contact-us-title{
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+}

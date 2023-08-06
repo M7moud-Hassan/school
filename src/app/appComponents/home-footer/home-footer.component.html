@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row p-3" dir="rtl">
+        <div class="bg-logo"></div>
+        <div class="col-12 col-md-4 p-3">
+            <div>
+                <img src="{{model.location.image}}" class="px-2">
+                <span>{{model.location.title}}</span>
+            </div>
+        </div>
+        <div class="col-12 col-md-3 p-3">
+            <div>
+                <img src="{{model.mail.image}}" class="px-2">
+                <span>{{model.mail.title}}</span>
+            </div>
+        </div>
+        <div class="col-12 col-md-3 p-3">
+            <div>
+                <img src="{{model.whatsapp.image}}" class="px-2">
+                <span>{{model.whatsapp.title}}</span>
+            </div>
+        </div>
+        <div class="col-12 col-md-2 p-3">
+            <div>
+                <img src="{{model.call.image}}" class="px-2">
+                <span>{{model.call.title}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4"></div>
+        <div class="col-12 col-md-4 pb-4 mt-4 social-container">
+            <span *ngFor="let item of list" class="social-links px-1">
+                <a routerLink="{{item.url}}" target="_blank">
+                    <img src="{{item.image}}" width="30" height="30">
+                </a>
+            </span>
+        </div>
+        <div class="col-12 col-md-4"></div>
+    </div>
+    <div class="footer" dir="rtl">
+        جميع الحقوق محفوظة ل Busway {{year}} 
+    </div>
+</div>
