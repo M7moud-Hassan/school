@@ -1,12 +1,14 @@
 
 <div class="main-index">
+    <a routerLink="/agent/home">agent</a>
+    <a class="ms-4" routerLink="/admin/home">admin</a>
     <div class="left-div">
         <div class="image">
             <img src="assets/images/register.png" alt="">
         </div>
         <div #dialog class="under-image">
             <!-- src="assets/images/message.svg" -->
-            <img [src]="imageSource" alt="logo" class="logo">
+            <img [src]="imageSource" alt="logo" (click)="openDialog()" class="logo">
             <span (click)="openDialog()">Busway مرحباً بك في باص واي </span>
         </div>
     </div>
@@ -34,8 +36,8 @@
                 </div> -->
 
                 <div class="input-box">
-                    <label for="phone">رقم الهاتف</label>
-                   
+                    <label for="phone">رقم الهاتف</label> 
+               
                 <ngx-intl-tel-input
                 [cssClass]="'custom'"
                 [preferredCountries]="preferredCountries"
@@ -57,11 +59,10 @@
                 formControlName="phone"
               >
               </ngx-intl-tel-input>
+               
               <div class="code-phone float-start">
                 +{{countryCode}}  
                </div>
-               
-            
         </div>
         <div class="input-box">
             <label for="email">البريد الالكتروني</label>

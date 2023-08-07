@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { MainService } from '../../Services/main.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-supervisor-pop-up',
@@ -10,8 +11,12 @@ import { MainService } from '../../Services/main.service';
 export class EditSupervisorPopUpComponent implements OnInit {
   editSupervisorForm:FormGroup=new FormGroup({});
 
-  constructor(private service:MainService){}
+  constructor(private service:MainService,public dialogRef: MatDialogRef<EditSupervisorPopUpComponent>){}
 
+
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
   getSupervisorData(){
     this.editSupervisorForm.patchValue(this.service.supervisorService.getSupervisorData());
   }

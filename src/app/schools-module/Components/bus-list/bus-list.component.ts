@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { GroupPopupComponent } from '../group-popup/group-popup.component';
 import { EditSupervisorPopUpComponent } from '../edit-supervisor-pop-up/edit-supervisor-pop-up.component';
@@ -66,20 +66,25 @@ export class BusListComponent implements OnInit {
       console.log('Dialog closed:', result);
     });
   }
-  openDetails() {
-    const dialogRef = this.service.dialog.open(EditSupervisorPopUpComponent, {
-      width: '50%',
-      height:'100%',
-      direction:'rtl',
-      panelClass:'custom-dialog-container',
-      data: { name: 'Angular Material' }
-    });
+  
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog closed:', result);
-    });
-  }
-  openDetailsDialog(){
-this.openDetails();
-  }
+  @HostListener('window:click', ['$event'])
+  onWindowClick(event: MouseEvent): void {
+    // console.log('Global click event occurred using HostListener!');
+    // console.log(event.target);
+
+    
+    const list1Element = document.getElementById('drop_filter');
+    const dropMenu=document.getElementById('dropMenu');
+
+    if (
+  event.target !== list1Element &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode !== dropMenu
+  &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode?.parentNode !== dropMenu))
+) {
+  console.log((event.target as HTMLElement).parentNode?.parentNode?.parentNode)
+  this.isSchoolAccountDropdownVisible = false;
+}
+}
 }

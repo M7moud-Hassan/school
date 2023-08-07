@@ -48,6 +48,7 @@ body{
     text-align: right !important;
     padding-right: 15%;
     padding-top: 7%;
+    
 }
 
 .row-item img {
@@ -103,26 +104,28 @@ body{
 }
 .dropdownlist2 .email{
     color: #3AA7CE;
+    font-size: 14px;
 }
 .dropdownlist2 .row-item{
     display: block !important;
     text-align: right !important;
 }
 .dropdownlist2 .row-item span{
-    font-size: 12px !important;
+    font-size: 16px !important;
     color: #575757 !important;
 }
 .dropdownlist2 .row-item  img{
-    width: 25px !important;
-    height: 25px !important;
+    width: 30px !important;
+    height: 30px !important;
 }
 .dropdownlist2 {
     position: absolute;
-    width: 22%;
-    top: 15%;
+    width: 300px;
+    top: 2%;
+    left: -10%;
     padding-top: 10px;
     padding-bottom: 10px;
-    left: 2%;
+    left: -3%;
     background-color: white;
     z-index: 100;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -132,7 +135,8 @@ body{
 .dropdownlist {
     text-align: center;
     position: absolute;
-    top: 15%;
+    top: 2%;
+    left: -2%;
     /* width: 120px; */
     padding: 15px 10px;
     background-color: white;

@@ -67,4 +67,9 @@ export class SchoolAccountDetailsComponent {
     const file: File = event.target.files[0];
     // Do something with the selected file...
   }
+  center: google.maps.LatLngLiteral = {
+    lat: 21.467420120714536,
+    lng: 48.39095806484077
+  };
+  zoom = 5 ;
 }

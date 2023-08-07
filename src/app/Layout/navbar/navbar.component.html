@@ -1,10 +1,11 @@
 <div class="toolbar" dir="ltr">
     <div class="school">
-        <button (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton"><img src="assets/images/school_logoo.png" alt=""></button>
+        <button #trigger2  (click)="showOverlay2()" class="schoolLogoButtton"><img id="list1" src="assets/images/school_logoo.png" alt=""></button>
         <span style="width: 100%;">اسم المدرسة</span>
+        <ng-template #overlayTemplate2>
         <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2">
             <img src="assets/images/school_logoo.png"  alt="">
-            <p>SCHOOL NAME</p>
+            <p style="font-size: 16px;">SCHOOL NAME</p>
            <p class="email">school email.com</p>
            <hr class="m-0 p-0">
            <div class="row-item">
@@ -32,7 +33,7 @@
         </a>
            </div>
         </div>
-       
+    </ng-template>
     </div>
    
     <div class="search">
@@ -43,21 +44,24 @@
             <input type="text" class="form-control" placeholder="أدخل نص البحث">
         </div>
         <div class="btns">
-            <img (click)="toggleSearchBox()" src="assets/images/Filter.svg" alt="">
+            <img  #trigger id="list2" (click)="showOverlay()" src="assets/images/Filter.svg" alt="">
         </div>
+        <ng-template #overlayTemplate>
         <div *ngIf="isSearchBoxVisible" class="dropdownlist">
           <div *ngFor="let item of searchType" >
             <div class="container">
-                <div class="row py-1">
+                <div class="row py-1"  (click)="selectItem(item)">
                     <div class="col-9 text-end">
                         <label for="id-{{item.id}}">{{item.label}}</label>
                     </div>
                     <div class="col-3 ">
-                        <input type="radio" id="id-{{item.id}}" class="defaultRadioButton" value="{{item.id}}" name="searchType">
+                        <input type="radio" id="id-{{item.id}}" class="defaultRadioButton" value="{{item.id}}" name="searchType"  [checked]="selectedItem == item.id">
                     </div>
                 </div>
             </div>
           </div>
+       
         </div>
+   </ng-template>
     </div>
 </div>

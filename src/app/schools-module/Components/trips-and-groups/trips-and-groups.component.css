@@ -1,6 +1,6 @@
 .dropdownlist2{
-    top: 42%;
-    left: 40px;
+    top: 0%;
+    left: 0%;
 }
 a:not([href]):not([class]), a:not([href]):not([class]):hover{
     display: inline-block;

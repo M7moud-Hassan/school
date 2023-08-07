@@ -78,7 +78,8 @@
 }
 .main-index .left-div .under-image span{
   cursor: pointer;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bold;
     padding-left: 10px;
 }
 .main-index .right-div .input-box {

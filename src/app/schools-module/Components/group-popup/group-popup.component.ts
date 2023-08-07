@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-group-popup',
@@ -29,5 +30,11 @@ export class GroupPopupComponent {
   }
   get getAllSelectedItems(){
     return this.groups.filter(e=>e.isChecked);
+  }
+
+  constructor(public dialogRef: MatDialogRef<GroupPopupComponent>) {}
+
+  closeDialog(): void {
+    this.dialogRef.close();
   }
 }

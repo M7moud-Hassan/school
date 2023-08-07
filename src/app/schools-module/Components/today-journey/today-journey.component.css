@@ -1,10 +1,15 @@
 .busBackground{
-    background-image: url('/assets/images/bus.png');
+    /* background-image: url('/assets/images/bus.png'); */
     background-size: 150px 150px;
     background-repeat: no-repeat;
     background-blend-mode: soft-light;
     background-position: 116px 185px;
     padding-bottom: 100px;
+}
+a:not([href]):not([class]), a:not([href]):not([class]):hover{
+    display: inline-block;
+    border: 0px;
+    background-color: transparent;
 }
 .activityItem{
     text-decoration: none;

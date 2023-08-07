@@ -1,6 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import { MainService } from '../../Services/main.service';
 import { TripsTrackingModel } from '../../Services/trips-tracking.service';
+import { AddNewStudentToGroupPopUpComponent } from '../add-new-student-to-group-pop-up/add-new-student-to-group-pop-up.component';
+import { ChangeSupervisorPopUpComponent } from '../change-supervisor-pop-up/change-supervisor-pop-up.component';
 
 @Component({
   selector: 'app-today-journey',
@@ -66,5 +68,34 @@ export class TodayJourneyComponent implements OnInit {
       this.isAllJourneySelected = false;
     }
   }
+  openChangeGroupSupervisorDialog(){
+    this.openDialog();
+  }
+  openDialog() {
+    const dialogRef = this.service.dialog.open(ChangeSupervisorPopUpComponent, {
+      width: '50%',
+      direction:'rtl',
+      panelClass:'custom-dialog-container',
+      data: { name: 'Angular Material' }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog closed:', result);
+    });
+  }
+  openAddStudentToGroupDialog(){
+    this.addStudentToGroupDialog();
+  }
+  addStudentToGroupDialog() {
+    const dialogRef = this.service.dialog.open(AddNewStudentToGroupPopUpComponent, {
+      width: '50%',
+      direction:'rtl',
+      panelClass:'custom-dialog-container',
+      data: { name: 'Angular Material' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog closed:', result);
+    });
+  }
 }

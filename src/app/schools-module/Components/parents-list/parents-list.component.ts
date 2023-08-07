@@ -19,11 +19,11 @@ export class ParentsListComponent implements OnInit {
   selectAll: boolean = false;
   detailsVisible: boolean[] = [false, false, false];
   overlayRef: OverlayRef | null = null;
-  
-  constructor(private service:MainService,private overlay: Overlay,private overlayPositionBuilder: OverlayPositionBuilder,private viewContainerRef: ViewContainerRef) {}
-  
   @ViewChild('trigger') trigger: any;
   @ViewChild('overlayTemplate', { static: false }) overlayTemplate!: TemplateRef<any>;
+  constructor(private service:MainService,private overlay: Overlay,private overlayPositionBuilder: OverlayPositionBuilder,private viewContainerRef: ViewContainerRef) {}
+  
+ 
 
   ngOnInit(): void {
   this.getParentList();

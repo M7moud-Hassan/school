@@ -7,3 +7,7 @@
 .rightImage{
     background-image: url('/assets/images/student-right.png');
 }
+.imageContainer{
+  width: 100px;
+  height: 100px;
+}

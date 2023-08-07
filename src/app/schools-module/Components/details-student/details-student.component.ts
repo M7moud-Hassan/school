@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { MainService } from '../../Services/main.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-details-student',
@@ -10,8 +11,11 @@ import { MainService } from '../../Services/main.service';
 export class DetailsStudentComponent implements OnInit {
   profileForm:FormGroup=new FormGroup({});
 
-  constructor(private service:MainService){}
+  constructor(private service:MainService,public dialogRef: MatDialogRef<DetailsStudentComponent>){}
 
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
   loadStudentData(){
     this.profileForm.patchValue(this.service.studentService.getStudentDetails());
   }

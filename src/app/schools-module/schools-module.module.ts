@@ -71,8 +71,8 @@ import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-u
 import { SupervisorProfileComponent } from './Components/supervisor-profile/supervisor-profile.component';
 import { TrackingAllComponent } from './Components/tracking-all/tracking-all.component';
 import { DetailsStudentComponent } from './Components/details-student/details-student.component';
-
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { TestComponent } from './Components/test/test.component';
 @NgModule({
   declarations: [
     SchoolsLayoutComponent,
@@ -129,7 +129,8 @@ import { DetailsStudentComponent } from './Components/details-student/details-st
     EditSupervisorPopUpComponent,
     SupervisorProfileComponent,
     TrackingAllComponent,
-    DetailsStudentComponent
+    DetailsStudentComponent,
+    TestComponent
   ],
   imports: [
     CommonModule,
@@ -150,8 +151,8 @@ import { DetailsStudentComponent } from './Components/details-student/details-st
     PortalModule,
     DragDropModule,
     OverlayModule,
-    PortalModule,
-    MatAutocompleteModule
+    PortalModule,    
+    SlickCarouselModule
   ]
 })
 export class SchoolsModuleModule { }

@@ -53,7 +53,7 @@
     cursor: pointer;
 }
 .icon-email{
-    right: -37%;
+    right: -110px;
 }
 .location-school{
     margin-top: 20px;
@@ -121,6 +121,12 @@
     padding: 0 50px 0 100px !important;
     background-color: white;
   }
+  @media (max-width: 600px) {
+    .input-box input{
+      padding: 0 80px 0 100px !important;
+    }
+  }
+ 
   .main-index{
     position: absolute !important;
   }

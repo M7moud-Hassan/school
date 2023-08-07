@@ -191,7 +191,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 .dropdownlist2 {
   position: absolute;
-  width: 25%;
+  width: 350px;
   /*
   in each component define the top value  
   top: 35%;
@@ -462,7 +462,7 @@ outline: 0;
   
 }
 
-.gm-style-iw{
+.gm-style-iw ,.gm-style-iw-a,.gm-style-iw-t,g.m-style-iw-d,.gm-style .gm-style-iw-tc::after,.gm-style {
   background-color: #000000ac !important;
 }
 

@@ -26,7 +26,7 @@
             </a>
             <a *ngIf="!item.isSelected" routerLink="{{item.link}}" (click)="toggleSelectedItem(item.id==1?0:item.id-1)"
                 class="text-decoration-none text-dark unselectedItem">
-                <div class="row-item">
+                <div class="row-item me-2">
                     <img src="{{item.unSelectedIcon}}" alt="">
                     <span>{{item.label}}</span>
                 </div>

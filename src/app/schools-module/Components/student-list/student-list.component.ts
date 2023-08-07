@@ -1,6 +1,6 @@
 import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
-import { Component, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, HostListener, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { SelectGroupsComponent } from '../select-groups/select-groups.component';
 import { DeleteStudentComponent } from '../delete-student/delete-student.component';
 import { LocationComponent } from '../location/location.component';
@@ -64,6 +64,7 @@ export class StudentListComponent implements OnInit {
   }
 
   openDialogSelectGroup(){
+  
     const dialogRef = this.service.dialog.open(SelectGroupsComponent, {
       width: '50%',
     });
@@ -72,16 +73,44 @@ export class StudentListComponent implements OnInit {
   openDialogDetailsStudent(){
     const dialogRef = this.service.dialog.open(DetailsStudentComponent, {
       width: '50%',
-      height:'100%',
+      height:'70%',
       direction:'rtl',
       panelClass:'custom-dialog-container',
     });
   }
 
+  @HostListener('window:click', ['$event'])
+  onWindowClick(event: MouseEvent): void {
+    console.log('Global click event occurred using HostListener!');
+    console.log(event.target);
+
+    
+    const list1Element = document.getElementById('drop_filter');
+    const dropMenu=document.getElementById('dropMenu');
+
+    if (
+  event.target !== list1Element &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode !== dropMenu
+  &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode?.parentNode !== dropMenu))
+) {
+  console.log((event.target as HTMLElement).parentNode?.parentNode?.parentNode)
+  this.isSchoolAccountDropdownVisible = false;
+}
+
+    
+  }
   deleteDialog(){
-    const dialogRef = this.service.dialog.open(DeleteStudentComponent, {
-      width: '50%',
+    let dialogOpened = false;
+    this.student_data.forEach(element => {
+      if (element.isSelected && !dialogOpened) {
+        const dialogRef = this.service.dialog.open(DeleteStudentComponent, {
+          width: '50%',
+        });
+        dialogOpened = true;
+      }
     });
+   
   }
   locationDialog(){
     const dialogRef = this.service.dialog.open(LocationComponent, {
@@ -90,7 +119,7 @@ export class StudentListComponent implements OnInit {
   }
   passwordStudentDialog(){
     const dialogRef = this.service.dialog.open(StudentPasswordComponent, {
-      width: '50%',
+      width: '30%',
     });
   }
   showOverlay() {

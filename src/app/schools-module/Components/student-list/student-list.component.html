@@ -14,10 +14,10 @@
                     <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن طالب">
                 </div>
                 <div class="btns">
-                    <img src="assets/images/Filter.svg" alt="" #trigger (click)="showOverlay()" class="schoolLogoButtton">
+                    <img src="assets/images/Filter.svg" id="drop_filter"  alt="" #trigger (click)="showOverlay()" class="schoolLogoButtton">
                     <ng-template #overlayTemplate>
                         <div class="positioned-element" dir="rtl">
-                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
+                    <div *ngIf="isSchoolAccountDropdownVisible" id="dropMenu" class="dropdownlist2 p-4">
                        <div class="row">
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_1">
@@ -38,18 +38,18 @@
                         </div>
                        </div>
                        <hr>
+                     
                        <div class="row">
-                        <div class="col-4">
-                            <label for="radio_1_1">
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_1">
                                 <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
                             </label>
                         </div>
-                        <div class="col-5">
-                            <label for="radio_1_2">
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_2">
                                 <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
                             </label>
                         </div>
-                        <div class="col-3"></div>
                        </div>
                        <hr>
                        <div class="row pb-3">
@@ -78,7 +78,7 @@
     <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
         <div class="col-12 col-md-5">
             <a routerLink="/school/new-student" class="text-muted"><div class="action-button" style="background-color: #3AA7CE; color: white;"><img src="assets/images/add.png" alt="">اضافة  طالب جديد </div></a>
-            <a routerLink="/school/profile" class="text-muted"><div class="action-button"><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
+            <a routerLink="/school/account-user" class="text-muted"><div class="action-button"><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
             <a routerLink="#" class="text-muted"><div class="action-button" (click)="deleteDialog()"><img src="assets/images/Delete.svg" alt="" >حذف </div></a>
         </div>
         <div class="col-12 col-md-7 float-end">

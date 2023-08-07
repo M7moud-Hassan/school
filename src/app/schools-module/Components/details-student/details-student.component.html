@@ -4,7 +4,7 @@
         <div class="row">
         <div class="col-11"></div>
         <div class="col-1 text-start">
-            <a routerLink="#"><img src="/assets/images/x.svg"></a>
+            <a routerLink="#"><img src="/assets/images/x.svg" (click)="closeDialog()"></a>
         </div>
         </div>
         <div class="row">
@@ -15,8 +15,8 @@
                         <img src="{{getImage}}">
                     </div>
                 </div>
-                <div class="text-center pt-2 fs-5 fw-bolder pt-3">{{getName}}</div>
-                <div class="text-center pt-3" style="color: #3AA7CE; font-size: 16px;">{{getNameEn}}</div>
+                <div class="text-center pt-2 fs-7 fw-bolder pt-3">{{getName}}</div>
+                <div class="text-center pt-3" style="color: #3AA7CE; font-size: 13px;">{{getNameEn}}</div>
             </div>
             <div class="col-12 col-md-4 leftImage"></div>
         </div>

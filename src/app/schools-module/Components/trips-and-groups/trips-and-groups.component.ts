@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { TripsAndGroupsService, tripsListModel } from '../../Services/trips-and-groups.service';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,6 +9,8 @@ import { MainService } from '../../Services/main.service';
 import { groupSimpleModel } from '../../Services/groups.service';
 import { studentSimpleModel } from '../../Services/student.service';
 import { supervisorSimpleModel } from '../../Services/supervisor.service';
+import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
+import { TemplatePortal } from '@angular/cdk/portal';
 
 
 @Component({
@@ -32,7 +34,8 @@ export class TripsAndGroupsComponent implements OnInit {
   total :number =  this.journies.length;
   tripSearchReportForm:FormGroup = new FormGroup({});
 
-  constructor(private service:MainService,private elementRef:ElementRef,){}
+  constructor(private service:MainService,private elementRef:ElementRef,
+    private overlay: Overlay,private overlayPositionBuilder: OverlayPositionBuilder,private viewContainerRef: ViewContainerRef){}
 
   ngOnInit(): void {
     this.getTripsList();
@@ -130,4 +133,40 @@ export class TripsAndGroupsComponent implements OnInit {
       console.log('Dialog closed:', result);
     });
   }
+  overlayRef: OverlayRef | null = null;
+  @ViewChild('trigger') trigger: any;
+  @ViewChild('overlayTemplate', { static: false }) overlayTemplate!: TemplateRef<any>;
+  showOverlay() {
+    this.isSchoolAccountDropdownVisible = !this.isSchoolAccountDropdownVisible;
+    if (!this.overlayRef) {
+      const positionStrategy = this.overlayPositionBuilder
+        .flexibleConnectedTo(this.trigger.nativeElement)
+        .withPositions([{ originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top' }]);
+      this.overlayRef = this.overlay.create({ positionStrategy });
+    }
+
+    const portal = new TemplatePortal(this.overlayTemplate, this.viewContainerRef);
+    this.overlayRef.attach(portal);
+  }
+
+  @HostListener('window:click', ['$event'])
+  onWindowClick(event: MouseEvent): void {
+    console.log('Global click event occurred using HostListener!');
+    console.log(event.target);
+
+    
+    const list1Element = document.getElementById('drop_filter');
+    const dropMenu=document.getElementById('dropMenu');
+
+    if (
+  event.target !== list1Element &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode !== dropMenu
+  &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode?.parentNode !== dropMenu))
+) {
+  console.log((event.target as HTMLElement).parentNode?.parentNode?.parentNode)
+  this.isSchoolAccountDropdownVisible = false;
 }
+  }
+}
+

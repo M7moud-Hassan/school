@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { GroupPopupComponent } from '../group-popup/group-popup.component';
 import { supervisorModel } from '../../Services/supervisor.service';
 import { MainService } from '../../Services/main.service';
+import { EditSupervisorPopUpComponent } from '../edit-supervisor-pop-up/edit-supervisor-pop-up.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supervisors-list',
@@ -18,7 +20,7 @@ export class SupervisorsListComponent implements OnInit {
   selectAll:boolean = false;
   detailsVisible: boolean[] = [false, false, false];
 
-  constructor(private service:MainService) {}
+  constructor(private service:MainService,private router:Router) {}
   
   ngOnInit(): void {
     this.getAllSupervisor();
@@ -67,4 +69,48 @@ export class SupervisorsListComponent implements OnInit {
       console.log('Dialog closed:', result);
     });
   }
+  @HostListener('window:click', ['$event'])
+  onWindowClick(event: MouseEvent): void {
+    // console.log('Global click event occurred using HostListener!');
+    // console.log(event.target);
+
+    
+    const list1Element = document.getElementById('drop_filter');
+    const dropMenu=document.getElementById('dropMenu');
+
+    if (
+  event.target !== list1Element &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode !== dropMenu
+  &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode?.parentNode !== dropMenu))
+) {
+  console.log((event.target as HTMLElement).parentNode?.parentNode?.parentNode)
+  this.isSchoolAccountDropdownVisible = false;
+}
+}
+openDetails() {
+  const dialogRef = this.service.dialog.open(EditSupervisorPopUpComponent, {
+    width: '50%',
+    height:'75%',
+    direction:'rtl',
+    panelClass:'custom-dialog-container',
+    data: { name: 'Angular Material' }
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('Dialog closed:', result);
+  });
+}
+openDetailsDialog(){
+this.openDetails();
+}
+
+checkItems(event: Event): void {
+  this.supervisor_data.forEach(element => {
+    if(element.isSelected){
+      this.router.navigate(['/school/account-user'])
+    }
+  });
+
+}
 }

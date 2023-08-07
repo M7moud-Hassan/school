@@ -14,8 +14,8 @@
                     <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن مشرف">
                 </div>
                 <div class="btns">
-                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
-                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
+                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton" id="drop_filter">
+                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-4" id="dropMenu">
                        <div class="row">
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_1">
@@ -36,7 +36,7 @@
                         </div>
                        </div>
                        <hr>
-                       <div class="row">
+                       <!-- <div class="row">
                         <div class="col-4">
                             <label for="radio_1_1">
                                 <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
@@ -48,6 +48,18 @@
                             </label>
                         </div>
                         <div class="col-3"></div>
+                       </div> -->
+                       <div class="row">
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_1">
+                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
+                            </label>
+                        </div>
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_2">
+                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
+                          </label>
+                        </div>
                        </div>
                        <hr>
                        <div class="row pb-3">
@@ -70,7 +82,7 @@
     <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
         <div class="col-12 col-md-5">
             <a routerLink="/school/new-supervisor" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">اضافة مشرف جديد </div></a>
-            <a routerLink="/school/profile" class="text-muted"><div class="action-button"><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
+            <a  class="text-muted"><div class="action-button" (click)="checkItems($event)" ><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
             <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/Delete.svg" alt="">حذف </div></a>
         </div>
         <div class="col-12 col-md-7 text-start">
@@ -102,7 +114,7 @@
                 { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
                 <tr id="first_{{i}}">
                     <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="item.isSelected" (change)="checkBoxChange()" id="checkbox-{{i}}" /></td>
-                    <td><img src="{{item.image}}" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
+                    <td style="cursor:pointer" (click)="openDetailsDialog()"><img src="{{item.image}}" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
                     <td>{{item.groupName}}</td>
                     <td>{{item.phoneNumber}} </td>
                     <td>{{item.lastActiveDate}}</td>
@@ -110,8 +122,8 @@
                         <span></span>{{item.isActive?'فعـــــال':'غير فعال'}}
                     </td>
                     <td>
-                        <a routerLink="/school/supervisor-profile" class="d-inline-block ms-2"> <img src="assets/images/person.svg"  width="20px" height="20px" alt=""> </a>
-                        <a routerLink="#" class="d-inline-block"> <img src="assets/images/lock.svg" width="20px" height="20px" alt=""> </a>
+                        <a routerLink="/school/supervisor-profile" class="d-inline-block ms-2"> <img src="assets/images/Edit.svg"  width="20px" height="20px" alt=""> </a>
+                        <a routerLink="#" class="d-inline-block"> <img src="assets/images/Delete.svg" width="20px" height="20px" alt=""> </a>
                     </td>
             </tbody>
         </table>

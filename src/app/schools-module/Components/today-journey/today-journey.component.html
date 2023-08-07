@@ -97,7 +97,7 @@
                                 </span>
                                 <span>
                                     <span class="spanTitle">عدد الطلاب {{item.studentCount}}</span>
-                                    <img src="assets/images/reload.svg"  alt="">
+                                    <img src="assets/images/number_student.svg"  alt="">
                                 </span>
                                 <span>
                                     <span class="activeStateTransparent"> 
@@ -124,8 +124,8 @@
                                 <span class="activeState" [style.backgroundColor]="item.codeActive?'#E0FFD9':'#FFF0EB'" > <span [style.backgroundColor]="item.codeActive?'#24FF00':'#ff0000'" class="dotColor"></span> {{item.codeActive?'فعال':'غير فعال'}}</span>
                             </span>
                             <span class="actionIcons float-start">
-                                <a routerLink="#"><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
-                                <a routerLink="#"><img src="assets/images/Edit.svg"   width="30" height="30" alt="" ></a>
+                                <a (click)="addStudentToGroupDialog()"><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
+                                <a (click)="openChangeGroupSupervisorDialog()"><img src="assets/images/Edit.svg"   width="30" height="30" alt="" ></a>
                                 <a routerLink="#"><img src="assets/images/Delete.svg" width="30" height="30" alt=""></a>
                             </span>
                         </span>

@@ -1,7 +1,87 @@
 
 
 <div class="container-fluid parent-container container_page">
-    <div class="row m-0" style="padding: 30px 30px 10px 30px;">
+    <div class="row" style="padding: 30px 30px 10px 30px;">
+        <div class="col-12 col-md-6">
+            <h3 class="fw-bolder float-end" style="font-size: 18px;">بيانات الباصات : <span class="users-count">{{total}}
+                    مستخدم</span></h3>
+        </div>
+        <div class="col-12 col-md-2"></div>
+        <div class="col-12 col-md-4 float-start">
+            <div class="search-box">
+                <div class="form-group has-search-box">
+                    <span class="form-control-feedback">
+                        <img src="assets/images/Search.svg" alt="">
+                    </span>
+                    <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن باص">
+                </div>
+                <div class="btns">
+                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton" id="drop_filter">
+                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-4" id="dropMenu">
+                       <div class="row">
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_1">
+                                <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton"> اسم  الباص
+                            </label>
+                        </div>
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_2">
+                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> رقم الباص
+                            </label>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="col-4 pt-2">تاريخ الاضافة</div>
+                        <div class="col-8">
+                            <input type="date" name="addDate" class="form-control defaultDateInput">
+                        </div>
+                       </div>
+                       <hr>
+                       <!-- <div class="row">
+                        <div class="col-4">
+                            <label for="radio_1_1">
+                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
+                            </label>
+                        </div>
+                        <div class="col-5">
+                            <label for="radio_1_2">
+                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
+                            </label>
+                        </div>
+                        <div class="col-3"></div>
+                       </div> -->
+                       <div class="row">
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_1">
+                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
+                            </label>
+                        </div>
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_2">
+                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
+                          </label>
+                        </div>
+                       </div>
+                       <hr>
+                       <div class="row pb-3">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 text-end">
+                                    <label for="groupName" class="pb-2 text-muted d-inline-block ">حدد المجموعة : </label>
+                                </div>
+                            </div>
+                            <div (click)="openSelectGroupDialog()" class="form-control text-start">
+                                <img src="/assets/images/list.svg">
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row m-0" style="padding: 30px 30px 10px 30px;">
         <div class="col-12 col-md-6">
             <h3 class="fw-bolder float-end" style="font-size: 18px;">بيانات الباصات : <span class="users-count">{{total}}
                     مستخدم</span></h3>
@@ -24,8 +104,8 @@
                     <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن باص">
                 </div>
                 <div class="btns">
-                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
-                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
+                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton" id="drop_filter">
+                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-4" id="dropMenu">
                        <div class="row">
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_1">
@@ -47,17 +127,16 @@
                        </div>
                        <hr>
                        <div class="row">
-                        <div class="col-4">
-                            <label for="radio_1_1">
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_1">
                                 <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
                             </label>
                         </div>
-                        <div class="col-5">
-                            <label for="radio_1_2">
+                        <div class="col-6 mt-2 text-end">
+                            <label for="radio_2">
                                 <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
                             </label>
                         </div>
-                        <div class="col-3"></div>
                        </div>
                        <hr>
                        <div class="row pb-3">
@@ -75,6 +154,18 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div> -->
+    <div class="row mt-2 mb-5 " style="padding: 0px 30px;">
+        <div class="col-12 col-md-5">
+            <a routerLink="/school/new-supervisor" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">اضافة باص جديد </div></a>
+            <a  class="text-muted"><div class="action-button" ><img src="assets/images/Edit.svg" alt="">تعديل </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/Delete.svg" alt="">حذف </div></a>
+        </div>
+        <div class="col-12 col-md-7 text-start">
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/print.svg" alt="">طباعة </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/excel.svg" alt="">إكسل </div></a>
+            <a routerLink="#" class="text-muted"><div class="action-button"><img src="assets/images/pdf.svg" alt="">pdf </div></a>
         </div>
     </div>
     <div>
@@ -108,7 +199,7 @@
                         <span></span>{{item.isActive?'فعـــــال':'غير فعال'}}
                     </td>
                     <td>
-                        <a (click)="openDetailsDialog()" class="d-inline-block ms-2"> <img src="assets/images/Edit.svg"  width="20px" height="20px" alt=""> </a>
+                        <a  class="d-inline-block ms-2"> <img src="assets/images/Edit.svg"  width="20px" height="20px" alt=""> </a>
                         <a routerLink="#" class="d-inline-block"> <img src="assets/images/Delete.svg" width="20px" height="20px" alt=""> </a>
                     </td>
             </tbody>

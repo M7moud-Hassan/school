@@ -1,10 +1,10 @@
 <div class="container-fluid">
-<div class="row" style="padding: 30px 30px 10px 30px;">
+<div class="row" style="padding: 30px 30px 13px 30px;">
     <div class="col-12 col-md-12">
         <a (click)="changePage(1)" class="headerSimpleLink"  [class.headerSimpleLinkActive]="showGroupsManagment"><span> إدارة المجموعات  </span></a>
         <a (click)="changePage(2)" class="headerSimpleLink"  [class.headerSimpleLinkActive]="showTripReport"><span> تقارير الرحلات </span></a>
         <a (click)="changePage(3)" class="headerSimpleLink"  [class.headerSimpleLinkActive]="showtripAppointment"><span> تحديد موعد الرحلات </span></a>
-        <!-- <h3 class="fw-bolder float-end" style="font-size: 16px;"><span class="text-decoration-underline"> إدارة المجموعات  </span><span style="font-size: 14px;" class="text-muted px-3" >تقارير الرحلات </span><span style="font-size: 14px;" class="text-muted px-3">تحديد موعد الرحلات</span></h3> -->
+        <!-- <h3 class="fw-bolder float-end" style="font-size: 13px;"><span class="text-decoration-underline"> إدارة المجموعات  </span><span style="font-size: 14px;" class="text-muted px-3" >تقارير الرحلات </span><span style="font-size: 14px;" class="text-muted px-3">تحديد موعد الرحلات</span></h3> -->
     </div>
 </div>
 <div *ngIf="showGroupsManagment"  class="row mt-2 mb-5 " style="padding: 0px 30px;">
@@ -19,32 +19,33 @@
         <div class="search-box">
             <div class="form-group has-search-box">
                 <span class="form-control-feedback">
-                    <img src="assets/images/Search.svg" alt="">
+                    <img src="assets/images/Search.svg" width="35px" alt="">
                 </span>
-                <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن مجموعة ">
+                <input type="text"  name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن مجموعة ">
             </div>
             <div class="btns">
-                <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
-                <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
-                   <div class="row" style="font-size: 10px;">
-                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                <img #trigger src="assets/images/Filter.svg" alt="" (click)="showOverlay()" class="schoolLogoButtton" id="drop_filter">
+                <ng-template #overlayTemplate>
+                <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-4" style="width: 400px;" id="dropMenu">
+                   <div class="row" style="font-size: 13px;">
+                    <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="radio_1">
-                            <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton">اسم المجموعة
+                            <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton float-end"> <span>اسم المجموعة</span>
                         </label>
                     </div>
                     <div class="col-7 mt-2 text-end">
                         <label for="radio_2">
-                            <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton">    احد طلاب المجموعة
+                            <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton float-end">    <span>احد طلاب المجموعة</span>
                         </label>
                     </div>
                     <div class="col-5 mt-2 text-end">
-                        <label for="radio_2">
-                            <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton">    اسم المشرف
+                        <label for="radio_3">
+                            <input type="radio" id="radio_3" name="searchBy" value="namesuper" class="radioButton float-end">  <span>اسم المشرف</span>
                         </label>
                     </div>
                     <div class="col-7 mt-2 text-end">
-                        <label for="radio_2">
-                            <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton">   عدد طلاب المجموعة
+                        <label for="radio_4">
+                            <input type="radio" id="radio_4" name="searchBy" value="numberUsers" class="radioButton float-end">   <span>عدد طلاب المجموعة</span>
                         </label>
                     </div>
                    </div>
@@ -52,12 +53,12 @@
                    
                   <div class="row">
                     <label class="d-inline-block text-end">نوع الحساب</label>
-                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                    <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="active">
                             <input type="radio" id="active" name="status" value="active" class="radioButton"> فعال
                         </label>
                     </div>
-                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                    <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="inActive">
                             <input type="radio" id="inActive" name="status" value="inActive" class="radioButton"> غير فعال
                         </label>
@@ -66,20 +67,20 @@
                   <hr>
                   <div class="row">
                       <label class="d-inline-block text-end">الإنهاء باستخدام الكود</label>
-                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                    <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="active_code">
                             <input type="radio" id="active_code" name="code" value="active" class="radioButton"> فعال
                         </label>
                     </div>
-                    <div class="col-5 mt-2 text-end" style="font-size: 10px;">
+                    <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="inActive_code">
                             <input type="radio" id="inActive_code" name="code" value="inActive" class="radioButton"> غير فعال
                         </label>
                     </div>
                   </div>
                    <hr/>
-                   <div class="row pb-2">
-                    <div class="col-4 pt-1">تاريخ الاضافة</div>
+                   <div class="row pb-2" dir="rtl">
+                    <div class="col-4 pt-2">تاريخ الاضافة</div>
                     <div class="col-8">
                         <input type="date" name="addDate" class="form-control py-1 datepicker dateInput">
                     </div>
@@ -87,6 +88,7 @@
                    </div>
                    
                 </div>
+            </ng-template>
             </div>
         </div>   
     </div>
@@ -106,7 +108,7 @@
                         </span>
                         <span>
                             <span class="spanTitle">عدد الطلاب {{item.studentCount}}</span>
-                            <img src="assets/images/reload.svg"  alt="">
+                            <img src="assets/images/number_student.svg"  alt="">
                         </span>
                         <span>
                             <span class="activeStateTransparent"> 
@@ -158,7 +160,7 @@
                         <div class="col-12 col-md-12">
                             <div class="dropdownMenu pb-3">
                                 <label for="groupId" class="fw-bolder fs-6 pb-3">اختر المجموعة</label>
-                                <select class="d-inline-block px-3 py-1 w-100 " style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="groupId" name="groupId" id="groupId">
+                                <select class="d-inline-block px-3 py-1 w-100 " style="border-radius: 13px;border: .1px solid #3AA7CE;" formControlName="groupId" name="groupId" id="groupId">
                                     <option *ngFor="let item of groups" class="p-4 d-inline-block" value="{{item.id}}">{{item.name}}</option>
                                 </select>
                             </div>
@@ -166,7 +168,7 @@
                         <div class="col-12 col-md-12">
                             <div class="dropdownMenu pb-3">
                                 <label for="supervisorId" class="fw-bolder fs-6 pb-3">اختر المشرف</label>
-                                <select class="d-inline-block px-3 py-1 w-100" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="supervisorId" name="supervisorId" id="supervisorId">
+                                <select class="d-inline-block px-3 py-1 w-100" style="border-radius: 13px;border: .1px solid #3AA7CE;" formControlName="supervisorId" name="supervisorId" id="supervisorId">
                                     <option *ngFor="let item of supervisors" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
                                 </select>
                             </div>
@@ -176,7 +178,7 @@
                         <div class="col-12 col-md-12">
                             <div class="dropdownMenu pb-3">
                                 <label for="studentId" class="fw-bolder fs-6 pb-3">اختر الطالب</label>
-                                <select class="d-inline-block px-3 py-1 w-100" style="border-radius: 10px;border: .1px solid #3AA7CE;" formControlName="studentId" name="studentId" id="studentId">
+                                <select class="d-inline-block px-3 py-1 w-100" style="border-radius: 13px;border: .1px solid #3AA7CE;" formControlName="studentId" name="studentId" id="studentId">
                                     <option *ngFor="let item of students" class="p-4  d-inline-block" value="{{item.id}}">{{item.name}}</option>
                                 </select>
                             </div>

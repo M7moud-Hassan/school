@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild,OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { DilaogContactComponent } from '../dilaog-contact/dilaog-contact.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -9,7 +9,7 @@ import { MainService } from '../../Services/main.service';
   templateUrl: './new-password.component.html',
   styleUrls: ['../login/login.component.css','./new-password.component.css']
 })
-export class NewPasswordComponent {
+export class NewPasswordComponent implements OnInit {
   showInput1:boolean=false;
   showInput2:boolean=false;
   showInput3:boolean=false;
@@ -19,13 +19,39 @@ export class NewPasswordComponent {
  
     
   }
+  ngOnInit(): void {
+    this.createForm()
+  }
 
   createForm(){
     this.resetPassword = this.service.formBuilder.group({
       currentPassword: ['', [Validators.required, Validators.minLength(8)]],
       newPassword: ['', [Validators.required, Validators.minLength(8)]],
       repeatPassword: ['', [Validators.required, Validators.minLength(8)]],
-    });
+    }, { validator: this.passwordMatchValidator });
+  }
+
+  passwordMatchValidator(formGroup: FormGroup) {
+    const newPassword = formGroup.get('newPassword')!.value;
+    const repeatPassword = formGroup.get('repeatPassword')!.value;
+
+    if (newPassword !== repeatPassword) {
+      formGroup.get('repeatPassword')!.setErrors({ compareWith: true });
+    } else {
+      formGroup.get('repeatPassword')!.setErrors(null);
+    }
+  }
+
+  get currentPassword() {
+    return this.resetPassword.get('currentPassword');
+  }
+
+  get newPassword() {
+    return this.resetPassword.get('newPassword');
+  }
+
+  get repeatPassword() {
+    return this.resetPassword.get('repeatPassword');
   }
 
   @ViewChild('dialog', { static: true }) set content(content: ElementRef) {
