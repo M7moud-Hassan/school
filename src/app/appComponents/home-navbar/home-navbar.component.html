@@ -1,1 +1,29 @@
-<p>home-navbar works!</p>
+<div class="container-fluid p-0" dir="rtl">
+    <div class="navbar-container">
+    <div class="row">
+        <div class="col-12 col-md-2">
+            <a routerLink="#">
+                <img src="/assets/images/logo_busway-white.svg" width="100%" height="50px">
+            </a>
+        </div>
+        <div class="col-12 col-md-7">
+            
+                <nav class="text-center">
+                    <a href="home-page/#section1"  routerLinkActive="activeLink" class="navbar-item-link activeLink" >الرئيسية</a>
+                    <a href="home-page/#section2" routerLinkActive="activeLink" class="navbar-item-link" >المميزات</a>
+                    <a href="home-page/#section3" routerLinkActive="activeLink" class="navbar-item-link" >المستهدفون</a>
+                    <a href="home-page/#section4" routerLinkActive="activeLink" class="navbar-item-link" >كيف نعمل</a>
+                    <a href="home-page/#section6" routerLinkActive="activeLink" class="navbar-item-link" >الشركاء</a>
+                    <a href="home-page/#section7" routerLinkActive="activeLink" class="navbar-item-link" >اتصل بنا</a>
+                    <a href="/terms-and-conditions" routerLinkActive="activeLink" class="navbar-item-link" >سياسة الخصوصية</a>
+                    <!-- <div class="animation start-home"></div> -->
+                </nav>
+            </div>
+            <div class="col-12 col-md-3">
+                <a (click)="changeLang()" class="language" ><span  >{{language}}</span></a>
+                <button class="btn-blue">تسجيل</button>
+                <button class="btn-ligth">دخول</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,7 +11,7 @@ export class SchoolHomePageService {
 
   constructor(private http:HttpClient) { }
 
-  addNewStudent(model:any):Observable<ResponseModel>{
+  sendContactUs(model:any):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${environment.baseApiUrl}/`,model);
   }
   getBusWaySection_1_data():busWaySection_1_model{
@@ -95,6 +95,77 @@ export class SchoolHomePageService {
         {image:'/assets/images/footer-snapchat.png',url:'www.snapchat.com'},
       ]
     }
+  }
+  loadPartnersSection6(){
+    return [
+      { id: 1, name: "شريك رقم 01" },
+      { id: 2, name: "شريك رقم 02" },
+      { id: 3, name: "شريك رقم 03" },
+      { id: 4, name: "شريك رقم 04" },
+      { id: 5, name: "شريك رقم 05" },
+      { id: 6, name: "شريك رقم 06" },
+      { id: 7, name: "شريك رقم 07" },
+      { id: 8, name: "شريك رقم 08" },
+      { id: 9, name: "شريك رقم 09" },
+      { id: 0, name: "شريك رقم 00" },
+      { id: 10, name: "شريك رقم 010" },
+
+      { id: 11, name: "شريك رقم 011" },
+      { id: 12, name: "شريك رقم 012" },
+      { id: 13, name: "شريك رقم 013" },
+      { id: 14, name: "شريك رقم 014" },
+      { id: 15, name: "شريك رقم 015" },
+      { id: 16, name: "شريك رقم 016" },
+      { id: 17, name: "شريك رقم 017" },
+      { id: 18, name: "شريك رقم 018" },
+      { id: 19, name: "شريك رقم 019" },
+      { id: 20, name: "شريك رقم 020" },
+
+      { id: 21, name: "شريك رقم 021" },
+      { id: 22, name: "شريك رقم 022" },
+      { id: 23, name: "شريك رقم 023" },
+      { id: 24, name: "شريك رقم 024" },
+      { id: 25, name: "شريك رقم 025" },
+      { id: 26, name: "شريك رقم 026" },
+      { id: 27, name: "شريك رقم 027" },
+      { id: 28, name: "شريك رقم 028" },
+      { id: 29, name: "شريك رقم 029" },
+      { id: 30, name: "شريك رقم 030" },
+
+      { id: 31, name: "شريك رقم 031" },
+      { id: 32, name: "شريك رقم 032" },
+      { id: 33, name: "شريك رقم 033" },
+      { id: 34, name: "شريك رقم 034" },
+      { id: 35, name: "شريك رقم 035" },
+      { id: 36, name: "شريك رقم 036" },
+      { id: 37, name: "شريك رقم 037" },
+      { id: 38, name: "شريك رقم 038" },
+      { id: 39, name: "شريك رقم 039" },
+      { id: 40, name: "شريك رقم 040" },
+
+      
+      { id: 41, name: "شريك رقم 041" },
+      { id: 42, name: "شريك رقم 042" },
+      { id: 43, name: "شريك رقم 043" },
+      { id: 44, name: "شريك رقم 044" },
+      { id: 45, name: "شريك رقم 045" },
+      { id: 46, name: "شريك رقم 046" },
+      { id: 47, name: "شريك رقم 047" },
+      { id: 48, name: "شريك رقم 048" },
+      { id: 49, name: "شريك رقم 049" },
+      { id: 50, name: "شريك رقم 050" },
+      
+      { id: 51, name: "شريك رقم 051" },
+      { id: 52, name: "شريك رقم 052" },
+      { id: 53, name: "شريك رقم 053" },
+      { id: 54, name: "شريك رقم 054" },
+      { id: 55, name: "شريك رقم 055" },
+      { id: 56, name: "شريك رقم 056" },
+      { id: 57, name: "شريك رقم 057" },
+      { id: 58, name: "شريك رقم 058" },
+      { id: 59, name: "شريك رقم 059" },
+      { id: 60, name: "شريك رقم 060" },
+    ];
   }
   
 }

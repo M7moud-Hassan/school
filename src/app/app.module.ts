@@ -28,6 +28,8 @@ import { HomeNavbarComponent } from './appComponents/home-navbar/home-navbar.com
 import { TermsAndConditionsComponent } from './appComponents/terms-and-conditions/terms-and-conditions.component';
 import { SchoolHomePageComponent } from './appComponents/school-home-page/school-home-page.component';
 import { Section7ContactUsComponent } from './appComponents/section7-contact-us/section7-contact-us.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -59,8 +61,10 @@ import { Section7ContactUsComponent } from './appComponents/section7-contact-us/
     AppRoutingModule,
     SharedModuleModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
-    
+    NgxPaginationModule,
+    NgxIntlTelInputModule ,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     AppComponent,

@@ -1,0 +1,29 @@
+.content{
+    padding: 30px 20px;
+    font-size: 17px;
+    line-height: 2;
+}
+.link{
+    display: block;
+    color: #3AA7CE;
+}
+.app-privacy{
+    color: #3AA7CE;
+}
+.contact-us{
+    font-weight: 900;
+    font-size: 20px;
+    color: #3AA7CE;
+    margin-top: 50px;
+}
+.change-tems{
+    font-weight: 900;
+    font-size: 20px;
+    color: black;
+    margin-top: 50px;
+}
+
+ul{
+    list-style-type: square;
+    color: #3AA7CE;
+}

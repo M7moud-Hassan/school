@@ -1,5 +1,78 @@
-<div class="container-fluid">
+<div class="container-fluid p-0 overflow-hidden" id="section7">
+    <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="contact-us-container">
-        <div class="contact-us-title">تواصل معنا </div>
+        <div class="contact-us-title py-3 mb-4">تواصل معنا </div>
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <label for="name" class="defaultLabel">أدخل الاسم</label>
+                    <div class="input-container_2_icon_begining">
+                        <span><img src="/assets/images/Message-email-light.svg"></span>
+                        <div  class="vertical-bar_2_icon_begining"></div>
+                        <input type="text" name="name" id="name" formControlName="name" placeholder="أدخل الاسم" class="input-field_2_icon_begining">
+                      </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <label for="phone" class="defaultLabel intl-label">رقم الهاتف</label>
+                <div class="intl-container">
+                <span class="intl-item">
+                    <ngx-intl-tel-input
+                [cssClass]="'custom-intl bg-transparent iti'"
+                [preferredCountries]="preferredCountries"
+                [enableAutoCountrySelect]="true"
+                [enablePlaceholder]="true"
+                [searchCountryFlag]="true"
+                [searchCountryField]="[
+                  SearchCountryField.Iso2,
+                  SearchCountryField.Name
+                ]"
+                [selectFirstCountry]="false"
+                [selectedCountryISO]="CountryISO.SaudiArabia"
+                [maxLength]="15"
+                (countryChange)="onCountrySelected($event)"
+                [phoneValidation]="true"
+                [separateDialCode]="separateDialCode"
+                [numberFormat]="PhoneNumberFormat.National"
+                formControlName="phone"
+                name="phone"
+              >
+              </ngx-intl-tel-input>
+                </span>
+              <span class="code-phone intl-code float-start">
+                +{{countryCode}}  
+               </span>
+        </div>
+            </div>
+            <div class="col-12 col-md-6">    
+                    <label for="email" class="defaultLabel">أدخل البريد الإلكتروني </label>
+                    <div class="input-container_2_icon_begining">
+                        <span><img src="/assets/images/Profile-light.svg"></span>
+                        <div  class="vertical-bar_2_icon_begining"></div>
+                        <input type="text" name="email" id="email" formControlName="email" placeholder="name@gmail.com" class="input-field_2_icon_begining">
+                      </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="capatch-container" dir="ltr">
+                    <label for="isNotRobot" class="defaultLabel pt-2" style="cursor: pointer;">
+                        <input type="checkbox" id="isNotRobot" name="isNotRobot" formControlName="isNotRobot" class="SquarecheckboxButton me-2">
+                        I’m not a robot
+                </label>
+                <img src="/assets/images/recaptcha.svg" width="45" height="45" class="float-end">
+                </div>
+            </div>
+            <div class="col-12 col-md-8"></div>
+        </div>
+        <div class="row">
+            <textarea rows="4" class="text-area" name="message" formControlName="message" placeholder="نص الرسالة"></textarea>
+        </div>
+        <div class="row py-3 mt-4">
+            <div class="col-12 col-md-4"></div>
+            <div class="col-12 col-md-4">
+                <button class="saveButton">أرسل</button>
+            </div>
+            <div class="col-12 col-md-4"></div>
+        </div>
     </div>
+</form>
 </div>
