@@ -11,6 +11,11 @@ import { MainService } from '../../Services/main.service';
   styleUrls: ['../parents-list/parents-list.component.css','./absence-list.component.css']
 })
 export class AbsenceListComponent implements OnInit{
+  searchKeyword:any='';
+  filterType:any = 'name';
+  date:any='';
+  from:any='';
+  to:any=''; 
   absence_data:absenceListModel[] =[] ;
   isSchoolAccountDropdownVisible:boolean = false;
   pageNo: number = 1;
@@ -73,5 +78,26 @@ export class AbsenceListComponent implements OnInit{
     this.service.dialog.open(DetailsAskComponent,{
       width: '50%',
     })
+  }
+
+ 
+  filterData(){
+    this.getAbsenceList();
+    if(this.filterType == 'name'){
+      this.absence_data = this.absence_data.filter(x=>x.studentName.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.filterType == 'by'){
+      this.absence_data = this.absence_data.filter(x=>x.by.includes(this.searchKeyword)) ;
+    }
+    if(this.date != ''){
+      this.absence_data = this.absence_data.filter(x=>x.createdAt == this.date) ;
+    }
+    if(this.to != ''){
+      this.absence_data = this.absence_data.filter(x=>x.to == this.to) ;
+    }
+    if(this.from != ''){
+      this.absence_data = this.absence_data.filter(x=>x.from == this.from) ;
+    }
+    this.total =  this.absence_data.length;
   }
 }

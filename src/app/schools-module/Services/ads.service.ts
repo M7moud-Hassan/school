@@ -25,22 +25,22 @@ export class AdsService {
 
   getAllAds():adsModel[]{
    return [
-    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'12/7/2023',title:'يوم التأسيس رقم 01'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 02'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 03'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 04'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'12/7/2023',title:'يوم التأسيس رقم 05'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 07'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'12/7/2023',title:'يوم التأسيس رقم 08'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'12/7/2023',title:'يوم التأسيس رقم 09'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'12/7/2023',title:'يوم التأسيس رقم 011'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 012'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 013'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'12/7/2023',title:'يوم التأسيس رقم 014'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'12/7/2023',title:'يوم التأسيس رقم 015'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 016'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 017'},
-    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'12/7/2023',title:'يوم التأسيس رقم 018'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'2023-08-01',title:'يوم التأسيس رقم 01'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-02',title:'يوم التأسيس رقم 02'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-01',title:'يوم التأسيس رقم 03'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-01',title:'يوم التأسيس رقم 04'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'2023-08-04',title:'يوم التأسيس رقم 05'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-01',title:'يوم التأسيس رقم 07'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'2023-08-01',title:'يوم التأسيس رقم 08'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'2023-08-05',title:'يوم التأسيس رقم 09'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'2023-08-01',title:'يوم التأسيس رقم 011'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-01',title:'يوم التأسيس رقم 012'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-07',title:'يوم التأسيس رقم 013'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'2023-08-01',title:'يوم التأسيس رقم 014'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:true,creationDate:'2023-08-03',title:'يوم التأسيس رقم 015'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-01',title:'يوم التأسيس رقم 016'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-02',title:'يوم التأسيس رقم 017'},
+    {image:'/assets/images/user.png',isSelected:false,isShown:false,creationDate:'2023-08-10',title:'يوم التأسيس رقم 018'},
    ];
   }
 }

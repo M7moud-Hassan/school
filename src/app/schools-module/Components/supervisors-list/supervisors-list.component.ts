@@ -12,6 +12,11 @@ import { Router } from '@angular/router';
   styleUrls: ['../parents-list/parents-list.component.css','./supervisors-list.component.css',]
 })
 export class SupervisorsListComponent implements OnInit {
+  searchKeyword: any = '';
+  filterType: any = 'name';
+  date: any = '';
+  isActive: any = "true";
+
   isSchoolAccountDropdownVisible:boolean = false;
   supervisor_data:supervisorModel[] = [];
   pageNo: number = 1;
@@ -112,5 +117,24 @@ checkItems(event: Event): void {
     }
   });
 
+}
+filterData(){
+  this.getAllSupervisor();
+  if(this.filterType == 'name'){
+    this.supervisor_data = this.supervisor_data.filter(x=>x.name.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+  } 
+  if(this.filterType == 'number'){
+    this.supervisor_data = this.supervisor_data.filter(x=>x.phoneNumber.includes(this.searchKeyword)) ;
+  }
+  if(this.date != ''){
+    this.supervisor_data = this.supervisor_data.filter(x=>x.lastActiveDate == this.date) ;
+  }
+  if(this.isActive == "false"){
+    this.supervisor_data = this.supervisor_data.filter(x=>x.isActive == false) ;
+  }
+  if(this.isActive == "true"){
+    this.supervisor_data = this.supervisor_data.filter(x=>x.isActive == true) ;
+  }
+  this.total =  this.supervisor_data.length;
 }
 }

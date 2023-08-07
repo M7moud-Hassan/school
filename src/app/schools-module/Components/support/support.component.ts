@@ -75,4 +75,29 @@ export class SupportComponent implements OnInit {
       width: '50%',
     })
   }
+
+  
+  searchKeyword:any='';
+  filterType:any = 'name';
+  date:any='';
+  isActive:any="true";
+  filterData(){
+    this.getSupportList();
+    if(this.filterType == 'name'){
+      this.help_data = this.help_data.filter(x=>x.title.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.filterType == 'title'){
+      this.help_data = this.help_data.filter(x=>x.title.includes(this.searchKeyword)) ;
+    }
+    if(this.date != ''){
+      this.help_data = this.help_data.filter(x=>x.date == this.date) ;
+    }
+    if(this.isActive == "false"){
+      this.help_data = this.help_data.filter(x=>x.status == false) ;
+    }
+    if(this.isActive == "true"){
+      this.help_data = this.help_data.filter(x=>x.status == true) ;
+    }
+    this.total =  this.help_data.length;
+  }
 }

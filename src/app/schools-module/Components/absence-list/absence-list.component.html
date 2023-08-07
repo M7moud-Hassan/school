@@ -24,7 +24,7 @@
                     <span class="form-control-feedback">
                         <img src="assets/images/Search.svg" alt="">
                     </span>
-                    <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن طلب ">
+                    <input type="text" name="parent_search-box" id="parent_search-box" [(ngModel)]="searchKeyword" (input)="filterData()" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن طلب ">
                 </div>
                 <div class="btns">
                     <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
@@ -32,12 +32,12 @@
                        <div class="row">
                         <div class="col-5 mt-2 text-end" style="font-size: 12px;">
                             <label for="radio_1">
-                                <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton">اسم الطالب
+                                <input type="radio" id="radio_1" name="searchBy" value="name" [(ngModel)]="filterType" (change)="filterData()" class="radioButton">اسم الطالب
                             </label>
                         </div>
                         <div class="col-7 mt-2 text-end">
                             <label for="radio_2">
-                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton">  أضيف بواسطة من
+                                <input type="radio" id="radio_2" name="searchBy" value="by" [(ngModel)]="filterType" (change)="filterData()" class="radioButton">  أضيف بواسطة من
                             </label>
                         </div>
                        </div>
@@ -45,17 +45,17 @@
                        <div class="row pb-2">
                         <div class="col-4 pt-2">تاريخ الاضافة</div>
                         <div class="col-8">
-                            <input type="date" name="addDate" class="form-control datepicker dateInput">
+                            <input type="date" name="addDate" [(ngModel)]="date" (change)="filterData()" class="form-control datepicker dateInput">
                         </div>
                         <hr class="mt-3">
-                        <div class="col-4 pt-2">تاريخ الاضافة</div>
+                        <div class="col-4 pt-2">من تاريخ</div>
                         <div class="col-8">
-                            <input type="date" name="addDate" class="form-control datepicker dateInput">
+                            <input type="date" name="fromDate" [(ngModel)]="from" (change)="filterData()" class="form-control datepicker dateInput">
                         </div>
                         <hr class="mt-3">
-                        <div class="col-4 pt-2">تاريخ الاضافة</div>
+                        <div class="col-4 pt-2">حتى تاريخ</div>
                         <div class="col-8">
-                            <input type="date" name="addDate" class="form-control datepicker dateInput">
+                            <input type="date" name="toDate" [(ngModel)]="to" (change)="filterData()" class="form-control datepicker dateInput">
                         </div>
                        </div>
                        

@@ -47,4 +47,28 @@ constructor(private service:MainAdminService,private overlay: Overlay,private ov
     this.overlayRef.attach(portal);
   }
 
+
+  searchKeyword:any='';
+  filterType:any = 'name';
+  date:any='';
+  isActive:any="true";
+  filterData(){
+    this.getAllUsers();
+    if(this.filterType == 'name'){
+      this.users = this.users.filter(x=>x.name.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.filterType == 'number'){
+      this.users = this.users.filter(x=>x.userNumber.includes(this.searchKeyword)) ;
+    }
+    if(this.date != ''){
+      this.users = this.users.filter(x=>x.lastActiveDate == this.date) ;
+    }
+    if(this.isActive == "false"){
+      this.users = this.users.filter(x=>x.isActive == false) ;
+    }
+    if(this.isActive == "true"){
+      this.users = this.users.filter(x=>x.isActive == true) ;
+    }
+    this.total =  this.users.length;
+  }
 }

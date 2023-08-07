@@ -19,7 +19,12 @@ import { TemplatePortal } from '@angular/cdk/portal';
   styleUrls: ['../report-trips/report-trips.component.css','../today-journey/today-journey.component.css', '../activities/activities.component.css','./trips-and-groups.component.css'],
 })
 export class TripsAndGroupsComponent implements OnInit {
-
+  searchKeyword:any='';
+  filterType:any = 'name';
+  date:any='';
+  isActive:any="true";
+  iscodeActive:any="true";
+  
   showGroupsManagment:boolean = true;
   showTripReport:boolean = false;
   showtripAppointment:boolean = false;
@@ -44,6 +49,7 @@ export class TripsAndGroupsComponent implements OnInit {
     this.getStudents();
     this.getStudentNames();
     this.getSupervisor();
+    this.total =  this.journies.length;
   }
 
   getTripsList(){
@@ -167,6 +173,39 @@ export class TripsAndGroupsComponent implements OnInit {
   console.log((event.target as HTMLElement).parentNode?.parentNode?.parentNode)
   this.isSchoolAccountDropdownVisible = false;
 }
+  }
+
+
+
+  filterData(){
+    this.getTripsList();
+    if(this.filterType == 'studentName'){
+      this.journies = this.journies.filter(x=>x.supervisorName.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.filterType == 'groupName'){
+      this.journies = this.journies.filter(x=>x.groupNameAr.includes(this.searchKeyword) || x.groupNameEn.includes(this.searchKeyword)) ;
+    }
+    if(this.filterType == 'superVisorName'){
+      this.journies = this.journies.filter(x=>x.supervisorName.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.filterType == 'studentCount'){
+      this.journies = this.journies.filter(x=>x.studentCount==this.searchKeyword) ;
+    }
+    if(this.date != ''){
+      this.journies = this.journies.filter(x=>x.date == this.date) ;
+    }
+    if(this.isActive == "false"){
+      this.journies = this.journies.filter(x=>x.active == false) ;
+    }
+    if(this.isActive == "true"){
+      this.journies = this.journies.filter(x=>x.active == true) ;
+    }
+    if(this.iscodeActive == "false"){
+      this.journies = this.journies.filter(x=>x.codeActive == false) ;
+    }
+    if(this.iscodeActive == "true"){
+      this.journies = this.journies.filter(x=>x.codeActive == true) ;
+    }
   }
 }
 

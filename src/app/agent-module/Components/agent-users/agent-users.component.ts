@@ -25,10 +25,10 @@ export class AgentUsersComponent implements OnInit {
   @ViewChild('overlayTemplate', { static: false }) overlayTemplate!: TemplateRef<any>;
   
   ngOnInit(): void {
-    this.getAllStudents();
+    this.getAllUsers();
     this.total =  this.usersList.length;
   }
-  getAllStudents(){
+  getAllUsers(){
     this.usersList = this.service.agentUsersService.getUsersList();
   }
 
@@ -85,5 +85,33 @@ export class AgentUsersComponent implements OnInit {
     if (this.overlayRef) {
       this.overlayRef.detach();
     }
+  }
+
+
+  searchKeyword:any='';
+  filterType:any = 'name';
+  date:any='';
+  isActive:any="true";
+  filterData(){
+    this.getAllUsers();
+    if(this.filterType == 'name'){
+      this.usersList = this.usersList.filter(x=>x.name.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.filterType == 'number'){
+      this.usersList = this.usersList.filter(x=>x.userNumber.includes(this.searchKeyword)) ;
+    }
+    if(this.filterType == 'phone'){
+      this.usersList = this.usersList.filter(x=>x.phone.includes(this.searchKeyword)) ;
+    }
+    if(this.date != ''){
+      this.usersList = this.usersList.filter(x=>x.lastActiveDate == this.date) ;
+    }
+    if(this.isActive == "false"){
+      this.usersList = this.usersList.filter(x=>x.isActive == false) ;
+    }
+    if(this.isActive == "true"){
+      this.usersList = this.usersList.filter(x=>x.isActive == true) ;
+    }
+    this.total =  this.usersList.length;
   }
 }

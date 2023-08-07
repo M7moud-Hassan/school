@@ -65,4 +65,18 @@ export class NotificationsComponent implements OnInit {
      
     })
   }
+
+  searchKeyword:any='';
+  filterType:any = 'name';
+  date:any='';
+  filterData(){
+    this.getNotificationList();
+    if(this.filterType == 'name'){
+      this.notificationList = this.notificationList.filter(x=>x.title.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.date != ''){
+      this.notificationList = this.notificationList.filter(x=>x.recievedDate == this.date) ;
+    }
+    this.total =  this.notificationList.length;
+  }
 }

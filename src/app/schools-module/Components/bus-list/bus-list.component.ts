@@ -1,7 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { GroupPopupComponent } from '../group-popup/group-popup.component';
-import { EditSupervisorPopUpComponent } from '../edit-supervisor-pop-up/edit-supervisor-pop-up.component';
 import { busListModel } from '../../Services/supervisor.service';
 import { MainService } from '../../Services/main.service';
 
@@ -11,6 +9,11 @@ import { MainService } from '../../Services/main.service';
   styleUrls: ['../parents-list/parents-list.component.css','./bus-list.component.css']
 })
 export class BusListComponent implements OnInit {
+  searchKeyword: any = '';
+  filterType: any = 'name';
+  date: any = '';
+  isActive: any = "true";
+
   isSchoolAccountDropdownVisible:boolean = false;
   bus_data:busListModel[] = [];
   pageNo: number = 1;
@@ -86,5 +89,26 @@ export class BusListComponent implements OnInit {
   console.log((event.target as HTMLElement).parentNode?.parentNode?.parentNode)
   this.isSchoolAccountDropdownVisible = false;
 }
+}
+
+
+filterData(){
+  this.getBusList();
+  if(this.filterType == 'name'){
+    this.bus_data = this.bus_data.filter(x=>x.name.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+  } 
+  if(this.filterType == 'number'){
+    this.bus_data = this.bus_data.filter(x=>x.busNumber.includes(this.searchKeyword)) ;
+  }
+  if(this.date != ''){
+    this.bus_data = this.bus_data.filter(x=>x.lastActiveDate == this.date) ;
+  }
+  if(this.isActive == "false"){
+    this.bus_data = this.bus_data.filter(x=>x.isActive == false) ;
+  }
+  if(this.isActive == "true"){
+    this.bus_data = this.bus_data.filter(x=>x.isActive == true) ;
+  }
+  this.total =  this.bus_data.length;
 }
 }
