@@ -31,6 +31,7 @@ import { Section7ContactUsComponent } from './appComponents/section7-contact-us/
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+    
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgxIntlTelInputModule ,
     ReactiveFormsModule,
     FormsModule
+    
   ],
   providers: [
     AppComponent,

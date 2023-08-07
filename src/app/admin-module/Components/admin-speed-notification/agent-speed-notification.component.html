@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="lastNotificationCard">
+            <div class="lastNotificationTitle">أخر الاضافات :</div>
+            <div class="scrollBarArea">
+                <a *ngFor="let item of addingsList" (click)="openDailog()">
+                    <div class="lastNotificationItem">
+                        <div class="row">
+                            <div class="col-1">
+                                <div class="imagesStack">
+                                    <img *ngFor="let img of item.images.slice(0, 2);let i= index" src="{{img}}" class="image-{{i+1}}"/>
+                                    <img *ngIf="item.images.length==3" src="{{item.images[2]}}" class="image-3"/>
+                                    <span *ngIf="item.images.length>3" class="imageMoreThan-3">+{{item.images.length - 2}}</span>
+                                </div>
+                            </div>
+                            <div class="col-10 lastNotificationContent">
+                                <span>{{item.title}}</span>
+                                <span>{{item.description}}</span>
+                            </div>
+                            <div class="col-1">{{item.time}}</div>
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="lastNotificationCard">
+            <div class="lastNotificationTitle">أخر التعديلات :</div>
+            <div class="scrollBarArea">
+                <a *ngFor="let item of updatesList" (click)="openDailog()">
+                    <div class="lastNotificationItem">
+                        <div class="row">
+                            <div class="col-1">
+                                <div class="imagesStack">
+                                    <img *ngFor="let img of item.images.slice(0, 2);let i= index" src="{{img}}" class="image-{{i+1}}"/>
+                                    <img *ngIf="item.images.length==3" src="{{item.images[2]}}" class="image-3"/>
+                                    <span *ngIf="item.images.length>3" class="imageMoreThan-3">+{{item.images.length - 2}}</span>
+                                </div>
+                            </div>
+                            <div class="col-10 lastNotificationContent">
+                                <span>{{item.title}}</span>
+                                <span>{{item.description}}</span>
+                            </div>
+                            <div class="col-1">{{item.time}}</div>
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        </div>
+    </div>
+</div>
