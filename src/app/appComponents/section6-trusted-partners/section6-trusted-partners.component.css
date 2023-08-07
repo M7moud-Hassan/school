@@ -1,0 +1,81 @@
+.section3 .divider_div{
+    height: .5vw;
+    margin-top: 1%;
+    /* background-color: #946356; */
+    color: black;
+}
+.section3 .bg-divider{
+    padding: 0;
+    margin: 0;
+}
+.section3 .bg-divider p{
+color: #946356;
+font-size: 2vw;
+}
+.section3 .card-title{
+    color: white;
+    font-size: 1.5vw;
+    padding: .5em;
+    font-family: font_title;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    background-color: #419e9f;
+}
+.section3  .card-body{
+    padding: 0;
+   
+    font-family: font_title;
+    font-size: 1vw;
+    padding-top: .5em;
+}
+.section3 .item .work .featured-carousel .owl-carousel .ftco-section{
+    background-color: red !important;
+}
+.section3 .card{
+   padding: 1em;
+}
+.section3 .card .card-text{
+   text-align: center;
+   font-size: 16px;
+}
+@media screen and (max-width: 770px) {
+.section3 .card .card-text{
+    font-size: 2vw;
+}
+}
+@media screen and (max-width: 570px) {
+    .section3 .divider_div{
+        margin-top: 15px;
+    }
+    .section3 .bg-divider p{
+        font-size: 5vw;
+    }
+    .section3 .card .card-text{
+        font-size: 2.5vw;
+    }
+    .section3 .ion-ios-arrow-back{
+        display: none;
+    }
+    .section3 .card  img{
+        height: 100% !important;
+        width: 100% !important;
+    }
+}
+.section3 .ion-ios-arrow-forward{
+    display: none;
+}
+.section3 .ion-ios-arrow-back{
+    display: none;
+}
+.section3 .card  img{
+    height: 20vw;
+    width: 100%;
+}
+
+
+
+.partner-name{
+    text-align: center;
+    padding-top: 10px;
+}

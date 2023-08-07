@@ -8,12 +8,17 @@ import { HomePageComponent } from './schools-module/Components/home-page/home-pa
 import { NewPasswordComponent } from './schools-module/Components/new-password/new-password.component';
 import { AgentLayoutComponent } from './Layout/agent-layout/agent-layout.component';
 import { AdminLayoutComponent } from './Layout/admin-layout/admin-layout.component';
+import { SchoolHomePageComponent } from './appComponents/school-home-page/school-home-page.component';
+import { TermsAndConditionsComponent } from './appComponents/terms-and-conditions/terms-and-conditions.component';
 
 const routes: Routes = [
+  {path:'home-page',component:SchoolHomePageComponent},
   {path:'login',component:LoginComponent},
   {path:'',component:RegisterComponent},
   {path:'reset-password',component:ResetPasswordComponent},
   {path:'new-password',component:NewPasswordComponent},
+  {path:'terms-and-conditions',component:TermsAndConditionsComponent},
+
   {path:'',component:MainLayoutComponent,children:[
     {path:'home',component:HomePageComponent},
     {path:'school',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},

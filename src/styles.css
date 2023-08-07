@@ -29,11 +29,13 @@ body,h1,h2,h3,h4,h5,h6,p,label,span,div {
   height: 100%;
   width: 100%;
   outline: none;
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
+  border-radius: 10px;
+  color: white;
   border-radius: 10px;
   font-size: 22px;
   padding: 0 18px 0 35px;
-  box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5);
+  /* box-shadow: 0 2px 4px rgba(104, 101, 101, 0.5); */
   transition: all 0.2s linear;
 }
 .iti #phone{
@@ -41,9 +43,14 @@ body,h1,h2,h3,h4,h5,h6,p,label,span,div {
   height: 100%;
   outline: none;
   border:none;
+  border-radius: 10px;
 }
 .iti #phone ::placeholder{
   font-size: 5px !important;
+}
+.iti::placeholder{
+  font-size: 16px !important;
+  color: white;
 }
 
 .mat-mdc-text-field-wrapper{
@@ -472,8 +479,8 @@ outline: 0;
 
 /* ====================style of input field start with edit and vartical bar (|)=================================================== */
 .input-container_2_icon_begining {
-  position: relative;
-  width: 100%;
+position: relative;
+width: 100%;
   padding: 5px 0px;
   margin: 20px;
   margin-top: 0px;

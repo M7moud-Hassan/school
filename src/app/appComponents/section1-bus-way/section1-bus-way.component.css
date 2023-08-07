@@ -1,0 +1,39 @@
+.homeBus{
+    width: 100%;
+    height: calc(50vh);
+}
+.data-container-section{
+    min-height: calc(50vh);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactUsLink{
+    text-align: center;
+    font-weight: 600;
+    color: black;
+    font-size: 20px;
+    transition: all .5s ease-in-out;
+    text-decoration: none;
+}
+.contactUsLink:hover{
+    color: #3AA7CE;
+}
+.title-word,.description-word{
+ font-size: 40px;
+ text-align: center;
+ color: black;
+ padding-bottom: 30px;
+ font-weight: 900;
+}
+.description-word{
+  font-size: 17px;
+  font-weight: 500;
+  color: #575757;
+}

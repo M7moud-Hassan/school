@@ -26,6 +26,7 @@ import { AdminNotificationListComponent } from './Components/admin-notification-
 
 
 const routes: Routes = [
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:AdminHomePageComponent},
   {path:'proxies',component:ProxiesComponent},
   {path:'proxy-page',component:ProxyPageComponent},

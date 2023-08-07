@@ -1,0 +1,105 @@
+.navbar-container {
+    padding: 5px 10px;
+    background-color: #3AA7CE;
+    width: 100%;
+    overflow: hidden;
+}
+.navbar-item-link {
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    position: relative;
+    font-size: 11px;
+    color: white;
+    font-weight: 200;
+   
+}
+
+.activeLink {
+
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.inActiveLink {
+    font-size: 11px;
+    color: white;
+    font-weight: 200;
+}
+
+.navbar-item-link:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 0px;
+    bottom: -15px;
+    right: 25px;
+    background-color: white;
+    transform: rotate(90deg);
+    transition: all .5s ease-in-out;
+}
+
+.navbar-item-link:hover:after {
+    height: 100%;
+}
+
+
+.activeLink:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 0px;
+    bottom: -15px;
+    right: 25px;
+    background-color: white;
+    transform: rotate(90deg);
+    transition: all .5s ease-in-out;
+}
+
+.activeLink:after {
+    height: 100%;
+}
+
+
+.language{
+    display: inline-block;
+  padding: 12px 10px 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  width: 40px;
+  text-align: right;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.btn-ligth{
+display: inline-block;
+padding: 7px 15px;
+background-color: white;
+color: #3AA7CE;
+border: .5px solid #3AA7CE;
+border-radius: 6px;
+margin-left: 10px;
+transition: all .5s ease-in-out;
+}
+.btn-blue{
+    display: inline-block;
+    padding: 7px 15px;
+    background-color: #3AA7CE;
+    color: white;
+    border: .5px solid white;
+    border-radius: 6px;
+    margin-left: 10px;
+    border: 0.1px solid #3AA7CE;
+}
+.btn-blue:hover{
+    background-color: white;
+    color: #3AA7CE;
+    border: 0.1px solid #3AA7CE;   
+}
+.btn-ligth:hover{
+    background-color: #3AA7CE;
+    color: white;
+    border: .5px solid white;
+}

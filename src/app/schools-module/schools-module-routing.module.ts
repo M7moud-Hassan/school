@@ -38,11 +38,12 @@ import { TrackingAllComponent } from './Components/tracking-all/tracking-all.com
 import { TestComponent } from './Components/test/test.component';
 
 const routes: Routes = [
+  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'home',component:HomePageComponent},
   {path:'profile',component:ProfileComponent},
   {path:'trip-reports',component:ReportTripsComponent},
   {path:'new-student',component:NewStudentComponent},
   {path:'parents',component:ParentsComponent},
-  {path:'home',component:HomePageComponent},
   {path:'parents-list',component:ParentsListComponent},
   {path:'students-list',component:StudentListComponent},
   {path:'tracking',component:TrackingTripComponent},

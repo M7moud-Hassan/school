@@ -1,0 +1,45 @@
+<section class="fatawy section3 p-0 overflow-hidden" id="section6">
+    <div class="container-fluid row bg-divider">
+      <div class="col-4 divider_div"></div>
+      <div class="col-4 ">
+      <p class="text-center">شركاء بادلونا الثقة</p>
+      </div>
+      <div class="col-4 divider_div"></div>
+    </div>
+    <section *ngIf="!isLoading"  class="ftco-section"  dir="ltr">
+      <div  class="container">
+        <div class="row">
+          <div  class="col-md-12">
+            <div class="featured-carousel owl-carousel">
+              <ng-container *ngFor="let item of list;let i = index"> 
+              <!-- <div  class="item">
+                <div  class="work"> -->
+                    <div class="items-container">
+                        <div class="row">
+                            <div class="col-12 col-md-3">
+                                <div class="partner-item">
+                                    <img src="/assets/images/rect.svg" width="100" height="100">
+                                    <div class="partner-name">{{item.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-3">{{i+1}}</div>
+                        </div>
+                    </div>
+                  <!-- <div class="card">
+                    <img src="/assets/images/user.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <div class="card-title" dir="ltr"><span class="truncate-1-lines" [innerHTML]="item.name"></span></div>
+                    </div>
+                    </div> -->
+                <!-- </div>
+              </div> -->
+          </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+     </section>
+   
