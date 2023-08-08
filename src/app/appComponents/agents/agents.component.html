@@ -1,0 +1,26 @@
+<h1 class="text-center">شركاء بادلونا الثقة</h1>
+
+<div style="width: 98%;">
+    <div class="slick-wrapper w-100 "  dir="ltr">
+
+        <!-- You can now use your library component in app.component.html -->
+        <ngx-slick-carousel class="carousel text-center" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+          (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+          <div ngxSlickItem *ngFor="let item of agents" class="slide wrapper  ">
+            <div class="card d-flex align-items-center justify-content-center m-4 p-4">
+                <div class="text-center">
+                    <img src="assets/images/agent.png"alt="" class="d-inline">
+                    <h3 class="text-center">اسم الشريك</h3>
+                </div>
+            </div>
+            <div class="card d-flex align-items-center justify-content-center m-4 p-4">
+                <div class="text-center">
+                    <img src="assets/images/agent.png"alt="" class="d-inline">
+                    <h3 class="text-center">اسم الشريك</h3>
+                </div>
+            </div>
+          </div>
+        </ngx-slick-carousel>
+        
+        </div>
+</div>

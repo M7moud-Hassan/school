@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['../statistics/statistics.component.css','./test.component.css']
+  selector: 'app-agents',
+  templateUrl: './agents.component.html',
+  styleUrls: ['./agents.component.css']
 })
-export class TestComponent {
+export class AgentsComponent {
+  agents=[1,2,3,4,5,6,7,8,9]
   slideConfig = {
     "slidesToShow": 4,
     "slidesToScroll": 4,
@@ -41,8 +42,6 @@ export class TestComponent {
 
 
   slides = [342, 453, 846, 855, 234, 564, 744, 243];
-
- 
   addSlide() {
     this.slides.push(488)
   }

@@ -35,7 +35,7 @@ import { AccountUserComponent } from './Components/account-user/account-user.com
 import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-up/edit-supervisor-pop-up.component';
 import { SupervisorProfileComponent } from './Components/supervisor-profile/supervisor-profile.component';
 import { TrackingAllComponent } from './Components/tracking-all/tracking-all.component';
-import { TestComponent } from './Components/test/test.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -72,8 +72,7 @@ const routes: Routes = [
   {path:'edit-bus',component:EditSupervisorPopUpComponent},
   {path:'supervisor-profile',component:SupervisorProfileComponent},
   {path:'account-user',component:AccountUserComponent},
-  {path:'tracking-all',component:TrackingAllComponent},
-  {path:'test',component:TestComponent}
+  {path:'tracking-all',component:TrackingAllComponent}
   
 ];
 

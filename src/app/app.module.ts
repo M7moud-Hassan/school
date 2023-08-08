@@ -30,8 +30,8 @@ import { SchoolHomePageComponent } from './appComponents/school-home-page/school
 import { Section7ContactUsComponent } from './appComponents/section7-contact-us/section7-contact-us.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-    
+import { AgentsComponent } from './appComponents/agents/agents.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeNavbarComponent,
     TermsAndConditionsComponent,
     SchoolHomePageComponent,
-    Section7ContactUsComponent
+    Section7ContactUsComponent,
+    AgentsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +66,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgxPaginationModule,
     NgxIntlTelInputModule ,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SlickCarouselModule
     
   ],
   providers: [
