@@ -22,7 +22,7 @@
                     <span class="form-control-feedback">
                         <img src="assets/images/Search.svg" alt="">
                     </span>
-                    <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن مستخدم">
+                    <input type="text" name="parent_search-box" id="parent_search-box" [(ngModel)]="searchKeyword" (input)="filterData()" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن مستخدم">
                 </div>
                 <div class="btns">
                     <img src="assets/images/Filter.svg" alt="" #trigger (click)="showOverlay()" class="schoolLogoButtton">
@@ -32,17 +32,17 @@
                        <div class="row">
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_1">
-                                <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton"> اسم  المستخدم
+                                <input type="radio" id="radio_1" name="searchBy" value="name" [(ngModel)]="filterType" (change)="filterData()" class="radioButton"> اسم  المستخدم
                             </label>
                         </div>
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_2">
-                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> رقم المستخدم
+                                <input type="radio" id="radio_2" name="searchBy" value="number" [(ngModel)]="filterType" (change)="filterData()" class="radioButton"> رقم المستخدم
                             </label>
                         </div>
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_3">
-                                <input type="radio" id="radio_3" name="searchBy" value="userPhone" class="radioButton"> رقم الهاتف
+                                <input type="radio" id="radio_3" name="searchBy" value="phone" [(ngModel)]="filterType" (change)="filterData()" class="radioButton"> رقم الهاتف
                             </label>
                         </div>
                        </div>
@@ -50,19 +50,19 @@
                        <div class="row">
                         <div class="col-4 pt-2">تاريخ الاضافة</div>
                         <div class="col-8">
-                            <input type="date" name="addDate" class="form-control defaultDateInput">
+                            <input type="date" name="addDate"  [(ngModel)]="date" (change)="filterData()"  class="form-control defaultDateInput">
                         </div>
                        </div>
                        <hr>
                        <div class="row">
                         <div class="col-4">
-                            <label for="radio_1_1">
-                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
+                            <label for="active">
+                                <input type="radio" id="active" name="enable" value="true" (change)="filterData()" [(ngModel)]="isActive" class="radioButton"> فعال 
                             </label>
                         </div>
                         <div class="col-5">
-                            <label for="radio_1_2">
-                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
+                            <label for="inactive">
+                                <input type="radio" id="inactive" name="enable" value="false" (change)="filterData()" [(ngModel)]="isActive" class="radioButton"> غير فعال 
                             </label>
                         </div>
                         <div class="col-3"></div>
@@ -88,6 +88,7 @@
                     <option value="20">20</option>
                   </select></td>
                   <td>رقم المستخدم</td>
+                  <td>رقم الجوال</td>
                 <td>آخر نشاط</td>
                 <td>الفاعلية</td>
                 <td>التحكم</td>
@@ -101,6 +102,7 @@
                     <td><input class="form-check-input fs-5" type="checkbox" [(ngModel)]="item.isSelected" (change)="checkBoxChange()" id="checkbox-{{i}}" /></td>
                     <td style="cursor: pointer;" ><img src="{{item.image}}" width="25" height="25" class="ms-2" alt=""> {{item.name}}</td>
                     <td>{{item.userNumber}} </td>
+                    <td>{{item.phone}} </td>
                     <td>{{item.lastActiveDate}}</td>
                     <td [className]="item.isActive?'parentActive':'parentInActive'">
                         <span></span>{{item.isActive?'فعـــــال':'غير فعال'}}

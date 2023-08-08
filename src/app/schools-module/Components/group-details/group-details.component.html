@@ -1,0 +1,56 @@
+<div class="container-fluid parent-container">
+    <div class="mainHeadre p-3">
+    <div class="row" style="padding: 10px">
+        <div class="col-12 col-md-12">
+            <h3 class="fw-bolder float-end" style="font-size: 18px;">{{groupDetails.groupNameAr}} <span class="small">( {{groupDetails.groupNameEn}} )</span><span class="users-count">{{total}} طلاب</span></h3>
+        </div>
+        <div class="col-12 col-md-4 float-start">
+           
+        </div>
+    </div>
+    <div class="row my-2 ">
+        <div class="col-12 col-md-12">
+            <a (click)="addStudentToGroupDialog()" class="text-muted"><div class="action-button" style="background-color: #3AA7CE;"><img src="assets/images/add.png" alt="">اضافة طالب جديد للمجموعة</div></a>
+        </div>
+    </div>
+</div>
+    <div>
+        <table class="table table">
+            <tr class="tableHeader">
+                <td>اسم الطالب  <select name="pageSize" id="pageSize" [(ngModel)]="pageSize" class="select-size">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select></td>
+                <td>المشرف</td>
+                <td>الرحلة</td>
+                <td>رقم الجوال</td>
+                <td>التحكم</td>
+            </tr>
+             <tr class="mt-3">
+                <td colspan="7"></td>
+             </tr>
+            <tbody *ngFor="let item of groupList | paginate: 
+                { id: 'foo', itemsPerPage: pageSize, currentPage: pageNo, totalItems: total };let i = index">
+                <tr id="first_{{i}}">
+                    <td>
+                        {{item.studentName}}
+                    </td>
+                    <td>
+                        {{item.supervisorName}}
+                    </td>
+                    <td> {{item.isOutgoingTrip ? 'رحلة ذهاب' : ''}} {{item.isOutgoingTrip && item.isReturnTrip ? ' + ':''}} {{item.isReturnTrip ? 'رحلة عودة' : ''}}</td>
+                     <td>{{item.phone}}</td>
+                    <td>
+                        <a  class="d-inline-block ms-2"> <img src="assets/images/Delete.svg"  width="20px" height="20px" alt=""> </a>
+                    </td>
+            </tbody>
+        </table>
+    </div>
+    <div class="row my-5 m-0">
+        <div class="d-flex align-items-center justify-content-center">
+            <pagination-controls (pageChange)="pageNo = $event" id="foo" nextLabel="" previousLabel=""></pagination-controls>
+        </div>
+    </div>
+</div>

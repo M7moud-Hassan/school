@@ -35,8 +35,7 @@ import { AccountUserComponent } from './Components/account-user/account-user.com
 import { EditSupervisorPopUpComponent } from './Components/edit-supervisor-pop-up/edit-supervisor-pop-up.component';
 import { SupervisorProfileComponent } from './Components/supervisor-profile/supervisor-profile.component';
 import { TrackingAllComponent } from './Components/tracking-all/tracking-all.component';
-
-
+import { GroupDetailsComponent } from './Components/group-details/group-details.component';
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:HomePageComponent},
@@ -58,6 +57,7 @@ const routes: Routes = [
   {path:'absence-list',component:AbsenceListComponent},
   {path:'new-absence-order',component:AddAbsenceOrderComponent},
   {path:'trips-and-groups',component:TripsAndGroupsComponent},
+  {path:'group-details',component:GroupDetailsComponent},
   {path:'new-group',component:NewTripGroupComponent},
   {path:'notifications',component:NotificationsComponent},
   {path:'new-notification',component:NewNotificationComponent},

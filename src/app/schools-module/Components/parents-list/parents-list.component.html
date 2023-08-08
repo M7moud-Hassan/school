@@ -11,7 +11,7 @@
                     <span class="form-control-feedback">
                         <img src="assets/images/Search.svg" alt="">
                     </span>
-                    <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن ولى الأمر">
+                    <input type="text" name="parent_search-box" id="parent_search-box" [(ngModel)]="searchKeyword" (input)="filterData()" class="form-control bg-white" placeholder="ابحث عن ولى الأمر">
                 </div>
                 <div class="btns">
                     <img src="assets/images/Filter.svg" alt=""  #trigger (click)="showOverlay()"  class="schoolLogoButtton">
@@ -21,17 +21,17 @@
                                 <div class="row">
                                  <div class="col-6 mt-2 text-end">
                                      <label for="radio_1">
-                                         <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton"> اسم ولى الأمر
+                                         <input type="radio" id="radio_1" name="searchBy" value="name" [(ngModel)]="filterType" (change)="filterData()" class="radioButton"> اسم ولى الأمر
                                      </label>
                                  </div>
                                  <div class="col-6 mt-2 text-end">
                                      <label for="radio_2">
-                                         <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> رقم المستخدم
+                                         <input type="radio" id="radio_2" name="searchBy" value="number" [(ngModel)]="filterType" (change)="filterData()" class="radioButton"> رقم المستخدم
                                      </label>
                                  </div>
                                  <div class="col-6 mt-2 text-end">
                                      <label for="radio_3">
-                                         <input type="radio" id="radio_3" name="searchBy" value="childName" class="radioButton"> اسم الابـــن
+                                         <input type="radio" id="radio_3" name="searchBy" value="child" [(ngModel)]="filterType" (change)="filterData()" class="radioButton"> اسم الابـــن
                                      </label>
                                  </div>
                                 </div>
@@ -39,19 +39,19 @@
                                 <div class="row">
                                  <div class="col-4 pt-2">تاريخ الاضافة</div>
                                  <div class="col-8">
-                                     <input type="date" name="addDate" class="form-control datepicker dateInput">
+                                     <input type="date" name="addDate" [(ngModel)]="date" (change)="filterData()" class="form-control datepicker dateInput">
                                  </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                  <div class="col-4">
-                                     <label for="radio_1_1">
-                                         <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> فعال 
+                                     <label for="active">
+                                         <input type="radio" id="active" name="enable" value="true" (change)="filterData()" [(ngModel)]="isActive" class="radioButton"> فعال 
                                      </label>
                                  </div>
                                  <div class="col-5">
-                                     <label for="radio_1_2">
-                                         <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> غير فعال 
+                                     <label for="inactive">
+                                         <input type="radio" id="inactive" name="enable" value="false" (change)="filterData()" [(ngModel)]="isActive" class="radioButton"> غير فعال 
                                      </label>
                                  </div>
                                  <div class="col-3"></div>
@@ -60,7 +60,7 @@
                                 <div class="row pb-3">
                                  <div class="col-4 pt-2">عدد الأبناء</div>
                                  <div class="col-6">
-                                     <select class="d-inline-block pt-1 w-100" style="border-radius: 5px;border: .1px solid #575757;" name="children_Number" >
+                                     <select class="d-inline-block pt-1 w-100" (change)="filterData()" [(ngModel)]="childNumber" style="border-radius: 5px;border: .1px solid #575757;" name="children_Number" >
                                          <option *ngFor="let item of childrenNumber" class="d-inline-block" value="{{item}}">{{item}}</option>
                                      </select>
                                  </div>

@@ -32,6 +32,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgentsComponent } from './appComponents/agents/agents.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { AgentHomeComponent } from './appComponents/agent-home/agent-home.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     TermsAndConditionsComponent,
     SchoolHomePageComponent,
     Section7ContactUsComponent,
-    AgentsComponent
+    AgentsComponent,
+    AgentHomeComponent
   ],
   imports: [
     BrowserModule,

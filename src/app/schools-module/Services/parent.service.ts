@@ -21,14 +21,14 @@ export class ParentService {
   getParentList():parentListModel[]{
     return  [
       {
-        id: 1, name: 'حساب ولى الأمر 1', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/01', isActive: false, childrenInfo: [{
+        id: 1, name: 'حساب ولى الأمر 1', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-01', isActive: true, childrenInfo: [{
           id: 100,
           name: 'الابـــن 1',
           phone: '055251521252'
         }]
       },
       {
-        id: 2, name: 'حساب ولى الأمر 2', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/06', isActive: false, childrenInfo:
+        id: 2, name: 'حساب ولى الأمر 2', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07-06', isActive: true, childrenInfo:
           [
             { id: 101, name: 'الابـــن 1', phone: '055251521252' },
             { id: 102, name: 'الابـــن 2', phone: '055251521252' },
@@ -38,14 +38,14 @@ export class ParentService {
           ]
       },
       {
-        id: 3, name: 'حساب ولى الأمر 3', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/05', isActive: true, childrenInfo: [{
+        id: 3, name: 'حساب ولى الأمر 3', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-05', isActive: true, childrenInfo: [{
           id: 111,
           name: 'الابـــن 1',
           phone: '055251521252'
         }]
       },
       {
-        id: 4, name: 'حساب ولى الأمر 4', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/08', isActive: true, childrenInfo:
+        id: 4, name: 'حساب ولى الأمر 4', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-08', isActive: true, childrenInfo:
           [
             { id: 106, name: 'الابـــن 1', phone: '055251521252' },
             { id: 107, name: 'الابـــن 2', phone: '055251521252' },
@@ -54,14 +54,14 @@ export class ParentService {
           ]
       },
       {
-        id: 5, name: 'حساب ولى الأمر 5', phone: '047868736783', isSelected: false, lastActiveDate: '2023/06/25', isActive: true, childrenInfo: [{
+        id: 5, name: 'حساب ولى الأمر 5', phone: '047868736783', isSelected: false, lastActiveDate: '2023-06-25', isActive: true, childrenInfo: [{
           id: 112,
           name: 'الابـــن 1',
           phone: '055251521252'
         }]
       },
       {
-        id: 6, name: 'حساب ولى الأمر 6', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/04', isActive: false, childrenInfo:
+        id: 6, name: 'حساب ولى الأمر 6', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-04', isActive: true, childrenInfo:
           [
             { id: 121, name: 'الابـــن 1', phone: '055251521252' },
             { id: 122, name: 'الابـــن 2', phone: '055251521252' },
@@ -71,28 +71,28 @@ export class ParentService {
           ]
       },
       {
-        id: 16, name: ' 1حساب ولى الأمر 6', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/03', isActive: false, childrenInfo: [{
+        id: 16, name: ' 1حساب ولى الأمر 6', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-03', isActive: true, childrenInfo: [{
           id: 113,
           name: 'الابـــن 1',
           phone: '055251521252'
         }]
       },
       {
-        id: 7, name: 'حساب ولى الأمر 7', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/05', isActive: false, childrenInfo:
+        id: 7, name: 'حساب ولى الأمر 7', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-05', isActive: false, childrenInfo:
           [
             { id: 131, name: 'الابـــن 1', phone: '055251521252' },
             { id: 132, name: 'الابـــن 2', phone: '055251521252' },
           ]
       },
       {
-        id: 8, name: 'حساب ولى الأمر 8', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/09', isActive: false, childrenInfo: [{
+        id: 8, name: 'حساب ولى الأمر 8', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-09', isActive: false, childrenInfo: [{
           id: 114,
           name: 'الابـــن 1',
           phone: '055251521252'
         }]
       },
       {
-        id: 9, name: 'حساب ولى الأمر 9', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/15', isActive: false, childrenInfo:
+        id: 9, name: 'حساب ولى الأمر 9', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-15', isActive: false, childrenInfo:
           [
             { id: 141, name: 'الابـــن 1', phone: '055251521252' },
             { id: 142, name: 'الابـــن 2', phone: '055251521252' },
@@ -102,14 +102,14 @@ export class ParentService {
           ]
       },
       {
-        id: 10, name: 'حساب ولى الأمر 10', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/08', isActive: true, childrenInfo: [{
+        id: 10, name: 'حساب ولى الأمر 10', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-08', isActive: true, childrenInfo: [{
           id: 115,
           name: 'الابـــن 1',
           phone: '055251521252'
         }]
       },
       {
-        id: 11, name: 'حساب ولى الأمر 11', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/14', isActive: false, childrenInfo:
+        id: 11, name: 'حساب ولى الأمر 11', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-14', isActive: false, childrenInfo:
           [
             { id: 151, name: 'الابـــن 1', phone: '055251521252' },
             { id: 152, name: 'الابـــن 2', phone: '055251521252' },
@@ -118,14 +118,14 @@ export class ParentService {
           ]
       },
       {
-        id: 12, name: 'حساب ولى الأمر 12', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/11', isActive: true, childrenInfo: [{
+        id: 12, name: 'حساب ولى الأمر 12', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-11', isActive: true, childrenInfo: [{
           id: 116,
           name: 'الابـــن 1',
           phone: '055251521252'
         }]
       },
       {
-        id: 13, name: 'حساب ولى الأمر 13', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/12', isActive: false, childrenInfo:
+        id: 13, name: 'حساب ولى الأمر 13', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-12', isActive: false, childrenInfo:
           [
             { id: 161, name: 'الابـــن 1', phone: '055251521252' },
             { id: 162, name: 'الابـــن 2', phone: '055251521252' },
@@ -133,14 +133,14 @@ export class ParentService {
           ]
       },
       {
-        id: 14, name: 'حساب ولى الأمر 14', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/01', isActive: false, childrenInfo: [{
+        id: 14, name: 'حساب ولى الأمر 14', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-01', isActive: false, childrenInfo: [{
           id: 117,
           name: 'الابـــن 1',
           phone: '055251521252'
         }]
       },
       {
-        id: 15, name: 'حساب ولى الأمر 15', phone: '047868736783', isSelected: false, lastActiveDate: '2023/07/03', isActive: false, childrenInfo:
+        id: 15, name: 'حساب ولى الأمر 15', phone: '047868736783', isSelected: false, lastActiveDate: '2023-07-03', isActive: false, childrenInfo:
           [
             { id: 171, name: 'الابـــن 1', phone: '055251521252' },
             { id: 172, name: 'الابـــن 2', phone: '055251521252' },

@@ -1,6 +1,7 @@
 
 <div class="container-fluid">
         <div class="row">
+            <div class="col-12 col-md-3"></div>
             <div class="col-12 col-md-6">
                 <div  class="defaultFormContainer">
                     <form [formGroup]="newTripGroupForm" (ngSubmit)="submit()">
@@ -8,40 +9,69 @@
                             <div>
                                 <div class="defaultMainFromHeader">بيانات المجموعة : </div>
                             </div>
-                            <div class="col-12 col-md-12">
-                                    <label for="groupNameAr" class="defaultLabel">اسم المجموعة</label>
-                                    <input type="text" class="defaultTextBox" formControlName="groupNameAr" name="groupNameAr" id="groupNameAr"  >
-                            </div>
-                            <div class="col-12 col-md-12">
-                                <label for="groupNameEn" class="defaultLabel">الاسم بالإنجليزية </label>
-                                <input type="text" class="defaultTextBox" formControlName="groupNameEn" name="groupNameEn" id="groupNameEn"  >
-                        </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-12">
-                                <div class="row" style="margin-bottom: 25px;">
-                                    <label class="defaultLabel">حالة QR Code</label>
+                            <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                            <div class="main-index">
+                                <div class="right-div text-center">
+                                    <div class="input-box">
+                                        <label for="groupNameAr" class="defaultLabel">اسم المجموعة :</label>
+                                        <input class="emial-input" style="font-size: 16px !important;" type="text"  name="groupNameAr" id="groupNameAr" formControlName="groupNameAr"  spellcheck="false" placeholder="">
+                                       
+                                        <div class="icon-email edit-icon">
+                                            <img src="assets/images/Edit.svg" alt="edit">
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="right-div text-center">
+                                    <div class="input-box">
+                                        <label for="groupNameEn" class="defaultLabel">الاسم بالانجليزية :</label>
+                                        <input class="emial-input" style="font-size: 16px !important;" type="text"  name="groupNameEn" id="groupNameEn" formControlName="groupNameEn"  spellcheck="false" placeholder="">
+                                       
+                                        <div class="icon-email edit-icon">
+                                            <img src="assets/images/Edit.svg" alt="edit">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="defaultLabel py-2">حالة QR Code</label>
                                     <div class="col-12 col-md-6">
-                                        <input type="radio"  class="SquareRadioButton" value="true" formControlName="qrCodeStatus" name="qrCode" id="qrCodeStatus_active"  >
+                                        <input type="radio" class="SquareRadioButton" value="true" formControlName="qrCodeStatus" name="qrCode"
+                                            id="qrCodeStatus_active">
                                         <label for="qrCodeStatus_active" class="defaultLabel">فعال</label>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <input type="radio"  class="SquareRadioButton" value="false" formControlName="qrCodeStatus" name="qrCode" id="qrCodeStatus_inActive"  >
+                                        <input type="radio" class="SquareRadioButton" value="false" formControlName="qrCodeStatus" name="qrCode"
+                                            id="qrCodeStatus_inActive">
                                         <label for="qrCodeStatus_inActive" class="defaultLabel">غير فعال</label>
                                     </div>
                                 </div>
+                                <div class="right-div text-center mt-0 pt-0">
+                                    <div class="input-box">
+                                        <label for="supervisor" class="defaultLabel">المشرف</label>
+                                        <input class="emial-input" style="font-size: 16px !important;" type="text"  name="supervisor" id="supervisor" formControlName="supervisor"  spellcheck="false" placeholder="">
+                                       
+                                        <div class="icon-email edit-icon">
+                                            <img src="assets/images/Edit.svg" alt="edit">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-12 col-md-6"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <label class="defaultLabel" for="students">إضافة طلاب</label>
-                                <select class="defaultSelectOption" formControlName="students" name="students" id="students">
-                                    <option *ngFor="let item of students" value="{{item.id}}">{{item.name}}</option>                                    
-                                </select>
+                            <div class="row">
+                                <ng-container *ngFor="let item of students">
+                                <span  *ngIf="!item.isDeleted" class="student-container">
+                                    <span class="student-item"> {{item.name}} </span>
+                                    <a (click)="removeStudent(item.id)" class="student-delete"></a>
+                                </span>
+                            </ng-container>
                             </div>
+                           
+                            <!-- ---------------------------------------------------------------------------------------------------------------- -->
+                            
                         </div>
-                        <div style="margin-top:80px;"></div>
+                        
+                        
+                        <div style="margin-top:50px;"></div>
                         <div class="row">
                             <div class="col-12 col-md-1"></div>
                             <div class="col-12 col-md-5">
@@ -55,6 +85,6 @@
                     </form>
                 </div>
             </div>
-            <div class="col-12 col-md-6"></div>
+            <div class="col-12 col-md-3"></div>
         </div>
 </div>

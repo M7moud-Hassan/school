@@ -1,0 +1,42 @@
+
+.emial-input{
+    border: .3px solid #3AA7CE !important;
+    box-shadow: none !important;
+}
+.student-container{
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    width: 150px;
+    margin: 5px;
+    /* border: 1px solid black; */
+}
+.student-item{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 5px;
+    width: 135px;
+    height: 35px;
+    /* border: 1px solid blue; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px grey;
+    text-align: center;
+}
+.student-delete{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 30px;
+    height: 35px;
+    background-image: url('/assets/images/delete-student.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 95%;
+}

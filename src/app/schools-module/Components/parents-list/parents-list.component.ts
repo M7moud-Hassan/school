@@ -10,6 +10,12 @@ import { parentListModel } from '../../Services/parent.service';
   styleUrls: ['./parents-list.component.css']
 })
 export class ParentsListComponent implements OnInit {
+  searchKeyword:any='';
+  filterType:any = 'name';
+  date:any='';
+  isActive:any="true";
+  childNumber:number = 0;
+
   childrenNumber: any = [...Array(11).keys()].splice(1, 10);
   parents_data:parentListModel[]=[];
   isSchoolAccountDropdownVisible: boolean = false;
@@ -70,5 +76,33 @@ export class ParentsListComponent implements OnInit {
     if (this.overlayRef) {
       this.overlayRef.detach();
     }
+  }
+
+
+
+  filterData(){
+    this.getParentList();
+    if(this.filterType == 'name'){
+      this.parents_data = this.parents_data.filter(x=>x.name.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.filterType == 'number'){
+      this.parents_data = this.parents_data.filter(x=>x.phone.includes(this.searchKeyword)) ;
+    }
+    if(this.filterType == 'child'){
+      this.parents_data = this.parents_data.filter(x=>x.childrenInfo.find(z=>z.name.toLowerCase().includes(this.searchKeyword)));
+    }
+    if(this.date != ''){
+      this.parents_data = this.parents_data.filter(x=>x.lastActiveDate == this.date) ;
+    }
+    if(this.isActive == "false"){
+      this.parents_data = this.parents_data.filter(x=>x.isActive == false) ;
+    }
+    if(this.isActive == "true"){
+      this.parents_data = this.parents_data.filter(x=>x.isActive == true) ;
+    }
+    if(this.childNumber > 0){
+      this.parents_data = this.parents_data.filter(x=>x.childrenInfo.length == this.childNumber);
+    }
+    this.total =  this.parents_data.length;
   }
 }

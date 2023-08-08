@@ -19,7 +19,7 @@
                     <span class="form-control-feedback">
                         <img src="assets/images/Search.svg" alt="">
                     </span>
-                    <input type="text" name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن طلب ">
+                    <input type="text" name="parent_search-box" id="parent_search-box" [(ngModel)]="searchKeyword" (input)="filterData()" id="parent_search-box"  class="form-control bg-white" placeholder="ابحث عن طلب ">
                 </div>
                 <div class="btns">
                     <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
@@ -27,12 +27,12 @@
                        <div class="row">
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_1">
-                                <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton">اسم المرسل
+                                <input type="radio" id="radio_1" name="searchBy" value="name" [(ngModel)]="filterType" (change)="filterData()"  class="radioButton">اسم المرسل
                             </label>
                         </div>
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_2">
-                                <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton"> عنوان الطلب
+                                <input type="radio" id="radio_2" name="searchBy" value="title" [(ngModel)]="filterType" (change)="filterData()"  class="radioButton"> عنوان الطلب
                             </label>
                         </div>
                        </div>
@@ -40,19 +40,19 @@
                        <div class="row">
                         <div class="col-4 pt-2">تاريخ الاضافة</div>
                         <div class="col-8">
-                            <input type="date" name="addDate" class="form-control datepicker dateInput">
+                            <input type="date" name="addDate" [(ngModel)]="date" (change)="filterData()" class="form-control datepicker dateInput">
                         </div>
                        </div>
                        <hr>
                        <div class="row">
                         <div class="col-4">
-                            <label for="radio_1_1">
-                                <input type="radio" id="radio_1_1" name="enable" value="active" class="radioButton"> تم الرد 
+                            <label for="active">
+                                <input type="radio" id="active" name="enable" value="true" (change)="filterData()" [(ngModel)]="isActive" class="radioButton"> تم الرد 
                             </label>
                         </div>
                         <div class="col-5">
-                            <label for="radio_1_2">
-                                <input type="radio" id="radio_1_2" name="enable" value="inActive" class="radioButton"> لم يتم الرد 
+                            <label for="inactive">
+                                <input type="radio" id="inactive" name="enable" value="false" (change)="filterData()" [(ngModel)]="isActive" class="radioButton"> لم يتم الرد 
                             </label>
                         </div>
                         <div class="col-3"></div>
@@ -90,7 +90,7 @@
                      <td>
                          <!-- anther image called replay.svg -->
                          <div class="d-inline-block text-end">
-                            <span class="text-start px-4 d-inline-block"> {{item.status?'فعـــــال':'غير فعال'}} </span>
+                            <span class="text-start px-4 d-inline-block"> {{item.status?'تــــم الــرد':'لم يتم الرد'}} </span>
                         </div>
                         <div class="d-inline-block text-end">
                             <img class="  d-inline-block" src="assets/images/{{item.status?'replay.svg':'no-replay.svg'}}" alt="no-replay">

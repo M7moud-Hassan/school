@@ -17,7 +17,7 @@ import { DetailsStudentComponent } from '../details-student/details-student.comp
 export class StudentListComponent implements OnInit {
   isSchoolAccountDropdownVisible:boolean = false;
   selectAll:boolean = false;
-  student_data:studentModel[] = [];
+  student_data:studentModel[]  = [];
   pageNo: number = 1;
   pageSize: number = 10;
   total :number =  this.student_data.length;
@@ -139,5 +139,30 @@ export class StudentListComponent implements OnInit {
     if (this.overlayRef) {
       this.overlayRef.detach();
     }
+  }
+
+
+  searchKeyword:any='';
+  filterType:any = 'name';
+  date:any='';
+  isActive:any="true";
+  filterData(){
+    this.getAllStudents();
+    if(this.filterType == 'name'){
+      this.student_data = this.student_data.filter(x=>x.name.toLowerCase().includes(this.searchKeyword.toLowerCase())) ;
+    } 
+    if(this.filterType == 'number'){
+      this.student_data = this.student_data.filter(x=>x.userNumber.includes(this.searchKeyword)) ;
+    }
+    if(this.date != ''){
+      this.student_data = this.student_data.filter(x=>x.lastActiveDate == this.date) ;
+    }
+    if(this.isActive == "false"){
+      this.student_data = this.student_data.filter(x=>x.isActive == false) ;
+    }
+    if(this.isActive == "true"){
+      this.student_data = this.student_data.filter(x=>x.isActive == true) ;
+    }
+    this.total =  this.student_data.length;
   }
 }

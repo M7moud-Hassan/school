@@ -21,7 +21,7 @@
                 <span class="form-control-feedback">
                     <img src="assets/images/Search.svg" width="35px" alt="">
                 </span>
-                <input type="text"  name="parent_search-box" id="parent_search-box" class="form-control bg-white" placeholder="ابحث عن مجموعة ">
+                <input type="text"  name="parent_search-box" id="parent_search-box" [(ngModel)]="searchKeyword" (input)="filterData()" class="form-control bg-white" placeholder="ابحث عن مجموعة ">
             </div>
             <div class="btns">
                 <img #trigger src="assets/images/Filter.svg" alt="" (click)="showOverlay()" class="schoolLogoButtton" id="drop_filter">
@@ -30,51 +30,51 @@
                    <div class="row" style="font-size: 13px;">
                     <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="radio_1">
-                            <input type="radio" id="radio_1" name="searchBy" value="relativeName" class="radioButton float-end"> <span>اسم المجموعة</span>
+                            <input type="radio" id="radio_1" name="searchBy" value="groupName" [(ngModel)]="filterType" (change)="filterData()" class="radioButton float-end"> <span>اسم المجموعة</span>
                         </label>
                     </div>
                     <div class="col-7 mt-2 text-end">
                         <label for="radio_2">
-                            <input type="radio" id="radio_2" name="searchBy" value="userNumber" class="radioButton float-end">    <span>احد طلاب المجموعة</span>
+                            <input type="radio" id="radio_2" name="searchBy" value="studentName" [(ngModel)]="filterType" (change)="filterData()" class="radioButton float-end">    <span>احد طلاب المجموعة</span>
                         </label>
                     </div>
                     <div class="col-5 mt-2 text-end">
                         <label for="radio_3">
-                            <input type="radio" id="radio_3" name="searchBy" value="namesuper" class="radioButton float-end">  <span>اسم المشرف</span>
+                            <input type="radio" id="radio_3" name="searchBy" value="superVisorName" [(ngModel)]="filterType" (change)="filterData()" class="radioButton float-end">  <span>اسم المشرف</span>
                         </label>
                     </div>
                     <div class="col-7 mt-2 text-end">
                         <label for="radio_4">
-                            <input type="radio" id="radio_4" name="searchBy" value="numberUsers" class="radioButton float-end">   <span>عدد طلاب المجموعة</span>
+                            <input type="radio" id="radio_4" name="searchBy" value="studentCount" [(ngModel)]="filterType" (change)="filterData()" class="radioButton float-end">   <span>عدد طلاب المجموعة</span>
                         </label>
                     </div>
                    </div>
                    <hr>
                    
-                  <div class="row">
+                  <div class="row" dir="rtl">
                     <label class="d-inline-block text-end">نوع الحساب</label>
                     <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="active">
-                            <input type="radio" id="active" name="status" value="active" class="radioButton"> فعال
+                            <input type="radio" id="active" name="status" value="true" (change)="filterData()" [(ngModel)]="isActive" class="radioButton"> فعال
                         </label>
                     </div>
                     <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="inActive">
-                            <input type="radio" id="inActive" name="status" value="inActive" class="radioButton"> غير فعال
+                            <input type="radio" id="inActive" name="status" value="false" (change)="filterData()" [(ngModel)]="isActive" class="radioButton"> غير فعال
                         </label>
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
+                  <div class="row" dir="rtl">
                       <label class="d-inline-block text-end">الإنهاء باستخدام الكود</label>
                     <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="active_code">
-                            <input type="radio" id="active_code" name="code" value="active" class="radioButton"> فعال
+                            <input type="radio" id="active_code" name="code" value="true" (change)="filterData()" [(ngModel)]="iscodeActive" class="radioButton"> فعال
                         </label>
                     </div>
                     <div class="col-5 mt-2 text-end" style="font-size: 13px;">
                         <label for="inActive_code">
-                            <input type="radio" id="inActive_code" name="code" value="inActive" class="radioButton"> غير فعال
+                            <input type="radio" id="inActive_code" name="code" value="false" (change)="filterData()" [(ngModel)]="iscodeActive" class="radioButton"> غير فعال
                         </label>
                     </div>
                   </div>
@@ -82,7 +82,7 @@
                    <div class="row pb-2" dir="rtl">
                     <div class="col-4 pt-2">تاريخ الاضافة</div>
                     <div class="col-8">
-                        <input type="date" name="addDate" class="form-control py-1 datepicker dateInput">
+                        <input type="date" name="addDate" [(ngModel)]="date" (change)="filterData()" class="form-control py-1 datepicker dateInput">
                     </div>
                     
                    </div>
@@ -104,11 +104,11 @@
                     <div>
                         <span class="MiddleGroup">
                             <span class="spanTitle">{{item.supervisorName}}</span>
-                            <img src="assets/images/reload.svg" alt="">
+                            <a (click)="openChangeGroupSupervisorDialog()" class="d-inline-block pe-2"> <img src="assets/images/reload.svg" alt=""></a>
                         </span>
                         <span>
                             <span class="spanTitle">عدد الطلاب {{item.studentCount}}</span>
-                            <img src="assets/images/number_student.svg"  alt="">
+                            <a (click)="addStudentToGroupDialog()" class="d-inline-block pe-2"><img src="assets/images/number_student.svg"  alt=""></a>
                         </span>
                         <span>
                             <span class="activeStateTransparent"> 
@@ -135,8 +135,8 @@
                         <span class="activeState" [style.backgroundColor]="item.codeActive?'#E0FFD9':'#FFF0EB'" > <span [style.backgroundColor]="item.codeActive?'#24FF00':'#ff0000'" class="dotColor"></span> {{item.codeActive?'فعال':'غير فعال'}}</span>
                     </span>
                     <span class="actionIcons float-start">
-                        <a (click)="addStudentToGroupDialog()"><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
-                        <a (click)="openChangeGroupSupervisorDialog()"><img src="assets/images/Edit.svg"   width="30" height="30" alt="" ></a>
+                        <a routerLink="/school/group-details" ><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
+                        <a ><img src="assets/images/Edit.svg"   width="30" height="30" alt="" ></a>
                         <a routerLink="#"><img src="assets/images/Delete.svg" width="30" height="30" alt=""></a>
                     </span>
                 </span>

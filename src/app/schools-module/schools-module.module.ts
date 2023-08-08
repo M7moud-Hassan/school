@@ -71,6 +71,7 @@ import { SupervisorProfileComponent } from './Components/supervisor-profile/supe
 import { TrackingAllComponent } from './Components/tracking-all/tracking-all.component';
 import { DetailsStudentComponent } from './Components/details-student/details-student.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { GroupDetailsComponent } from './Components/group-details/group-details.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +129,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     SupervisorProfileComponent,
     TrackingAllComponent,
     DetailsStudentComponent,
-  
+    GroupDetailsComponent
+
   ],
   imports: [
     CommonModule,
