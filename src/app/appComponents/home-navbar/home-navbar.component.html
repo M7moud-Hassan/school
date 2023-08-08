@@ -9,20 +9,20 @@
         <div class="col-12 col-md-7">
             
                 <nav class="text-center">
-                    <a href="home-page/#section1"  routerLinkActive="activeLink" class="navbar-item-link activeLink" >الرئيسية</a>
-                    <a href="home-page/#section2" routerLinkActive="activeLink" class="navbar-item-link" >المميزات</a>
-                    <a href="home-page/#section3" routerLinkActive="activeLink" class="navbar-item-link" >المستهدفون</a>
-                    <a href="home-page/#section4" routerLinkActive="activeLink" class="navbar-item-link" >كيف نعمل</a>
-                    <a href="home-page/#section6" routerLinkActive="activeLink" class="navbar-item-link" >الشركاء</a>
-                    <a href="home-page/#section7" routerLinkActive="activeLink" class="navbar-item-link" >اتصل بنا</a>
+                    <a href="school/#section1"  routerLinkActive="activeLink" class="navbar-item-link activeLink" >الرئيسية</a>
+                    <a href="school/#section2" routerLinkActive="activeLink" class="navbar-item-link" >المميزات</a>
+                    <a href="school/#section3" routerLinkActive="activeLink" class="navbar-item-link" >المستهدفون</a>
+                    <a href="school/#section4" routerLinkActive="activeLink" class="navbar-item-link" >كيف نعمل</a>
+                    <a href="school/#section6" routerLinkActive="activeLink" class="navbar-item-link" >الشركاء</a>
+                    <a href="school/#section7" routerLinkActive="activeLink" class="navbar-item-link" >اتصل بنا</a>
                     <a href="/terms-and-conditions" routerLinkActive="activeLink" class="navbar-item-link" >سياسة الخصوصية</a>
                     <!-- <div class="animation start-home"></div> -->
                 </nav>
             </div>
             <div class="col-12 col-md-3">
                 <a (click)="changeLang()" class="language" ><span  >{{language}}</span></a>
-                <a routerLink="/regiter" class="btn-blue">تسجيل</a>
-                <a routerLink="/login" class="btn-ligth">دخول</a>
+                <a *ngIf="register" routerLink="/register" class="btn-blue">تسجيل</a>
+                <a *ngIf="login" routerLink="/login" class="btn-ligth">دخول</a>
             </div>
         </div>
     </div>

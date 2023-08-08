@@ -13,8 +13,10 @@ import { TermsAndConditionsComponent } from './appComponents/terms-and-condition
 
 const routes: Routes = [
   {path:'school',component:SchoolHomePageComponent},
+  {path:'admin',component:SchoolHomePageComponent},
+  {path:'agent',component:SchoolHomePageComponent},
   {path:'login',component:LoginComponent},
-  {path:'regiter',component:RegisterComponent},
+  {path:'register',component:RegisterComponent},
   {path:'reset-password',component:ResetPasswordComponent},
   {path:'new-password',component:NewPasswordComponent},
   {path:'terms-and-conditions',component:TermsAndConditionsComponent},

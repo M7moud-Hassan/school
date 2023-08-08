@@ -25,8 +25,9 @@
                     <input type="text" name="parent_search-box" id="parent_search-box" [(ngModel)]="searchKeyword" (input)="filterData()" class="form-control bg-white" placeholder="ابحث عن طلب ">
                 </div>
                 <div class="btns">
-                    <img src="assets/images/Filter.svg" alt="" (click)="toggleSchoolAccountDropDown()" class="schoolLogoButtton">
-                    <div *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-2">
+                    <img #trigger src="assets/images/Filter.svg" alt="" (click)="showOverlay()" class="schoolLogoButtton"  id="drop_filter">
+                    <ng-template #overlayTemplate>
+                    <div dir="rtl" *ngIf="isSchoolAccountDropdownVisible" class="dropdownlist2 p-4" id="dropMenu">
                        <div class="row">
                         <div class="col-6 mt-2 text-end">
                             <label for="radio_1">
@@ -42,6 +43,7 @@
                         </div>
                        </div>
                     </div>
+                </ng-template>
                 </div>
             </div>   
         </div>

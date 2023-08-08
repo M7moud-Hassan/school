@@ -1,8 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { TripsAndGroupsService, tripsListModel } from '../../Services/trips-and-groups.service';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { JourneyReportModel } from '../../Core/Models/journey-report-model';
 import { ChangeSupervisorPopUpComponent } from '../change-supervisor-pop-up/change-supervisor-pop-up.component';
 import { AddNewStudentToGroupPopUpComponent } from '../add-new-student-to-group-pop-up/add-new-student-to-group-pop-up.component';
 import { MainService } from '../../Services/main.service';

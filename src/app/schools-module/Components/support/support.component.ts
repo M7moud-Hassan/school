@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { GroupPopupComponent } from '../group-popup/group-popup.component';
 import { DetailsAskComponent } from '../details-ask/details-ask.component';
 import { supportListModel } from '../../Services/support.service';
 import { MainService } from '../../Services/main.service';
+import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
+import { TemplatePortal } from '@angular/cdk/portal';
 
 @Component({
   selector: 'app-support',
@@ -19,7 +21,9 @@ export class SupportComponent implements OnInit {
   selectAll:boolean = false;
   detailsVisible: boolean[] = [false, false, false];
 
-  constructor(private service:MainService) {}
+  constructor(private service:MainService,private elementRef:ElementRef,
+    private overlay: Overlay,private overlayPositionBuilder: OverlayPositionBuilder,private viewContainerRef: ViewContainerRef){}
+
 
   ngOnInit(): void {
     this.getSupportList();
@@ -99,5 +103,41 @@ export class SupportComponent implements OnInit {
       this.help_data = this.help_data.filter(x=>x.status == true) ;
     }
     this.total =  this.help_data.length;
+  }
+
+  overlayRef: OverlayRef | null = null;
+  @ViewChild('trigger') trigger: any;
+  @ViewChild('overlayTemplate', { static: false }) overlayTemplate!: TemplateRef<any>;
+  showOverlay() {
+    this.isSchoolAccountDropdownVisible = !this.isSchoolAccountDropdownVisible;
+    if (!this.overlayRef) {
+      const positionStrategy = this.overlayPositionBuilder
+        .flexibleConnectedTo(this.trigger.nativeElement)
+        .withPositions([{ originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top' }]);
+      this.overlayRef = this.overlay.create({ positionStrategy });
+    }
+
+    const portal = new TemplatePortal(this.overlayTemplate, this.viewContainerRef);
+    this.overlayRef.attach(portal);
+  }
+
+  @HostListener('window:click', ['$event'])
+  onWindowClick(event: MouseEvent): void {
+    console.log('Global click event occurred using HostListener!');
+    console.log(event.target);
+
+    
+    const list1Element = document.getElementById('drop_filter');
+    const dropMenu=document.getElementById('dropMenu');
+
+    if (
+  event.target !== list1Element &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode !== dropMenu
+  &&
+  ((event.target as HTMLElement).parentNode?.parentNode?.parentNode?.parentNode !== dropMenu))
+) {
+  console.log((event.target as HTMLElement).parentNode?.parentNode?.parentNode)
+  this.isSchoolAccountDropdownVisible = false;
+}
   }
 }

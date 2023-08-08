@@ -101,4 +101,6 @@ export class RegisterComponent implements OnInit{
      "assets/images/message.svg";
     });
   }
+
+  
 }
