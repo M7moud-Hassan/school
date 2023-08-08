@@ -72,6 +72,7 @@ import { TrackingAllComponent } from './Components/tracking-all/tracking-all.com
 import { DetailsStudentComponent } from './Components/details-student/details-student.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { TestComponent } from './Components/test/test.component';
+import { GroupDetailsComponent } from './Components/group-details/group-details.component';
 @NgModule({
   declarations: [
     SchoolsLayoutComponent,
@@ -128,7 +129,8 @@ import { TestComponent } from './Components/test/test.component';
     SupervisorProfileComponent,
     TrackingAllComponent,
     DetailsStudentComponent,
-    TestComponent
+    TestComponent,
+    GroupDetailsComponent
   ],
   imports: [
     CommonModule,

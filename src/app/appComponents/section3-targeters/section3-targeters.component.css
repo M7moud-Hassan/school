@@ -51,9 +51,10 @@
 
 .targeters-container{
     background-color: white;
-    box-shadow: 1px 2px 4px grey;
+    box-shadow: -1px 2px 4px grey;
     padding: 30px 20px;
     border-radius: 30px;
+    margin: 5px 5px 5px 20px;
 }
 
 .targeters-container-title, .targeters-container-description{
