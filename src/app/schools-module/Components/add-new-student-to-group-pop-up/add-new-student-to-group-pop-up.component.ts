@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-new-student-to-group-pop-up',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AddNewStudentToGroupPopUpComponent {
 
+constructor(public dialogRef: MatDialogRef<AddNewStudentToGroupPopUpComponent>) {
+  
+}
+closeDialog(): void {
+  this.dialogRef.close();
+}
 }

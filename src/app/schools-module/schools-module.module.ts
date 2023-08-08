@@ -71,8 +71,8 @@ import { SupervisorProfileComponent } from './Components/supervisor-profile/supe
 import { TrackingAllComponent } from './Components/tracking-all/tracking-all.component';
 import { DetailsStudentComponent } from './Components/details-student/details-student.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { TestComponent } from './Components/test/test.component';
 import { GroupDetailsComponent } from './Components/group-details/group-details.component';
+
 @NgModule({
   declarations: [
     SchoolsLayoutComponent,
@@ -129,8 +129,8 @@ import { GroupDetailsComponent } from './Components/group-details/group-details.
     SupervisorProfileComponent,
     TrackingAllComponent,
     DetailsStudentComponent,
-    TestComponent,
     GroupDetailsComponent
+
   ],
   imports: [
     CommonModule,

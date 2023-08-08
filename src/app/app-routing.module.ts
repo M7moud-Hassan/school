@@ -12,9 +12,11 @@ import { SchoolHomePageComponent } from './appComponents/school-home-page/school
 import { TermsAndConditionsComponent } from './appComponents/terms-and-conditions/terms-and-conditions.component';
 
 const routes: Routes = [
-  {path:'home-page',component:SchoolHomePageComponent},
+  {path:'school',component:SchoolHomePageComponent},
+  {path:'admin',component:SchoolHomePageComponent},
+  {path:'agent',component:SchoolHomePageComponent},
   {path:'login',component:LoginComponent},
-  {path:'',component:RegisterComponent},
+  {path:'register',component:RegisterComponent},
   {path:'reset-password',component:ResetPasswordComponent},
   {path:'new-password',component:NewPasswordComponent},
   {path:'terms-and-conditions',component:TermsAndConditionsComponent},

@@ -1,5 +1,6 @@
 .dropdownlist2{
-    top: 55%;
+    top: 0% !important;
+    left: 0% !important;
 }
 .mainHeadre{
     background-image: url('/assets/images/notifications.png');
