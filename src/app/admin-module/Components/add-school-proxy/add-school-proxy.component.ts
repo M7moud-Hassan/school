@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainAdminService } from '../../Services/main-admin.service';
 
 @Component({
   selector: 'app-add-school-proxy',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AddSchoolProxyComponent {
 
-  constructor() {
+  constructor(private service:MainAdminService) {
   
     
   }
@@ -43,5 +44,8 @@ export class AddSchoolProxyComponent {
     };
 
     reader.readAsDataURL(file);
+  }
+  back(){
+    this.service.back()
   }
 }

@@ -183,6 +183,33 @@
                                 </select>
                             </div>
                         </div>
+                        <!-- ----------------------------------------------------------------------------------------------- -->
+                        <div class="col-12 col-md-12" dir="rtl">
+                            <div class="ng-autocomplete">
+                                <ng-autocomplete
+                                [title]="title"
+                                [data]="studentsNames"
+                                [searchKeyword]="keyword"
+                                (selected)="selectEvent($event)"
+                                (inputChanged)="onChangeSearch($event)"
+                                (inputFocused)="onFocuse($event)"
+                                [itemTemplate]="itemTemplate"
+                                [notFoundTemplate]="notFoundTemplate"
+                                placeholder="ابحث عن طالب  . . . "
+                                >
+                                </ng-autocomplete>
+                              
+                                <ng-template #itemTemplate let-item>
+                                  <a [innerHTML]="item"></a>
+                                </ng-template>
+                              
+                                <ng-template #notFoundTemplate let-notFound>
+                                  <a [innerHTML]="notFound"></a>
+                                </ng-template>
+                              </div>
+
+                        </div>
+                        <!-- ----------------------------------------------------------------------------------------------- -->
                         <div class="col-12 col-md-12" dir="rtl">
                             <div class="form-group" >
                                 <label for="journeyDate"  class="fw-bolder fs-6 pb-2 mb-2">تاريخ الرحلة</label>
@@ -309,7 +336,7 @@
                     <button class="saveButton">حفظ التعديل</button>
                 </div>
                 <div class="col-12 col-md-5">
-                    <button class="cancelButton">إلغاء</button>
+                    <a class="cancelButton" (click)="back()" >إلغاء</a>
                 </div>
                 <div class="col-12 col-md-1"></div>
             </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainAdminService } from '../../Services/main-admin.service';
 
 @Component({
   selector: 'app-admin-content-management-ads',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AdminContentManagementAdsComponent {
   isMainAdsShown:boolean = true;
+  constructor(private service:MainAdminService){}
+  back(){
+    this.service.back();
+  }
 }

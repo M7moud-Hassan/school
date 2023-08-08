@@ -10,6 +10,7 @@ import { AgentSubscriptionService } from './agent-subscription.service';
 import { AgentAdsService } from './agent-ads.service';
 import { AgentNotificationService } from './agent-notification.service';
 import { AgentSupportService } from './agent-support.service';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class MainAgentService {
     private _formBuilder:FormBuilder,
     private _dialog: MatDialog,
     private _router: Router,
+    private _location:Location,
     private _agentHomeService: AgentHomeService,
     private _agentsService: AgentsService,
     private _agentAuthService: AgentAuthService,
@@ -69,7 +71,9 @@ export class MainAgentService {
 
 
 
-
+    back(){
+      this._location.back();
+    }
     printFormValues(myForm:FormGroup): void {
       let  i = 0;
       let displayedValues:String = "";

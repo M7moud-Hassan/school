@@ -74,5 +74,7 @@ export class AddAbsenceOrderComponent implements OnInit {
   getOutboundJourneyAbsent(){
     return this.absenceOrderForm.controls['isOutboundJourneyAbsent'];
   }
-
+  back(){
+    this.service.back();
+  }
 }

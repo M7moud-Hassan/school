@@ -92,5 +92,8 @@ export class AgentAddNewSubscribersComponent implements OnInit {
     };
     reader.readAsDataURL(file);
   }
+  back(){
+    this.service.back();
+  }
 
 }

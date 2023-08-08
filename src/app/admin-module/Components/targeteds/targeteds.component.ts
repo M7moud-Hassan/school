@@ -53,5 +53,8 @@ export class TargetedsComponent implements OnInit {
     })
   }
 
+  back(){
+    this.service.back()
+  }
 }
 

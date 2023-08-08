@@ -36,5 +36,7 @@ export class AdminContentManagementContactUsComponent implements OnInit {
       }
     });
   }
-
+back(){
+  this.service.back();
+}
 }

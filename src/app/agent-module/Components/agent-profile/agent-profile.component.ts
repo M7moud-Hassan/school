@@ -68,4 +68,7 @@ export class AgentProfileComponent implements OnInit {
       })
     }
   }
+  back(){
+    this.service.back();
+  }
 }

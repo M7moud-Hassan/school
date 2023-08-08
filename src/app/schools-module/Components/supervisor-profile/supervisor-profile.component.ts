@@ -142,5 +142,7 @@ export class SupervisorProfileComponent implements OnInit {
   get getImage(){
     return this.profileForm.controls['image'].value;
   }
-
+ back(){
+  this.service.back();
+ }
 }

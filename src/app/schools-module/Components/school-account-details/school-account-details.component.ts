@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SchoolAccountDetailsModel } from '../../Core/Models/school-account-details-model';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SchoolService } from '../../Services/school.service';
+import { MainService } from '../../Services/main.service';
 
 @Component({
   selector: 'app-school-account-details',
@@ -10,11 +11,11 @@ import { SchoolService } from '../../Services/school.service';
 })
 export class SchoolAccountDetailsComponent {
   schoolAccountDetailsModel:SchoolAccountDetailsModel = {} as SchoolAccountDetailsModel;
-  constructor(private fb:FormBuilder,private schoolService:SchoolService){
+  constructor(private service:MainService){
 
   }
 
-  profileForm = this.fb.group({
+  profileForm = this.service.formBuilder.group({
     nameAr: ['', [Validators.required]],
     nameEn: ['', [Validators.required]],
     userNumber: ['', [Validators.required]],
@@ -53,7 +54,7 @@ export class SchoolAccountDetailsComponent {
 
     if(this.profileForm.valid){
       this.mapValues();
-      this.schoolService.updateSchoolAccount(this.schoolAccountDetailsModel).subscribe({
+      this.service.schoolService.updateSchoolAccount(this.schoolAccountDetailsModel).subscribe({
         next:(response)=>{
 
         },
@@ -72,4 +73,8 @@ export class SchoolAccountDetailsComponent {
     lng: 48.39095806484077
   };
   zoom = 5 ;
+
+  back(){
+    this.service.back();
+  }
 }

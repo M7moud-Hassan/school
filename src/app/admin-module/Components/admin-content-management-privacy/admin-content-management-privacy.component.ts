@@ -36,5 +36,7 @@ export class AdminContentManagementPrivacyComponent implements OnInit {
       }
     });
   }
-
+back(){
+  this.service.back();
+}
 }

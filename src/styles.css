@@ -189,6 +189,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
+  text-decoration: none;
 }
 .cancelButton{
   border-color: #575757;
@@ -631,6 +632,12 @@ width: 100%;
 }
 
 
+.one-line-only{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(25vw);
+}
 
 
 
@@ -638,7 +645,13 @@ width: 100%;
 
 
 
-
+.autocomplete-container .input-container input {
+  display: inline-block;
+  border-radius: 13px;
+  border: .3px solid #3AA7CE;
+  padding-right: 100px;
+      box-shadow: none;
+}
 
 
 

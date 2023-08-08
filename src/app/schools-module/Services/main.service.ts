@@ -17,6 +17,7 @@ import { AbsenceService } from './absence.service';
 import { SupportService } from './support.service';
 import { NotificationService } from './notification.service';
 import { TripsAndGroupsService } from './trips-and-groups.service';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,7 @@ export class MainService {
     private _formBuilder:FormBuilder,
     private _dialog: MatDialog,
     private _router: Router,
+    private _location:Location,
     private _authService:AuthService,
     private _groupService:GroupsService,
     private _statisticsService:StatisticsService,
@@ -125,7 +127,9 @@ export class MainService {
 
 
 
-
+  back(){
+    this._location.back();
+  }
   printFormValues(myForm:FormGroup): void {
     let  i = 0;
     let displayedValues:String = "";

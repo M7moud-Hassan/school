@@ -46,4 +46,7 @@ show(i:Number){
   this.items=this.parents
   else this.items=this.supervisor
 }
+back(){
+  this.service.back();
+}
 }

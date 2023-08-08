@@ -50,4 +50,7 @@ export class AddUsersComponent implements OnInit {
 
     reader.readAsDataURL(file);
   }
+  back(){
+    this.service.back();
+  }
 }

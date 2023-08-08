@@ -172,6 +172,9 @@ export class TripsAndGroupsComponent implements OnInit {
   this.isSchoolAccountDropdownVisible = false;
 }
   }
+  back(){
+    this.service.back();
+  }
 
 
 
@@ -205,5 +208,24 @@ export class TripsAndGroupsComponent implements OnInit {
       this.journies = this.journies.filter(x=>x.codeActive == true) ;
     }
   }
+
+
+  // title = 'angular-dropdownlist';  
+  // public dataFields : Object = {id:1,name:'محمد حسن احمد'};
+
+  title = 'Demo';
+  keyword:string="Name";
+  selectEvent(item:any){
+    //do something with selected items .
+    console.log("Selected Name : "+item);
+  }
+  onChangeSearch(textSearch:string){
+    //fetch remote data from here .
+    this.keyword = textSearch;
+    // alert(this.keyword);
+    console.log("Search Name : "+textSearch);
+  }
+  onFocuse(e:any){}
+
 }
 

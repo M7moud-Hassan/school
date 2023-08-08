@@ -11,7 +11,7 @@
                             <div class="col-12">
                                 <label for="studentName" class="inputLabel">اسم الطالب</label>
                         <div class="inputIcons">
-                            <img src="/assets/images/Edit.svg">
+                            <!-- <img src="/assets/images/Edit.svg"> -->
                             <input class="inputField" type="text" name="studentName" id="studentName" formControlName="studentName" placeholder="">
                         </div>
                             </div>
@@ -37,7 +37,7 @@
                             <div class="col-12">
                                 <label for="reason" class="inputLabel">سبب الغياب</label>
                         <div class="inputIcons">
-                            <img src="/assets/images/Edit.svg">
+                            <!-- <img src="/assets/images/Edit.svg"> -->
                             <input class="inputField" type="text" name="reason" id="reason" formControlName="reason" placeholder="">
                         </div>
                             </div>
@@ -48,7 +48,7 @@
                             <div class="col-12">
                                 <label for="by" class="inputLabel">تم بواسطة</label>
                         <div class="inputIcons">
-                            <img src="/assets/images/Edit.svg">
+                            <!-- <img src="/assets/images/Edit.svg"> -->
                             <input class="inputField" type="text" name="by" id="by" formControlName="by" placeholder="">
                         </div>
                             </div>
@@ -58,10 +58,10 @@
                 <div class="row mt-3">
                     <div class="col-12 col-md-1"></div>
                     <div class="col-12 col-md-5">
-                        <button class="saveButton">حفظ البيانات</button>
+                        <button class="saveButton">إرسال</button>
                      </div>
                      <div class="col-12 col-md-5">
-                         <button class="cancelButton">إلغاء</button>
+                         <a class="cancelButton" (click)="back()" >إلغاء</a>
                      </div>
                      <div class="col-12 col-md-1"></div>
                  </div>

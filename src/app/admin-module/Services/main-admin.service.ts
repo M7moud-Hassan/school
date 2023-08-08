@@ -10,6 +10,7 @@ import { UserSystemService } from './user-system.service';
 import { SubscriptionsService } from './subscriptions.service';
 import { AdminManagementService } from './admin-management.service';
 import { AdminContentManagementService } from './admin-content-management.service';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class MainAdminService {
     private _formBuilder:FormBuilder,
     private _dialog: MatDialog,
     private _router: Router,
+    private _location:Location,
     private _adminUsersService: AdminUsersService,
     private _adminHomeService:AdminHomeService,
     private _adminProxiesService:ProxiesService,
@@ -67,7 +69,9 @@ get adminUserssystem():UserSystemService{
 
 
 
-
+    back(){
+      this._location.back();
+    }
     printFormValues(myForm:FormGroup): void {
       let  i = 0;
       let displayedValues:String = "";

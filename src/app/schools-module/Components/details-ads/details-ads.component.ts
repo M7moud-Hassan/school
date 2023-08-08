@@ -52,4 +52,7 @@ export class DetailsAdsComponent  implements OnInit{
   get getImage(){
     return this.detailsAdForm.controls['image'].value;
   }
+  back(){
+    this.service.back();
+  }
 }

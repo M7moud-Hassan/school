@@ -70,4 +70,7 @@ export class ProfileComponent implements OnInit {
       })
     }
   }
+  back(){
+    this.service.back();
+  }
 }

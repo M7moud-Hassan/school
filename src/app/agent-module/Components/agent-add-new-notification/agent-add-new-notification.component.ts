@@ -66,4 +66,7 @@ export class AgentAddNewNotificationComponent implements OnInit {
       }
     });
   }
+  back(){
+    this.service.back();
+  }
 }

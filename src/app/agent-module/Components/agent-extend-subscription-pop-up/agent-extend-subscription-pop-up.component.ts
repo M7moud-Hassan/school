@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainAgentService } from '../../Services/main-agent.service';
 
 @Component({
   selector: 'app-agent-extend-subscription-pop-up',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AgentExtendSubscriptionPopUpComponent {
 
+  constructor(private service:MainAgentService){}
+
+  back(){
+    this.service.back();
+  }
 }

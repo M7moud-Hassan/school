@@ -112,4 +112,7 @@ export class AccountUserComponent implements AfterViewInit,OnInit{
   get getImage(){
     return this.profileForm.controls['image'].value;
   }
+  back(){
+    this.service.back();
+  }
 }

@@ -72,6 +72,11 @@ import { TrackingAllComponent } from './Components/tracking-all/tracking-all.com
 import { DetailsStudentComponent } from './Components/details-student/details-student.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { GroupDetailsComponent } from './Components/group-details/group-details.component';
+import { FilterStudentsPipe } from './Core/Pipes/filter-students.pipe';
+// import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+
+
 
 @NgModule({
   declarations: [
@@ -129,10 +134,11 @@ import { GroupDetailsComponent } from './Components/group-details/group-details.
     SupervisorProfileComponent,
     TrackingAllComponent,
     DetailsStudentComponent,
-    GroupDetailsComponent
-
+    GroupDetailsComponent,
+    FilterStudentsPipe,
   ],
   imports: [
+    // DropDownListModule,
     CommonModule,
     SchoolsModuleRoutingModule,
     SharedModuleModule,
@@ -152,7 +158,8 @@ import { GroupDetailsComponent } from './Components/group-details/group-details.
     DragDropModule,
     OverlayModule,
     PortalModule,    
-    SlickCarouselModule
+    SlickCarouselModule,
+    AutocompleteLibModule,
   ]
 })
 export class SchoolsModuleModule { }

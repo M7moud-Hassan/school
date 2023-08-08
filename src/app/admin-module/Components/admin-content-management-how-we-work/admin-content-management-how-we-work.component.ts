@@ -47,4 +47,7 @@ export class AdminContentManagementHowWeWorkComponent implements OnInit {
       width:'50%'
     })
   }
+  back(){
+    this.service.back();
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddSchoolProxyComponent } from '../add-school-proxy/add-school-proxy.component';
+import { MainAdminService } from '../../Services/main-admin.service';
 
 @Component({
   selector: 'app-add-proxiy',

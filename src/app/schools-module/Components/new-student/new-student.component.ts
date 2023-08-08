@@ -96,5 +96,7 @@ export class NewStudentComponent implements OnInit {
 
     reader.readAsDataURL(file);
   }
-
+back(){
+  this.service.back();
+}
 }

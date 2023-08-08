@@ -66,4 +66,7 @@ export class NewNotificationComponent implements OnInit {
       }
     });
   }
+  back(){
+    this.service.back();
+  }
 }
