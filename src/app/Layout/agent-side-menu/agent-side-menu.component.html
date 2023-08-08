@@ -5,6 +5,7 @@
             <a *ngIf="item.isSelected" routerLink="{{item.link}}" class="bg-menu">
                 <div class="right">
                     <p class="text-center">{{item.label}}</p>
+                    <span *ngIf="item.hasBadge" class="badge-item-selected">3</span>
                 </div>
                 <div class="left">
                     <img src="{{item.selectedIcon}}" alt="">
@@ -16,6 +17,7 @@
                 <div class="row-item">
                     <img src="{{item.unSelectedIcon}}" alt="">
                     <span>{{item.label}}</span>
+                    <span *ngIf="item.hasBadge" class="badge-item-unselected">3</span>
                 </div>
             </a>
         </ng-container>
