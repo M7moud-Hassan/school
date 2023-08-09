@@ -30,8 +30,8 @@ const routes: Routes = [
   ]},
   {path:'',component:AdminLayoutComponent,children:[
     {path:'admin',loadChildren:()=>import('./admin-module/admin-module.module').then(m=>m.AdminModuleModule)},
-  ]}
-
+  ]},
+  {path:'**',component:NavigationPageComponent},
 ];
 
 @NgModule({
