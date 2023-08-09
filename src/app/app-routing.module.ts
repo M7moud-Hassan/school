@@ -4,14 +4,15 @@ import { MainLayoutComponent } from './Layout/main-layout/main-layout.component'
 import { LoginComponent } from './schools-module/Components/login/login.component';
 import { RegisterComponent } from './schools-module/Components/register/register.component';
 import { ResetPasswordComponent } from './schools-module/Components/reset-password/reset-password.component';
-import { HomePageComponent } from './schools-module/Components/home-page/home-page.component';
 import { NewPasswordComponent } from './schools-module/Components/new-password/new-password.component';
 import { AgentLayoutComponent } from './Layout/agent-layout/agent-layout.component';
 import { AdminLayoutComponent } from './Layout/admin-layout/admin-layout.component';
 import { SchoolHomePageComponent } from './appComponents/school-home-page/school-home-page.component';
 import { TermsAndConditionsComponent } from './appComponents/terms-and-conditions/terms-and-conditions.component';
+import { NavigationPageComponent } from './appComponents/navigation-page/navigation-page.component';
 
 const routes: Routes = [
+  {path:'',component:NavigationPageComponent},
   {path:'school',component:SchoolHomePageComponent},
   {path:'admin',component:SchoolHomePageComponent},
   {path:'agent',component:SchoolHomePageComponent},
@@ -22,7 +23,6 @@ const routes: Routes = [
   {path:'terms-and-conditions',component:TermsAndConditionsComponent},
 
   {path:'',component:MainLayoutComponent,children:[
-    {path:'home',component:HomePageComponent},
     {path:'school',loadChildren:()=>import('./schools-module/schools-module.module').then(m=>m.SchoolsModuleModule)},
   ]},
   {path:'',component:AgentLayoutComponent,children:[

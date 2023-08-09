@@ -1,0 +1,19 @@
+body {
+    background-color: #f8f9fa;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #3AA7CE;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #3AA7CE;
+  }
