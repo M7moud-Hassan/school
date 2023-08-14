@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { MainAdminService } from '../../Services/main-admin.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-details-img-driver',
@@ -14,7 +15,7 @@ export class DetailsImgDriverComponent implements OnInit {
 
 
 
-  constructor(private service:MainAdminService){}
+  constructor(private service:MainAdminService,public dialogRef: MatDialogRef<DetailsImgDriverComponent>){}
   ngOnInit(): void {
     this.createForm();
     this.getDetails();
@@ -63,6 +64,9 @@ export class DetailsImgDriverComponent implements OnInit {
         }
       })
     }
+  }
+  closeDialog(): void {
+    this.dialogRef.close();
   }
 }
 

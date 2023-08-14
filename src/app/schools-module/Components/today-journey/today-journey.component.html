@@ -93,11 +93,11 @@
                             <div>
                                 <span class="MiddleGroup">
                                     <span class="spanTitle">{{item.supervisorName}}</span>
-                                    <img src="assets/images/reload.svg" alt="">
+                                    <a (click)="openChangeGroupSupervisorDialog()"><img src="assets/images/reload.svg" alt=""></a>
                                 </span>
                                 <span>
                                     <span class="spanTitle">عدد الطلاب {{item.studentCount}}</span>
-                                    <img src="assets/images/number_student.svg"  alt="">
+                                    <a (click)="addStudentToGroupDialog()"><img src="assets/images/number_student.svg"  alt=""></a>
                                 </span>
                                 <span>
                                     <span class="activeStateTransparent"> 

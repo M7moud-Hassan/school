@@ -56,4 +56,8 @@ export class EditSupervisorPopUpComponent implements OnInit {
     return this.editSupervisorForm.controls['busColor'].value;
   }
 
+  goEdit(){
+    this.closeDialog()
+    this.service.router.navigate(['/school/supervisor-profile'])
+  }
 }

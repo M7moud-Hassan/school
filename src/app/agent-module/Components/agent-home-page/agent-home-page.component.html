@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="notificationAlertContainer">
-                    <div *ngFor="let item of addingsList" class="notificationItemCard">
+                    <div *ngFor="let item of addingsList" routerLink="/agent/speed-notification" style="cursor: pointer;" class="notificationItemCard"  >
                         <div class="row">
                             <div class="col-8 notiTitle">{{item.title}}</div>
                             <div class="col-4 notiTime">{{item.time}}</div>
@@ -117,7 +117,7 @@
                     </div>
                 </div>
                 <div class="notificationAlertContainer">
-                    <div *ngFor="let item of updatesList" class="notificationItemCard">
+                    <div *ngFor="let item of updatesList"  routerLink="/agent/speed-notification" style="cursor: pointer;"  class="notificationItemCard">
                         <div class="lastModifiedItem d-flex">
                             <span class="lastModifiedCircle"></span>
                             <span class="lastModifiedLabel">{{item.title}}</span>

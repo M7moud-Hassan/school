@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { MainAdminService } from '../../Services/main-admin.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-details-img',
@@ -14,7 +15,7 @@ export class DetailsImgComponent implements OnInit {
 
 
 
-  constructor(private service:MainAdminService){}
+  constructor(private service:MainAdminService,public dialogRef: MatDialogRef<DetailsImgComponent>){}
   ngOnInit(): void {
     this.createForm();
     this.getDetails();
@@ -59,5 +60,9 @@ export class DetailsImgComponent implements OnInit {
         }
       })
     }
+  }
+
+  closeDialog(): void {
+    this.dialogRef.close();
   }
 }

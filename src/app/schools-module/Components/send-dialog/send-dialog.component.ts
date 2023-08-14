@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-send-dialog',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./send-dialog.component.css']
 })
 export class SendDialogComponent {
-
+  constructor(public dialogRef: MatDialogRef<SendDialogComponent>) {}
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
 }

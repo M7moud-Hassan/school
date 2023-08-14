@@ -8,7 +8,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class GroupPopupComponent {
 
-
+  constructor(public dialogRef: MatDialogRef<GroupPopupComponent>) {}
   groups=[
     {id:1,name:'المجموعة الاولى',isChecked:false},
     {id:3,name:'المجموعة الثانية',isChecked:false},
@@ -32,7 +32,6 @@ export class GroupPopupComponent {
     return this.groups.filter(e=>e.isChecked);
   }
 
-  constructor(public dialogRef: MatDialogRef<GroupPopupComponent>) {}
 
   closeDialog(): void {
     this.dialogRef.close();

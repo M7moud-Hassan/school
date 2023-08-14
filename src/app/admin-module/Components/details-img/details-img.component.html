@@ -1,7 +1,7 @@
 <form [formGroup]="imageForm" (ngSubmit)="onSubmit()">
 <div>
     <div class="header-D p-2">
-        <img src="assets/images/closeD.svg" alt="close">
+        <a (click)="closeDialog()" class="border-0"><img src="assets/images/closeD.svg" alt="close"></a>
         <span class="float-end text-white fs-5 px-3">بيانات الصورة</span>
     </div>
     <div class="container-fluid pt-4">
@@ -42,7 +42,7 @@
     <div  class="row p-0 m-0 mt-4 mb-4">
         <div class="col-0 col-md-1"></div>
         <div class="col-12 col-md-5">
-            <button class="btn border w-100 btn-default">
+            <button (click)="closeDialog()" class="btn border w-100 btn-default">
                 إلغاء
             </button>
         </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MainAgentService } from '../../Services/main-agent.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-agent-extend-subscription-pop-up',
@@ -8,9 +9,13 @@ import { MainAgentService } from '../../Services/main-agent.service';
 })
 export class AgentExtendSubscriptionPopUpComponent {
 
-  constructor(private service:MainAgentService){}
+  constructor(private service:MainAgentService,public dialogRef: MatDialogRef<AgentExtendSubscriptionPopUpComponent>){}
 
   back(){
     this.service.back();
+  }
+  
+  closeDialog(): void {
+    this.dialogRef.close();
   }
 }

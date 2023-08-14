@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-agent-school-location-pop-up',
@@ -11,4 +12,8 @@ export class AgentSchoolLocationPopUpComponent {
     lat: 21.467420120714536,
     lng: 48.39095806484077
   };
+  constructor(public dialogRef: MatDialogRef<AgentSchoolLocationPopUpComponent>) {}
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
 }

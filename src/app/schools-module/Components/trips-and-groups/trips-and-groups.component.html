@@ -135,7 +135,7 @@
                         <span class="activeState" [style.backgroundColor]="item.codeActive?'#E0FFD9':'#FFF0EB'" > <span [style.backgroundColor]="item.codeActive?'#24FF00':'#ff0000'" class="dotColor"></span> {{item.codeActive?'فعال':'غير فعال'}}</span>
                     </span>
                     <span class="actionIcons float-start">
-                        <a routerLink="/school/group-details" ><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
+                        <a (click)="addStudentToGroupDialog()" ><img src="assets/images/user.svg"   width="30" height="30" alt=""></a>
                         <a ><img src="assets/images/Edit.svg"   width="30" height="30" alt="" ></a>
                         <a routerLink="#"><img src="assets/images/Delete.svg" width="30" height="30" alt=""></a>
                     </span>
